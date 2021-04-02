@@ -28,9 +28,9 @@
 </template>
 
 <script>
-import FineDining from "./FineDining.vue";
-import SeeTheSights from "./SeeTheSights.vue";
-import TalkToLocals from "./TalkToLocals.vue";
+import FineDining from "./attractions/FineDining.vue";
+import SeeTheSights from "./attractions/SeeTheSights.vue";
+import TalkToLocals from "./attractions/TalkToLocals.vue";
 
 export default {
   components: {

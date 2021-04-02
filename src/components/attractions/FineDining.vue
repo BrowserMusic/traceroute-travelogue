@@ -1,6 +1,6 @@
 <template>
   <div class="fine-dining">
-    <img src="../assets/fancy_foods.jpeg" />
+    <img src="@/assets/fancy_foods.jpeg" />
   </div>
 </template>
 
