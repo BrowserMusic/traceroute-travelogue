@@ -16,7 +16,7 @@ In the script section, Vue has a lot of predefined functions that have specific 
 ### Store (Vuex)
 The last thing to explain is the store. The advantage of React, Vue, or Svelte is that they're reactive – things automatically update when values change, rather than needing a complicated series of listeners or passing a hacky global state object around. The store (called Vuex in Vue) is like having a global state, but it has some protections against accidentally overwriting values.
 
-The store has a state, mutations, getters, and actions (no actions in ours yet though).
+The store has a state, mutations, getters, and actions (no actions in ours yet though). You can look at all of those in `src/store/index.js`.
 
 * The state is where all the variables are held. You can get these values in components by doing `this.$store.state.whatever`.
 * To update the variables in the state, you have to call a mutation on them, like `this.$store.commit("myMutation", false)`. (Mutations can be complicated, but ours are all pretty simple right now.)
