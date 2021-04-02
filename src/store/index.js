@@ -29,11 +29,7 @@ export default new Vuex.Store({
       ]
   },
   mutations: {
-    increment(state) {
-      state.count++;
-    },
     openModal(state, f) {
-      // console.log("modal state: " + f);
       state.isModalOpen = f;
     },
     changeCity(state, city) {
@@ -41,16 +37,17 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    // split the coordinates away from the city names
     getPath: (state) => {
       return state.paths[state.currentPath].map(value => value.coords);
     },
+    // get the first point of the current path, for map focusing
     getOrigin: (state) => {
       return state.paths[state.currentPath][state.currentCity].coords;
     },
+    // get the current city
     getCurrentCityInfo: (state) => {
       return state.paths[state.currentPath][state.currentCity];
     }
   }
 })
-
-// export default createStore;

@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <LeafletMap />
     <ModalCityContainer v-if="isModalOpen"></ModalCityContainer>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
 
@@ -14,18 +12,11 @@ import LeafletMap from "./LeafletMap.vue";
 export default {
   name: "App",
   components: {
-    // HelloWorld,
     LeafletMap,
     ModalCityContainer,
   },
-  // data() {
-  //   return {
-  //     showModal: false,
-  //   };
-  // },
   computed: {
     isModalOpen() {
-      // console.log(this.$store.isModalOpen);
       return this.$store.state.isModalOpen;
     },
   },

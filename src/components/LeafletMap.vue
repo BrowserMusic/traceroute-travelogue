@@ -14,16 +14,19 @@ export default {
     };
   },
   mounted() {
-    this.map = L.map("mapContainer").setView(this.$store.getters.getOrigin, 4);
+    this.map = L.map("mapContainer").setView(this.$store.getters.getOrigin, 4); // init map, set focus on the path's first point
+
+    // tile attribution (required for Leaflet)
     L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
 
-    L.polyline(this.$store.getters.getPath, { color: "red" }).addTo(this.map);
+    L.polyline(this.$store.getters.getPath, { color: "red" }).addTo(this.map); // line between path markers
 
     let points = [];
     let index = 0;
+    // generate path markers
     for (let marker of this.$store.getters.getPath) {
       const point = L.circle(marker, {
         color: "red",
@@ -35,8 +38,7 @@ export default {
 
       points.push(point);
       point.on("click", (e) => {
-        // console.log(e);
-        // console.log(e.target.options.customIndex);
+        // make click listeners for each path marker
         this.$store.commit("openModal", true);
         this.$store.commit("changeCity", e.target.options.customIndex);
       });

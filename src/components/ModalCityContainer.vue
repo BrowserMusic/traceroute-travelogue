@@ -49,7 +49,6 @@ export default {
     },
   },
   mounted() {
-    // const ref = this;
     window.addEventListener("click", this.clickAwayToClose);
   },
   beforeDestroy() {
