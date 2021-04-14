@@ -1,7 +1,7 @@
 <template>
   <div class="local-flavor">
     <p>"Ma'am, are you from around here?"</p>
-    <p>"No, never!"</p>
+    <p>"BEEP BEEP BOOP BOOP"</p>
   </div>
 </template>
 

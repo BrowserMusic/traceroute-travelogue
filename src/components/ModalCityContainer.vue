@@ -10,10 +10,10 @@
           <ul>
             <li class="tab" @click.prevent="tripActivity = 0">Try some food</li>
             <li class="tab" @click.prevent="tripActivity = 1">
-              Chat up the locals
+              Go see the sights
             </li>
             <li class="tab" @click.prevent="tripActivity = 2">
-              Go see the sights
+              Chat up the locals
             </li>
           </ul>
 
@@ -21,6 +21,19 @@
           <SeeTheSights v-if="tripActivity == 1" />
           <TalkToLocals v-if="tripActivity == 2" />
           <!-- <slot name="body">Coordinates: {{ myCity.coords }}</slot> -->
+
+          <ul>
+            <li class="tab" @click.prevent="prevCity" v-if="cityIndex > 0">
+              Previous city
+            </li>
+            <li
+              class="tab"
+              @click.prevent="nextCity"
+              v-if="cityIndex < tripLength"
+            >
+              Next city
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -47,9 +60,22 @@ export default {
     myCity() {
       return this.$store.getters.getCurrentCityInfo;
     },
+    cityIndex() {
+      return this.$store.state.currentCity;
+    },
+    tripLength() {
+      return this.$store.getters.tripLength;
+    },
   },
   mounted() {
+    const ref = this;
     window.addEventListener("click", this.clickAwayToClose);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key == "Escape") {
+        ref.$store.commit("openModal", false);
+      }
+    });
   },
   beforeDestroy() {
     window.removeEventListener("click", this.clickAwayToClose);
@@ -60,6 +86,17 @@ export default {
       if (e.target.classList[0] == "modal-wrapper") {
         ref.$store.commit("openModal", false);
       }
+    },
+    nextCity() {
+      this.$store.commit("changeCity", this.$store.state.currentCity + 1);
+      this.changeCity(this.$store.state.currentCity);
+    },
+    prevCity() {
+      this.$store.commit("changeCity", this.$store.state.currentCity - 1);
+      this.changeCity(this.$store.state.currentCity);
+    },
+    changeCity(cIndex) {
+      this.$emit("changeCity", cIndex);
     },
   },
 };
@@ -84,7 +121,7 @@ export default {
 }
 
 .modal-container {
-  width: 300px;
+  width: 90vw;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
@@ -111,10 +148,15 @@ ul {
   list-style-type: none;
   padding-left: 0;
   display: flex;
+  justify-content: center;
 }
 
 .tab {
   cursor: pointer;
+  padding: 0.5em 1em;
+  background: #d7d7d7;
+  margin-right: 0.5em;
+  border-radius: 2px;
 }
 
 /*

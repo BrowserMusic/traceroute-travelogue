@@ -48,6 +48,9 @@ export default new Vuex.Store({
     // get the current city
     getCurrentCityInfo: (state) => {
       return state.paths[state.currentPath][state.currentCity];
+    },
+    tripLength: (state) => {
+      return state.paths[state.currentPath].length;
     }
   }
 })

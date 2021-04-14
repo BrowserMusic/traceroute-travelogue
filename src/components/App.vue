@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <LeafletMap />
-    <ModalCityContainer v-if="isModalOpen"></ModalCityContainer>
+    <LeafletMap :city="myCity" />
+    <ModalCityContainer
+      v-if="isModalOpen"
+      @changeCity="passCityVal"
+    ></ModalCityContainer>
   </div>
 </template>
 
@@ -15,9 +18,19 @@ export default {
     LeafletMap,
     ModalCityContainer,
   },
+  data() {
+    return {
+      myCity: 0,
+    };
+  },
   computed: {
     isModalOpen() {
       return this.$store.state.isModalOpen;
+    },
+  },
+  methods: {
+    passCityVal(e) {
+      this.myCity = e;
     },
   },
 };

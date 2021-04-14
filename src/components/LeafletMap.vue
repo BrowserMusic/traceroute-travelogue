@@ -13,8 +13,16 @@ export default {
       map: null,
     };
   },
+  props: {
+    city: Number,
+  },
+  watch: {
+    city: function (old, newV) {
+      this.map.setView(this.$store.getters.getCurrentCityInfo.coords, 6);
+    },
+  },
   mounted() {
-    this.map = L.map("mapContainer").setView(this.$store.getters.getOrigin, 4); // init map, set focus on the path's first point
+    this.map = L.map("mapContainer").setView(this.$store.getters.getOrigin, 6); // init map, set focus on the path's first point
 
     // tile attribution (required for Leaflet)
     L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
@@ -22,16 +30,18 @@ export default {
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
 
-    L.polyline(this.$store.getters.getPath, { color: "red" }).addTo(this.map); // line between path markers
+    L.polyline(this.$store.getters.getPath, { color: "#3cb35f" }).addTo(
+      this.map
+    ); // line between path markers
 
     let points = [];
     let index = 0;
     // generate path markers
     for (let marker of this.$store.getters.getPath) {
       const point = L.circle(marker, {
-        color: "red",
-        fillColor: "#f03",
-        fillOpacity: "0.5",
+        color: "#3cb35f",
+        fillColor: "#3cb35f",
+        fillOpacity: 1,
         radius: 30000,
         customIndex: index,
       }).addTo(this.map);
