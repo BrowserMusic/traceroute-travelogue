@@ -7,7 +7,7 @@
         </div>
 
         <div class="modal-body">
-          <ul>
+          <ul class="activity-tabs">
             <li class="tab" @click.prevent="tripActivity = 0">Try some food</li>
             <li class="tab" @click.prevent="tripActivity = 1">
               Go see the sights
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import FineDining from "./attractions/FineDining.vue";
+import FineDining from "./dining/FineDining.vue";
 import SeeTheSights from "./attractions/SeeTheSights.vue";
 import TalkToLocals from "./attractions/TalkToLocals.vue";
 
@@ -102,7 +102,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -138,17 +138,22 @@ export default {
 
 .modal-body {
   margin: 20px 0;
-}
 
-.modal-default-button {
-  float: right;
+  ul.activity-tabs {
+    // list-style-type: none;
+    // padding-left: 0;
+    display: flex;
+    // justify-content: center;
+  }
 }
 
 ul {
   list-style-type: none;
   padding-left: 0;
-  display: flex;
-  justify-content: center;
+}
+
+.modal-default-button {
+  float: right;
 }
 
 .tab {

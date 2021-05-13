@@ -51,6 +51,9 @@ export default {
         // make click listeners for each path marker
         this.$store.commit("openModal", true);
         this.$store.commit("changeCity", e.target.options.customIndex);
+        this.map.setView(this.$store.getters.getCurrentCityInfo.coords, 6, {
+          duration: 1,
+        });
       });
       index++;
     }
@@ -59,6 +62,11 @@ export default {
     if (this.map) {
       this.map.remove();
     }
+  },
+  methods: {
+    // moveToCity(c) {
+    //   this.map.setView(this.$store.getters.getCurrentCityInfo.coords, 6);
+    // }
   },
 };
 </script>
