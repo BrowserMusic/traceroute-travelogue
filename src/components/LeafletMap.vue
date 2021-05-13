@@ -17,12 +17,18 @@ export default {
     city: Number,
   },
   watch: {
-    city: function (old, newV) {
-      this.map.setView(this.$store.getters.getCurrentCityInfo.coords, 6);
+    city: function () {
+      this.map.setView(
+        this.$store.getters["path/getCurrentCityInfo"].coords,
+        6
+      );
     },
   },
   mounted() {
-    this.map = L.map("mapContainer").setView(this.$store.getters.getOrigin, 6); // init map, set focus on the path's first point
+    this.map = L.map("mapContainer").setView(
+      this.$store.getters["path/getOrigin"],
+      6
+    ); // init map, set focus on the path's first point
 
     // tile attribution (required for Leaflet)
     L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
@@ -30,14 +36,14 @@ export default {
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
 
-    L.polyline(this.$store.getters.getPath, { color: "#3cb35f" }).addTo(
+    L.polyline(this.$store.getters["path/getPath"], { color: "#3cb35f" }).addTo(
       this.map
     ); // line between path markers
 
     let points = [];
     let index = 0;
     // generate path markers
-    for (let marker of this.$store.getters.getPath) {
+    for (let marker of this.$store.getters["path/getPath"]) {
       const point = L.circle(marker, {
         color: "#3cb35f",
         fillColor: "#3cb35f",
@@ -50,10 +56,14 @@ export default {
       point.on("click", (e) => {
         // make click listeners for each path marker
         this.$store.commit("openModal", true);
-        this.$store.commit("changeCity", e.target.options.customIndex);
-        this.map.setView(this.$store.getters.getCurrentCityInfo.coords, 6, {
-          duration: 1,
-        });
+        this.$store.commit("path/changeCity", e.target.options.customIndex);
+        this.map.setView(
+          this.$store.getters["path/getCurrentCityInfo"].coords,
+          6,
+          {
+            duration: 1,
+          }
+        );
       });
       index++;
     }

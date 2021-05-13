@@ -27,7 +27,7 @@ export default {
     parentElem = document.querySelector(".the-whole-plate");
     const width = parentElem.clientWidth;
     const height = parentElem.clientHeight;
-    const objs = this.$store.getters.getRandomFoods;
+    const objs = this.$store.getters["dining/getRandomFoods"];
     const scene = new THREE.Scene();
     const raycaster = new THREE.Raycaster();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
@@ -36,7 +36,6 @@ export default {
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height);
-    // renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor("#e5e5e5");
     parentElem.appendChild(renderer.domElement);
 
@@ -45,23 +44,18 @@ export default {
     scene.add(axesHelper, gridHelper);
 
     const loader = new GLTFLoader();
-    // let sceneObjs = [];
+
     for (let o of objs) {
-      // const mesh = load3DObject(`/gltf/${o.name}/scene.gltf`, o, loader, scene);
       load3DObject(`/gltf/food/${o.name}`, o, loader, scene);
-      // console.log(mesh);
-      // sceneObjs.push(mesh);
     }
 
-    const led = this.$store.getters.getRandomParts;
+    const led = this.$store.getters["dining/getRandomParts"];
     load3DObject(`/gltf/parts/${led.name}`, led, loader, scene);
-    // sceneObjs.push(mesh);
 
-    const plate = this.$store.getters.getRandomPlate;
+    const plate = this.$store.getters["dining/getRandomPlate"];
     load3DObject(`/gltf/plates/${plate.name}`, plate, loader, scene);
 
-    const tools = this.$store.getters.getRandomTools;
-    console.log(tools);
+    const tools = this.$store.getters["dining/getRandomTools"];
     for (let o of tools) {
       load3DObject(`/gltf/tools/${o.name}`, o, loader, scene);
     }
@@ -224,6 +218,7 @@ function load3DObject(loc, data, loader, scene) {
       sceneObjs.push(mesh);
       return mesh;
     },
+    // eslint-disable-next-line no-unused-vars
     function (xhr) {
       // console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
     },

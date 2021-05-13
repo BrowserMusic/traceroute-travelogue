@@ -58,13 +58,13 @@ export default {
   },
   computed: {
     myCity() {
-      return this.$store.getters.getCurrentCityInfo;
+      return this.$store.getters["path/getCurrentCityInfo"];
     },
     cityIndex() {
-      return this.$store.state.currentCity;
+      return this.$store.state.path.currentCity;
     },
     tripLength() {
-      return this.$store.getters.tripLength;
+      return this.$store.getters["path/tripLength"];
     },
   },
   mounted() {
@@ -88,12 +88,20 @@ export default {
       }
     },
     nextCity() {
-      this.$store.commit("changeCity", this.$store.state.currentCity + 1);
-      this.changeCity(this.$store.state.currentCity);
+      // this.$store.commit("changeCity", this.$store.state.path.currentCity + 1);
+      // this.changeCity(this.$store.state.path.currentCity);
+      this.$store.commit(
+        "path/changeCity",
+        this.$store.state.path.currentCity + 1
+      );
+      this.changeCity(this.$store.state.path.currentCity);
     },
     prevCity() {
-      this.$store.commit("changeCity", this.$store.state.currentCity - 1);
-      this.changeCity(this.$store.state.currentCity);
+      this.$store.commit(
+        "path/changeCity",
+        this.$store.state.path.currentCity - 1
+      );
+      this.changeCity(this.$store.state.path.currentCity);
     },
     changeCity(cIndex) {
       this.$emit("changeCity", cIndex);
