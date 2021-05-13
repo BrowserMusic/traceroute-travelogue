@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Vuex from "vuex";
+import pathBlock from "../data/paths.json";
+import dinner from "../data/food.json";
 
 Vue.use(Vuex);
 
@@ -9,24 +11,11 @@ export default new Vuex.Store({
     currentPath: 0, // index of current path
     currentCity: 0, // index of city in path
     isModalOpen: false,
-    paths: // the base one when you load geotraceroute: nuremberg to missoula
-      [
-        [
-          { coords: [49.446278, 11.073978], name: "Nuremberg" },
-          { coords: [50.114963, 8.658529], name: "Frankfurt" },
-          { coords: [52.365904, 4.887474], name: "Amsterdam" },
-          { coords: [53.407733, -2.982116], name: "Liverpool" },
-          { coords: [45.553852, -73.624592], name: "Montreal" },
-          { coords: [43.704, -79.367105], name: "Toronto" },
-          { coords: [41.488703, -81.714795], name: "Cleveland" },
-          { coords: [41.858966, -87.671574], name: "Chicago" },
-          { coords: [38.054897, -97.931986], name: "Kansas" },
-          { coords: [39.746435, -104.974626], name: "Denver" },
-          { coords: [40.781722, -111.934227], name: "Salt Lake" },
-          { coords: [47.602723, -122.333308], name: "Seattle" },
-          { coords: [46.864812, -114.018641], name: "Missoula" }
-        ]
-      ]
+    paths: pathBlock,// the base one when you load geotraceroute: nuremberg to missoula
+    foods: dinner.foods,
+    parts: dinner.parts,
+    tools: dinner.tools,
+    plates: dinner.plates
   },
   mutations: {
     openModal(state, f) {
@@ -51,6 +40,50 @@ export default new Vuex.Store({
     },
     tripLength: (state) => {
       return state.paths[state.currentPath].length;
+    },
+    getRandomFoods: (state) => {
+      let retval = [];
+      getRandomItems(state.foods.list, 5, (item) => {
+        const scale = ("scale" in item) ? item.scale : state.foods.baseScale;
+        retval.push({ "name": item.name, "scale": scale });
+      })
+
+      return retval;
+    },
+    getRandomParts: (state) => {
+      const item = state.parts.list[0];
+      const scale = ("scale" in item) ? item.scale : state.parts.baseScale;
+      return ({ "name": item.name, "scale": scale });
+    },
+    getRandomPlate: (state) => {
+      let retval = {};
+      getRandomItems(state.plates.list, 1, (plate) => {
+        const scale = ("scale" in plate) ? plate.scale : state.plates.baseScale;
+        retval = { "name": plate.name, "scale": scale, "position": [0, -0.75, 0] };
+      });
+
+      console.log(retval);
+      return retval;
+    },
+    getRandomTools: (state) => {
+      let retval = [];
+      let index = 0;
+      getRandomItems(state.tools.list, 2, (tool) => {
+        const scale = ("scale" in tool) ? tool.scale : state.tools.baseScale;
+        const position = (index == 0) ? [-1, -0.75, 0] : [1, -0.75, 0];
+        retval.push({ "name": tool.name, "scale": scale, "position": position, "rotation": [0, Math.PI / 2, 0] });
+        index++;
+      });
+
+      return retval;
     }
   }
 })
+
+function getRandomItems(list, count, callback) {
+  for (let i = 0; i < count; i++) {
+    var item = list[Math.floor(Math.random() * list.length)];
+    // retval.push({ "name": item, "scale": 2 });
+    callback(item);
+  }
+}

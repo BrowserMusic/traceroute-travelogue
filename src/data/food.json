@@ -1,0 +1,403 @@
+{
+  "foods": {
+    "baseScale": 2,
+    "list": [
+      {
+        "name": "apple.glb"
+      },
+      {
+        "name": "appleHalf.glb"
+      },
+      {
+        "name": "avocado.glb"
+      },
+      {
+        "name": "avocadoHalf.glb"
+      },
+      {
+        "name": "bacon.glb"
+      },
+      {
+        "name": "baconRaw.glb"
+      },
+      {
+        "name": "banana.glb"
+      },
+      {
+        "name": "beet.glb"
+      },
+      {
+        "name": "bottleKetchup.glb",
+        "scale": 1
+      },
+      {
+        "name": "bottleMusterd.glb",
+        "scale": 1
+      },
+      {
+        "name": "bottleOil.glb",
+        "scale": 1
+      },
+      {
+        "name": "bowlBroth.glb"
+      },
+      {
+        "name": "bowlCereal.glb"
+      },
+      {
+        "name": "bowlSoup.glb"
+      },
+      {
+        "name": "bread.glb"
+      },
+      {
+        "name": "broccoli.glb"
+      },
+      {
+        "name": "burger.glb"
+      },
+      {
+        "name": "cabbage.glb"
+      },
+      {
+        "name": "cakeBirthday.glb"
+      },
+      {
+        "name": "can.glb"
+      },
+      {
+        "name": "candyBar.glb"
+      },
+      {
+        "name": "carrot.glb"
+      },
+      {
+        "name": "carton.glb"
+      },
+      {
+        "name": "cauliflower.glb"
+      },
+      {
+        "name": "celeryStick.glb"
+      },
+      {
+        "name": "cheese.glb",
+        "scale": 1
+      },
+      {
+        "name": "cherries.glb"
+      },
+      {
+        "name": "chinese.glb"
+      },
+      {
+        "name": "chocolate.glb"
+      },
+      {
+        "name": "cocktail.glb"
+      },
+      {
+        "name": "coconutHalf.glb"
+      },
+      {
+        "name": "corn.glb"
+      },
+      {
+        "name": "cornDog.glb"
+      },
+      {
+        "name": "croissant.glb"
+      },
+      {
+        "name": "cupcake.glb"
+      },
+      {
+        "name": "cupTea.glb"
+      },
+      {
+        "name": "dimSum.glb"
+      },
+      {
+        "name": "donut.glb"
+      },
+      {
+        "name": "donutSprinkles.glb"
+      },
+      {
+        "name": "eggHalf.glb"
+      },
+      {
+        "name": "eggplant.glb"
+      },
+      {
+        "name": "fish.glb"
+      },
+      {
+        "name": "frappe.glb"
+      },
+      {
+        "name": "fries.glb"
+      },
+      {
+        "name": "frikandelSpeciaal.glb"
+      },
+      {
+        "name": "gingerBread.glb"
+      },
+      {
+        "name": "grapes.glb"
+      },
+      {
+        "name": "honey.glb"
+      },
+      {
+        "name": "hotDog.glb"
+      },
+      {
+        "name": "iceCreamCone.glb"
+      },
+      {
+        "name": "leek.glb"
+      },
+      {
+        "name": "lemonHalf.glb"
+      },
+      {
+        "name": "loaf.glb"
+      },
+      {
+        "name": "loafBaguette.glb"
+      },
+      {
+        "name": "lollypop.glb"
+      },
+      {
+        "name": "makiRoe.glb"
+      },
+      {
+        "name": "makiSalmon.glb"
+      },
+      {
+        "name": "makiVegetable.glb"
+      },
+      {
+        "name": "meatCooked.glb"
+      },
+      {
+        "name": "meatRibs.glb"
+      },
+      {
+        "name": "meatSausage.glb"
+      },
+      {
+        "name": "mincemeatPie.glb"
+      },
+      {
+        "name": "muffin.glb"
+      },
+      {
+        "name": "mushroom.glb"
+      },
+      {
+        "name": "mussel.glb"
+      },
+      {
+        "name": "onion.glb"
+      },
+      {
+        "name": "onionHalf.glb"
+      },
+      {
+        "name": "orange.glb"
+      },
+      {
+        "name": "pancakes.glb"
+      },
+      {
+        "name": "paprika.glb"
+      },
+      {
+        "name": "peanutButter.glb"
+      },
+      {
+        "name": "pear.glb"
+      },
+      {
+        "name": "pearHalf.glb"
+      },
+      {
+        "name": "pepper.glb"
+      },
+      {
+        "name": "pie.glb"
+      },
+      {
+        "name": "pineapple.glb"
+      },
+      {
+        "name": "pizza.glb"
+      },
+      {
+        "name": "plateSauerkraut.glb"
+      },
+      {
+        "name": "popsicle.glb"
+      },
+      {
+        "name": "pudding.glb"
+      },
+      {
+        "name": "pumpkin.glb"
+      },
+      {
+        "name": "radish.glb"
+      },
+      {
+        "name": "riceBall.glb"
+      },
+      {
+        "name": "salad.glb"
+      },
+      {
+        "name": "sandwich.glb"
+      },
+      {
+        "name": "soda.glb"
+      },
+      {
+        "name": "soy.glb"
+      },
+      {
+        "name": "strawberry.glb"
+      },
+      {
+        "name": "sub.glb"
+      },
+      {
+        "name": "sundae.glb"
+      },
+      {
+        "name": "sushiSalmon.glb"
+      },
+      {
+        "name": "taco.glb"
+      },
+      {
+        "name": "tajine.glb"
+      },
+      {
+        "name": "tomato.glb"
+      },
+      {
+        "name": "tomatoSlice.glb"
+      },
+      {
+        "name": "turkey.glb",
+        "scale": 0.75
+      },
+      {
+        "name": "waffle.glb"
+      },
+      {
+        "name": "watermelon.glb"
+      },
+      {
+        "name": "whippedCream.glb"
+      },
+      {
+        "name": "wholeHam.glb"
+      },
+      {
+        "name": "wineRed.glb"
+      }
+    ]
+  },
+  "parts": {
+    "baseScale": 0.15,
+    "list": [
+      {
+        "name": "led.glb"
+      }
+    ]
+  },
+  "plates": {
+    "baseScale": 1.5,
+    "list": [
+      {
+        "name": "styrofoam.glb"
+      },
+      {
+        "name": "bowl.glb"
+      },
+      {
+        "name": "cuttingBoardJapanese.glb"
+      },
+      {
+        "name": "fryingPan.glb"
+      },
+      {
+        "name": "mug.glb"
+      },
+      {
+        "name": "pizzaBox.glb",
+        "scale": 1
+      },
+      {
+        "name": "pan.glb"
+      },
+      {
+        "name": "plate.glb"
+      },
+      {
+        "name": "pot.glb"
+      }
+    ]
+  },
+  "tools": {
+    "baseScale": 1.5,
+    "list": [
+      {
+        "name": "cakeSlicer.glb"
+      },
+      {
+        "name": "cheeseSlicer.glb"
+      },
+      {
+        "name": "cookingFork.glb"
+      },
+      {
+        "name": "cookingKnifeChopping.glb"
+      },
+      {
+        "name": "cookingSpatula.glb"
+      },
+      {
+        "name": "cookingSpoon.glb"
+      },
+      {
+        "name": "gingerBreadCutter.glb"
+      },
+      {
+        "name": "pepperMill.glb"
+      },
+      {
+        "name": "pizzaCutter.glb"
+      },
+      {
+        "name": "rollingPin.glb"
+      },
+      {
+        "name": "utensilFork.glb"
+      },
+      {
+        "name": "utensilKnife.glb"
+      },
+      {
+        "name": "utensilSpoon.glb"
+      },
+      {
+        "name": "whisk.glb"
+      }
+    ]
+  }
+}
