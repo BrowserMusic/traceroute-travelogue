@@ -1,7 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-// import pathBlock from "../data/paths.json";
-// import dinner from "../data/food.json";
 import dining from "./dinner.js";
 import path from "./path.js";
 
@@ -13,13 +11,24 @@ export default new Vuex.Store({
     path,
   },
   state: () => ({
-    count: 0,
     isModalOpen: false,
+    layout: "map"
   }),
   mutations: {
     openModal(state, f) {
       state.isModalOpen = f;
     },
+    changeLayout(state, l) {
+      // states are either "map" or "chapter"
+      // console.log("before: " + state.layout);
+      if (l != null) {
+        state.layout = l;
+      } else {
+        state.layout = (state.layout == "map") ? "chapter" : "map";
+      }
+
+      // console.log("after: " + state.layout);
+    }
   },
   getters: {
   }

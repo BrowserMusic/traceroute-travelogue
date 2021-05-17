@@ -31,4 +31,12 @@ const path = {
   }
 }
 
+// function adjustForAM(coord) {
+//   if (coord[1] < 0) {
+//     coord[1] = (180 - Math.abs(coord[1])) + 180;
+//   }
+
+//   return coord;
+// }
+
 export default path;

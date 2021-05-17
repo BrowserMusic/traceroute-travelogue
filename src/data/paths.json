@@ -2,6 +2,133 @@
   [
     {
       "coords": [
+        -41.293005356424814,
+        174.77051506386763
+      ],
+      "city": "Wellington",
+      "country": "New Zealand",
+      "text": "mailing the head set up"
+    },
+    {
+      "coords": [
+        -39.92909656966034,
+        175.0390251279176
+      ],
+      "city": "Whanganui",
+      "region": "Manawatū-Whanganui",
+      "country": "New Zealand",
+      "text": "head enters packet sphere",
+      "notes": "I’m sure I can create some zany vid that’s all spiraled out which could handle the background. If we have time we might want to have some sort of animation of the head falling into the void?",
+      "transition": "could be another one-way node here"
+    },
+    {
+      "coords": [
+        -37.77427251159037,
+        175.25834418412273
+      ],
+      "city": "Hamilton",
+      "region": "Waikato region",
+      "country": "New Zealand",
+      "text": "chat with orb? tells you about traveling through packet sphere, gives audience some cable facts",
+      "notes": "just gives us room to get some fast facts from our customs orb about the packetsphere and how internet cables stretch across the globe underground and through water. I had a side idea where maybe the customs orb initially confiscates some stuff at this node the head was traveling with and you have to hunt for the stuff around the packetsphere along your journey but that doesn’t feel like a necessary thing for a first draft."
+    },
+    {
+      "coords": [
+        -36.862778320953616,
+        174.74591137615633
+      ],
+      "city": "Auckland",
+      "country": "New Zealand",
+      "text": "a landing node that outlines three main travel modes/regions. all are locked, the first unlockable one is mine, but you need to grease up the minecart wheels.",
+      "nodes": [
+        "to mine",
+        "up to local network",
+        "to ocean"
+      ],
+      "notes": "would have a few dead ends. I did this under the assumption that the head is going from me to you so maybe at the beginning you’re next to the coast, so you can check out the ocean but can’t cross yet so it’s locked, and you can try to resurface but it’s too far to jump, and the head will need to find it’s fantastically long wig (which was confiscated) to use as a rope to resurface. The mine is the only unlockable direction at the moment."
+    },
+    {
+      "coords": [
+        -37.83139980257073,
+        145.08376561705302
+      ],
+      "city": "Melborne",
+      "region": "Victoria",
+      "country": "Australia",
+      "text": "meet mine cart, they're stuck on tracks",
+      "notes": "between 5 and 6 you need to go find oil to grease up the minecart’s wheels, so you have to travel to taranaki (a volcano on the way between wellington and auckland where the cable goes along) to the only oil drilling operation in NZ to find some oil. I’m not totally sure of the look for this one, but maybe a lava filled cavern?",
+      "transition": "you have to walk on a ledge next to lava pit, potential transition node"
+    },
+    {
+      "coords": [
+        -31.957066648214724,
+        115.85300820398551
+      ],
+      "city": "Perth",
+      "region": "Western Australia",
+      "country": "Australia",
+      "text": "mine rail spaghetti, one node showing that",
+      "transition": "to auckland",
+      "notes": "I have a sketch of some zany minecart rails that I can send but need to re-draw since I did an orb sketch over top of the original.  It might be good enough to use as a background."
+    },
+    {
+      "coords": [
+        -33.829676378850934,
+        151.05141444509846
+      ],
+      "city": "Sydney",
+      "region": "New South Wales",
+      "country": "Australia"
+    },
+    {
+      "coords": [
+        34.05952694359969,
+        242.82172907534016
+      ],
+      "city": "Redlands",
+      "region": "California",
+      "country": "United States of America"
+    },
+    {
+      "coords": [
+        39.19508366962147,
+        263.4079026085785
+      ],
+      "city": "Manhattan",
+      "region": "Kansas",
+      "country": "United States of America"
+    },
+    {
+      "coords": [
+        43.73576220778811,
+        280.60405785465696
+      ],
+      "city": "Toronto",
+      "region": "Ontario",
+      "country": "Canada"
+    },
+    {
+      "coords": [
+        39.03822234679275,
+        282.51195288763824
+      ],
+      "city": "Ashburn",
+      "region": "Virginia",
+      "country": "United States of America"
+    },
+    {
+      "coords": [
+        38.036972658155555,
+        281.5136522656343
+      ],
+      "city": "Charlottesville",
+      "region": "Virginia",
+      "country": "United States of America"
+    }
+  ],
+  [
+    {
+      "coords": [
         49.446278,
         11.073978
       ],
