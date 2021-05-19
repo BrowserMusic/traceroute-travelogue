@@ -33,8 +33,8 @@ export default {
   methods: {
     classDef() {
       let retval = "dialogue-line";
-      console.log(this.content);
-      console.log(this.previous);
+      // console.log(this.content);
+      // console.log(this.previous);
       if (this.content.speaker != this.previous.speaker) {
         retval = retval + " new-speaker";
       } else {

@@ -1,17 +1,16 @@
 <template>
   <div class="chapter-wrap">
     <ConversationManager
+      :isFocus="whichActive == 'dialogue'"
       :nextScene="sceneIfDialogue"
       @end-scene="sceneChange()"
     />
     <AnimationManager
-      v-if="scene.type == 'animation'"
+      :isFocus="whichActive == 'animation'"
       :scene="scene"
       @end-scene="sceneChange()"
-      @next-step="toNextStep()"
     />
 
-    <!-- <button @click.prevent="toNextStep()">Proceed</button> -->
     <button @click.prevent="toNextNode()">Done</button>
   </div>
 </template>
@@ -28,6 +27,7 @@ export default {
       lines: [],
       sceneIndex: 0,
       lineIndex: 0,
+      whichActive: "",
     };
   },
   computed: {
@@ -51,18 +51,18 @@ export default {
     },
   },
   mounted() {
-    // this.toNextStep();
+    this.whichActive = this.scene.type;
   },
   methods: {
     sceneChange() {
-      console.log("requesting a scene change");
-      this.$store.commit("path/changeScene");
+      this.$store.dispatch("path/nextScene");
+      this.whichActive = this.scene.type;
     },
     toNextStep() {
       this.lineIndex++;
 
       if (this.lineIndex >= this.scene.lines.length) {
-        this.$store.commit("path/changeScene");
+        this.$store.dispatch("path/nextScene");
         this.lineIndex = 0;
       }
     },

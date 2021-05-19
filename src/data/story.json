@@ -114,8 +114,8 @@
       "type": "dialogue",
       "id": "tutorial",
       "level": 2,
-      "include": [
-        "IPv4Display"
+      "components": [
+        "ipv4"
       ],
       "lines": [
         {

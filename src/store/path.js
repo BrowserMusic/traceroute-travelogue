@@ -8,7 +8,8 @@ const path = {
     currentCity: 0, // index of city in path
     paths: pathBlock,// the base one when you load geotraceroute: nuremberg to missoula 
     story: story,
-    sceneIndex: 0,
+    sceneIndex: 0, // index of current scene node inside city
+    lineIndex: 0, // index of current line if dialogue is present
   }),
   mutations: {
     changeCity(state, city) {
@@ -19,6 +20,13 @@ const path = {
         state.sceneIndex = scene;
       } else {
         state.sceneIndex++;
+      }
+    },
+    changeLine(state, line) {
+      if (line != undefined) {
+        state.lineIndex = line;
+      } else {
+        state.lineIndex++;
       }
     }
   },
@@ -50,7 +58,35 @@ const path = {
     getScene: (state) => {
       return state.story[state.currentCity][state.sceneIndex];
     },
-
+    getLine: (state, getters) => {
+      const scene = getters.getScene;
+      if ("lines" in scene) {
+        return scene.lines[state.lineIndex - 1];
+      } else {
+        return null;
+      }
+    }
+  },
+  actions: {
+    nextLine({ state, commit, getters }) {
+      if (!getters.getScene.includes("lines")) {
+        return;
+      }
+      else if (state.lineIndex >= getters.getScene.lines.length) {
+        commit('changeScene');
+        commit('changeLine', 0);
+        return;
+      } else {
+        const retval = getters.getLine;
+        commit('changeLine');
+        return retval;
+      }
+    },
+    nextScene({ commit }) {
+      // console.log("SCENE CHANGE");
+      commit("changeLine", 0);
+      commit("changeScene");
+    }
   }
 }
 

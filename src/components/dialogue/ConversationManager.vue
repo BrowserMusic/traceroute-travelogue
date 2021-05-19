@@ -4,9 +4,9 @@
       v-for="(label, index) in conversationIDs"
       :key="index"
       :label="label"
+      :isFocus="isFocus"
       :scenes="getScenesByConvo(label)"
       @end-scene="$emit('end-scene')"
-      @next-step="toNextStep()"
     />
   </div>
 </template>
@@ -16,9 +16,8 @@ import Conversation from "./Conversation.vue";
 export default {
   components: { Conversation },
   props: {
-    sceneIndex: Number,
-    nodeIndex: Number,
     nextScene: Object,
+    isFocus: Boolean,
   },
   data() {
     return {
