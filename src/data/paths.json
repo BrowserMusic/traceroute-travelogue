@@ -7,7 +7,38 @@
       ],
       "city": "Wellington",
       "country": "New Zealand",
-      "text": "mailing the head set up"
+      "nodes": [
+        {
+          "text": "mailing the head set up"
+        },
+        {
+          "text": "head enters packet sphere",
+          "notes": "I’m sure I can create some zany vid that’s all spiraled out which could handle the background. If we have time we might want to have some sort of animation of the head falling into the void?",
+          "transition": "could be another one-way node here"
+        },
+        {
+          "text": "chat with orb? tells you about traveling through packet sphere, gives audience some cable facts",
+          "notes": "just gives us room to get some fast facts from our customs orb about the packetsphere and how internet cables stretch across the globe underground and through water. I had a side idea where maybe the customs orb initially confiscates some stuff at this node the head was traveling with and you have to hunt for the stuff around the packetsphere along your journey but that doesn’t feel like a necessary thing for a first draft."
+        },
+        {
+          "text": "a landing node that outlines three main travel modes/regions. all are locked, the first unlockable one is mine, but you need to grease up the minecart wheels.",
+          "nodes": [
+            {
+              "text": "to mine",
+              "transition": "city"
+            },
+            {
+              "text": "up to local network",
+              "transition": "none"
+            },
+            {
+              "text": "to ocean",
+              "transition": "none"
+            }
+          ],
+          "notes": "would have a few dead ends. I did this under the assumption that the head is going from me to you so maybe at the beginning you’re next to the coast, so you can check out the ocean but can’t cross yet so it’s locked, and you can try to resurface but it’s too far to jump, and the head will need to find it’s fantastically long wig (which was confiscated) to use as a rope to resurface. The mine is the only unlockable direction at the moment."
+        }
+      ]
     },
     {
       "coords": [
@@ -16,10 +47,7 @@
       ],
       "city": "Whanganui",
       "region": "Manawatū-Whanganui",
-      "country": "New Zealand",
-      "text": "head enters packet sphere",
-      "notes": "I’m sure I can create some zany vid that’s all spiraled out which could handle the background. If we have time we might want to have some sort of animation of the head falling into the void?",
-      "transition": "could be another one-way node here"
+      "country": "New Zealand"
     },
     {
       "coords": [
@@ -28,9 +56,7 @@
       ],
       "city": "Hamilton",
       "region": "Waikato region",
-      "country": "New Zealand",
-      "text": "chat with orb? tells you about traveling through packet sphere, gives audience some cable facts",
-      "notes": "just gives us room to get some fast facts from our customs orb about the packetsphere and how internet cables stretch across the globe underground and through water. I had a side idea where maybe the customs orb initially confiscates some stuff at this node the head was traveling with and you have to hunt for the stuff around the packetsphere along your journey but that doesn’t feel like a necessary thing for a first draft."
+      "country": "New Zealand"
     },
     {
       "coords": [
