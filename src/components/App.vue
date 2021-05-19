@@ -54,4 +54,10 @@ body {
   color: #2c3e50;
   /* margin-top: 60px; */
 }
+
+.window {
+  background-color: white;
+  border: 1px solid grey;
+  padding: 1.5em;
+}
 </style>

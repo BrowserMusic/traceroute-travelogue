@@ -26,9 +26,9 @@ export default {
   },
   watch: {
     layout: function (newV, oldV) {
-      console.log("layout watch");
+      // console.log("layout watch");
       if (this.isMounted) {
-        console.log(newV, oldV);
+        // console.log(newV, oldV);
         if (
           (newV == "chapter" && oldV == "map") ||
           (newV == "chapter" && oldV == "")
