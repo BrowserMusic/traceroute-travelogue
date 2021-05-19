@@ -1,0 +1,353 @@
+[
+  [
+    {
+      "type": "animation",
+      "scene": "showOpeningTyping"
+    },
+    {
+      "type": "dialogue",
+      "level": 1,
+      "id": "main",
+      "lines": [
+        {
+          "speaker": "becky",
+          "text": "are you ready to get this international online conversation started??"
+        },
+        {
+          "speaker": "Zak",
+          "text": "I mean, I just started it right now by saying ‘hello’"
+        },
+        {
+          "speaker": "Becky",
+          "text": "no no, like, *really* start it."
+        },
+        {
+          "speaker": "Zak",
+          "text": "oh, right, you haven’t actually received my message yet."
+        },
+        {
+          "speaker": "Becky",
+          "text": "well, because you haven’t sent it!"
+        },
+        {
+          "speaker": "Zak",
+          "text": "I pressed Enter and all that, I don’t know if you saw"
+        },
+        {
+          "speaker": "Becky",
+          "text": "I did! but ‘hello’ still has to take the the journey all the way from New Zealand to the US."
+        },
+        {
+          "speaker": "Becky",
+          "text": "do you want to do the honors, since you’re sending the message?"
+        },
+        {
+          "speaker": "Zak",
+          "text": "yeah, hang on"
+        }
+      ]
+    },
+    {
+      "type": "animation",
+      "level": 1,
+      "scene": "zakRemoveHead"
+    },
+    {
+      "type": "dialogue",
+      "level": 1,
+      "id": "main",
+      "lines": [
+        {
+          "speaker": "Zak",
+          "text": "alright, ready to send whenever"
+        },
+        {
+          "speaker": "Becky",
+          "text": "let’s check the packet details just to be sure"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "level": 2,
+      "id": "tutorial",
+      "lines": [
+        {
+          "speaker": "Becky",
+          "text": "hey! let’s take a closer look at this Salome situation."
+        },
+        {
+          "speaker": "Zak",
+          "text": "I mean, I’m not *actually* sending a severed head"
+        },
+        {
+          "speaker": "Zak",
+          "text": "and a severed head wouldn’t be able to say hello"
+        },
+        {
+          "speaker": "Zak",
+          "text": "and also I would be dead"
+        },
+        {
+          "speaker": "Becky",
+          "text": "yes!"
+        },
+        {
+          "speaker": "Becky",
+          "text": "to all of that"
+        },
+        {
+          "speaker": "Becky",
+          "text": "anyway"
+        },
+        {
+          "speaker": "Becky",
+          "text": "this head-in-a-box is actually a **packet** that Zak is about to send me."
+        },
+        {
+          "speaker": "Becky",
+          "text": "sending a packet is like sending physical mail––you still have an origin, a destination, and a message, but there’s some other stuff in there too. "
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "id": "tutorial",
+      "level": 2,
+      "include": [
+        "IPv4Display"
+      ],
+      "lines": [
+        {
+          "speaker": "Becky",
+          "text": "Here's what it looks like."
+        },
+        {
+          "speaker": "Becky",
+          "text": "so we can talk about the obvious ones first. Zak is the source and I’m the destination, except instead of our names we use our IP addresses.",
+          "highlight": [
+            "source",
+            "destination"
+          ]
+        },
+        {
+          "speaker": "Zak",
+          "text": "well, that’s complicated too, because we’re probably using some kind of service like Twitter or Discord or Slack or something to have this conversation."
+        },
+        {
+          "speaker": "Becky",
+          "text": "right, right. So Zak is actually sending the message from his IP address to [[redacted]]’s IP address"
+        },
+        {
+          "speaker": "Becky",
+          "text": "and then the server at [[redacted]] figures out who Zak is sending to, and then sends *me* a packet with the origin set to their server and the destination set to me."
+        },
+        {
+          "speaker": "Zak",
+          "text": "but that makes this much more annoying"
+        },
+        {
+          "speaker": "Becky",
+          "text": "yeah, we’ll keep them out of this."
+        },
+        {
+          "speaker": "Becky",
+          "text": "anyway, everything here except for “data” is the packet’s **header**."
+        },
+        {
+          "speaker": "Becky",
+          "text": "'version' is 4, because we’re using IPv4",
+          "highlight": [
+            "version"
+          ]
+        },
+        {
+          "speaker": "Becky",
+          "text": "the Internet Header Length (IHL) is exactly how long the header is in bytes.",
+          "highlight": [
+            "ihl"
+          ]
+        },
+        {
+          "speaker": "Becky",
+          "text": "there’s also the Total Length, which is the full length of the packet, including the data we care about",
+          "highlight": [
+            "totalLength"
+          ]
+        },
+        {
+          "speaker": "Box",
+          "text": "“hello”"
+        },
+        {
+          "speaker": "Becky",
+          "text": "Type-of-Service is how we’d like the packet to be handled, in the sense of what priority it has. video or audio have higher priority because you want those to happen in time, but the timing of an email doesn’t need to be as precise",
+          "highlight": [
+            "typeOfService"
+          ]
+        },
+        {
+          "speaker": "Zak",
+          "text": "like shipping next-day versus three-day postage."
+        },
+        {
+          "speaker": "Becky",
+          "text": "yeah!"
+        },
+        {
+          "speaker": "Becky",
+          "text": "then the next line has to do with fragmentation. Packets can only get so long, so if you need to send a lot of data (like a video, or this website), you have to split it up across a bunch of packets."
+        },
+        {
+          "speaker": "Becky",
+          "text": "so if you have to chop up your cool video into **fragments**, each packet that’s got a bit of that video shares the same Identification code.",
+          "highlight": [
+            "identification"
+          ]
+        },
+        {
+          "speaker": "Becky",
+          "text": "The Flag tells all the routers along the way that you’re sending fragmented data,",
+          "highlight": [
+            "flag"
+          ]
+        },
+        {
+          "speaker": "Becky",
+          "text": "and the Fragmentation Offset tells you what part of the original data a given packet represents.",
+          "highlight": [
+            "fragOff"
+          ]
+        },
+        {
+          "speaker": "Zak",
+          "text": "like a jigsaw puzzle with numbers on the back of each piece, so the router can put it back together really fast. not a very “fun” puzzle, but a very effective one"
+        },
+        {
+          "speaker": "Box",
+          "text": "“hello”"
+        },
+        {
+          "speaker": "Zak",
+          "text": "yeah, you’re not big enough to be fragmented, buddy"
+        },
+        {
+          "speaker": "Box",
+          "text": "“hello”"
+        },
+        {
+          "speaker": "Becky",
+          "text": "well, you never know. Fragmenting data into packets is really important––sending big chunks of data between two users would slow down the internet for everyone else on the line."
+        },
+        {
+          "speaker": "Becky",
+          "text": "Anyways, the next chunk is Time-to-Live, which is a counter that drops by 1 for every router it comes across. If the TTL ever drops to 0, it gets dropped.",
+          "highlight": [
+            "ttl"
+          ]
+        },
+        {
+          "speaker": "Box",
+          "text": "“hello”"
+        },
+        {
+          "speaker": "Becky",
+          "text": "I mean, we’re not at the router yet, but if you keep doing that you might die sooner"
+        },
+        {
+          "speaker": "Box",
+          "text": "“hello”"
+        },
+        {
+          "speaker": "Box",
+          "text": "“hello”"
+        },
+        {
+          "speaker": "Becky",
+          "text": "the last two are what lower-level protocol is used to send the packet,",
+          "hightlight": [
+            "protocol"
+          ]
+        },
+        {
+          "speaker": "Zak",
+          "text": "like ground mail vs air mail vs overseas"
+        },
+        {
+          "speaker": "Becky",
+          "text": "and every router the packet passes uses its Header Checksum to verify that the header contains what it ought to.",
+          "highlight": [
+            "headerChecksum"
+          ]
+        },
+        {
+          "speaker": "Zak",
+          "text": "oh, and the message has to go in the “data” part.",
+          "highlight": [
+            "data"
+          ]
+        },
+        {
+          "speaker": "Becky",
+          "text": "yeah."
+        },
+        {
+          "speaker": "Becky",
+          "text": "that’s"
+        },
+        {
+          "speaker": "Becky",
+          "text": "that’s where this gets more complicated. Every time you go to a webpage, it actually takes about 5-6 packets (not all IP packets!) to actually get the page contents, because you have to first find out where their server is based on the host name, then ask for their stuff, and then they have to send you their stuff in chunks, and then tell you they’re done sending you stuff."
+        },
+        {
+          "speaker": "Zak",
+          "text": "did… did you want to go over all that?"
+        },
+        {
+          "speaker": "Becky",
+          "text": "no!!!"
+        },
+        {
+          "speaker": "Becky",
+          "text": "just assume that there’s a ton of junk in the data, but it could be any junk, because a packet could contain anything from a paragraph of text to a 30x30 section of an image."
+        },
+        {
+          "speaker": "Becky",
+          "text": "let’s just get this head out the door"
+        },
+        {
+          "speaker": "Box",
+          "text": "“hello”"
+        },
+        {
+          "speaker": "Zak",
+          "text": "wait a sec",
+          "highlight": [
+            "stop"
+          ]
+        },
+        {
+          "speaker": "Zak",
+          "text": "I know this packets-as-physical mail metaphor doesn’t match one-to-one with reality"
+        },
+        {
+          "speaker": "Zak",
+          "text": "but what’s our equivalent for postage?"
+        },
+        {
+          "speaker": "Becky",
+          "text": "I don’t know––I know I have to pay for internet service, but how that divides down to the packet level is beyond me"
+        },
+        {
+          "speaker": "Zak",
+          "text": "that’s a good question to ask, then"
+        },
+        {
+          "speaker": "Zak",
+          "text": "*'what does it cost to use the internet?*'",
+          "style": "bigText"
+        }
+      ]
+    }
+  ]
+]
