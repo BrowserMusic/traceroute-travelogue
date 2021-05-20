@@ -1,13 +1,18 @@
 <template>
-  <div id="mapContainer" :data-layout="layout"></div>
+  <div class="mapWrap">
+    <div id="mapContainer" :data-layout="layout"></div>
+    <BigHello />
+  </div>
 </template>
 
 <script>
+import BigHello from "./dialogue/BigHello.vue";
 import MapHolder from "../utils/MapHolder";
 let map = {};
 
 export default {
   name: "LeafletMap",
+  components: { BigHello },
   data() {
     return {
       isMounted: false,
@@ -45,6 +50,11 @@ export default {
   mounted() {
     this.isMounted = true;
     map = new MapHolder(this.path, this.mapMarkerClick);
+
+    // map.openingAnimation(() => {
+    //   this.$store.commit("openHello");
+    // });
+    this.$emit("after-opening");
   },
   beforeDestroy() {
     if (map) {
@@ -70,11 +80,13 @@ export default {
 
   &.mini-map {
     border-radius: 5px;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
+    padding: 0.5em;
+    border: 1px solid grey;
     position: absolute !important;
-    bottom: 0;
-    right: 0;
+    bottom: 0.5em;
+    right: 0.5em;
   }
 }
 </style>

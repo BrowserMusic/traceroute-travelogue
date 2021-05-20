@@ -17,9 +17,10 @@ class MapHolder {
     this.layers = {};
     this.callback = nodeClickCallback;
 
-    this.map = L.map("mapContainer").setView(
-      coords[0],
-      6
+    const startPoints = [7.814066825367012, 220.21091102644226];
+    this.map = L.map("mapContainer", { zoomSnap: 0.5 }).setView(
+      startPoints,
+      3.2
     );
 
     // tile attribution (required for Leaflet)
@@ -29,12 +30,13 @@ class MapHolder {
     }).addTo(this.map);
     this.buildNodePath();
     this.buildEndpoints();
+
+    // this.openingAnimation();
   }
 
   transitionAndEnlarge(cityIndex) {
     this.map.invalidateSize();
     let speed = 2;
-    // let newCity = this.$store.getters["path/getCurrentCityInfo"].coords;
     const newCity = this.path[cityIndex];
 
     if (cityIndex > 0) {
@@ -53,6 +55,34 @@ class MapHolder {
     // document.querySelector("#mapContainer").classList.add("mini-map");
     this.map.invalidateSize();
     this.map.setView(this.path[cityIndex], 6);
+  }
+
+  disableMovement() {
+    this.map.dragging.disable();
+    this.map.doubleClickZoom.disable();
+    this.map.scrollWheelZoom.disable();
+  }
+
+  enableMovement() {
+    this.map.dragging.enable();
+    this.map.doubleClickZoom.enable();
+    this.map.scrollWheelZoom.enable();
+  }
+
+  openingAnimation(callback) {
+    setTimeout(() => {
+      this.disableMovement();
+      this.map.on("moveend", () => {
+        // console.log(e);
+        callback();
+        this.enableMovement();
+        this.map.off("moveend");
+      })
+      this.map.flyTo(this.path[0], 8, {
+        duration: 2
+      });
+    }, 1000);
+
   }
 
   buildNodePath() {
@@ -78,13 +108,14 @@ class MapHolder {
     }
 
     this.layers["travelPath"] = L.layerGroup(points).addLayer(line).addTo(this.map);
+    this.layers["travelPath"].hide();
   }
 
   buildEndpoints() {
     const start = L.marker(this.origin);
     const end = L.marker(this.destination);
-    start.bindPopup("Zak<br />Wellington, NZ").openPopup();
-    end.bindPopup("Becky<br />Charlottesville, VA, US").openPopup();
+    start.bindTooltip("Zak<br />Wellington, NZ", { permanent: true }).openTooltip();
+    end.bindTooltip("Becky<br />Charlottesville, VA, US", { permanent: true }).openTooltip();
 
     this.layers["endpoints"] = L.layerGroup([start, end]).addTo(this.map);
   }

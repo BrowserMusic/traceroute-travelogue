@@ -144,8 +144,8 @@ export default {
 <style lang="scss">
 .ipv4-viewer {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.5em;
+  right: 0.5em;
   width: 40%;
 
   .packet {

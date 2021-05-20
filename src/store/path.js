@@ -10,7 +10,7 @@ const path = {
     story: story,
     sceneIndex: 0, // index of current scene node inside city
     lineIndex: 0, // index of current line if dialogue is present
-  }),
+  }), // 4 + 45
   mutations: {
     changeCity(state, city) {
       state.currentCity = city;
@@ -65,23 +65,63 @@ const path = {
       } else {
         return null;
       }
+    },
+    getLineList: (state, getters) => {
+      const scene = getters.getScene;
+      if ("lines" in scene) {
+        return scene.lines;
+      } else {
+        return null;
+      }
     }
   },
   actions: {
-    nextLine({ state, commit, getters }) {
-      if (!getters.getScene.includes("lines")) {
-        return;
+    next({ state, commit, getters }) {
+      // console.trace();
+      const lines = getters.getLineList;
+      const scenes = getters.getCurrentChapter;
+      if (lines != null) {
+        if (state.lineIndex + 1 < lines.length) {
+          console.log('nextline');
+          commit("changeLine");
+          return;
+        }
       }
-      else if (state.lineIndex >= getters.getScene.lines.length) {
-        commit('changeScene');
-        commit('changeLine', 0);
-        return;
+      if (state.sceneIndex + 1 < scenes.length) {
+        console.log('next scene');
+        commit("changeScene");
+
+        if (getters.getLineList != null) {
+          commit("changeLine", 0);
+        }
       } else {
-        const retval = getters.getLine;
-        commit('changeLine');
-        return retval;
+        if (state.currentCity + 1 < state.story.length) {
+          console.log('next city');
+          commit("changeCity");
+          commit("changeScene", 0);
+          if (getters.getLineList != null) {
+            commit("changeLine", 0);
+          }
+        } else {
+          console.log("no more cities! you're boned!");
+        }
       }
+
     },
+    // nextLine({ state, commit, getters }) {
+    //   if (!getters.getScene.includes("lines")) {
+    //     return;
+    //   }
+    //   else if (state.lineIndex >= getters.getScene.lines.length) {
+    //     commit('changeScene');
+    //     commit('changeLine', 0);
+    //     return;
+    //   } else {
+    //     const retval = getters.getLine;
+    //     commit('changeLine');
+    //     return retval;
+    //   }
+    // },
     nextScene({ commit }) {
       // console.log("SCENE CHANGE");
       commit("changeLine", 0);

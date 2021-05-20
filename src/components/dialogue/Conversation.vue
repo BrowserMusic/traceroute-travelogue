@@ -10,7 +10,9 @@
         :index="index"
       />
     </div>
-    <button v-if="isFocus" @click="toNextStep()">Proceed</button>
+    <button v-if="isFocus && isActiveConvo" @click="toNextStep()">
+      Proceed
+    </button>
   </div>
 </template>
 
@@ -24,6 +26,7 @@ export default {
     scenes: Array,
     label: String,
     isFocus: Boolean,
+    isActiveConvo: Boolean,
   },
   computed: {
     sceneIndex() {
@@ -39,20 +42,21 @@ export default {
   data() {
     return {
       lines: [],
-      // lineIndex: 0,
     };
   },
   watch: {
-    sceneIndex(newV) {
-      if (newV > 0) {
-        // this.lineIndex = 0;
-        this.$store.commit("path/changeLine", 0);
-      }
+    // sceneIndex(newV) {
+    //   if (newV > 0) {
+    //     this.$store.commit("path/changeLine", 0);
+    //     this.toNextStep();
+    //   }
+    // },
+    lineIndex() {
+      this.appendToList();
     },
   },
   mounted() {
-    // console.log(this.scene);
-    this.toNextStep();
+    this.appendToList();
   },
   methods: {
     getPrevLine(index) {
@@ -63,18 +67,19 @@ export default {
       }
     },
     generateClass() {
-      return `conversation window ${this.label}`;
+      const focus = this.isActiveConvo ? "focus" : "";
+      return `conversation window ${this.label} ${focus}`;
     },
-    toNextStep() {
-      // console.log(this.lineIndex);
+    appendToList() {
+      if (!this.isActiveConvo) return;
       if (this.lineIndex >= this.currentScene.lines.length) {
-        this.$emit("end-scene");
         return;
       } else {
         this.lines.push(this.currentScene.lines[this.lineIndex]);
       }
-
-      this.$store.commit("path/changeLine");
+    },
+    toNextStep() {
+      this.$store.dispatch("path/next");
     },
   },
 };
@@ -91,7 +96,11 @@ export default {
   margin: 1em;
   // padding: 1.5em;
   position: relative;
-  width: 50%;
+  width: 40%;
+
+  &.focus {
+    z-index: 999;
+  }
 
   .lines {
     height: inherit;

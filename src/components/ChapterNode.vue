@@ -36,6 +36,7 @@ export default {
       return retval;
     },
     scene() {
+      console.log(this.$store.getters["path/getScene"]);
       return this.$store.getters["path/getScene"];
     },
     city() {
@@ -43,7 +44,7 @@ export default {
     },
     sceneIfDialogue() {
       if ("lines" in this.scene) {
-        console.log(this.scene);
+        // console.log(this.scene);
         return this.scene;
       } else {
         return null;

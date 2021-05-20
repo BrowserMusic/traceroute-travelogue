@@ -12,11 +12,20 @@ export default new Vuex.Store({
   },
   state: () => ({
     isModalOpen: false,
-    layout: "map"
+    layout: "map",
+    showBigHello: false,
   }),
   mutations: {
     openModal(state, f) {
       state.isModalOpen = f;
+    },
+    openHello(state, f) {
+      if (f != null) {
+        state.showBigHello = false;
+      } else {
+        state.showBigHello = true;
+      }
+
     },
     changeLayout(state, l) {
       // states are either "map" or "chapter"

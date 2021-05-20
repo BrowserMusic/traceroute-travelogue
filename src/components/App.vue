@@ -1,18 +1,11 @@
 <template>
   <div id="app">
-    <LeafletMap />
+    <LeafletMap @after-opening="beginStory()" />
     <ChapterNode :index="myCity" v-if="isModalOpen" />
-    <!--
-    <ModalCityContainer
-      v-if="isModalOpen"
-      @changeCity="passCityVal"
-    ></ModalCityContainer>
-    -->
   </div>
 </template>
 
 <script>
-// import ModalCityContainer from "./ModalCityContainer.vue";
 import LeafletMap from "./LeafletMap.vue";
 import ChapterNode from "./ChapterNode.vue";
 
@@ -20,8 +13,8 @@ export default {
   name: "App",
   components: {
     LeafletMap,
-    // ModalCityContainer,
     ChapterNode,
+    // BigHello,
   },
   data() {
     return {
@@ -33,9 +26,26 @@ export default {
       return this.$store.state.isModalOpen;
     },
   },
+  mounted() {
+    window.addEventListener("keyup", this.proceed);
+  },
+  beforeDestroy() {
+    window.removeEventListener("keyup", this.proceed);
+  },
   methods: {
     passCityVal(e) {
       this.myCity = e;
+    },
+    beginStory() {
+      this.$store.commit("changeLayout");
+      this.$store.commit("openModal", true);
+      this.$store.commit("path/changeCity", 0);
+      this.$store.commit("path/changeScene");
+    },
+    proceed(e) {
+      if (e.code == "Space") {
+        this.$store.dispatch("path/next");
+      }
     },
   },
 };
@@ -57,6 +67,7 @@ body {
 
 .window {
   background-color: white;
+  box-shadow: 6px 5px 0px rgba(0, 0, 0, 0.25);
   border: 1px solid grey;
   padding: 1.5em;
 }

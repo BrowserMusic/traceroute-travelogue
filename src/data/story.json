@@ -115,7 +115,10 @@
       "id": "tutorial",
       "level": 2,
       "components": [
-        "ipv4"
+        {
+          "name": "ipv4",
+          "state": "start"
+        }
       ],
       "lines": [
         {
@@ -341,11 +344,60 @@
         {
           "speaker": "Zak",
           "text": "that’s a good question to ask, then"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "id": "tutorial",
+      "level": 2,
+      "components": [
+        {
+          "name": "bigtext",
+          "state": "start",
+          "settings": {
+            "text": "what does it cost to use the internet?"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Zak",
+          "text": "*'what does it cost to use the internet?'*",
+          "style": "bigText"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "id": "main",
+      "level": 1,
+      "components": [
+        {
+          "name": "ipv4",
+          "state": "stop"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Becky",
+          "text": "alright, everything seems to be good to go with the packet header."
+        },
+        {
+          "speaker": "Box",
+          "text": "\"hello\""
+        },
+        {
+          "speaker": "Becky",
+          "text": "it sounds like your head is ready to go on an adventure!"
         },
         {
           "speaker": "Zak",
-          "text": "*'what does it cost to use the internet?*'",
-          "style": "bigText"
+          "text": "it definitely seems like it..."
+        },
+        {
+          "speaker": "Zak",
+          "text": "and maybe it can help us answer that question as it navigates its way to you"
         }
       ]
     }
