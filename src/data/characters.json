@@ -1,0 +1,51 @@
+{
+  "base": {
+    "name": "Unnamed",
+    "states": {
+      "neutral": "🙂",
+      "happy": "😀",
+      "laughing": "😂",
+      "surprised": "😲",
+      "mad": "😤",
+      "shocked": "😱",
+      "box": "🙃"
+    }
+  },
+  "zak": {
+    "name": "Zak",
+    "states": {
+      "neutral": "",
+      "happy": "",
+      "shocked": ""
+    }
+  },
+  "becky": {
+    "name": "Becky",
+    "states": {
+      "neutral": "",
+      "happy": "",
+      "shocked": "",
+      "mad": ""
+    }
+  },
+  "box": {
+    "name": "Box",
+    "states": {
+      "neutral": "",
+      "happy": "",
+      "shocked": ""
+    },
+    "display": {
+      "type": "image",
+      "file": "/images/floating_head.gif"
+    }
+  },
+  "mineCart": {},
+  "orb": {
+    "name": "Orb",
+    "display": {
+      "type": "video",
+      "file": "/videos/orb-silent.mp4"
+    }
+  }
+}

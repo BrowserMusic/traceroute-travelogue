@@ -10,18 +10,17 @@
         :index="index"
       />
     </div>
-    <button v-if="isFocus && isActiveConvo" @click="toNextStep()">
-      Proceed
-    </button>
+    <proceed-button v-if="isFocus && isActiveConvo" />
   </div>
 </template>
 
 <script>
+import ProceedButton from "../misc/ProceedButton.vue";
 import DialogueLine from "./DialogueLine.vue";
 
 export default {
   name: "Conversation",
-  components: { DialogueLine },
+  components: { DialogueLine, ProceedButton },
   props: {
     scenes: Array,
     label: String,
@@ -45,12 +44,6 @@ export default {
     };
   },
   watch: {
-    // sceneIndex(newV) {
-    //   if (newV > 0) {
-    //     this.$store.commit("path/changeLine", 0);
-    //     this.toNextStep();
-    //   }
-    // },
     lineIndex() {
       this.appendToList();
     },
@@ -78,9 +71,9 @@ export default {
         this.lines.push(this.currentScene.lines[this.lineIndex]);
       }
     },
-    toNextStep() {
-      this.$store.dispatch("path/next");
-    },
+    // toNextStep() {
+    //   this.$store.dispatch("path/next");
+    // },
   },
 };
 </script>

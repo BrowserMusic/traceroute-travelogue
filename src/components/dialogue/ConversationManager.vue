@@ -9,13 +9,22 @@
       :scenes="getScenesByConvo(label)"
       @end-scene="$emit('end-scene')"
     />
+
+    <BigDialogue
+      :scene="
+        nextScene != null && 'id' in nextScene && nextScene.id == 'large'
+          ? nextScene
+          : {}
+      "
+    />
   </div>
 </template>
 
 <script>
+import BigDialogue from "./BigDialogue.vue";
 import Conversation from "./Conversation.vue";
 export default {
-  components: { Conversation },
+  components: { Conversation, BigDialogue },
   props: {
     nextScene: Object,
     isFocus: Boolean,
@@ -50,7 +59,7 @@ export default {
       return retval;
     },
     addNewScene(scene) {
-      if (!this.conversationIDs.includes(scene.id)) {
+      if (!this.conversationIDs.includes(scene.id) && scene.id != "large") {
         this.conversationIDs.push(scene.id);
       }
       this.activeConvo = scene.level - 1;
