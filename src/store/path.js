@@ -8,8 +8,9 @@ const path = {
     currentCity: 0, // index of city in path
     paths: pathBlock,// the base one when you load geotraceroute: nuremberg to missoula 
     story: story,
-    sceneIndex: 0, // index of current scene node inside city
+    sceneIndex: 5, // index of current scene node inside city
     lineIndex: 0, // index of current line if dialogue is present
+    freezeState: false
   }), // 4 + 45
   mutations: {
     changeCity(state, city) {
@@ -28,6 +29,9 @@ const path = {
       } else {
         state.lineIndex++;
       }
+    },
+    freeze(state, f) {
+      state.freezeState = f;
     }
   },
   getters: {
@@ -77,7 +81,8 @@ const path = {
   },
   actions: {
     next({ state, commit, getters }) {
-      // console.trace();
+      if (state.freezeState) return;
+
       const lines = getters.getLineList;
       const scenes = getters.getCurrentChapter;
       if (lines != null) {

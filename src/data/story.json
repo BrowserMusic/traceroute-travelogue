@@ -56,6 +56,16 @@
       "type": "dialogue",
       "level": 1,
       "id": "main",
+      "components": [
+        {
+          "name": "character",
+          "state": "start",
+          "settings": {
+            "name": "box",
+            "align": "right"
+          }
+        }
+      ],
       "lines": [
         {
           "speaker": "Zak",
@@ -398,6 +408,157 @@
         {
           "speaker": "Zak",
           "text": "and maybe it can help us answer that question as it navigates its way to you"
+        }
+      ]
+    },
+    {
+      "type": "animation",
+      "components": [
+        {
+          "name": "bigbutton",
+          "state": "start",
+          "settings": {
+            "text": "ENTER THE PACKETSPHERE?"
+          }
+        }
+      ]
+    },
+    {
+      "type": "animation",
+      "animation": "headIntoSphere",
+      "components": [
+        {
+          "name": "character",
+          "state": "stop"
+        },
+        {
+          "name": "bigbutton",
+          "state": "stop"
+        },
+        {
+          "name": "bigtext",
+          "state": "stop"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "id": "large",
+      "level": 3,
+      "characters": [
+        {
+          "name": "orb",
+          "align": "right",
+          "style": "--char-width: 500px; --char-font-size: 2em; --char-margin-top: -2em;"
+        },
+        {
+          "name": "box",
+          "align": "left",
+          "style": "--char-width: 200px; --char-font-size: 1em;"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "orb",
+          "genText": "randomText",
+          "button": "TURN ON SUBTITLES?",
+          "freeze": true
+        },
+        {
+          "speaker": "orb",
+          "text": "STOP. WHAT IS THE PURPOSE OF YOUR JOURNEY THROUGH THE PACKETSPHERE?"
+        },
+        {
+          "speaker": "box",
+          "button": "hello",
+          "freeze": true
+        },
+        {
+          "speaker": "box",
+          "text": "hello"
+        },
+        {
+          "speaker": "orb",
+          "text": "..."
+        },
+        {
+          "speaker": "orb",
+          "text": "DO YOU HAVE ANYTHING TO DECLARE?"
+        },
+        {
+          "speaker": "box",
+          "button": "hello",
+          "freeze": true
+        },
+        {
+          "speaker": "box",
+          "text": "hello"
+        },
+        {
+          "speaker": "orb",
+          "text": "..."
+        },
+        {
+          "speaker": "orb",
+          "text": "WHERE IS YOUR FINAL DESTINATION?"
+        },
+        {
+          "speaker": "box",
+          "button": "hello",
+          "freeze": true
+        },
+        {
+          "speaker": "box",
+          "text": "hello"
+        },
+        {
+          "speaker": "orb",
+          "text": "..."
+        },
+        {
+          "speaker": "orb",
+          "text": "INVALID RESPONSE."
+        },
+        {
+          "speaker": "Orb",
+          "text": "ALL TRAVEL THROUGH THE PACKETSPHERE MUST PROVIDE DESTINATION ADDRESS TO BE ASSIGNED A TRACEROUTE."
+        },
+        {
+          "speaker": "Orb",
+          "text": "PLEASE REVIEW TRACEROUTE REFERENCE IN THE INTERNET TRAVEL GUIDE."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "id": "main",
+      "level": 1,
+      "components": [
+        {
+          "name": "pamphlet",
+          "state": "start",
+          "settings": {
+            "page": 0
+          }
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Zak",
+          "text": "that's cute."
+        },
+        {
+          "speaker": "none",
+          "component": "pamphlet",
+          "text": "If you're reading this right now you're likely a packet about to start a jouney across the internet. At the moment you've been sent out through a device and are sitting in your first router. Routers look at your destination address and depending on the local traffic conditions will pass you through to the next closest stop along your journey to your destination."
+        },
+        {
+          "speaker": "Becky",
+          "text": "let's look for the Traceroute Reference! Might give us a better understanding of how packets move around the world?"
+        },
+        {
+          "speaker": "Zak",
+          "text": "which might give us a better idea of what the *cost* of doing so is"
         }
       ]
     }
