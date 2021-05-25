@@ -530,9 +530,7 @@
       ]
     },
     {
-      "type": "dialogue",
-      "id": "main",
-      "level": 1,
+      "type": "animation",
       "components": [
         {
           "name": "pamphlet",
@@ -541,16 +539,16 @@
             "page": 0
           }
         }
-      ],
+      ]
+    },
+    {
+      "type": "dialogue",
+      "id": "main",
+      "level": 1,
       "lines": [
         {
           "speaker": "Zak",
           "text": "that's cute."
-        },
-        {
-          "speaker": "none",
-          "component": "pamphlet",
-          "text": "If you're reading this right now you're likely a packet about to start a jouney across the internet. At the moment you've been sent out through a device and are sitting in your first router. Routers look at your destination address and depending on the local traffic conditions will pass you through to the next closest stop along your journey to your destination."
         },
         {
           "speaker": "Becky",
@@ -559,6 +557,52 @@
         {
           "speaker": "Zak",
           "text": "which might give us a better idea of what the *cost* of doing so is"
+        }
+      ]
+    },
+    {
+      "type": "animation",
+      "components": [
+        {
+          "name": "pamphlet",
+          "state": "start",
+          "settings": {
+            "page": 1,
+            "image": "/images/server-after.png",
+            "text": "If you're reading this right now you're likely a packet about to start a journey across the internet. At the moment you've been sent out through a device and are sitting in your first router. Routers look at your destination address and depending on the local traffic conditions will pass you through to the next closest stop along your journey to your destination."
+          }
+        }
+      ]
+    },
+    {
+      "type": "animation",
+      "components": [
+        {
+          "name": "pamphlet",
+          "settings": {
+            "page": 1,
+            "image": "/images/server-after.png",
+            "text": "In addition to the information they're carrying to their destinations, packets like you contain all kinds of information that help them with their journies. This information includes a destination address which you'll need to get through the right cables to your final desitination. Other important information includes your source address and a Time to Live, which is like a clock set when a packet leaves and counts down each time it goes through a router. When it hits 0 the packet is deleted so that the packet doesn't loop back and forth. "
+          }
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "id": "main",
+      "level": 1,
+      "lines": [
+        {
+          "speaker": "Becky",
+          "text": "well we definitely know our destination address, so let's get going already and see what it's like in the web!"
+        },
+        {
+          "speaker": "Zak",
+          "text": "wait how are we talking if we're not actually in the router with my head?"
+        },
+        {
+          "speaker": "Becky",
+          "text": "I don't know, but who cares?"
         }
       ]
     }
