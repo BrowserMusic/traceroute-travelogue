@@ -8,7 +8,7 @@ const path = {
     currentCity: 0, // index of city in path
     paths: pathBlock,// the base one when you load geotraceroute: nuremberg to missoula 
     story: story,
-    sceneIndex: 5, // index of current scene node inside city
+    sceneIndex: 0, // index of current scene node inside city
     lineIndex: 0, // index of current line if dialogue is present
     freezeState: false
   }), // 4 + 45
@@ -80,20 +80,20 @@ const path = {
     }
   },
   actions: {
-    next({ state, commit, getters }) {
-      if (state.freezeState) return;
+    next({ state, commit, getters }, ignoreFreeze) {
+      if (state.freezeState && !ignoreFreeze) return;
 
       const lines = getters.getLineList;
       const scenes = getters.getCurrentChapter;
       if (lines != null) {
         if (state.lineIndex + 1 < lines.length) {
-          console.log('nextline');
+          // console.log('nextline');
           commit("changeLine");
           return;
         }
       }
       if (state.sceneIndex + 1 < scenes.length) {
-        console.log('next scene');
+        // console.log('next scene');
         commit("changeScene");
 
         if (getters.getLineList != null) {
@@ -101,7 +101,7 @@ const path = {
         }
       } else {
         if (state.currentCity + 1 < state.story.length) {
-          console.log('next city');
+          // console.log('next city');
           commit("changeCity");
           commit("changeScene", 0);
           if (getters.getLineList != null) {
@@ -111,22 +111,61 @@ const path = {
           console.log("no more cities! you're boned!");
         }
       }
-
     },
-    // nextLine({ state, commit, getters }) {
-    //   if (!getters.getScene.includes("lines")) {
-    //     return;
-    //   }
-    //   else if (state.lineIndex >= getters.getScene.lines.length) {
-    //     commit('changeScene');
-    //     commit('changeLine', 0);
-    //     return;
-    //   } else {
-    //     const retval = getters.getLine;
-    //     commit('changeLine');
-    //     return retval;
-    //   }
-    // },
+    async fastForwardStep({ state, getters, dispatch }, obj) {
+      const cityLimit = ("city" in obj) ? obj.city : getters.getPath.length - 1;
+      let sceneLimit, lineLimit;
+
+      // console.log("cityLimit", cityLimit);
+
+      if (state.currentCity <= cityLimit) {
+        if ("scene" in obj && state.currentCity == cityLimit) {
+          sceneLimit = obj.scene;
+        } else {
+          sceneLimit = getters.getCurrentChapter.length;
+        }
+      } else {
+        return false;
+      }
+
+      // console.log("sceneLimit", sceneLimit);
+
+      if (state.sceneIndex <= sceneLimit) {
+        if ("lines" in getters.getScene) {
+          if ("line" in obj && state.sceneIndex == sceneLimit) {
+            // console.log("exist");
+            lineLimit = obj.line;
+          } else {
+            // console.log("not");
+            lineLimit = getters.getScene.lines.length;
+          }
+        }
+        else {
+          lineLimit = -1;
+        }
+      } else {
+        return false;
+      }
+
+      // console.log("lineLimit", lineLimit);
+
+      if (state.currentCity <= cityLimit && state.sceneIndex <= sceneLimit) {
+        if (lineLimit == -1 || state.lineIndex <= lineLimit) {
+          await dispatch("next", true);
+          return {
+            "current": {
+              "city": state.currentCity, "scene": state.sceneIndex, "line": state.lineIndex
+            },
+            "limit": {
+              "city": cityLimit, "scene": sceneLimit, "line": lineLimit
+            },
+            "under": true
+          };
+        } else {
+          return false;
+        }
+      }
+    },
     nextScene({ commit }) {
       // console.log("SCENE CHANGE");
       commit("changeLine", 0);

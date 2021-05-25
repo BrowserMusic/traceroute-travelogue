@@ -25,8 +25,19 @@ export default {
     isModalOpen() {
       return this.$store.state.isModalOpen;
     },
+    city() {
+      return this.$store.state.path.currentCity;
+    },
+
+    scene() {
+      return this.$store.state.path.sceneIndex;
+    },
+    line() {
+      return this.$store.state.path.lineIndex;
+    },
   },
-  mounted() {
+  async mounted() {
+    await this.fastForward();
     window.addEventListener("keyup", this.proceed);
   },
   beforeDestroy() {
@@ -47,11 +58,25 @@ export default {
         this.$store.dispatch("path/next");
       }
     },
+    async fastForward() {
+      const limit = { city: 0, scene: 10 };
+      let stateval = await this.$store.dispatch("path/fastForwardStep", limit);
+      while (stateval != false) {
+        this.$nextTick();
+        stateval = await this.$store.dispatch("path/fastForwardStep", limit);
+      }
+
+      this.$store.commit("path/freeze", false);
+    },
   },
 };
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   /* min-height: 100vh; */
