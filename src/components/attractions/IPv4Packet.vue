@@ -1,6 +1,6 @@
 <template>
   <div class="ipv4-viewer window">
-    <h4 :data-highlight="highlight">the IPv4 packet</h4>
+    <h4>the IPv4 packet</h4>
     <div class="packet">
       <div
         v-for="(item, index) in struct"
@@ -73,7 +73,6 @@ export default {
         },
         {
           name: "Protocol",
-          // shortname: "Offset",
           code: "protocol",
           bits: 8,
         },
@@ -106,30 +105,57 @@ export default {
     };
   },
   computed: {
-    highlight() {
-      // console.log("inside ipv4 highlight");
-      let line = this.$store.getters["path/getLine"];
-      // console.log(line);
-      if (line != null && "highlight" in line) {
-        // console.log(line);
-        return line.highlight;
-      }
-
-      return null;
+    lineIndex() {
+      return this.$store.state.path.lineIndex;
     },
+    // highlight() {
+    //   // console.log("inside ipv4 highlight");
+    //   // let line =
+    //   // console.log(line);
+    //   if (line != null && "highlight" in line) {
+    //     console.log(line.highlight);
+    //     return line.highlight;
+    //   }
+
+    //   return null;
+    // },
+  },
+  mounted() {
+    this.getLine();
   },
   watch: {
-    highlight(newV, oldV) {
-      if (newV == null && oldV != null) {
-        this.persistentHighlight = oldV;
-      } else if (newV != null && oldV != null) {
-        this.persistentHighlight = newV;
-      } else {
-        this.persistentHighlight = newV;
-      }
+    lineIndex() {
+      this.getLine();
+      // const line = this.$store.getters["path/getLine"];
+      // console.log("inside ipv4");
+      // console.log(
+      //   `${this.lineIndex} ${line.speaker}: ${line.text.substring(0, 20)}`
+      // );
+      // if (line != null && "highlight" in line) {
+      //   this.persistentHighlight = line.highlight;
+      // }
+      // if (newV == null && oldV != null) {
+      //   this.persistentHighlight = oldV;
+      // } else if (newV != null && oldV != null) {
+      //   this.persistentHighlight = newV;
+      // } else {
+      //   this.persistentHighlight = newV;
+      // }
     },
   },
   methods: {
+    getLine() {
+      const line = this.$store.getters["path/getLine"];
+      // console.log("inside ipv4");
+      // console.log(line);
+      // console.log(this.$store.getters["path/getScene"]);
+      // console.log(
+      //   `${this.lineIndex} ${line.speaker}: ${line.text.substring(0, 20)}`
+      // );
+      if (line != null && "highlight" in line) {
+        this.persistentHighlight = line.highlight;
+      }
+    },
     elemWidth(item) {
       return `--block-width: ${item.bits}`;
     },
@@ -143,6 +169,7 @@ export default {
 
 <style lang="scss">
 .ipv4-viewer {
+  min-width: 520px;
   position: absolute;
   top: 0.5em;
   right: 0.5em;

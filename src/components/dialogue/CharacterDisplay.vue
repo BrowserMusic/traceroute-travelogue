@@ -105,7 +105,8 @@ export default {
   margin-top: var(--char-margin-top);
   max-width: var(--char-width);
   position: absolute;
-  top: 200px;
+  bottom: 200px;
+  z-index: 1000;
 
   &.left {
     left: 0;
@@ -148,18 +149,4 @@ export default {
 .single-char.active .char-icon-wrap {
   background-color: yellow;
 }
-
-// .single-char:not(.active) .char-icon-wrap::after {
-//   border-radius: 75px;
-//   content: "";
-//   display: block;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background: rgba(0, 0, 0, 0.25);
-//   z-index: 1010;
-// }
-// background-color: blue;
 </style>

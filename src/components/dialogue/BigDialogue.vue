@@ -37,8 +37,8 @@ export default {
     },
   },
   mounted() {
-    console.log("making big conversation!!");
-    console.log(this.scene);
+    // console.log("making big conversation!!");
+    // console.log(this.scene);
   },
   methods: {
     mostRecentSettings(c) {

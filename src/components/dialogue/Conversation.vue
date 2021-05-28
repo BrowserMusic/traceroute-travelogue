@@ -37,6 +37,9 @@ export default {
     lineIndex() {
       return this.$store.state.path.lineIndex;
     },
+    bigSceneIndex() {
+      return this.$store.state.path.sceneIndex;
+    },
   },
   data() {
     return {
@@ -44,7 +47,11 @@ export default {
     };
   },
   watch: {
-    lineIndex() {
+    lineIndex(newV) {
+      console.log(this.label + " " + newV);
+      this.appendToList();
+    },
+    bigSceneIndex() {
       this.appendToList();
     },
   },
@@ -64,11 +71,21 @@ export default {
       return `conversation window ${this.label} ${focus}`;
     },
     appendToList() {
-      if (!this.isActiveConvo) return;
+      // console.log(this.label + " running appendtolist");
+      if (!this.isActiveConvo || this.currentScene.lines[this.lineIndex].seen) {
+        // console.log("already seen or inactive");
+        return;
+      }
       if (this.lineIndex >= this.currentScene.lines.length) {
+        // console.log("index too high");
         return;
       } else {
+        const line = this.currentScene.lines[this.lineIndex];
+        // console.log(
+        //   `${this.lineIndex} ${line.speaker}: ${line.text.substring(0, 20)}`
+        // );
         this.lines.push(this.currentScene.lines[this.lineIndex]);
+        this.currentScene.lines[this.lineIndex].seen = true;
       }
     },
     // toNextStep() {

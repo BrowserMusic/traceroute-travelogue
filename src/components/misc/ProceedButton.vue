@@ -15,24 +15,28 @@ export default {
       type: String,
       default: "Proceed",
     },
+    goto: {
+      type: String,
+      default: null,
+    },
   },
   mounted() {
-    // console.log("in proceed button");
-    // console.log(this.locked, this.text);
     if (this.locked) {
-      // console.log("freezing");
       this.$store.commit("path/freeze", true);
     }
+    console.log(this.goto);
   },
   methods: {
-    proceed() {
+    async proceed() {
       this.$emit("pressed");
       if (this.locked) {
-        // console.log("unfreezing");
         this.$store.commit("path/freeze", false);
-        // console.log(this.$store.state.freezeState);
       }
-      this.$store.dispatch("path/next");
+      if (this.goto != null) {
+        await this.$store.dispatch("path/toOption", this.goto);
+      } else {
+        await this.$store.dispatch("path/next");
+      }
     },
     buttonText() {
       if (this.text == null) {

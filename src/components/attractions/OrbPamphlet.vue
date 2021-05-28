@@ -41,7 +41,7 @@ export default {
   box-shadow: -29px 35px 9px 2px rgba(0, 0, 0, 0.25);
   position: absolute;
   top: 1em;
-  right: 2em;
+  right: 4em;
   transform: rotate(-10deg);
   max-width: 400px;
   // border: 1px solid black;
@@ -49,6 +49,7 @@ export default {
 
   &:not(.show-cover) {
     border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
     border-left: 30px solid white;
   }
 
@@ -65,17 +66,19 @@ export default {
     height: 100%;
     transform: skewY(-46.6deg) translate(-54px, -44px);
     background-color: darkred;
+    border-bottom-left-radius: 2px;
   }
 
   &::after {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 25px;
+    height: 20px;
     width: 106%;
     background: grey;
-    // transform: skewX(-45deg) translate(-11px, 30px);
     transform: skewX(-43.6deg) translate(-18px, 25px);
+    border-bottom: 4px solid #6d0000;
+    box-shadow: inset 1px -2px 3px 0 rgba(0, 0, 0, 0.25);
   }
 
   .cover {
@@ -116,6 +119,7 @@ export default {
   }
 
   .page {
+    background-color: white;
     border-right: 1px solid grey;
     // border-top: 1px solid grey;
     min-height: inherit;
@@ -137,7 +141,7 @@ export default {
     border-right: 10px solid #d6cece;
     border-top: 1px solid grey;
     border-left: 1px solid grey;
-    box-shadow: 0px 6px 0 grey;
+    box-shadow: 0px 6px 0 #6d0000;
 
     &::after {
       content: "";
@@ -147,7 +151,7 @@ export default {
       height: 100%;
       width: 15px;
       background: linear-gradient(90deg, #75757547, transparent);
-      transform: skew(0deg, -30deg) translate(0px, -4px);
+      transform: skew(0deg, -30deg) translate(5px, -1px);
     }
   }
 }

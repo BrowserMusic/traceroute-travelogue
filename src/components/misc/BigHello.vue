@@ -7,7 +7,7 @@
   >
     <h1>
       {{ helloText }}
-      <button v-if="helloText.length == 5" @click="proceed">Enter</button>
+      <button v-if="showButton" @click="proceed">Enter</button>
     </h1>
   </div>
 </template>
@@ -17,6 +17,7 @@ export default {
   data() {
     return {
       helloText: "",
+      showButton: false,
     };
   },
   computed: {
@@ -38,16 +39,19 @@ export default {
 
       let ref = this;
       const timeout = setInterval(() => {
-        if (index >= word.length) {
-          clearInterval(timeout);
+        if (index == word.length) {
+          this.showButton = true;
+
           // setTimeout(() => {
 
           // }, 1000);
+        } else if (index > word.length) {
+          clearInterval(timeout);
         } else {
           ref.helloText += word[index];
           index++;
         }
-      }, 100);
+      }, 300);
     },
     proceed() {
       this.$store.commit("openHello", false);
