@@ -37,7 +37,7 @@ export default {
     },
   },
   async mounted() {
-    await this.fastForward();
+    // await this.fastForward();
     window.addEventListener("keyup", this.proceed);
   },
   beforeDestroy() {
@@ -59,7 +59,7 @@ export default {
       }
     },
     async fastForward() {
-      const limit = { city: 0, scene: 10 };
+      const limit = { city: 1, scene: 0 };
       let stateval = await this.$store.dispatch("path/fastForwardStep", limit);
       while (stateval != false) {
         this.$nextTick();

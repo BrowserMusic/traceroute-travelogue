@@ -10,18 +10,20 @@
       :scene="scene"
       @end-scene="sceneChange()"
     />
+    <AudioHandler />
 
-    <button @click.prevent="toNextNode()">Done</button>
+    <!-- <button @click.prevent="toNextNode()">Done</button> -->
   </div>
 </template>
 
 <script>
 import ConversationManager from "./dialogue/ConversationManager.vue";
 import AnimationManager from "./AnimationManager.vue";
+import AudioHandler from "./AudioHandler.vue";
 
 export default {
   name: "ChapterNode",
-  components: { ConversationManager, AnimationManager },
+  components: { ConversationManager, AnimationManager, AudioHandler },
   data() {
     return {
       lines: [],
@@ -36,7 +38,7 @@ export default {
       return retval;
     },
     scene() {
-      console.log(this.$store.getters["path/getScene"]);
+      // console.log(this.$store.getters["path/getScene"]);
       return this.$store.getters["path/getScene"];
     },
     city() {
