@@ -40,7 +40,13 @@
       "file": "/images/floating_head.gif"
     }
   },
-  "mineCart": {},
+  "mike": {
+    "name": "Mike",
+    "display": {
+      "type": "image",
+      "file": "/images/shopcart.gif"
+    }
+  },
   "orb": {
     "name": "Orb",
     "display": {
