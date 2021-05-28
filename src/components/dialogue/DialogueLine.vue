@@ -1,12 +1,19 @@
 <template>
   <div :class="classDef()">
-    <span class="speaker" v-if="showUser">{{ content.speaker }}</span>
-    <span class="speaker" v-else></span>
-    <span class="text">{{ content.text }}</span>
+    <template v-if="!isAlert">
+      <span class="speaker" v-if="showUser">{{ content.speaker }}</span>
+      <span class="speaker" v-else></span>
+      <span class="text" v-html="parsedText(content.text)"></span
+    ></template>
+    <template v-else>
+      <span class="notice">{{ parsedText(content.text) }}</span>
+    </template>
   </div>
 </template>
 
 <script>
+const marked = require("marked");
+
 export default {
   name: "DialogueLine",
   props: {
@@ -19,11 +26,15 @@ export default {
     return {
       showUser: true,
       myID: "",
+      isAlert: false,
     };
     // console.log(this.content);
   },
   mounted() {
-    // console.log(this.content);
+    if (this.content.speaker == "notice") {
+      this.isAlert = true;
+    }
+
     this.$nextTick(() => {
       document
         .querySelector(`.conversation.${this.parent} .${this.myID}`)
@@ -46,6 +57,14 @@ export default {
 
       return retval;
     },
+    parsedText(text) {
+      const t = marked.parseInline(text);
+      var res = t
+        .split("[[redacted]]")
+        .join("<span class='redact'>▥▤▧▩</span>");
+
+      return res;
+    },
   },
 };
 </script>
@@ -66,11 +85,26 @@ export default {
     margin-top: 0.25em;
     padding: 0.25em 0.5em;
   }
+
+  .speaker {
+    text-align: right;
+    margin-right: 1.5em;
+    margin-top: 0.5em;
+    min-width: 50px;
+  }
+  .notice {
+    display: block;
+    font-weight: bold;
+    color: #4a4a4a;
+    padding: 1em 0;
+    text-align: center;
+    width: 100%;
+  }
 }
-.speaker {
-  text-align: right;
-  margin-right: 1.5em;
-  margin-top: 0.5em;
-  min-width: 50px;
+
+.redact {
+  text-shadow: 2px -2px 0 blue, -1px -1px 0 red, 3px 1px 0 green;
+  letter-spacing: -2px;
+  margin-right: 5px;
 }
 </style>

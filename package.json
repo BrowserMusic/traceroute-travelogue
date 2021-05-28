@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "leaflet": "^1.7.1",
     "leaflet-layervisibility": "*",
+    "marked": "^2.0.5",
     "three": "^0.128.0",
     "tone": "^14.7.77",
     "vue": "^2.6.11",
