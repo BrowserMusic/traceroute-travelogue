@@ -1,0 +1,927 @@
+[
+  {
+    "type": "animation",
+    "scene": "showOpeningTyping"
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "becky",
+        "text": "are you ready to get this international online conversation started??"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I mean, I just started it right now by saying \"hello\""
+      },
+      {
+        "speaker": "Becky",
+        "text": "no no, like, *really* start it."
+      },
+      {
+        "speaker": "Zak",
+        "text": "oh, right, you haven’t actually received my message yet."
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, because you haven’t sent it!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I pressed Enter and all that, I don’t know if you saw"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I did! but \"hello\" still has to take the the journey all the way from New Zealand to the US."
+      },
+      {
+        "speaker": "Becky",
+        "text": "do you want to do the honors, since you’re sending the message?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah, hang on"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "Zak: Remove head."
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "components": [
+      {
+        "name": "character",
+        "state": "start",
+        "settings": {
+          "name": "box",
+          "align": "right"
+        }
+      },
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "notice",
+        "text": "Zak's Head has joined your conversation."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "alright, ready to send whenever"
+      },
+      {
+        "speaker": "Becky",
+        "text": "let’s check the packet details just to be sure"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 2,
+    "id": "tutorial",
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "hey! let’s take a closer look at this Salome situation."
+      },
+      {
+        "speaker": "Zak",
+        "text": "I mean, I’m not *actually* sending a severed head"
+      },
+      {
+        "speaker": "Zak",
+        "text": "and a severed head wouldn’t be able to say hello"
+      },
+      {
+        "speaker": "Zak",
+        "text": "and also I would be dead"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yes!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "to all of that"
+      },
+      {
+        "speaker": "Becky",
+        "text": "anyway"
+      },
+      {
+        "speaker": "Becky",
+        "text": "this head-in-a-box is actually a **packet** that Zak is about to send me."
+      },
+      {
+        "speaker": "Becky",
+        "text": "sending a packet is like sending physical mail––you still have an origin, a destination, and a message, but there’s some other stuff in there too. "
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "tutorial",
+    "level": 2,
+    "components": [
+      {
+        "name": "ipv4",
+        "state": "start"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "Here's what it looks like."
+      },
+      {
+        "speaker": "Becky",
+        "text": "so we can talk about the obvious ones first. Zak is the source and I’m the destination, except instead of our physical addresses we use our IP addresses.",
+        "highlight": [
+          "source",
+          "destination"
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "well, that’s complicated too, because we’re probably using some kind of service like Twitter or Discord or Slack or something to have this conversation."
+      },
+      {
+        "speaker": "Becky",
+        "text": "right, right. So Zak is actually sending the message from his IP address to [[redacted]]’s IP address"
+      },
+      {
+        "speaker": "Becky",
+        "text": "and then the server at [[redacted]] figures out who Zak is sending to, and then sends *me* a packet with the origin set to their server and the destination set to me."
+      },
+      {
+        "speaker": "Zak",
+        "text": "but that makes this much more annoying"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah, we’ll keep them out of this for now."
+      },
+      {
+        "speaker": "Becky",
+        "text": "anyway, everything here except for “data” is the packet’s **header**."
+      },
+      {
+        "speaker": "Becky",
+        "text": "\"**version**\" is 4, because we’re using IPv4",
+        "highlight": [
+          "version"
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "the **Internet Header Length** (IHL) is exactly how long the header is in bytes.",
+        "highlight": [
+          "ihl"
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "there’s also the **Total Length**, which is the full length of the packet, including the data we care about",
+        "highlight": [
+          "totalLength"
+        ]
+      },
+      {
+        "speaker": "Box",
+        "text": "“hello”"
+      },
+      {
+        "speaker": "Becky",
+        "text": "**Type-of-Service** is how we’d like the packet to be handled, in the sense of what priority it has. video or audio have higher priority because you want those to happen in time, but the timing of an email doesn’t need to be as precise",
+        "highlight": [
+          "typeOfService"
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "like shipping next-day versus three-day postage."
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "then the next line has to do with **fragmentation**. IPv4 packets have a max size of ~63kb, so if you need to send a lot of data (like a video, or this website), you have to split it up across a bunch of packets."
+      },
+      {
+        "speaker": "Becky",
+        "text": "so if you have to chop up your cool video into fragments, each packet that’s got a bit of that video shares the same **Identification** code.",
+        "highlight": [
+          "identification"
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "The **Flag** tells all the routers along the way that you’re sending fragmented data,",
+        "highlight": [
+          "flag"
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "and the **Fragmentation Offset** tells you what part of the original data a given packet represents.",
+        "highlight": [
+          "fragOff"
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "like a jigsaw puzzle with numbers on the back of each piece, so the router can put it back together really fast. not a very “fun” puzzle, but a very effective one"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah, you’re not big enough to be fragmented, buddy"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, you never know. Fragmenting data into packets is really important––sending big chunks of data between two users would slow down the internet for everyone else on the line."
+      },
+      {
+        "speaker": "Becky",
+        "text": "the message itself is small, but what if the image is going to? What if the chat service we're using needs to include a ton of extra data?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "Anyways, the next chunk is **Time-to-Live**, which is a counter that drops by 1 for every router it comes across. If the TTL ever drops to 0, it gets dropped.",
+        "highlight": [
+          "ttl"
+        ]
+      },
+      {
+        "speaker": "Box",
+        "text": "“hello”"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I mean, we’re not at the router yet, but if you keep doing that you might die sooner"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Becky",
+        "text": "the last two are what lower-level **protocol** is used to send the packet,",
+        "hightlight": [
+          "protocol"
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "like ground mail vs air mail vs overseas"
+      },
+      {
+        "speaker": "Becky",
+        "text": "and every router the packet passes uses its **Header Checksum** to verify that the header contains what it ought to.",
+        "highlight": [
+          "headerChecksum"
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "oh, and the message has to go in the **\"data\"** part.",
+        "highlight": [
+          "data"
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah."
+      },
+      {
+        "speaker": "Becky",
+        "text": "that's"
+      },
+      {
+        "speaker": "Becky",
+        "text": "that's where this gets more complicated. Every time you go to a webpage, it actually takes at least 5-6 packets (not all IP packets!) to even get the webpage, and then a number of packets for every resource the page needs to load."
+      },
+      {
+        "speaker": "Zak",
+        "text": "did… did you want to go over all that?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "no!!!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, not yet, anyway. I'm sure it's going to become relevant."
+      },
+      {
+        "speaker": "Becky",
+        "text": "just assume that there’s a ton of junk in the data, but it could be any junk, because a packet could contain anything from a paragraph of text to a 30x30 section of an image."
+      },
+      {
+        "speaker": "Becky",
+        "text": "let’s just get this head out the door"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "wait a sec",
+        "highlight": [
+          "stop"
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "I know this packets-as-physical mail metaphor doesn’t match one-to-one with reality"
+      },
+      {
+        "speaker": "Zak",
+        "text": "but what’s our equivalent for postage?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I don’t know––I know I have to pay for internet service, but how that divides down to the packet level is beyond me"
+      },
+      {
+        "speaker": "Zak",
+        "text": "that’s a good question to ask, then"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "tutorial",
+    "level": 2,
+    "components": [
+      {
+        "name": "bigtext",
+        "state": "start",
+        "settings": {
+          "text": "what does it cost to use the internet?"
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "*\"what does it cost to use the internet?\"*",
+        "style": "bigText"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "ipv4",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "notice",
+        "text": "–––"
+      },
+      {
+        "speaker": "Becky",
+        "text": "alright, everything seems to be good to go with the packet header."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Becky",
+        "text": "it sounds like your head is ready to go on an adventure!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "it definitely seems like it..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "and maybe it can help us answer that question as it navigates its way to you"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "ENTER THE PACKETSPHERE?"
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "animation": "headIntoSphere",
+    "components": [
+      {
+        "name": "character",
+        "state": "stop"
+      },
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      },
+      {
+        "name": "bigtext",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "large",
+    "level": 3,
+    "characters": [
+      {
+        "name": "orb",
+        "align": "right",
+        "style": "--char-width: 500px; --char-font-size: 2em; --char-margin-top: -2em;"
+      },
+      {
+        "name": "box",
+        "align": "left",
+        "style": "--char-width: 200px; --char-font-size: 1em;"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "orb",
+        "genText": "randomText",
+        "button": "TURN ON SUBTITLES?",
+        "freeze": true
+      },
+      {
+        "speaker": "orb",
+        "text": "STOP. WHAT IS THE PURPOSE OF YOUR JOURNEY THROUGH THE PACKETSPHERE?"
+      },
+      {
+        "speaker": "box",
+        "button": "hello",
+        "freeze": true
+      },
+      {
+        "speaker": "box",
+        "text": "hello"
+      },
+      {
+        "speaker": "orb",
+        "text": "..."
+      },
+      {
+        "speaker": "orb",
+        "text": "DO YOU HAVE ANYTHING TO DECLARE?"
+      },
+      {
+        "speaker": "box",
+        "button": "hello",
+        "freeze": true
+      },
+      {
+        "speaker": "box",
+        "text": "hello"
+      },
+      {
+        "speaker": "orb",
+        "text": "..."
+      },
+      {
+        "speaker": "orb",
+        "text": "WHERE IS YOUR FINAL DESTINATION?"
+      },
+      {
+        "speaker": "box",
+        "button": "hello",
+        "freeze": true
+      },
+      {
+        "speaker": "box",
+        "text": "hello"
+      },
+      {
+        "speaker": "orb",
+        "text": "..."
+      },
+      {
+        "speaker": "orb",
+        "text": "INVALID RESPONSE."
+      },
+      {
+        "speaker": "Orb",
+        "text": "ALL TRAVEL THROUGH THE PACKETSPHERE MUST PROVIDE DESTINATION ADDRESS TO BE ASSIGNED A TRACEROUTE."
+      },
+      {
+        "speaker": "Orb",
+        "text": "PLEASE REVIEW TRACEROUTE REFERENCE IN THE INTERNET TRAVEL GUIDE."
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 0
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "notice",
+        "text": "You received a copy of the Internet Travel Guide."
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "that's cute."
+      },
+      {
+        "speaker": "Becky",
+        "text": "and enormous!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "maybe it'll give us a better understanding of how packets move around the world?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "which might give us a better idea of what the *cost* of doing so is"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 1,
+          "title": "Welcome!",
+          "image": "/images/server-after.png",
+          "text": "If you're reading this right now you're likely a packet about to start a journey across the internet. At the moment you've been sent out through a device and are sitting in your first router. Routers look at your destination address and depending on the local traffic conditions will pass you through to the next closest stop along your journey to your destination."
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "image": "/images/server-after.png",
+          "text": "To determine your destination IP address, first locate your ISP's DNS resolver. Make sure you have the domain name of your destination ready for faster processing."
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "that... didn't clarify anything for me"
+      },
+      {
+        "speaker": "Becky",
+        "text": "Turn the page? Maybe we'll get a better explanation."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "DNS Resolution",
+          "image": "/images/server-after.png",
+          "text": "Your DNS resolver will recursively ask the root DNS server, then the TLD server, then finally the domain's nameserver, which will give you the IP address required to continue your request."
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "what??"
+      },
+      {
+        "speaker": "Becky",
+        "text": "wow, let's try to parse that out"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "tutorial",
+    "level": 2,
+    "lines": [
+      {
+        "speaker": "notice",
+        "text": "Subject: Why Domain Name Servers?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "So here's the deal."
+      },
+      {
+        "speaker": "Becky",
+        "text": "any website is located at some IP address. IP addresses look something like: 194.18.24.800"
+      },
+      {
+        "speaker": "Becky",
+        "text": "but humans don't like IP addresses, because numbers are hard to remember."
+      },
+      {
+        "speaker": "Becky",
+        "text": "instead, we use URLs, like whatever.com or horse.pizza."
+      },
+      {
+        "speaker": "Zak",
+        "text": "or [[redacted]].com."
+      },
+      {
+        "speaker": "Becky",
+        "text": "but routers don't want URLs, they want IP addresses."
+      },
+      {
+        "speaker": "Zak",
+        "text": "so: something has to translate it?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "Yeah. We need to \"resolve\" the URL into an IP address, and we'll do that by asking a hierarchical series of Domain Name Servers."
+      },
+      {
+        "speaker": "Zak",
+        "text": "how do we do that?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, it's something our Internet Service Provider (ISP) likely handles"
+      },
+      {
+        "speaker": "Becky",
+        "text": "but I think the Guide is going to walk us through it."
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "hey! we've got our domain name. it's [[redacted]].com. can you resolve it?"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "DNS Resolution",
+          "image": "/images/server-after.png",
+          "text": "Congratulations! With your domain name in hand, it's time to begin. First, we'll find the nearest DNS root server. The root server's task is to redirect you to a Top-Level Domain (TLD) server. Each of these servers handles a different TLD, like .com, .net, .org, .pizza, etc."
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "DNS Resolution",
+          "image": "/images/server-after.png",
+          "text": "There are 1380 root DNS servers spread strategically throughout the globe, which come in 13 varieties from A to M. You can find your nearest DNS root server via the attached handout."
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "link",
+        "state": "start",
+        "settings": {
+          "img": "/images/root_dns_handout.jpeg",
+          "url": "https://root-servers.org/#map",
+          "text": "click me to find your closest root DNS servers!"
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "oh, that's cool, there's actually four of them in Wellington. D, E, I, and J."
+      },
+      {
+        "speaker": "Zak",
+        "text": "which one should we pick?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "hmm... I don't know if it matters that much. I guess pick your favorite letter?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I'll do J."
+      },
+      {
+        "speaker": "Zak",
+        "text": "hey, uh.. guide? can we ask the \"J\" root DNS server in Wellington, NZ to forward us... somewhere?"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "DNS Resolution",
+          "image": "/images/server-after.png",
+          "text": "Congratulations!! The \"J\" root DNS server's IP address is 199.7.83.42. You should hear from the root DNS soon."
+        }
+      },
+      {
+        "name": "link",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "J",
+        "text": "Hello! This is the J root DNS server. Your requested URL's top-level domain is dot-com. Forwarding you to the dot-com TLD domain closest to you."
+      },
+      {
+        "speaker": "Becky",
+        "text": "that was fa-"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "DNS Resolution",
+          "image": "/images/server-after.png",
+          "text": "Congratulations!!! You've received the location of the closest TLD server covering dot-com to you. Now forwarding this request to the TLD server."
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "dot-com",
+        "text": "Hello! This is the dot-com TLD server speaking. The closest nameserver for your domain, [[redacted]].com, is located in Auckland, NZ. The nameserver will give you the IP address of your destination."
+      },
+      {
+        "speaker": "Zak",
+        "text": "wait, what's a nameserver again?"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "DNS Resolution",
+          "image": "/images/server-after.png",
+          "text": "Congratulations!!!! Your nameserver is in sight! Please make your way to Auckland, NZ."
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "it generally belongs to whatever registrar the site owner registered the domain with."
+      },
+      {
+        "speaker": "Becky",
+        "text": "it's like a local address book, but it's also the post office, but also you're the package."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah."
+      },
+      {
+        "speaker": "Zak",
+        "text": "you've got that right, buddy."
+      },
+      {
+        "speaker": "Becky",
+        "text": "well we definitely know where to go to figure out where we're going, so let's get to it so we can see what it's like in the web!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "wait how are we talking if we're not actually in the router with my head?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I don't know, but who cares?"
+      }
+    ]
+  }
+]

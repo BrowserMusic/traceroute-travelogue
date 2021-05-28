@@ -1,5 +1,22 @@
 import pathBlock from "../data/paths.json";
-import story from "../data/story.json";
+import wellington from "../data/story/1_wellington.json";
+import whanganui from "../data/story/2_whanganui.json";
+
+function prepJSON() {
+  const path = [wellington, whanganui];
+  for (let j = 0; j < path.length; j++) {
+    for (let i = 0; i < path[j].length; i++) {
+      path[j][i].index = i;
+      if ("lines" in path[j][i]) {
+        for (let o = 0; o < path[j][i].lines.length; o++) {
+          path[j][i].lines[o].index = o;
+        }
+      }
+    }
+  }
+
+  return path;
+}
 
 const path = {
   namespaced: true,
@@ -7,14 +24,19 @@ const path = {
     currentPath: 0, // index of current path
     currentCity: 0, // index of city in path
     paths: pathBlock,// the base one when you load geotraceroute: nuremberg to missoula 
-    story: story,
+    story: prepJSON(),
     sceneIndex: 0, // index of current scene node inside city
     lineIndex: 0, // index of current line if dialogue is present
     freezeState: false
   }), // 4 + 45
   mutations: {
     changeCity(state, city) {
-      state.currentCity = city;
+      if (city != null) {
+        state.currentCity = city;
+      } else {
+        state.currentCity++;
+      }
+
     },
     changeScene(state, scene) {
       if (scene != null) {
@@ -62,10 +84,21 @@ const path = {
     getScene: (state) => {
       return state.story[state.currentCity][state.sceneIndex];
     },
+    getSceneById: (state, getters) => (id) => {
+      const filtered = getters.getCurrentChapter.filter((s) => {
+        if ("pathid" in s && s.pathid == id) {
+          return s;
+        }
+      });
+
+      if (filtered.length > 0) {
+        return filtered[0].index;
+      }
+    },
     getLine: (state, getters) => {
       const scene = getters.getScene;
       if ("lines" in scene) {
-        return scene.lines[state.lineIndex - 1];
+        return scene.lines[state.lineIndex]; //TODO change back to -1?
       } else {
         return null;
       }
@@ -80,30 +113,39 @@ const path = {
     }
   },
   actions: {
-    next({ state, commit, getters }, ignoreFreeze) {
-      if (state.freezeState && !ignoreFreeze) return;
+    async next({ state, commit, getters, dispatch }, obj) {
+      if (state.freezeState && !(obj != null && "ignoreFreeze" in obj)) return;
+      else if (obj != null && "goto" in obj) {
+        await dispatch("toOption", obj.goto);
+      }
 
       const lines = getters.getLineList;
       const scenes = getters.getCurrentChapter;
+
+      // try to change the line first: easiest
       if (lines != null) {
         if (state.lineIndex + 1 < lines.length) {
-          // console.log('nextline');
           commit("changeLine");
           return;
+        } else {
+          console.log("longer than lines length");
         }
       }
+
+      // then try to change the scene, see if that does it
       if (state.sceneIndex + 1 < scenes.length) {
-        // console.log('next scene');
         commit("changeScene");
+        // commit("changeLine", 0);
+        console.log("next scene");
 
         if (getters.getLineList != null) {
+          console.log("which does contain lines, so we're resetting");
           commit("changeLine", 0);
         }
       } else {
         if (state.currentCity + 1 < state.story.length) {
-          // console.log('next city');
-          commit("changeCity");
           commit("changeScene", 0);
+          commit("changeCity");
           if (getters.getLineList != null) {
             commit("changeLine", 0);
           }
@@ -111,6 +153,13 @@ const path = {
           console.log("no more cities! you're boned!");
         }
       }
+    },
+    toOption({ getters, commit }, tag) {
+      const sceneIndex = getters.getSceneById(tag);
+      commit("freeze", false);
+      commit("changeScene", sceneIndex);
+      commit("changeLine", 0);
+      // console.log(getters.getScene);
     },
     async fastForwardStep({ state, getters, dispatch }, obj) {
       const cityLimit = ("city" in obj) ? obj.city : getters.getPath.length - 1;
@@ -151,7 +200,7 @@ const path = {
 
       if (state.currentCity <= cityLimit && state.sceneIndex <= sceneLimit) {
         if (lineLimit == -1 || state.lineIndex <= lineLimit) {
-          await dispatch("next", true);
+          await dispatch("next", { "ignoreFreeze": true });
           return {
             "current": {
               "city": state.currentCity, "scene": state.sceneIndex, "line": state.lineIndex
@@ -173,13 +222,5 @@ const path = {
     }
   }
 }
-
-// function adjustForAM(coord) {
-//   if (coord[1] < 0) {
-//     coord[1] = (180 - Math.abs(coord[1])) + 180;
-//   }
-
-//   return coord;
-// }
 
 export default path;

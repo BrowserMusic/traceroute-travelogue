@@ -1,0 +1,633 @@
+[
+  {
+    "type": "animation",
+    "pathid": "landing-whan",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "text": "up to local network",
+              "img": "/images/email.gif",
+              "to": "err-whan-1"
+            },
+            {
+              "text": "to ocean",
+              "img": "/images/ocean.gif",
+              "to": "err-whan-2"
+            },
+            {
+              "text": "down underground",
+              "img": "/images/mine_travel.gif",
+              "to": "mine1"
+            }
+          ],
+          "onskip": "mine1"
+        }
+      },
+      {
+        "name": "error",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "pathid": "err-whan-1",
+    "components": [
+      {
+        "name": "error",
+        "state": "start",
+        "settings": {
+          "title": "up to local network",
+          "text": "You just came from there! We're not at our destination yet.",
+          "to": "landing-whan"
+        }
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "pathid": "err-whan-2",
+    "components": [
+      {
+        "name": "error",
+        "state": "start",
+        "settings": {
+          "title": "to ocean",
+          "text": "The ocean looks beautiful! But there aren't any cables leading under it from here.",
+          "to": "landing-whan"
+        }
+      }
+    ],
+    "to": "landing-whan"
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "pathid": "mine1",
+    "components": [
+      {
+        "name": "character",
+        "state": "start",
+        "settings": {
+          "name": "mike",
+          "align": "right"
+        }
+      },
+      {
+        "name": "hub",
+        "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 0
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "notice",
+        "text": "Mike has joined your conversation."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Mike",
+        "text": "G'day, the name's Mike. Mike the Minecart."
+      },
+      {
+        "speaker": "Mike",
+        "text": "Lemme guess, you're a packet looking for a ride through these here underground cables, aye? "
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah, actually, we're headed to the US eventually, but I think we have to get to Auckland first."
+      },
+      {
+        "speaker": "Mike",
+        "text": "Well you're out of luck, I've been rusted to these tracks for years."
+      },
+      {
+        "speaker": "Becky",
+        "text": "wait, why are we underground again?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "what is this place?"
+      },
+      {
+        "speaker": "Mike",
+        "text": "You're at the entrance to the dirtiest part of the internet."
+      },
+      {
+        "speaker": "Mike",
+        "text": "Down here under the earth is where a lot of the internet actually is, or at least where all your data travels through to get from here to there."
+      },
+      {
+        "speaker": "Mike",
+        "text": "Kind of funny, actually."
+      },
+      {
+        "speaker": "Mike",
+        "text": "Down here is where most of ores and other raw materials come from to make these fibre optic cables."
+      },
+      {
+        "speaker": "Mike",
+        "text": "(along with everything else electronic)"
+      },
+      {
+        "speaker": "Mike",
+        "text": "Those weird humans dig it all up just to put it back in down here, only in a different place and more toxic configuration."
+      },
+      {
+        "speaker": "Becky",
+        "text": "well if this dude is rusted to the tracks I guess we're going to have to find a way to get Mike's wheels un-stuck if your packet is going to have any chance of making it over to me. "
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah... hmmm well I took a roadtrip up to Taranaki not that long ago and learned they actually drill oil around there, even though most of Aotearoa (New Zealand)'s energy is harvested from hydroelectric power. "
+      },
+      {
+        "speaker": "Zak",
+        "text": "It's just a bit north of here, maybe we can nab some oil around there to grease up those wheels?"
+      },
+      {
+        "speaker": "Mike",
+        "text": "These rails are treacherous!"
+      },
+      {
+        "speaker": "Mike",
+        "text": "No packet's going to get through safely on their own!"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Mike",
+        "text": "However... "
+      },
+      {
+        "speaker": "Mike",
+        "text": "If you want to get to the oil fields you might be able to walk along that there service path to a router that connects to the oil companies' local network up in Taranaki."
+      },
+      {
+        "speaker": "Becky",
+        "text": "I think this guy might have a few screws loose"
+      },
+      {
+        "speaker": "Becky",
+        "text": "but let's check it out anyway!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "text": "to oil fields?",
+              "img": "/images/oilrig.gif",
+              "to": "oil-field1"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "pathid": "oil-field1",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      },
+      {
+        "name": "character",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "dang not this again"
+      },
+      {
+        "guide": "beep"
+      },
+      {
+        "speaker": "Becky",
+        "text": "this internet travel guide beeps?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I guess it's weirdly sentient or something, it must be trying to tell us something about this place"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 1,
+          "title": "WELCOME TO THE TARANAKI OIL FIELDS!!!!",
+          "image": "/images/server-after.png",
+          "text": "WELCOME TO THE TARANAKI OIL FIELDS!!!!"
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "pathid": "oil-field1",
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "aaaaa!!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 1,
+          "title": "WELCOME TO THE TARANAKI OIL FIELDS!!!!",
+          "image": "/images/server-after.png",
+          "text": "If you've ended up here, you're probably one lost packet! what are you doing outside of the packetsphere? well since you're here we might as well use this as an opportunity to learn a bit more about where the internet *really* comes from."
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "pathid": "oil-field1",
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "oh?"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 1,
+          "title": "WELCOME TO THE TARANAKI OIL FIELDS!",
+          "image": "/images/server-after.png",
+          "text": "The internet, and just about all of the things that make it up require energy to run. Since all of these routers, computers, data centers, mobile devices etc. are also scattered all around the globe, these individual pieces of technology rely mostly on their local power grids to get that energy. So as different places harvest energy in different ways, the energy \"diet\" of the internet changes depending on where you are."
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "Hmm, so I guess what it \"costs\" to use the internet depends not only on where *you're* using it, but where you're *connecting* to with the internet, and all the places that connection is traveling through along its journey."
+      },
+      {
+        "speaker": "Zak",
+        "text": "and I suppose that's only one layer of the cost, but even that layer must get pretty complicated pretty quickly, especially with a long chain like ours."
+      },
+      {
+        "speaker": "Zak",
+        "text": "sometimes it feels complicated enough wondering where the electricity comes to run the toaster in my house... but this is..."
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah with the internet it's like your toaster, my toaster and everybody's toaster in between. "
+      },
+      {
+        "speaker": "Guide",
+        "text": "That's a lot of toast!! Or in this case it's a lot of kilowatt hours per gigabyte."
+      },
+      {
+        "speaker": "Becky",
+        "text": "wait, you talk?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Anyways, if you're looking for oil I'm sure Todd Energy won't mind if you borrow one of their oil drums, there's a little one around here somewhere..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "this is a weirdly interactive travel pamphet!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "now if only I could remember where I put that little oil drum in the code..."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "pick-oil",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "img": "/images/oildrum-fire.gif",
+              "to": "oil-field2"
+            },
+            {
+              "img": "/images/drumkit.gif",
+              "to": "wrong-drum"
+            },
+            {
+              "img": "/images/lava.gif",
+              "to": "bad-oil-drum"
+            }
+          ]
+        }
+      },
+      {
+        "name": "error",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "pathid": "bad-oil-drum",
+    "components": [
+      {
+        "name": "error",
+        "state": "start",
+        "settings": {
+          "title": "That's not oil",
+          "text": "That's not an oil drum! Look around and try again.",
+          "to": "pick-oil"
+        }
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "pathid": "wrong-drum",
+    "components": [
+      {
+        "name": "error",
+        "state": "start",
+        "settings": {
+          "title": "That's not oil",
+          "text": "That's the wrong kind of drum!",
+          "to": "pick-oil"
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "pathid": "oil-field2",
+    "level": 1,
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "there it is!!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "it's not much but it should be enough to clear that rust from Mike's wheels."
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, it's also a little bit on fire, but hopefully Mike won't mind... let's go back down to the mines!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "img-timer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "character",
+        "state": "start",
+        "settings": {
+          "name": "mike",
+          "align": "right"
+        }
+      },
+      {
+        "name": "img-timer",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "how's it going?"
+      },
+      {
+        "speaker": "Mike",
+        "text": "Oh you know, same old same old, still stuck to the tracks."
+      },
+      {
+        "speaker": "Becky",
+        "text": "here, I think maybe this might help your wheels..."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "oiling-options",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "img": "/images/oil-drop.gif",
+              "text": "oil Mike?",
+              "to": "oil-success"
+            },
+            {
+              "img": "/images/drink.gif",
+              "text": "hmmm...",
+              "to": "oil-drink"
+            }
+          ]
+        }
+      },
+      {
+        "name": "error",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "pathid": "oil-drink",
+    "components": [
+      {
+        "name": "error",
+        "state": "start",
+        "settings": {
+          "title": "Uhhh...",
+          "text": "You... you definitely shouldn't do that. Just give the oil to Mike.",
+          "to": "oiling-options"
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "pathid": "oil-success",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Mike",
+        "text": "Say... that's feeling pretty good!... whoo hoo!!! I'm free!"
+      },
+      {
+        "speaker": "Mike",
+        "text": "Hey, what was your name again?"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Mike",
+        "text": "Well listen, I owe ya big time. Any time you need a ride through these here underground cable mines you just give me a holler!"
+      },
+      {
+        "speaker": "Mike",
+        "text": "In fact, I'll take you up to the surface right now! You're headed towards the authoritative DNS nameserver for [[redacted]], right?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "wait, how did you know that?"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Mike",
+        "text": "You just tell me when you're ready, and we'll head out."
+      },
+      {
+        "speaker": "Zak ",
+        "text": "ha – \"head out\"! now my head can take off up to Auckland!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "..."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "HOP IN THE CART AND RIDE UP TO AUCKLAND?"
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      }
+    ],
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Mike",
+        "text": "Alright, hang on tight! Sky City, here we come!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "img-timer",
+        "state": "start",
+        "settings": {
+          "src": "/images/mine_travel.gif",
+          "timer": 4000
+        }
+      }
+    ]
+  }
+]

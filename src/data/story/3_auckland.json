@@ -1,0 +1,15 @@
+[
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "img-timer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
+      }
+    ]
+  },
+]
