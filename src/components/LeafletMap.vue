@@ -1,12 +1,17 @@
 <template>
   <div class="mapWrap">
+    <p class="you-are-here" v-if="isMini">
+      {{ cityDetails.city }},
+      <span v-if="'region' in cityDetails">{{ cityDetails.region }}, </span
+      >{{ cityDetails.country }}
+    </p>
     <div id="mapContainer" :data-layout="layout"></div>
-    <BigHello />
+    <BigHello @after-opening="$emit('after-opening')" />
   </div>
 </template>
 
 <script>
-import BigHello from "./dialogue/BigHello.vue";
+import BigHello from "./misc/BigHello.vue";
 import MapHolder from "../utils/MapHolder";
 let map = {};
 
@@ -16,6 +21,7 @@ export default {
   data() {
     return {
       isMounted: false,
+      isMini: false,
     };
   },
   computed: {
@@ -27,6 +33,9 @@ export default {
     },
     path() {
       return this.$store.getters["path/getPathCoords"];
+    },
+    cityDetails() {
+      return this.$store.getters["path/getCurrentCityInfo"];
     },
   },
   watch: {
@@ -40,11 +49,16 @@ export default {
         ) {
           document.querySelector("#mapContainer").classList.add("mini-map");
           map.toMiniMap(this.city);
+          this.isMini = true;
         } else if (newV == "map" && oldV == "chapter") {
           document.querySelector("#mapContainer").classList.remove("mini-map");
           map.transitionAndEnlarge(this.city);
         }
       }
+    },
+    city(newV) {
+      map.addCityMarker(newV);
+      map.transitionAndEnlarge(newV);
     },
   },
   mounted() {
@@ -68,6 +82,13 @@ export default {
       this.$store.commit("changeLayout");
       // map.invalidateSize();
     },
+    cityText() {
+      let txt = this.cityDetails.city + ", ";
+      txt += "region" in this.cityDetails ? this.cityDetails + ", " : "";
+      txt += this.cityDetails.country;
+
+      return txt;
+    },
   },
 };
 </script>
@@ -79,6 +100,7 @@ export default {
   height: 100vh;
 
   &.mini-map {
+    --city-text: "";
     border-radius: 5px;
     width: 180px;
     height: 180px;
@@ -87,6 +109,28 @@ export default {
     position: absolute !important;
     bottom: 0.5em;
     right: 0.5em;
+
+    .leaflet-control-attribution {
+      display: none;
+    }
+
+    &::before {
+      content: var(--city-text);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
+}
+.you-are-here {
+  background-color: white;
+  font-size: 0.7em;
+  position: absolute;
+  bottom: 190px;
+  right: 1em;
+  text-align: right;
+  margin: 0;
+  z-index: 1000;
+  max-width: 150px;
 }
 </style>

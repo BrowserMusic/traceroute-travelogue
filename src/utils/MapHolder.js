@@ -34,6 +34,10 @@ class MapHolder {
     // this.openingAnimation();
   }
 
+  addCityMarker(cIndex) {
+    const m = L.marker(this.path[cIndex]).addTo(this.map);
+  }
+
   transitionAndEnlarge(cityIndex) {
     this.map.invalidateSize();
     let speed = 2;
@@ -81,7 +85,7 @@ class MapHolder {
       this.map.flyTo(this.path[0], 8, {
         duration: 2
       });
-    }, 1000);
+    }, 2000);
 
   }
 
