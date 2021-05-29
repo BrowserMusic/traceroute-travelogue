@@ -35,7 +35,7 @@ class MapHolder {
   }
 
   addCityMarker(cIndex) {
-    const m = L.marker(this.path[cIndex]).addTo(this.map);
+    L.marker(this.path[cIndex]).addTo(this.map);
   }
 
   transitionAndEnlarge(cityIndex) {
