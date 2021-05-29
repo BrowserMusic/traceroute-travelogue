@@ -20,7 +20,7 @@
 <script>
 export default {
   props: {
-    // highlight: Array,
+    settings: Object,
   },
   data() {
     return {
@@ -108,17 +108,6 @@ export default {
     lineIndex() {
       return this.$store.state.path.lineIndex;
     },
-    // highlight() {
-    //   // console.log("inside ipv4 highlight");
-    //   // let line =
-    //   // console.log(line);
-    //   if (line != null && "highlight" in line) {
-    //     console.log(line.highlight);
-    //     return line.highlight;
-    //   }
-
-    //   return null;
-    // },
   },
   mounted() {
     this.getLine();
@@ -126,21 +115,6 @@ export default {
   watch: {
     lineIndex() {
       this.getLine();
-      // const line = this.$store.getters["path/getLine"];
-      // console.log("inside ipv4");
-      // console.log(
-      //   `${this.lineIndex} ${line.speaker}: ${line.text.substring(0, 20)}`
-      // );
-      // if (line != null && "highlight" in line) {
-      //   this.persistentHighlight = line.highlight;
-      // }
-      // if (newV == null && oldV != null) {
-      //   this.persistentHighlight = oldV;
-      // } else if (newV != null && oldV != null) {
-      //   this.persistentHighlight = newV;
-      // } else {
-      //   this.persistentHighlight = newV;
-      // }
     },
   },
   methods: {
@@ -160,7 +134,10 @@ export default {
       return `--block-width: ${item.bits}`;
     },
     determineHighlight(code) {
-      return this.persistentHighlight.includes(code);
+      return (
+        "highlight" in this.settings && this.settings.highlight.includes(code)
+      );
+      // return this.persistentHighlight.includes(code);
       // if (highlight != null && highlight.includes(code)
     },
   },

@@ -1,46 +1,39 @@
 <template>
-  <div class="animation-manager">
+  <div class="animation-manager" :data-stuff="compList">
     <CharacterDisplay
       v-if="isVisible('character')"
-      :name="getCompSettings('character').name"
-      :align="getCompSettings('character').align"
-      :settings="getCompSettings('character')"
+      :name="getSettings('character').name"
+      :align="getSettings('character').align"
+      :settings="getSettings('character')"
     />
-    <IPv4Packet v-if="isVisible('ipv4')" />
+    <IPv4Packet v-if="isVisible('ipv4')" :settings="getSettings('ipv4')" />
     <BigSideText
       v-if="isVisible('bigtext')"
-      :content="getCompSettings('bigtext')"
+      :content="getSettings('bigtext')"
     />
     <BigButton
       v-if="isVisible('bigbutton')"
-      :text="getCompSettings('bigbutton').text"
+      :text="getSettings('bigbutton').text"
     />
     <OrbPamphlet
       v-if="isVisible('pamphlet')"
-      :page="getCompSettings('pamphlet').page"
-      :settings="getCompSettings('pamphlet')"
+      :page="getSettings('pamphlet').page"
+      :settings="getSettings('pamphlet')"
     />
-    <hub-zone v-if="isVisible('hub')" :settings="getCompSettings('hub')" />
-    <error-text
-      v-if="isVisible('error')"
-      :settings="getCompSettings('error')"
-    />
+    <hub-zone v-if="isVisible('hub')" :settings="getSettings('hub')" />
+    <error-text v-if="isVisible('error')" :settings="getSettings('error')" />
     <div class="handout" loading="lazy" v-if="isVisible('link')">
-      <a :href="getCompSettings('link').url" target="_blank">
-        <img :src="getCompSettings('link').img" />
-        <h4 v-if="'text' in getCompSettings('link')">
-          {{ getCompSettings("link").text }}
+      <a :href="getSettings('link').url" target="_blank">
+        <img :src="getSettings('link').img" />
+        <h4 v-if="'text' in getSettings('link')">
+          {{ getSettings("link").text }}
         </h4>
       </a>
     </div>
     <image-on-timer
       v-if="isVisible('img-timer')"
-      :settings="getCompSettings('img-timer')"
+      :settings="getSettings('img-timer')"
     />
-    <!-- <div class="solo-img" v-if="isVisible('solo-img')">
-      <img :src="getCompSettings('solo-img').img" />
-    </div> -->
-    <!-- <proceed-button /> -->
   </div>
 </template>
 
@@ -88,14 +81,21 @@ export default {
   },
   data() {
     return {
-      images: [
-        {
-          file: "/images/floating_head.gif",
-          show: false,
-        },
-      ],
+      // images: [
+      //   {
+      //     file: "/images/floating_head.gif",
+      //     show: false,
+      //   },
+      // ],
       compstate: [],
     };
+  },
+  computed: {
+    compList() {
+      const thing = this.$store.getters["path/comps/getAllActive"];
+      console.log(thing);
+      return thing;
+    },
   },
   methods: {
     toNextStep() {
@@ -119,8 +119,16 @@ export default {
       this.$forceUpdate();
     },
     isVisible(slug) {
-      const comp = this.getComponent(slug);
-      return comp != null && comp.state != "stop";
+      return slug in this.compList;
+      // const comp = this.getComponent(slug);
+      // return comp != null && comp.state != "stop";
+    },
+    getSettings(slug) {
+      if ("settings" in this.compList[slug]) {
+        return this.compList[slug].settings;
+      } else {
+        return null;
+      }
     },
     getComponent(slug) {
       const filtered = this.compstate.filter((s) => s.name == slug);

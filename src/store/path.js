@@ -1,6 +1,7 @@
 import pathBlock from "../data/paths.json";
 import wellington from "../data/story/1_wellington.json";
 import whanganui from "../data/story/2_whanganui.json";
+import comps from "./components.js";
 
 function prepJSON() {
   const path = [wellington, whanganui];
@@ -20,6 +21,9 @@ function prepJSON() {
 
 const path = {
   namespaced: true,
+  modules: {
+    comps
+  },
   state: () => ({
     currentPath: 0, // index of current path
     currentCity: 0, // index of city in path
@@ -126,6 +130,7 @@ const path = {
       if (lines != null) {
         if (state.lineIndex + 1 < lines.length) {
           commit("changeLine");
+          commit("comps/updateComponents", getters.getLine);
           return;
         } else {
           console.log("longer than lines length");
@@ -135,6 +140,7 @@ const path = {
       // then try to change the scene, see if that does it
       if (state.sceneIndex + 1 < scenes.length) {
         commit("changeScene");
+        commit("comps/updateComponents", getters.getScene);
         // commit("changeLine", 0);
         console.log("next scene");
 
@@ -146,6 +152,7 @@ const path = {
         if (state.currentCity + 1 < state.story.length) {
           commit("changeScene", 0);
           commit("changeCity");
+          commit("comps/updateComponents", getters.getScene);
           if (getters.getLineList != null) {
             commit("changeLine", 0);
           }

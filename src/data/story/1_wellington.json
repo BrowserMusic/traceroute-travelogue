@@ -79,7 +79,7 @@
     "lines": [
       {
         "speaker": "notice",
-        "text": "Zak's Head has joined your conversation."
+        "text": "Zak’s Head has joined your conversation."
       },
       {
         "speaker": "Box",
@@ -135,30 +135,30 @@
       {
         "speaker": "Becky",
         "text": "sending a packet is like sending physical mail––you still have an origin, a destination, and a message, but there’s some other stuff in there too. "
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "tutorial",
-    "level": 2,
-    "components": [
-      {
-        "name": "ipv4",
-        "state": "start"
-      }
-    ],
-    "lines": [
+      },
       {
         "speaker": "Becky",
-        "text": "Here's what it looks like."
+        "text": "Here's what it looks like.",
+        "components": [
+          {
+            "name": "ipv4",
+            "state": "start"
+          }
+        ]
       },
       {
         "speaker": "Becky",
         "text": "so we can talk about the obvious ones first. Zak is the source and I’m the destination, except instead of our physical addresses we use our IP addresses.",
-        "highlight": [
-          "source",
-          "destination"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "source",
+                "destination"
+              ]
+            }
+          }
         ]
       },
       {
@@ -188,22 +188,43 @@
       {
         "speaker": "Becky",
         "text": "\"**version**\" is 4, because we’re using IPv4",
-        "highlight": [
-          "version"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "version"
+              ]
+            }
+          }
         ]
       },
       {
         "speaker": "Becky",
         "text": "the **Internet Header Length** (IHL) is exactly how long the header is in bytes.",
-        "highlight": [
-          "ihl"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "ihl"
+              ]
+            }
+          }
         ]
       },
       {
         "speaker": "Becky",
         "text": "there’s also the **Total Length**, which is the full length of the packet, including the data we care about",
-        "highlight": [
-          "totalLength"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "totalLength"
+              ]
+            }
+          }
         ]
       },
       {
@@ -213,8 +234,15 @@
       {
         "speaker": "Becky",
         "text": "**Type-of-Service** is how we’d like the packet to be handled, in the sense of what priority it has. video or audio have higher priority because you want those to happen in time, but the timing of an email doesn’t need to be as precise",
-        "highlight": [
-          "typeOfService"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "typeOfService"
+              ]
+            }
+          }
         ]
       },
       {
@@ -232,22 +260,43 @@
       {
         "speaker": "Becky",
         "text": "so if you have to chop up your cool video into fragments, each packet that’s got a bit of that video shares the same **Identification** code.",
-        "highlight": [
-          "identification"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "identification"
+              ]
+            }
+          }
         ]
       },
       {
         "speaker": "Becky",
         "text": "The **Flag** tells all the routers along the way that you’re sending fragmented data,",
-        "highlight": [
-          "flag"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "flag"
+              ]
+            }
+          }
         ]
       },
       {
         "speaker": "Becky",
         "text": "and the **Fragmentation Offset** tells you what part of the original data a given packet represents.",
-        "highlight": [
-          "fragOff"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "fragOff"
+              ]
+            }
+          }
         ]
       },
       {
@@ -277,8 +326,15 @@
       {
         "speaker": "Becky",
         "text": "Anyways, the next chunk is **Time-to-Live**, which is a counter that drops by 1 for every router it comes across. If the TTL ever drops to 0, it gets dropped.",
-        "highlight": [
-          "ttl"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "ttl"
+              ]
+            }
+          }
         ]
       },
       {
@@ -300,8 +356,15 @@
       {
         "speaker": "Becky",
         "text": "the last two are what lower-level **protocol** is used to send the packet,",
-        "hightlight": [
-          "protocol"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "protocol"
+              ]
+            }
+          }
         ]
       },
       {
@@ -311,15 +374,29 @@
       {
         "speaker": "Becky",
         "text": "and every router the packet passes uses its **Header Checksum** to verify that the header contains what it ought to.",
-        "highlight": [
-          "headerChecksum"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "headerChecksum"
+              ]
+            }
+          }
         ]
       },
       {
         "speaker": "Zak",
         "text": "oh, and the message has to go in the **\"data\"** part.",
-        "highlight": [
-          "data"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "data"
+              ]
+            }
+          }
         ]
       },
       {
@@ -361,8 +438,15 @@
       {
         "speaker": "Zak",
         "text": "wait a sec",
-        "highlight": [
-          "stop"
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": [
+                "stop"
+              ]
+            }
+          }
         ]
       },
       {
@@ -380,27 +464,19 @@
       {
         "speaker": "Zak",
         "text": "that’s a good question to ask, then"
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "tutorial",
-    "level": 2,
-    "components": [
-      {
-        "name": "bigtext",
-        "state": "start",
-        "settings": {
-          "text": "what does it cost to use the internet?"
-        }
-      }
-    ],
-    "lines": [
+      },
       {
         "speaker": "Zak",
         "text": "*\"what does it cost to use the internet?\"*",
-        "style": "bigText"
+        "components": [
+          {
+            "name": "bigtext",
+            "state": "start",
+            "settings": {
+              "text": "what does it cost to use the internet?"
+            }
+          }
+        ]
       }
     ]
   },
