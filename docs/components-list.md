@@ -237,3 +237,74 @@
 * `afterText`: the text to display after the audio has finished playing.
 * `choices`: buttons to display after the audio has finished playing. All of them lead to the same place.
 * `to`: the `pathid` of the scene to go to when you're finished.
+
+## `video`
+
+`video` just shows a video in the foreground, with some text to explain it.
+
+### example
+
+```json
+{
+  "name": "video",
+  "state": "start",
+  "settings": {
+    "src": "/videos/aucklanddatacentre.mp4",
+    "text": "Looks like this might be the Auckland Data Centre from the outside. Smaller than you thought?",
+    "to": "auck-strange"
+  }
+}
+```
+
+### settings
+* `src`: video source
+* `text`: text to display below the video
+* `to`: which `pathid` to go to after this is done. Not currently optional.
+
+## `hub`
+
+`hub` lets you choose between multiple destinations. Generally there are 1-2 distractions, and one option that actually continues the plot.
+
+This component is the most complicated by far, and needs multiple scenes to function correctly. Check "Going Out of Order" on the other docs page for an explanation.
+
+### example
+```json
+{
+  "type": "animation",
+  "pathid": "landing-whan",
+  "components": [
+    {
+      "name": "hub",
+      "state": "start",
+      "settings": {
+        "locations": [
+          {
+            "text": "up to local network",
+            "img": "/images/email.gif",
+            "to": "err-whan-1"
+          },
+          {
+            "text": "up to local network",
+            "img": "/images/email.gif",
+            "to": "err-whan-2"
+          }
+        ]
+      }
+    },
+    {
+      "name": "error",
+      "state": "stop"
+    }
+  ]
+}
+```
+### settings
+For each location:
+
+* `text`: the text of the option
+* `img`: the gif to use as this option's "button"
+* `to`: which scene you're going to.
+
+**Note**  
+* Make sure the scene containing the hub has a `pathid` that is different from any other scene.
+* Add `stop`s for the components included in the 1-2 "distraction" scenes that aren't progressing the narrative.

@@ -110,7 +110,7 @@ If you need a reference for what it should look like, you can check any existing
 
 ## No Dialogue?
 
-Often, a scene needs to transition to adding a component (or something), but no dialogue should be included. In that case, use `"type": "animation"` on the scene. The "id" and "level" tags don't matter outside of dialogue. Like so:
+Often, a scene needs to transition to just adding a component (or something), but no dialogue should be included. In that case, use `"type": "animation"` on the scene. The "id" and "level" tags don't matter here. Like so:
 
 ```json
 {
