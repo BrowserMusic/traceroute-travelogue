@@ -21,7 +21,9 @@
       :settings="getSettings('pamphlet')"
     />
     <hub-zone v-if="isVisible('hub')" :settings="getSettings('hub')" />
+
     <error-text v-if="isVisible('error')" :settings="getSettings('error')" />
+
     <div class="handout" loading="lazy" v-if="isVisible('link')">
       <a :href="getSettings('link').url" target="_blank">
         <img :src="getSettings('link').img" />
@@ -30,10 +32,36 @@
         </h4>
       </a>
     </div>
+
     <image-on-timer
-      v-if="isVisible('img-timer')"
-      :settings="getSettings('img-timer')"
+      v-if="isVisible('imgtimer')"
+      :settings="getSettings('imgtimer')"
     />
+
+    <drag-and-drop
+      v-if="isVisible('draganddrop')"
+      :settings="getSettings('draganddrop')"
+    />
+
+    <media-background
+      v-if="isVisible('mediabg')"
+      :settings="getSettings('mediabg')"
+    />
+
+    <div class="single-video" v-if="isVisible('video')">
+      <video loop muted autoplay playsinline>
+        <source :src="getSettings('video').src" type="video/mp4" />
+      </video>
+      <p v-if="'text' in getSettings('video')">
+        {{ getSettings("video").text }}
+      </p>
+      <proceed-button
+        :text="'Who took this footage?'"
+        :goto="getSettings('video').to"
+      />
+    </div>
+
+    <concert v-if="isVisible('concert')" :settings="getSettings('concert')" />
   </div>
 </template>
 
@@ -42,11 +70,14 @@ import IPv4Packet from "./attractions/IPv4Packet.vue";
 import BigSideText from "./misc/BigSideText.vue";
 import CharacterDisplay from "./dialogue/CharacterDisplay.vue";
 import BigButton from "./misc/BigButton.vue";
-import ProceedButton from "./misc/ProceedButton.vue";
 import OrbPamphlet from "./attractions/OrbPamphlet.vue";
 import HubZone from "./attractions/HubZone.vue";
 import ErrorText from "./misc/ErrorText.vue";
 import ImageOnTimer from "./misc/ImageOnTimer.vue";
+import DragAndDrop from "./attractions/DragAndDrop.vue";
+import MediaBackground from "./misc/MediaBackground.vue";
+import Concert from "./attractions/Concert.vue";
+import ProceedButton from "./misc/ProceedButton.vue";
 
 export default {
   name: "AnimationManager",
@@ -55,40 +86,18 @@ export default {
     BigSideText,
     CharacterDisplay,
     BigButton,
-    ProceedButton,
     OrbPamphlet,
     HubZone,
     ErrorText,
     ImageOnTimer,
+    DragAndDrop,
+    MediaBackground,
+    Concert,
+    ProceedButton,
   },
   props: {
     scene: Object,
     isFocus: Boolean,
-  },
-  watch: {
-    scene: {
-      immediate: true,
-      deep: true,
-      handler(newV) {
-        if (newV.scene == "zakRemoveHead") {
-          this.images[0].show = true;
-        }
-        if ("components" in newV) {
-          this.changeVisibility();
-        }
-      },
-    },
-  },
-  data() {
-    return {
-      // images: [
-      //   {
-      //     file: "/images/floating_head.gif",
-      //     show: false,
-      //   },
-      // ],
-      compstate: [],
-    };
   },
   computed: {
     compList() {
@@ -101,27 +110,8 @@ export default {
     toNextStep() {
       this.$emit("end-scene");
     },
-    changeVisibility() {
-      for (let item of this.scene.components) {
-        let changed = false;
-        for (let i = 0; i < this.compstate.length; i++) {
-          if (item.name == this.compstate[i].name) {
-            this.compstate[i] = item;
-            changed = true;
-          }
-        }
-
-        if (!changed) {
-          this.compstate.push(item);
-        }
-      }
-      console.log(this.compstate);
-      this.$forceUpdate();
-    },
     isVisible(slug) {
       return slug in this.compList;
-      // const comp = this.getComponent(slug);
-      // return comp != null && comp.state != "stop";
     },
     getSettings(slug) {
       if ("settings" in this.compList[slug]) {
@@ -137,7 +127,6 @@ export default {
       }
 
       return null;
-      // return this.compstate.filter((s) => s.name == slug)[0];
     },
     getCompSettings(slug) {
       const myComp = this.getComponent(slug);
@@ -155,7 +144,9 @@ export default {
 }
 
 .handout,
-.solo-img {
+.solo-img,
+.single-video {
+  background-color: white;
   border: 3px solid white;
   box-shadow: 0px 0px 0px 1px black;
   position: absolute;
@@ -171,6 +162,17 @@ export default {
     position: absolute;
     top: 1em;
     left: 2em;
+  }
+}
+
+.single-video {
+  max-width: 230px;
+  padding: 1em;
+  bottom: 5em;
+  right: 260px;
+
+  video {
+    width: 100%;
   }
 }
 

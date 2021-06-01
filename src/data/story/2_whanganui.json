@@ -445,7 +445,7 @@
     "type": "animation",
     "components": [
       {
-        "name": "img-timer",
+        "name": "imgtimer",
         "state": "start",
         "settings": {
           "src": "/images/loadscreen.gif",
@@ -468,7 +468,7 @@
         }
       },
       {
-        "name": "img-timer",
+        "name": "imgtimer",
         "state": "stop"
       }
     ],
@@ -541,6 +541,10 @@
     "components": [
       {
         "name": "hub",
+        "state": "stop"
+      },
+      {
+        "name": "error",
         "state": "stop"
       }
     ],
@@ -621,7 +625,7 @@
     "type": "animation",
     "components": [
       {
-        "name": "img-timer",
+        "name": "imgtimer",
         "state": "start",
         "settings": {
           "src": "/images/mine_travel.gif",

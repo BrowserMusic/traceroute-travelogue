@@ -14,7 +14,6 @@ export default {
   components: {
     LeafletMap,
     ChapterNode,
-    // BigHello,
   },
   data() {
     return {
@@ -37,7 +36,8 @@ export default {
     },
   },
   async mounted() {
-    // await this.fastForward();
+    const limit = { city: 2, scene: 0 };
+    // await this.fastForward(limit);
     window.addEventListener("keyup", this.proceed);
   },
   beforeDestroy() {
@@ -58,8 +58,7 @@ export default {
         this.$store.dispatch("path/next");
       }
     },
-    async fastForward() {
-      const limit = { city: 1, scene: 0 };
+    async fastForward(limit) {
       let stateval = await this.$store.dispatch("path/fastForwardStep", limit);
       while (stateval != false) {
         this.$nextTick();
@@ -75,6 +74,12 @@ export default {
 <style>
 * {
   box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 body {

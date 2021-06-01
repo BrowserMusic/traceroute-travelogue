@@ -19,6 +19,7 @@
 
 <script>
 export default {
+  name: "HubZone",
   props: {
     settings: Object,
   },

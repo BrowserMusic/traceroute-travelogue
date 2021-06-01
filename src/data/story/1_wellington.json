@@ -59,6 +59,23 @@
     ]
   },
   {
+    "type": "animation",
+    "components": [
+      {
+        "name": "draganddrop",
+        "state": "start",
+        "settings": {
+          "img": "/images/floating_head.gif",
+          "dropText": "Isolate your packet for further analysis!"
+        }
+      },
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      }
+    ]
+  },
+  {
     "type": "dialogue",
     "level": 1,
     "id": "main",
@@ -72,7 +89,7 @@
         }
       },
       {
-        "name": "bigbutton",
+        "name": "draganddrop",
         "state": "stop"
       }
     ],
@@ -148,7 +165,7 @@
       },
       {
         "speaker": "Becky",
-        "text": "so we can talk about the obvious ones first. Zak is the source and I’m the destination, except instead of our physical addresses we use our IP addresses.",
+        "text": "so we can talk about the obvious ones first. Zak is the **source** and I’m the **destination**, except instead of our physical addresses we use our IP addresses.",
         "components": [
           {
             "name": "ipv4",
@@ -534,6 +551,15 @@
     "animation": "headIntoSphere",
     "components": [
       {
+        "name": "draganddrop",
+        "state": "start",
+        "settings": {
+          "img": "/images/floating_head.gif",
+          "dropText": "Launch your packet into the packetsphere!",
+          "dropImg": "/images/portal.gif"
+        }
+      },
+      {
         "name": "character",
         "state": "stop"
       },
@@ -551,6 +577,12 @@
     "type": "dialogue",
     "id": "large",
     "level": 3,
+    "components": [
+      {
+        "name": "draganddrop",
+        "state": "stop"
+      }
+    ],
     "characters": [
       {
         "name": "orb",
@@ -652,14 +684,7 @@
       {
         "speaker": "notice",
         "text": "You received a copy of the Internet Travel Guide."
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "lines": [
+      },
       {
         "speaker": "Zak",
         "text": "that's cute."

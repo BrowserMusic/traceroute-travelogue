@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import dining from "./dinner.js";
 import path from "./path.js";
+import audio from "./audio.js";
 
 Vue.use(Vuex);
 
@@ -9,6 +10,7 @@ export default new Vuex.Store({
   modules: {
     dining,
     path,
+    audio
   },
   state: () => ({
     isModalOpen: false,

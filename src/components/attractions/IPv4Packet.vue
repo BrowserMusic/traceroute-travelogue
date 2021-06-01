@@ -19,6 +19,7 @@
 
 <script>
 export default {
+  name: "IPv4Packet",
   props: {
     settings: Object,
   },

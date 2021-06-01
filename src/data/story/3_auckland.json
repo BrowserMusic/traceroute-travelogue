@@ -3,7 +3,7 @@
     "type": "animation",
     "components": [
       {
-        "name": "img-timer",
+        "name": "imgtimer",
         "state": "start",
         "settings": {
           "src": "/images/loadscreen.gif",
@@ -18,8 +18,162 @@
     "level": 1,
     "components": [
       {
-        "name": "img-timer",
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "video",
+          "src": "/videos/aucklanddatacentre.mp4",
+          "orientation": "vertical"
+        }
+      },
+      {
+        "name": "imgtimer",
         "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "notice",
+        "text": "You have entered Auckland, NZ."
+      },
+      {
+        "speaker": "Mike",
+        "text": "See you folks on the flip side!"
+      },
+      {
+        "speaker": "Mike",
+        "text": "I'm going joyriding down in those mines."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "thanks again, Mike!"
+      },
+      {
+        "speaker": "notice",
+        "text": "Mike descends back into the depths.",
+        "components": [
+          {
+            "name": "character",
+            "state": "stop"
+          }
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "huh. what's going on in the background?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "maybe we can take a closer look?"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "auck-strange",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "text": "take a closer look",
+              "img": "/images/magnify.gif",
+              "to": "auck-background"
+            },
+            {
+              "text": "faintly, you hear music...",
+              "img": "/images/music.gif",
+              "to": "auck-music"
+            },
+            {
+              "text": "keep moving",
+              "img": "/images/beach2.gif",
+              "to": "auck-datacentre-start",
+              "disabled": true,
+              "expects": [
+                "auck-background",
+                "auck-music"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "concert",
+        "state": "stop"
+      },
+      {
+        "name": "video",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "auck-music",
+    "components": [
+      {
+        "name": "concert",
+        "state": "start",
+        "settings": {
+          "src": "/audio/auck_data.mp3",
+          "beforeText": "You hear faint music coming from within the data center.",
+          "afterText": "Strange, isn't it? And yet you were granted this recital, as if the data center knew you were already coming... a treasured memory.",
+          "to": "auck-strange"
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "auck-background",
+    "components": [
+      {
+        "name": "video",
+        "state": "start",
+        "settings": {
+          "src": "/videos/aucklanddatacentre.mp4",
+          "text": "Looks like this might be the Auckland Data Centre from the outside. Smaller than you thought?",
+          "to": "auck-strange"
+        }
+      },
+      {
+        "name": "mediabg",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "pathid": "auck-datacentre-start",
+    "level": 1,
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      },
+      {
+        "name": "mediabg",
+        "state": "stop"
+      },
+      {
+        "name": "concert",
+        "state": "stop"
+      },
+      {
+        "name": "character",
+        "state": "start",
+        "settings": {
+          "name": "orb",
+          "align": "right"
+        }
       }
     ],
     "lines": [
@@ -33,7 +187,13 @@
       },
       {
         "speaker": "Guide",
-        "text": "*beeps*"
+        "text": "*beeps*",
+        "components": [
+          {
+            "name": "character",
+            "state": "stop"
+          }
+        ]
       },
       {
         "speaker": "Zak",
@@ -73,7 +233,7 @@
               "to": "auck-convo-2"
             },
             {
-              "text": "down underground",
+              "text": "to departures",
               "img": "/images/mine_travel.gif",
               "to": "auck-proceed",
               "disabled": true
@@ -81,6 +241,10 @@
           ],
           "onskip": "auck-proceed"
         }
+      },
+      {
+        "name": "link",
+        "state": "stop"
       }
     ]
   },
@@ -89,6 +253,12 @@
     "id": "main",
     "level": 1,
     "pathid": "auck-convo-1",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Zak",
@@ -163,7 +333,7 @@
         "text": "All I can give you is an IP address, which is something like 14.1.88.255.",
         "components": [
           {
-            "name": "ip-address",
+            "name": "ipaddress",
             "state": "start"
           }
         ]
@@ -178,7 +348,8 @@
       },
       {
         "speaker": "Becky",
-        "text": "I doubt it's that simple, but we can at least leave Auckland I think."
+        "text": "I doubt it's that simple, but we can at least leave Auckland I think.",
+        "to": "landing-auck"
       }
     ]
   },
@@ -189,11 +360,19 @@
     "level": 2,
     "components": [
       {
-        "name": "img-timer",
+        "name": "imgtimer",
+        "state": "stop"
+      },
+      {
+        "name": "hub",
         "state": "stop"
       }
     ],
     "lines": [
+      {
+        "speaker": "notice",
+        "text": "Subject: Traceroutes and Hops"
+      },
       {
         "speaker": "Becky",
         "text": "so we started at Wellington, then went to Whanganui, and now we're in Auckland."
@@ -264,8 +443,132 @@
       },
       {
         "speaker": "Becky",
-        "text": "which involves going underwater, like we're about to do."
+        "text": "which involves going underwater, like we're about to do.",
+        "to": "landing-auck"
       }
     ]
   },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "pathid": "auck-convo-1",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Guide",
+        "text": "If you've received your destination IP address and are satisfied with the knowledge you've gained thus far, it's time to dive!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Here in Auckland, packets are routed to the proper deep sea cable according to their final destinations and local traffic conditions."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Whatever cable you take, you're sure to be sailing the seven seas in luxury with our fantastic fleet of tar-soaked nylon yarn fibre optic cables!",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "url": "#",
+              "img": "/images/cable_cross.png",
+              "width": "300px"
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "yummy!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Featuring galvanized armor wires, a nylon yarn bedding, polyethelene insulation and a copper sheath, our fantastic fibre optic cables are securely wrapped in silicon gel and ultra-high strength steel wires for a deep sea cable experience you're sure not to forget. "
+      },
+      {
+        "speaker": "Zak",
+        "text": "gosh, I wonder how much of this stuff there is in the ocean just to make the internet work..."
+      },
+      {
+        "speaker": "Guide",
+        "text": "An absolutely enormous amount of the world's internet infrastructure is made up of these underwater cables, as of 2021 there were more than 1.3 million kilometers of cable (and that's just of the cables currently in use). "
+      },
+      {
+        "speaker": "Becky",
+        "text": "wow, well let's hope your head doesn't get lost!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "auck-departure",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "img": "/images/oil-drop.gif",
+              "text": "head to the ocean",
+              "to": "to-tasman"
+            },
+            {
+              "img": "/images/drink.gif",
+              "text": "listen one last time",
+              "to": "concert-again"
+            }
+          ]
+        }
+      },
+      {
+        "name": "concert",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "concert-again",
+    "components": [
+      {
+        "name": "concert",
+        "state": "start",
+        "settings": {
+          "src": "/audio/auck_data.mp3",
+          "beforeText": "You find the source of the music again. Just one more listen, you say.",
+          "afterText": "Do you feel that you have changed somehow? Perhaps you are smarter or more beautiful? Or is there some wisdom here? Rate this experience.",
+          "choices": [
+            "Strongly Agree",
+            "Strongly Disagree"
+          ],
+          "to": "auck-departure"
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "to-tasman",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
+      },
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ]
+  }
 ]

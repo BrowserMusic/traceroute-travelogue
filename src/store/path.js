@@ -1,10 +1,13 @@
 import pathBlock from "../data/paths.json";
-import wellington from "../data/story/1_wellington.json";
-import whanganui from "../data/story/2_whanganui.json";
 import comps from "./components.js";
 
+import wellington from "../data/story/1_wellington.json";
+import whanganui from "../data/story/2_whanganui.json";
+import auckland from "../data/story/3_auckland.json";
+
+
 function prepJSON() {
-  const path = [wellington, whanganui];
+  const path = [wellington, whanganui, auckland];
   for (let j = 0; j < path.length; j++) {
     for (let i = 0; i < path[j].length; i++) {
       path[j][i].index = i;
@@ -97,6 +100,8 @@ const path = {
 
       if (filtered.length > 0) {
         return filtered[0].index;
+      } else {
+        return "path node not found";
       }
     },
     getLine: (state, getters) => {
@@ -133,7 +138,7 @@ const path = {
           commit("comps/updateComponents", getters.getLine);
           return;
         } else {
-          console.log("longer than lines length");
+          // console.log("longer than lines length");
         }
       }
 
@@ -145,7 +150,7 @@ const path = {
         console.log("next scene");
 
         if (getters.getLineList != null) {
-          console.log("which does contain lines, so we're resetting");
+          // console.log("which does contain lines, so we're resetting");
           commit("changeLine", 0);
         }
       } else {
@@ -166,6 +171,7 @@ const path = {
       commit("freeze", false);
       commit("changeScene", sceneIndex);
       commit("changeLine", 0);
+      commit("comps/updateComponents", getters.getScene);
       // console.log(getters.getScene);
     },
     async fastForwardStep({ state, getters, dispatch }, obj) {

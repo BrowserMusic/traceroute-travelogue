@@ -6,17 +6,22 @@ const comps = {
     bigtext: {},
     bighello: {},
     error: {},
+    draganddrop: {},
     bigbutton: {},
     pamphlet: {},
     hub: {},
     link: {},
-    imgtimer: {}
+    imgtimer: {},
+    mediabg: {},
+    concert: {},
+    video: {}
   }),
   mutations: {
     updateComponents(state, block) {
       if (!("components" in block)) {
         return;
       }
+
       for (let comp of block.components) {
         if (!(comp.name in state)) {
           console.error();
