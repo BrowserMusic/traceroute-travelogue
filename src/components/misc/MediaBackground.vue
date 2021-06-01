@@ -55,6 +55,11 @@ export default {
     width: 100%;
     height: 100%;
   }
+
+  &.image-background {
+    background-image: var(--media-bg-image);
+    background-size: cover;
+  }
 }
 
 .media-background.vertical-video {

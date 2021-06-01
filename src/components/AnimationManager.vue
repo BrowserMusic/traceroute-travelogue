@@ -24,7 +24,12 @@
 
     <error-text v-if="isVisible('error')" :settings="getSettings('error')" />
 
-    <div class="handout" loading="lazy" v-if="isVisible('link')">
+    <div
+      class="handout"
+      loading="lazy"
+      v-if="isVisible('link')"
+      :style="handoutStyle(getSettings('link'))"
+    >
       <a :href="getSettings('link').url" target="_blank">
         <img :src="getSettings('link').img" />
         <h4 v-if="'text' in getSettings('link')">
@@ -62,6 +67,7 @@
     </div>
 
     <concert v-if="isVisible('concert')" :settings="getSettings('concert')" />
+    <gif-mess v-if="isVisible('gifmess')" :settings="getSettings('gifmess')" />
   </div>
 </template>
 
@@ -78,6 +84,7 @@ import DragAndDrop from "./attractions/DragAndDrop.vue";
 import MediaBackground from "./misc/MediaBackground.vue";
 import Concert from "./attractions/Concert.vue";
 import ProceedButton from "./misc/ProceedButton.vue";
+import GifMess from "./attractions/GifMess.vue";
 
 export default {
   name: "AnimationManager",
@@ -94,6 +101,7 @@ export default {
     MediaBackground,
     Concert,
     ProceedButton,
+    GifMess,
   },
   props: {
     scene: Object,
@@ -131,6 +139,16 @@ export default {
     getCompSettings(slug) {
       const myComp = this.getComponent(slug);
       return myComp != null && "settings" in myComp ? myComp.settings : {};
+    },
+    handoutStyle(sett) {
+      // console.log(sett);
+      let retval = "";
+      if ("width" in sett) {
+        retval = "width: " + sett.width + ";";
+      }
+
+      // console.log(retval);
+      return retval;
     },
   },
 };

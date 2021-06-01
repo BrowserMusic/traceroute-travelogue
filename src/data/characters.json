@@ -53,5 +53,19 @@
       "type": "video",
       "file": "/videos/orb-silent.mp4"
     }
+  },
+  "karen": {
+    "name": "Karen",
+    "display": {
+      "type": "image",
+      "file": "/images/karendolphin.gif"
+    }
+  },
+  "tv": {
+    "name": "Television",
+    "display": {
+      "type": "video",
+      "file": "/videos/CRT_Face2.mp4"
+    }
   }
 }

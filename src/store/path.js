@@ -4,10 +4,10 @@ import comps from "./components.js";
 import wellington from "../data/story/1_wellington.json";
 import whanganui from "../data/story/2_whanganui.json";
 import auckland from "../data/story/3_auckland.json";
-
+import tasman from "../data/story/4_tasman.json";
 
 function prepJSON() {
-  const path = [wellington, whanganui, auckland];
+  const path = [wellington, whanganui, auckland, tasman];
   for (let j = 0; j < path.length; j++) {
     for (let i = 0; i < path[j].length; i++) {
       path[j][i].index = i;
@@ -123,7 +123,8 @@ const path = {
   },
   actions: {
     async next({ state, commit, getters, dispatch }, obj) {
-      if (state.freezeState && !(obj != null && "ignoreFreeze" in obj)) return;
+      const isFastForward = obj != null && "ignoreFreeze" in obj;
+      if (state.freezeState && !isFastForward) return;
       else if (obj != null && "goto" in obj) {
         await dispatch("toOption", obj.goto);
       }
@@ -138,6 +139,10 @@ const path = {
           commit("comps/updateComponents", getters.getLine);
           return;
         } else {
+          if ("to" in getters.getLine && !isFastForward) {
+            await dispatch("toOption", getters.getLine.to);
+            return;
+          }
           // console.log("longer than lines length");
         }
       }

@@ -158,7 +158,8 @@
   "settings": {
     "img": "/images/root_dns_handout.jpeg",
     "url": "https://root-servers.org/#map",
-    "text": "click me to find your closest root DNS servers!"
+    "text": "click me to find your closest root DNS servers!",
+    "width": "300px"
   }
 }
 ```
@@ -167,6 +168,7 @@
 * `img`: image to display.
 * `url`: where you're going.
 * `text`: text to display on top of the image. (optional)
+* `width`: width of the image, if the default size (500px) is too large. Needs to have px at the end. (optional)
 
 ## `imgtimer`
 
@@ -260,6 +262,33 @@
 * `src`: video source
 * `text`: text to display below the video
 * `to`: which `pathid` to go to after this is done. Not currently optional.
+
+## `gifmess`
+
+`gifmess` semi-randomly throws a bunch of images on the page. There might not be a limit to how many you can have?
+
+### example
+
+```json
+{
+  "name": "gifmess",
+  "state": "start",
+  "settings": {
+    "images": [
+      "/images/beach2.gif",
+      "/images/ocean.gif",
+      "/images/portal.gif",
+      "/images/drink.gif",
+      "/images/cave.gif",
+      "/images/drumkit.gif",
+      "/images/beach2.gif"
+    ]
+  }
+}
+```
+
+### settings
+* `images`: a list of images
 
 ## `hub`
 

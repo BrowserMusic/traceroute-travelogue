@@ -1,0 +1,331 @@
+[
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
+      },
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      },
+      {
+        "name": "link",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/beach2.gif",
+            "/images/ocean.gif",
+            "/images/portal.gif",
+            "/images/drink.gif",
+            "/images/cave.gif",
+            "/images/drumkit.gif",
+            "/images/beach2.gif"
+          ]
+        }
+      },
+      {
+        "name": "character",
+        "state": "start",
+        "settings": {
+          "name": "karen",
+          "align": "right"
+        }
+      },
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "notice",
+        "text": "You have arrived in the Tasman Sea. Karen joins your conversation."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Karen",
+        "text": "Why, hello there! I'm Karen, the dolphin GIF!"
+      },
+      {
+        "speaker": "Karen",
+        "text": "I was originally created sometime between 2004 and 2009 for [pinkrainbowuk's GeoCities site](https://web.archive.org/web/20091022120101/http://geocities.com/pinkrainbowuk/Index1.html), and I've been trapped here ever since..."
+      },
+      {
+        "speaker": "Karen",
+        "text": "Anyhow, welcome to the global network of deep sea fibre optic cables!"
+      },
+      {
+        "speaker": "Karen",
+        "text": "If you've made it this far, then you're likely looking for safe passage across the Tasman Sea, am I right?"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Karen",
+        "text": "...yeah!"
+      },
+      {
+        "speaker": "Karen",
+        "text": "He doesn't say much, does he."
+      },
+      {
+        "speaker": "Zak",
+        "text": "nope, just a packet with a simple message"
+      },
+      {
+        "speaker": "Becky",
+        "text": "and that message is \"hello,\" as I'm sure you've seen."
+      },
+      {
+        "speaker": "Karen",
+        "text": "Well, you're just as valuable as a multi-terabyte file transfer to me, little guy."
+      },
+      {
+        "speaker": "Zak",
+        "text": "so, wait... the Tasman Sea... is my head going to Australia?"
+      },
+      {
+        "speaker": "Karen",
+        "text": "Sure is. We're taking the Tasman Global Access Cable right on over to Sydney.",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/cable_map_tasman.jpg",
+              "url": "https://www.submarinecablemap.com/#/submarine-cable/tasman-global-access-tga-cable",
+              "text": "check out the Tasman Global Access Cable!",
+              "width": "300px"
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "I wonder why we didn't get sent straight to the US?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "it's like the guide said, the orb in the router probably sent us through to Australia first because of traffic flow. "
+      },
+      {
+        "speaker": "Karen",
+        "text": "Ha ha, that Orb! Such a prankster."
+      },
+      {
+        "speaker": "Karen",
+        "text": "Anyway, you folks done chatting?"
+      },
+      {
+        "speaker": "Karen",
+        "text": "Hop on my back and we'll go on an adventure!!"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "TRUST KAREN?"
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Karen",
+        "text": "I hope you're ready for things to get weird!!"
+      },
+      {
+        "speaker": "Box",
+        "text": "..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "..."
+      },
+      {
+        "speaker": "Becky",
+        "text": "..."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "large",
+    "level": 3,
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      },
+      {
+        "name": "link",
+        "state": "stop"
+      },
+      {
+        "name": "character",
+        "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "stop"
+      }
+    ],
+    "characters": [
+      {
+        "name": "tv",
+        "align": "left"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "TV",
+        "text": "uhhhh uhhhhhh..."
+      },
+      {
+        "speaker": "TV",
+        "text": "uhhhh... a head... uhhhh... a face.... hmm..."
+      },
+      {
+        "speaker": "TV",
+        "text": "...a face... a face... something... I haven't seen in a long time..."
+      },
+      {
+        "speaker": "TV",
+        "text": "...dropped... I was dropped... dumped... planted... like a seed... from a great ship... "
+      },
+      {
+        "speaker": "TV",
+        "text": "returned... to the ground... into the deep... from where I come... "
+      },
+      {
+        "speaker": "TV",
+        "text": "my origins... span the globe... I was once rock... mountain... earth... cut out... from my homes... carried... to the factory floor... dunked... married with chemical... rarified... rendered... manufactured..."
+      },
+      {
+        "speaker": "TV",
+        "text": "becoming... vapor. becoming... gas. becoming... liquid. becoming... solid. becoming... glass. becoming... becoming... becoming..."
+      },
+      {
+        "speaker": "TV",
+        "text": "my... my flesh... built... built to show... shine... my cathrode ray tube... blasting photons into the mind's eye... red... green... blue... "
+      },
+      {
+        "speaker": "TV",
+        "text": "distributed... sold... bought... watched... used... broken... waiting... waiting... waiting... stasis... "
+      },
+      {
+        "speaker": "TV",
+        "text": "corroded... collapsing... back into the everywhere... and the everywhen... I am shoveled into the ship... to discard... into the sacrifice zone..."
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "uh... hm... that was intense!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah, that was a lot."
+      },
+      {
+        "speaker": "Karen",
+        "text": "Such is the fate of all electronics when they are no longer useful to humans."
+      },
+      {
+        "speaker": "Karen",
+        "text": "That TV is yesterday's technology, but eventually all the tech of today's internet––the computers, routers, smart phones, even the solar panels that harvest energy––will break and become part of the 50+ million metric tons of e-waste that the human race produces each year."
+      },
+      {
+        "speaker": "ITG",
+        "text": "*beeping*"
+      },
+      {
+        "speaker": "ITG",
+        "text": "Since the advent of Internet-of-Things technology, where devices have increasingly become expected to connect to the internet (our phones, watches, refrigerators) the internet is increasingly made up of a bunch of random future-junk. "
+      },
+      {
+        "speaker": "ITG",
+        "text": "And that junk is extremely toxic. E-waste is the world's fastest growing and largest stream of toxic waste. Most of our technology has things like arsenic, lead, chlorine, plastics and heavy metals which contaminate the air, soil and water when manufactured and disposed of. "
+      },
+      {
+        "speaker": "Becky",
+        "text": "wow, well that's definitely a cost..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "wait, can we back up for a second? At this point I expect this kind of information from the internet travel guide, but why do you know so much about this, Karen?"
+      },
+      {
+        "speaker": "Karen",
+        "text": "Oh, I eat garbage."
+      },
+      {
+        "speaker": "Karen",
+        "text": "Actually that reminds me, all this swimming is making me hungry, do you think you guys could keep an eye out for some food when you get to Australia?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "...sure, Karen. "
+      }
+    ]
+  }
+]

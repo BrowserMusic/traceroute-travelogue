@@ -14,7 +14,8 @@ const comps = {
     imgtimer: {},
     mediabg: {},
     concert: {},
-    video: {}
+    video: {},
+    gifmess: {}
   }),
   mutations: {
     updateComponents(state, block) {

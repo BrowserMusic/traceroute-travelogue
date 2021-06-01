@@ -47,8 +47,8 @@ export default {
     };
   },
   watch: {
-    lineIndex(newV) {
-      console.log(this.label + " " + newV);
+    lineIndex() {
+      // console.log(this.label + " " + newV);
       this.appendToList();
     },
     bigSceneIndex() {
@@ -80,7 +80,7 @@ export default {
         // console.log("index too high");
         return;
       } else {
-        const line = this.currentScene.lines[this.lineIndex];
+        // const line = this.currentScene.lines[this.lineIndex];
         // console.log(
         //   `${this.lineIndex} ${line.speaker}: ${line.text.substring(0, 20)}`
         // );

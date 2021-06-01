@@ -145,7 +145,10 @@
       },
       {
         "name": "mediabg",
-        "state": "stop"
+        "settings": {
+          "type": "image",
+          "src": "/images/auck_data.png"
+        }
       }
     ]
   },
@@ -161,6 +164,13 @@
       },
       {
         "name": "mediabg",
+        "settings": {
+          "type": "image",
+          "src": "/images/auck_data.png"
+        }
+      },
+      {
+        "name": "video",
         "state": "stop"
       },
       {
@@ -452,7 +462,7 @@
     "type": "dialogue",
     "id": "main",
     "level": 1,
-    "pathid": "auck-convo-1",
+    "pathid": "auck-proceed",
     "components": [
       {
         "name": "hub",
@@ -502,6 +512,54 @@
       {
         "speaker": "Becky",
         "text": "wow, well let's hope your head doesn't get lost!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "See the map in the attached handout for further information."
+      },
+      {
+        "speaker": "notice",
+        "text": "You receive the Submarine Cable Map.",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/cable_map.jpg",
+              "url": "https://www.submarinecablemap.com/#/",
+              "text": "check out the global submarine cable map!",
+              "width": "400px"
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Becky",
+        "text": "you're not kidding!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "that is an *extraordinary* amount of spaghetti!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "is it me, or does the Auckland cable only lead elsewhere in New Zealand?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I think you're right"
+      },
+      {
+        "speaker": "Zak",
+        "text": "how are we getting overseas, then?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "You'll see when you get to the coast!"
       }
     ]
   },
@@ -515,12 +573,12 @@
         "settings": {
           "locations": [
             {
-              "img": "/images/oil-drop.gif",
+              "img": "/images/beach.gif",
               "text": "head to the ocean",
               "to": "to-tasman"
             },
             {
-              "img": "/images/drink.gif",
+              "img": "/images/music.gif",
               "text": "listen one last time",
               "to": "concert-again"
             }
@@ -529,6 +587,10 @@
       },
       {
         "name": "concert",
+        "state": "stop"
+      },
+      {
+        "name": "link",
         "state": "stop"
       }
     ]
@@ -542,7 +604,7 @@
         "state": "start",
         "settings": {
           "src": "/audio/auck_data.mp3",
-          "beforeText": "You find the source of the music again. Just one more listen, you say.",
+          "beforeText": "You find the source of the music again. Just one more listen, you say to yourself.",
           "afterText": "Do you feel that you have changed somehow? Perhaps you are smarter or more beautiful? Or is there some wisdom here? Rate this experience.",
           "choices": [
             "Strongly Agree",
@@ -550,6 +612,10 @@
           ],
           "to": "auck-departure"
         }
+      },
+      {
+        "name": "hub",
+        "state": "stop"
       }
     ]
   },
@@ -558,11 +624,10 @@
     "pathid": "to-tasman",
     "components": [
       {
-        "name": "imgtimer",
+        "name": "bigbutton",
         "state": "start",
         "settings": {
-          "src": "/images/loadscreen.gif",
-          "timer": 2000
+          "text": "PROCEED TO THE OCEAN?"
         }
       },
       {

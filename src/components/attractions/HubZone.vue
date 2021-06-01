@@ -92,7 +92,8 @@ export default {
     }
 
     img {
-      max-width: 100%;
+      min-width: 60px;
+      max-width: 150px;
     }
   }
 
