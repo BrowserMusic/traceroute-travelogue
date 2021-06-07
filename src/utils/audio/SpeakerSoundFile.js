@@ -75,12 +75,12 @@ class SpeakerSoundFile {
   //   return { events: events, speed: speed };
   // }
 
-  // makePlaybackRate() {
-  //   let rate = Math.random() * 0.25;
-  //   rate *= (Math.random() > 0.5) ? 1 : -1;
-  //   rate += 1;
-  //   return rate;
-  // }
+  makePlaybackRate() {
+    let rate = Math.random() * 0.2;
+    rate *= (Math.random() > 0.5) ? 1 : -1;
+    rate += 1;
+    return rate;
+  }
 
   soundsAsBoundaries(fnames) {
     let retval = [];
