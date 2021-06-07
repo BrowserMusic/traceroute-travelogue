@@ -44,3 +44,5 @@ Next, if you've added new files or changed file names, you need to update the ch
 ```
 
 Under the "audio" section, `type` can either be "base" or "file." "base" is the default FM synth, "file" is how we use audio files. If you're using `"type": "file"`, `style` can be "once" or "many." "once" means only one file is played, "many" means it behaves similar to the way the FM synth behaves – i.e., a sometimes-directed string of sounds. **("many" isn't implemented yet, but I'm working on it!)**
+
+If you add or change files on a `"type": "file"`, add their names to the `sounds` list. The value you use should be the same as the original file name, which will also be reflected in the speech.json you generated earlier. Spelling and capitalization count!
