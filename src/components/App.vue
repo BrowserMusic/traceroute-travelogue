@@ -37,7 +37,7 @@ export default {
   },
   async mounted() {
     const limit = { city: 2, scene: 8 };
-    await this.fastForward(limit);
+    // await this.fastForward(limit);
     window.addEventListener("keyup", this.proceed);
   },
   beforeDestroy() {
