@@ -1,22 +1,22 @@
 {
-  "base": {
-    "name": "Unnamed",
-    "states": {
-      "neutral": "🙂",
-      "happy": "😀",
-      "laughing": "😂",
-      "surprised": "😲",
-      "mad": "😤",
-      "shocked": "😱",
-      "box": "🙃"
-    }
-  },
   "zak": {
     "name": "Zak",
     "states": {
       "neutral": "",
       "happy": "",
       "shocked": ""
+    },
+    "audio": {
+      "type": "file",
+      "style": "many",
+      "sounds": [
+        "Zak1",
+        "Zak2",
+        "Zak3",
+        "Zak4",
+        "Zak5",
+        "Zak6"
+      ]
     }
   },
   "becky": {
@@ -26,6 +26,11 @@
       "happy": "",
       "shocked": "",
       "mad": ""
+    },
+    "audio": {
+      "type": "base",
+      "wave": "sine",
+      "pitch": 523.25
     }
   },
   "box": {
@@ -38,6 +43,15 @@
     "display": {
       "type": "image",
       "file": "/images/floating_head.gif"
+    },
+    "audio": {
+      "type": "file",
+      "style": "once",
+      "sounds": [
+        "hello_long",
+        "hello_med",
+        "hello_short"
+      ]
     }
   },
   "mike": {
@@ -52,6 +66,18 @@
     "display": {
       "type": "video",
       "file": "/videos/orb-silent.mp4"
+    },
+    "audio": {
+      "type": "file",
+      "style": "once",
+      "sounds": [
+        "orb_short",
+        "orb_short2",
+        "orb_short3",
+        "orb_short4",
+        "orb_short5",
+        "orb_short6"
+      ]
     }
   },
   "karen": {
@@ -59,6 +85,14 @@
     "display": {
       "type": "image",
       "file": "/images/karendolphin.gif"
+    },
+    "audio": {
+      "type": "file",
+      "style": "many",
+      "sounds": [
+        "dolphcall_med",
+        "dolphcall_short"
+      ]
     }
   },
   "tv": {
@@ -66,6 +100,15 @@
     "display": {
       "type": "video",
       "file": "/videos/CRT_Face2.mp4"
+    }
+  },
+  "notice": {
+    "name": "Notice",
+    "audio": {
+      "type": "base",
+      "wave": "triangle",
+      "pitch": 880,
+      "maxLength": 1
     }
   }
 }

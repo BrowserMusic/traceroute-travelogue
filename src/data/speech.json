@@ -1,0 +1,92 @@
+{
+  "resources": [
+    "speech.ogg"
+  ],
+  "spritemap": {
+    "Zak1": {
+      "start": 0,
+      "end": 0.6008163265306122,
+      "loop": false
+    },
+    "Zak2": {
+      "start": 2,
+      "end": 2.6008163265306123,
+      "loop": false
+    },
+    "Zak3": {
+      "start": 4,
+      "end": 4.7575510204081635,
+      "loop": false
+    },
+    "Zak4": {
+      "start": 6,
+      "end": 6.3395918367346935,
+      "loop": false
+    },
+    "Zak5": {
+      "start": 8,
+      "end": 8.522448979591836,
+      "loop": false
+    },
+    "Zak6": {
+      "start": 10,
+      "end": 10.57469387755102,
+      "loop": false
+    },
+    "dolphcall_med": {
+      "start": 12,
+      "end": 12.600816326530612,
+      "loop": false
+    },
+    "dolphcall_short": {
+      "start": 14,
+      "end": 14.417959183673469,
+      "loop": false
+    },
+    "hello_long": {
+      "start": 16,
+      "end": 16.57469387755102,
+      "loop": false
+    },
+    "hello_med": {
+      "start": 18,
+      "end": 18.57469387755102,
+      "loop": false
+    },
+    "hello_short": {
+      "start": 20,
+      "end": 20.496326530612244,
+      "loop": false
+    },
+    "orb_short": {
+      "start": 22,
+      "end": 22.55201814058957,
+      "loop": false
+    },
+    "orb_short2": {
+      "start": 24,
+      "end": 25.03201814058957,
+      "loop": false
+    },
+    "orb_short3": {
+      "start": 27,
+      "end": 28.44,
+      "loop": false
+    },
+    "orb_short4": {
+      "start": 30,
+      "end": 30.6,
+      "loop": false
+    },
+    "orb_short5": {
+      "start": 32,
+      "end": 32.888004535147395,
+      "loop": false
+    },
+    "orb_short6": {
+      "start": 34,
+      "end": 34.96,
+      "loop": false
+    }
+  }
+}
