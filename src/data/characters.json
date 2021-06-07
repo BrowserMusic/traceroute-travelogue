@@ -8,7 +8,7 @@
     },
     "audio": {
       "type": "file",
-      "style": "many",
+      "style": "once",
       "sounds": [
         "Zak1",
         "Zak2",
