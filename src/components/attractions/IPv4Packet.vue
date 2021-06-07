@@ -121,12 +121,6 @@ export default {
   methods: {
     getLine() {
       const line = this.$store.getters["path/getLine"];
-      // console.log("inside ipv4");
-      // console.log(line);
-      // console.log(this.$store.getters["path/getScene"]);
-      // console.log(
-      //   `${this.lineIndex} ${line.speaker}: ${line.text.substring(0, 20)}`
-      // );
       if (line != null && "highlight" in line) {
         this.persistentHighlight = line.highlight;
       }
@@ -136,7 +130,9 @@ export default {
     },
     determineHighlight(code) {
       return (
-        "highlight" in this.settings && this.settings.highlight.includes(code)
+        this.settings != null &&
+        "highlight" in this.settings &&
+        this.settings.highlight.includes(code)
       );
       // return this.persistentHighlight.includes(code);
       // if (highlight != null && highlight.includes(code)
