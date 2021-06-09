@@ -1,0 +1,23 @@
+[
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "dining",
+        "state": "start"
+      },
+      {
+        "name": "mediabg",
+        "state": "stop"
+      },
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "stop"
+      }
+    ]
+  }
+]

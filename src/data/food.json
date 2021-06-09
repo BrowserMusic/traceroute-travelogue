@@ -3,312 +3,413 @@
     "baseScale": 2,
     "list": [
       {
-        "name": "apple.glb"
+        "name": "apple.glb",
+        "realname": "apple"
       },
       {
-        "name": "appleHalf.glb"
+        "name": "appleHalf.glb",
+        "realname": "half apple"
       },
       {
-        "name": "avocado.glb"
+        "name": "avocado.glb",
+        "realname": "avocado"
       },
       {
-        "name": "avocadoHalf.glb"
+        "name": "avocadoHalf.glb",
+        "realname": "half avocado"
       },
       {
-        "name": "bacon.glb"
+        "name": "bacon.glb",
+        "realname": "bacon"
       },
       {
-        "name": "baconRaw.glb"
+        "name": "baconRaw.glb",
+        "realname": "raw bacon"
       },
       {
-        "name": "banana.glb"
+        "name": "banana.glb",
+        "realname": "banana"
       },
       {
-        "name": "beet.glb"
+        "name": "beet.glb",
+        "realname": "beet"
       },
       {
         "name": "bottleKetchup.glb",
+        "realname": "ketchup",
         "scale": 1
       },
       {
         "name": "bottleMusterd.glb",
+        "realname": "mustard",
         "scale": 1
       },
       {
         "name": "bottleOil.glb",
+        "realname": "oil",
         "scale": 1
       },
       {
-        "name": "bowlBroth.glb"
+        "name": "bowlBroth.glb",
+        "realname": "broth"
       },
       {
-        "name": "bowlCereal.glb"
+        "name": "bowlCereal.glb",
+        "realname": "cereal"
       },
       {
-        "name": "bowlSoup.glb"
+        "name": "bowlSoup.glb",
+        "realname": "soup"
       },
       {
-        "name": "bread.glb"
+        "name": "bread.glb",
+        "realname": "bread"
       },
       {
-        "name": "broccoli.glb"
+        "name": "broccoli.glb",
+        "realname": "broccoli"
       },
       {
-        "name": "burger.glb"
+        "name": "burger.glb",
+        "realname": "burger"
       },
       {
-        "name": "cabbage.glb"
+        "name": "cabbage.glb",
+        "realname": "cabbage"
       },
       {
-        "name": "cakeBirthday.glb"
+        "name": "cakeBirthday.glb",
+        "realname": "birthday cake"
       },
       {
-        "name": "can.glb"
+        "name": "can.glb",
+        "realname": "can"
       },
       {
-        "name": "candyBar.glb"
+        "name": "candyBar.glb",
+        "realname": "candy bar"
       },
       {
-        "name": "carrot.glb"
+        "name": "carrot.glb",
+        "realname": "carrot"
       },
       {
-        "name": "carton.glb"
+        "name": "carton.glb",
+        "realname": "carton"
       },
       {
-        "name": "cauliflower.glb"
+        "name": "cauliflower.glb",
+        "realname": "cauliflower"
       },
       {
-        "name": "celeryStick.glb"
+        "name": "celeryStick.glb",
+        "realname": "celery stick"
       },
       {
         "name": "cheese.glb",
+        "realname": "cheese",
         "scale": 1
       },
       {
-        "name": "cherries.glb"
+        "name": "cherries.glb",
+        "realname": "cherries"
       },
       {
-        "name": "chinese.glb"
+        "name": "chinese.glb",
+        "realname": "chinese"
       },
       {
-        "name": "chocolate.glb"
+        "name": "chocolate.glb",
+        "realname": "chocolate"
       },
       {
-        "name": "cocktail.glb"
+        "name": "cocktail.glb",
+        "realname": "cocktail"
       },
       {
-        "name": "coconutHalf.glb"
+        "name": "coconutHalf.glb",
+        "realname": "coconut"
       },
       {
-        "name": "corn.glb"
+        "name": "corn.glb",
+        "realname": "corn"
       },
       {
-        "name": "cornDog.glb"
+        "name": "cornDog.glb",
+        "realname": "corn dog"
       },
       {
-        "name": "croissant.glb"
+        "name": "croissant.glb",
+        "realname": "croissant"
       },
       {
-        "name": "cupcake.glb"
+        "name": "cupcake.glb",
+        "realname": "cupcake"
       },
       {
-        "name": "cupTea.glb"
+        "name": "cupTea.glb",
+        "realname": "cup of tea"
       },
       {
-        "name": "dimSum.glb"
+        "name": "dimSum.glb",
+        "realname": "dim sum"
       },
       {
-        "name": "donut.glb"
+        "name": "donut.glb",
+        "realname": "donut"
       },
       {
-        "name": "donutSprinkles.glb"
+        "name": "donutSprinkles.glb",
+        "realname": "donut with sprinkles"
       },
       {
-        "name": "eggHalf.glb"
+        "name": "eggHalf.glb",
+        "realname": "half an egg"
       },
       {
-        "name": "eggplant.glb"
+        "name": "eggplant.glb",
+        "realname": "eggplant"
       },
       {
-        "name": "fish.glb"
+        "name": "fish.glb",
+        "realname": "fish"
       },
       {
-        "name": "frappe.glb"
+        "name": "frappe.glb",
+        "realname": "frappe"
       },
       {
-        "name": "fries.glb"
+        "name": "fries.glb",
+        "realname": "fries"
       },
       {
-        "name": "frikandelSpeciaal.glb"
+        "name": "frikandelSpeciaal.glb",
+        "realname": "frikandel special"
       },
       {
-        "name": "gingerBread.glb"
+        "name": "gingerBread.glb",
+        "realname": "gingerbread"
       },
       {
-        "name": "grapes.glb"
+        "name": "grapes.glb",
+        "realname": "grapes"
       },
       {
-        "name": "honey.glb"
+        "name": "honey.glb",
+        "realname": "honey"
       },
       {
-        "name": "hotDog.glb"
+        "name": "hotDog.glb",
+        "realname": "hotDog"
       },
       {
-        "name": "iceCreamCone.glb"
+        "name": "iceCreamCone.glb",
+        "realname": "ice cream cone"
       },
       {
-        "name": "leek.glb"
+        "name": "leek.glb",
+        "realname": "leek"
       },
       {
-        "name": "lemonHalf.glb"
+        "name": "lemonHalf.glb",
+        "realname": "lemon half"
       },
       {
-        "name": "loaf.glb"
+        "name": "loaf.glb",
+        "realname": "loaf"
       },
       {
-        "name": "loafBaguette.glb"
+        "name": "loafBaguette.glb",
+        "realname": "baguette"
       },
       {
-        "name": "lollypop.glb"
+        "name": "lollypop.glb",
+        "realname": "lollipop"
       },
       {
-        "name": "makiRoe.glb"
+        "name": "makiRoe.glb",
+        "realname": "maki roll with roe"
       },
       {
-        "name": "makiSalmon.glb"
+        "name": "makiSalmon.glb",
+        "realname": "salmon maki roll"
       },
       {
-        "name": "makiVegetable.glb"
+        "name": "makiVegetable.glb",
+        "realname": "vegetable maki roll"
       },
       {
-        "name": "meatCooked.glb"
+        "name": "meatCooked.glb",
+        "realname": "cooked meat"
       },
       {
-        "name": "meatRibs.glb"
+        "name": "meatRibs.glb",
+        "realname": "ribs"
       },
       {
-        "name": "meatSausage.glb"
+        "name": "meatSausage.glb",
+        "realname": "sausage"
       },
       {
-        "name": "mincemeatPie.glb"
+        "name": "mincemeatPie.glb",
+        "realname": "mincemeat pie"
       },
       {
-        "name": "muffin.glb"
+        "name": "muffin.glb",
+        "realname": "muffin"
       },
       {
-        "name": "mushroom.glb"
+        "name": "mushroom.glb",
+        "realname": "mushroom"
       },
       {
-        "name": "mussel.glb"
+        "name": "mussel.glb",
+        "realname": "mussel"
       },
       {
-        "name": "onion.glb"
+        "name": "onion.glb",
+        "realname": "onion"
       },
       {
-        "name": "onionHalf.glb"
+        "name": "onionHalf.glb",
+        "realname": "half onion"
       },
       {
-        "name": "orange.glb"
+        "name": "orange.glb",
+        "realname": "orange"
       },
       {
-        "name": "pancakes.glb"
+        "name": "pancakes.glb",
+        "realname": "pancakes"
       },
       {
-        "name": "paprika.glb"
+        "name": "paprika.glb",
+        "realname": "paprika"
       },
       {
-        "name": "peanutButter.glb"
+        "name": "peanutButter.glb",
+        "realname": "peanut butter"
       },
       {
-        "name": "pear.glb"
+        "name": "pear.glb",
+        "realname": "pear"
       },
       {
-        "name": "pearHalf.glb"
+        "name": "pearHalf.glb",
+        "realname": "halved pear"
       },
       {
-        "name": "pepper.glb"
+        "name": "pepper.glb",
+        "realname": "pepper"
       },
       {
-        "name": "pie.glb"
+        "name": "pie.glb",
+        "realname": "pie"
       },
       {
-        "name": "pineapple.glb"
+        "name": "pineapple.glb",
+        "realname": "pineapple"
       },
       {
-        "name": "pizza.glb"
+        "name": "pizza.glb",
+        "realname": "pizza"
       },
       {
-        "name": "plateSauerkraut.glb"
+        "name": "plateSauerkraut.glb",
+        "realname": "sauerkraut"
       },
       {
-        "name": "popsicle.glb"
+        "name": "popsicle.glb",
+        "realname": "popsicle"
       },
       {
-        "name": "pudding.glb"
+        "name": "pudding.glb",
+        "realname": "pudding"
       },
       {
-        "name": "pumpkin.glb"
+        "name": "pumpkin.glb",
+        "realname": "pumpkin"
       },
       {
-        "name": "radish.glb"
+        "name": "radish.glb",
+        "realname": "radish"
       },
       {
-        "name": "riceBall.glb"
+        "name": "riceBall.glb",
+        "realname": "rice ball"
       },
       {
-        "name": "salad.glb"
+        "name": "salad.glb",
+        "realname": "salad"
       },
       {
-        "name": "sandwich.glb"
+        "name": "sandwich.glb",
+        "realname": "sandwich"
       },
       {
-        "name": "soda.glb"
+        "name": "soda.glb",
+        "realname": "soda"
       },
       {
-        "name": "soy.glb"
+        "name": "soy.glb",
+        "realname": "soy"
       },
       {
-        "name": "strawberry.glb"
+        "name": "strawberry.glb",
+        "realname": "strawberry"
       },
       {
-        "name": "sub.glb"
+        "name": "sub.glb",
+        "realname": "sub"
       },
       {
-        "name": "sundae.glb"
+        "name": "sundae.glb",
+        "realname": "sundae"
       },
       {
-        "name": "sushiSalmon.glb"
+        "name": "sushiSalmon.glb",
+        "realname": "salmon sushi"
       },
       {
-        "name": "taco.glb"
+        "name": "taco.glb",
+        "realname": "taco"
       },
       {
-        "name": "tajine.glb"
+        "name": "tajine.glb",
+        "realname": "tajine"
       },
       {
-        "name": "tomato.glb"
+        "name": "tomato.glb",
+        "realname": "tomato"
       },
       {
-        "name": "tomatoSlice.glb"
+        "name": "tomatoSlice.glb",
+        "realname": "sliced tomato"
       },
       {
         "name": "turkey.glb",
+        "realname": "roast turkey",
         "scale": 0.75
       },
       {
-        "name": "waffle.glb"
+        "name": "waffle.glb",
+        "realname": "waffle"
       },
       {
-        "name": "watermelon.glb"
+        "name": "watermelon.glb",
+        "realname": "watermelon"
       },
       {
-        "name": "whippedCream.glb"
+        "name": "whippedCream.glb",
+        "realname": "whipped cream"
       },
       {
-        "name": "wholeHam.glb"
+        "name": "wholeHam.glb",
+        "realname": "roast ham"
       },
       {
-        "name": "wineRed.glb"
+        "name": "wineRed.glb",
+        "realname": "red wine"
       }
     ]
   },
@@ -316,7 +417,8 @@
     "baseScale": 0.15,
     "list": [
       {
-        "name": "led.glb"
+        "name": "led.glb",
+        "realname": "led"
       }
     ]
   },
@@ -324,32 +426,41 @@
     "baseScale": 1.5,
     "list": [
       {
-        "name": "styrofoam.glb"
+        "name": "styrofoam.glb",
+        "realname": "styrofoam container"
       },
       {
-        "name": "bowl.glb"
+        "name": "bowl.glb",
+        "realname": "bowl"
       },
       {
-        "name": "cuttingBoardJapanese.glb"
+        "name": "cuttingBoardJapanese.glb",
+        "realname": "Japanese cutting board"
       },
       {
-        "name": "fryingPan.glb"
+        "name": "fryingPan.glb",
+        "realname": "frying pan"
       },
       {
-        "name": "mug.glb"
+        "name": "mug.glb",
+        "realname": "mug"
       },
       {
         "name": "pizzaBox.glb",
+        "realname": "pizza box",
         "scale": 1
       },
       {
-        "name": "pan.glb"
+        "name": "pan.glb",
+        "realname": "pan"
       },
       {
-        "name": "plate.glb"
+        "name": "plate.glb",
+        "realname": "plate"
       },
       {
-        "name": "pot.glb"
+        "name": "pot.glb",
+        "realname": "pot"
       }
     ]
   },
@@ -357,46 +468,60 @@
     "baseScale": 1.5,
     "list": [
       {
-        "name": "cakeSlicer.glb"
+        "name": "cakeSlicer.glb",
+        "realname": "cake slicer"
       },
       {
-        "name": "cheeseSlicer.glb"
+        "name": "cheeseSlicer.glb",
+        "realname": "cheese slicer"
       },
       {
-        "name": "cookingFork.glb"
+        "name": "cookingFork.glb",
+        "realname": "cooking fork"
       },
       {
-        "name": "cookingKnifeChopping.glb"
+        "name": "cookingKnifeChopping.glb",
+        "realname": "chef's knife"
       },
       {
-        "name": "cookingSpatula.glb"
+        "name": "cookingSpatula.glb",
+        "realname": "spatula"
       },
       {
-        "name": "cookingSpoon.glb"
+        "name": "cookingSpoon.glb",
+        "realname": "spoon"
       },
       {
-        "name": "gingerBreadCutter.glb"
+        "name": "gingerBreadCutter.glb",
+        "realname": "cookie cutter"
       },
       {
-        "name": "pepperMill.glb"
+        "name": "pepperMill.glb",
+        "realname": "pepper mill"
       },
       {
-        "name": "pizzaCutter.glb"
+        "name": "pizzaCutter.glb",
+        "realname": "pizza cutter"
       },
       {
-        "name": "rollingPin.glb"
+        "name": "rollingPin.glb",
+        "realname": "rolling pin"
       },
       {
-        "name": "utensilFork.glb"
+        "name": "utensilFork.glb",
+        "realname": "fork"
       },
       {
-        "name": "utensilKnife.glb"
+        "name": "utensilKnife.glb",
+        "realname": "knife"
       },
       {
-        "name": "utensilSpoon.glb"
+        "name": "utensilSpoon.glb",
+        "realname": "spoon"
       },
       {
-        "name": "whisk.glb"
+        "name": "whisk.glb",
+        "realname": "whisk"
       }
     ]
   }

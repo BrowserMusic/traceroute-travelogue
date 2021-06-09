@@ -68,6 +68,7 @@
 
     <concert v-if="isVisible('concert')" :settings="getSettings('concert')" />
     <gif-mess v-if="isVisible('gifmess')" :settings="getSettings('gifmess')" />
+    <fine-dining v-if="isVisible('dining')" :settings="getSettings('dining')" />
   </div>
 </template>
 
@@ -85,6 +86,7 @@ import MediaBackground from "./misc/MediaBackground.vue";
 import Concert from "./attractions/Concert.vue";
 import ProceedButton from "./misc/ProceedButton.vue";
 import GifMess from "./attractions/GifMess.vue";
+import FineDining from "./dining/FineDining.vue";
 
 export default {
   name: "AnimationManager",
@@ -102,6 +104,7 @@ export default {
     Concert,
     ProceedButton,
     GifMess,
+    FineDining,
   },
   props: {
     scene: Object,

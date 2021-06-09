@@ -1,7 +1,9 @@
 <template>
   <div class="fine-dining">
     <div class="the-whole-plate"></div>
-    <NutritionInfo :selected="selected" />
+    <p v-if="isLoaded">{{ generateDishName() }}</p>
+    <proceed-button text="Gosh, how thoughtful" />
+    <!-- <NutritionInfo :selected="selected" /> -->
   </div>
 </template>
 
@@ -10,6 +12,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import NutritionInfo from "./NutritionInfo.vue";
+import ProceedButton from "../misc/ProceedButton.vue";
 const mouse = new THREE.Vector2();
 let sceneObjs = [];
 let INTERSECTED;
@@ -17,10 +20,17 @@ let parentElem;
 
 export default {
   name: "FineDining",
-  components: { NutritionInfo },
+  components: { NutritionInfo, ProceedButton },
   data() {
     return {
       selected: "",
+      isLoaded: false,
+      objs: {
+        food: [],
+        plate: [],
+        tools: [],
+        gizmo: [],
+      },
     };
   },
   mounted() {
@@ -45,17 +55,21 @@ export default {
 
     const loader = new GLTFLoader();
 
+    this.objs.food = objs;
     for (let o of objs) {
       load3DObject(`/gltf/food/${o.name}`, o, loader, scene);
     }
 
     const led = this.$store.getters["dining/getRandomParts"];
+    this.objs.gizmo = [led];
     load3DObject(`/gltf/parts/${led.name}`, led, loader, scene);
 
     const plate = this.$store.getters["dining/getRandomPlate"];
+    this.objs.plate = [plate];
     load3DObject(`/gltf/plates/${plate.name}`, plate, loader, scene);
 
     const tools = this.$store.getters["dining/getRandomTools"];
+    this.objs.tools = tools;
     for (let o of tools) {
       load3DObject(`/gltf/tools/${o.name}`, o, loader, scene);
     }
@@ -97,6 +111,8 @@ export default {
 
     parentElem.addEventListener("mousemove", onMouseMove, false);
     parentElem.addEventListener("click", this.onMouseDown, false);
+
+    this.isLoaded = true;
   },
   beforeDestroy() {
     parentElem.removeEventListener("mousemove", onMouseMove);
@@ -105,6 +121,22 @@ export default {
     onMouseDown() {
       if (INTERSECTED == null) return;
       this.selected = findGrandParent(INTERSECTED).name;
+    },
+    generateDishName() {
+      if (this.objs.food == []) return;
+
+      console.log(this.objs);
+      const foods = this.objs.food.map((s) => s.realname);
+
+      let retval = `We are delighted to serve you this 
+        ${this.objs.plate[0].realname} of 
+        ${foods.join(", ")}, with a side of
+        ${this.objs.gizmo[0].realname}. The ${this.objs.tools[0].realname} and
+        ${this.objs.tools[1].realname} are provided for the purposes
+        of consumpton. Please enjoy your meal.
+      `;
+
+      return retval;
     },
   },
 };
@@ -239,6 +271,15 @@ function randNum(max) {
 <style>
 .fine-dining {
   display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 3em;
+  right: 3em;
+  z-index: 10000;
+  border: 1px solid gray;
+  padding: 1em;
+  background: white;
+  width: calc(800px + 2em);
 }
 .the-whole-plate {
   height: 500px;

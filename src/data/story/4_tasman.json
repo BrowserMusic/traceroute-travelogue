@@ -203,24 +203,56 @@
     ]
   },
   {
-    "type": "dialogue",
-    "id": "large",
-    "level": 3,
+    "type": "animation",
     "components": [
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/beach2.gif",
+            "/images/ocean.gif",
+            "/images/portal.gif",
+            "/images/drink.gif",
+            "/images/cave.gif",
+            "/images/drumkit.gif",
+            "/images/beach2.gif"
+          ]
+        }
+      },
+      {
+        "name": "link",
+        "state": "start",
+        "settings": {
+          "img": "/images/email.gif",
+          "width": "150px"
+        }
+      },
+      {
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "image",
+          "src": "/images/portal.gif"
+        }
+      },
       {
         "name": "imgtimer",
         "state": "stop"
       },
       {
-        "name": "link",
-        "state": "stop"
-      },
-      {
         "name": "character",
         "state": "stop"
-      },
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "large",
+    "level": 3,
+    "components": [
       {
-        "name": "gifmess",
+        "name": "link",
         "state": "stop"
       }
     ],
@@ -277,6 +309,12 @@
     "type": "dialogue",
     "id": "main",
     "level": 1,
+    "components": [
+      {
+        "name": "gifmess",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Zak",
@@ -325,6 +363,18 @@
       {
         "speaker": "Becky",
         "text": "...sure, Karen. "
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "ESCAPE THIS WEIRDNESS FOR AUSTRALIA?"
+        }
       }
     ]
   }
