@@ -44,21 +44,27 @@ export default {
   methods: {
     classDef() {
       let retval = "dialogue-line";
-      // console.log(this.content);
-      // console.log(this.previous);
       if (this.content.speaker != this.previous.speaker) {
         retval = retval + " new-speaker";
       } else {
         this.showUser = false;
       }
 
-      this.myID = `${this.content.speaker}-${this.index}`;
+      this.myID = `${this.content.speaker.trim()}-${this.index}`;
       retval += ` ${this.myID}`;
 
       return retval;
     },
     parsedText(text) {
-      const t = marked.parseInline(text);
+      const renderer = new marked.Renderer();
+      const linkRenderer = renderer.link;
+      renderer.link = (href, title, text) => {
+        const html = linkRenderer.call(renderer, href, title, text);
+        return html.replace(/^<a /, '<a target="_blank" rel="nofollow" ');
+      };
+      // const html = marked(markdown, { renderer });
+
+      const t = marked.parseInline(text, { renderer });
       var res = t
         .split("[[redacted]]")
         .join("<span class='redact'>▥▤▧▩</span>");
