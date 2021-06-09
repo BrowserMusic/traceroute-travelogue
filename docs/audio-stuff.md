@@ -88,3 +88,7 @@ This is a random scene. Here are what all these things mean:
 ### Stop background audio?
 
 In the next scene, do `"audio": false`. 
+
+### Is this also part of the audiosprite?
+
+Yes! It needs to be included in that. I should rename speech.json to something else, but haven't yet.
