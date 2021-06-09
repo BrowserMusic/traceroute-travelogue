@@ -5,9 +5,10 @@ import wellington from "../data/story/1_wellington.json";
 import whanganui from "../data/story/2_whanganui.json";
 import auckland from "../data/story/3_auckland.json";
 import tasman from "../data/story/4_tasman.json";
+import perth from "../data/story/6_perth.json";
 
 function prepJSON() {
-  const path = [wellington, whanganui, auckland, tasman];
+  const path = [wellington, whanganui, auckland, tasman, perth];
   for (let j = 0; j < path.length; j++) {
     for (let i = 0; i < path[j].length; i++) {
       path[j][i].index = i;
@@ -34,7 +35,8 @@ const path = {
     story: prepJSON(),
     sceneIndex: 0, // index of current scene node inside city
     lineIndex: 0, // index of current line if dialogue is present
-    freezeState: false
+    freezeState: false,
+    isFastForward: false
   }), // 4 + 45
   mutations: {
     changeCity(state, city) {
@@ -61,7 +63,10 @@ const path = {
     },
     freeze(state, f) {
       state.freezeState = f;
-    }
+    },
+    changeFastState(state, f) {
+      state.isFastForward = f;
+    },
   },
   getters: {
     // split the coordinates away from the city names
@@ -168,6 +173,7 @@ const path = {
           }
         } else {
           console.log("no more cities! you're boned!");
+          return true;
         }
       }
     },
@@ -218,16 +224,19 @@ const path = {
 
       if (state.currentCity <= cityLimit && state.sceneIndex <= sceneLimit) {
         if (lineLimit == -1 || state.lineIndex <= lineLimit) {
-          await dispatch("next", { "ignoreFreeze": true });
-          return {
-            "current": {
-              "city": state.currentCity, "scene": state.sceneIndex, "line": state.lineIndex
-            },
-            "limit": {
-              "city": cityLimit, "scene": sceneLimit, "line": lineLimit
-            },
-            "under": true
-          };
+          const isEnd = await dispatch("next", { "ignoreFreeze": true });
+          if (isEnd) return false;
+          else {
+            return {
+              "current": {
+                "city": state.currentCity, "scene": state.sceneIndex, "line": state.lineIndex
+              },
+              "limit": {
+                "city": cityLimit, "scene": sceneLimit, "line": lineLimit
+              },
+              "under": true
+            };
+          }
         } else {
           return false;
         }
