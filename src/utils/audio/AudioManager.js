@@ -1,28 +1,25 @@
 import * as Tone from "tone";
-import SpeakerSoundFile from "./SpeakerSoundFile.js";
-import SpeakerSynth from "./SpeakerSynth.js";
-// import folks from "../data/characters.json";
+import SpeakerManager from "./SpeakerManager.js";
+import BackgroundMusicManager from "./BackgroundMusicManager";
+const speechFile = "/audio/speech.mp3";
 
 class AudioManager {
-  constructor(folks, speechFile) {
-    console.log(folks);
-    this.voices = {};
+  constructor() {
     this.player = this.makeAudioPlayer(speechFile);
-
-    for (let f of Object.keys(folks)) {
-      if (!("audio" in folks[f]) || folks[f].audio.type == "base") {
-        const settings = ("audio" in folks[f]) ? folks[f].audio : {};
-        this.voices[f] = new SpeakerSynth(settings);
-      } else if (folks[f].audio.type == "file") {
-        this.voices[f] = new SpeakerSoundFile(this.player, folks[f].audio);
-      }
-    }
-
-    // console.log(this.)
+    this.speech = new SpeakerManager(this.player);
+    this.bg = new BackgroundMusicManager(speechFile);
   }
 
-  play(speaker, { mood, length }) {
-    this.voices[speaker].play(mood, length);
+  play(speaker, obj) {
+    this.speech.play(speaker, obj)
+  }
+
+  playBackground(sound) {
+    this.bg.play(sound);
+  }
+
+  stopBackground() {
+    this.bg.stop();
   }
 
   makeAudioPlayer(speechFile) {
@@ -30,12 +27,34 @@ class AudioManager {
   }
 
   beforeDestroy() {
-    for (let s of Object.keys(this.voices)) {
-      s.beforeDestroy();
-    }
-
+    this.speech.beforeDestroy();
     this.player.dispose();
   }
 }
+
+// class SpritePlayer() {
+//   constructor(file) {
+//     this.player = new Tone.Player(speechFile).toDestination();
+//   }
+
+//   playSoundEvent(sound, time) {
+//     if ("rate" in sound) {
+//       this.player.playbackRate = sound.rate;
+//     }
+//     time = (time == null) ? Tone.now() : time;
+
+//     this.player.start(time, sound.start, sound.duration);
+//   }
+
+//   getRandomSound() {
+//     const index = Math.floor(Math.random() * this.sounds.length);
+//     const duration = this.sounds[index].end - this.sounds[index].start;
+
+//     return {
+//       start: this.sounds[index].start,
+//       duration: duration
+//     };
+//   }
+// }
 
 export default AudioManager;

@@ -4,7 +4,7 @@ class SpeakerSynth {
   constructor(settings) {
     const wave = ("wave" in settings) ? settings.wave : "sine";
     const pitch = ("pitch" in settings) ? settings.pitch : 440.0;
-    const maxLength = ("maxLength" in settings) ? settings.maxLength : 12;
+    const maxLength = ("maxLength" in settings) ? settings.maxLength : 8;
     this.synth = this.makeDefaultSynth(wave);
     this.pitch = pitch;
     this.maxLength = maxLength;
@@ -26,8 +26,6 @@ class SpeakerSynth {
     const seq = new Tone.Sequence(
       (time, note) => {
         this.playEvent(note.pitch, note.mod, time);
-        // this.synth.modulationIndex.value = note.mod;
-        // this.synth.triggerAttackRelease(note.pitch, 0.035, time);
       },
       events.events,
       events.speed
@@ -37,6 +35,7 @@ class SpeakerSynth {
     seq.loop = false;
   }
 
+  // eslint-disable-next-line no-unused-vars
   makeEvents(mood = "normal", limit = 5, deviance = 30) {
     // question, exclamation, puzzled, normal
     let events = [];
@@ -52,7 +51,7 @@ class SpeakerSynth {
       limit += 1;
     }
 
-    limit = Math.min(limit, 8);
+    limit = Math.min(limit, this.maxLength);
 
     for (let i = 0; i < limit; i++) {
       if (mood == "question") {
@@ -60,10 +59,6 @@ class SpeakerSynth {
       }
 
       events[i] = this.generateRandomEvent(pitch);
-      // events[i] = {
-      //   pitch: pitch + (Math.random() * deviance - deviance / 2),
-      //   mod: Math.random() * 20 + 10,
-      // };
     }
 
     return { events: events, speed: speed };

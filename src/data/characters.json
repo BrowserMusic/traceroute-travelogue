@@ -8,7 +8,7 @@
     },
     "audio": {
       "type": "file",
-      "style": "once",
+      "style": "many",
       "sounds": [
         "Zak1",
         "Zak2",
@@ -92,7 +92,8 @@
       "sounds": [
         "dolphcall_med",
         "dolphcall_short"
-      ]
+      ],
+      "maxLength": 4
     }
   },
   "tv": {

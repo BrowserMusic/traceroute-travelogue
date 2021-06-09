@@ -24,6 +24,9 @@ export default {
     scene() {
       return this.$store.getters["path/getScene"];
     },
+    sceneIndex() {
+      return this.$store.state.path.sceneIndex;
+    },
     lineIndex() {
       return this.$store.state.path.lineIndex;
     },
@@ -36,6 +39,7 @@ export default {
   },
   watch: {
     lineIndex() {
+      if (this.$store.state.path.isFastForward) return;
       if (this.line != null) {
         const mood = this.seeMood(this.line.text);
         const length = Math.max(Math.floor(this.line.text.length / 12), 1);
@@ -43,6 +47,16 @@ export default {
           length: length,
           mood: mood,
         });
+      }
+    },
+    sceneIndex() {
+      if (this.$store.state.path.isFastForward) return;
+      if ("audio" in this.scene) {
+        if (!this.scene.audio) {
+          mng.stopBackground();
+        } else {
+          mng.playBackground(this.scene.audio);
+        }
       }
     },
   },
