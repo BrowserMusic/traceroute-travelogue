@@ -36,7 +36,7 @@ export default {
     },
   },
   async mounted() {
-    const limit = { city: 2, scene: 8 };
+    const limit = { city: 3, scene: 0 };
     // await this.fastForward(limit);
     window.addEventListener("keyup", this.proceed);
   },
@@ -59,12 +59,14 @@ export default {
       }
     },
     async fastForward(limit) {
+      this.$store.commit("path/changeFastState", true);
       let stateval = await this.$store.dispatch("path/fastForwardStep", limit);
       while (stateval != false) {
         this.$nextTick();
         stateval = await this.$store.dispatch("path/fastForwardStep", limit);
       }
 
+      this.$store.commit("path/changeFastState", false);
       this.$store.commit("path/freeze", false);
     },
   },
