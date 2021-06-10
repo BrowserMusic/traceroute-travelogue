@@ -78,6 +78,17 @@
     "type": "dialogue",
     "level": 2,
     "id": "tutorial",
+    "components": [
+      {
+        "name": "ipv4",
+        "state": "start",
+        "settings": {
+          "toShow": [
+            "layer"
+          ]
+        }
+      }
+    ],
     "lines": [
       {
         "speaker": "Zak",
@@ -93,7 +104,22 @@
       },
       {
         "speaker": "Guide",
-        "text": "It's time for the top layer of a packet – the **application layer**!"
+        "text": "It's time for the top layer of a packet – the **application layer**!",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "application",
+                  "http",
+                  "dns",
+                  "tls"
+                ]
+              }
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",
@@ -105,7 +131,19 @@
       },
       {
         "speaker": "Guide",
-        "text": "You already know about DNS, but let's talk about HTTP."
+        "text": "You already know about DNS, but let's talk about HTTP.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "http"
+                ]
+              }
+            }
+          }
+        ]
       },
       {
         "speaker": "Becky",
@@ -137,15 +175,54 @@
       },
       {
         "speaker": "Guide",
-        "text": "The request is going to go *inside* the TCP data field, which is *inside* the IP packet data field!"
+        "text": "The request is going to go *inside* the TCP data field, which is *inside* the IP packet data field!",
+        "components": [
+          {
+            "name": "ipv4",
+            "state": "start",
+            "settings": {
+              "toShow": [
+                "ip",
+                "tcp"
+              ],
+              "highlight": {
+                "ip": [
+                  "data"
+                ],
+                "tcp": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",
-        "text": "But now that we know how the previous layers work, we can leave them alone for now."
+        "text": "But now that we know how the previous layers work, we can leave them alone for now.",
+        "components": [
+          {
+            "name": "ipv4",
+            "state": "stop"
+          }
+        ]
       },
       {
         "speaker": "Guide",
-        "text": "here is what a very basic HTTP request looks like."
+        "text": "here is what a very basic HTTP request looks like.",
+        "components": [
+          {
+            "name": "http",
+            "state": "start",
+            "settings": {
+              "method": "GET",
+              "query": "/search?q=test",
+              "version": "HTTP 1.1",
+              "host": "www.[[redacted]].com",
+              "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:89.0) Gecko/20100101 Firefox/89.0"
+            }
+          }
+        ]
       },
       {
         "speaker": "Becky",
@@ -153,7 +230,15 @@
       },
       {
         "speaker": "Guide",
-        "text": "Let's start in the middle. The **host** is the site you're requesting, which, as you already know, is [[redacted]].."
+        "text": "Let's start in the middle. The **host** is the site you're requesting, which, as you already know, is [[redacted]]..",
+        "components": [
+          {
+            "name": "http",
+            "settings": {
+              "highlight": "host"
+            }
+          }
+        ]
       },
       {
         "speaker": "Becky",
@@ -181,7 +266,15 @@
       },
       {
         "speaker": "Zak",
-        "text": "hey, is it me, or is that **User-Agent** thing my actual computer and browser?"
+        "text": "hey, is it me, or is that **User-Agent** thing my actual computer and browser?",
+        "components": [
+          {
+            "name": "http",
+            "settings": {
+              "highlight": "agent"
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",
@@ -201,7 +294,15 @@
       },
       {
         "speaker": "Guide",
-        "text": "The capitalized GET is the HTTP method in use. \"GET\" means you're asking the server to give you something."
+        "text": "The capitalized GET is the HTTP method in use. \"GET\" means you're asking the server to give you something.",
+        "components": [
+          {
+            "name": "http",
+            "settings": {
+              "highlight": "method"
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",
@@ -225,7 +326,15 @@
       },
       {
         "speaker": "Guide",
-        "text": "The bit to the right of GET is the **query string** to send to the host, which would look like `www.[[redacted]].com/search?q=test` in your browser's address bar."
+        "text": "The bit to the right of GET is the **query string** to send to the host, which would look like `www.[[redacted]].com/search?q=test` in your browser's address bar.",
+        "components": [
+          {
+            "name": "http",
+            "settings": {
+              "highlight": "query"
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",
@@ -233,7 +342,16 @@
       },
       {
         "speaker": "Guide",
-        "text": "And, as you might imagine, there's a data field below this, which you'd only use if you wanted something specific out of the server or, say, had a specific message that needed sending."
+        "text": "And, as you might imagine, there's a data field below this, which you'd only use if you wanted something specific out of the server or, say, had a specific message that needed sending.",
+        "components": [
+          {
+            "name": "http",
+            "settings": {
+              "method": "POST",
+              "data": "\"get a load of that book!\""
+            }
+          }
+        ]
       },
       {
         "speaker": "Zak",
@@ -268,7 +386,13 @@
     "lines": [
       {
         "speaker": "Zak",
-        "text": "hey, [[redacted]]?"
+        "text": "hey, [[redacted]]?",
+        "components": [
+          {
+            "name": "http",
+            "state": "stop"
+          }
+        ]
       },
       {
         "speaker": "redacted",
@@ -308,7 +432,30 @@
       },
       {
         "speaker": "Zak",
-        "text": "is that crufty enough?"
+        "text": "is that crufty enough?",
+        "components": [
+          {
+            "name": "http",
+            "state": "start",
+            "settings": {
+              "method": "POST",
+              "query": "/chats/packetsphere/messages",
+              "version": "HTTP 1.1",
+              "host": "www.[[redacted]].com",
+              "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:89.0) Gecko/20100101 Firefox/89.0",
+              "data": {
+                "action": "create",
+                "fromUser": "zak",
+                "toUser": "becky",
+                "version": "1.0",
+                "message": "hello",
+                "attachments": [
+                  "/images/floating_head.gif"
+                ]
+              }
+            }
+          }
+        ]
       },
       {
         "speaker": "redacted",
