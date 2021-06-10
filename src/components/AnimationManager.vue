@@ -48,6 +48,8 @@
       :settings="getSettings('draganddrop')"
     />
 
+    <HTTPRequest v-if="isVisible('http')" :settings="getSettings('http')" />
+
     <media-background
       v-if="isVisible('mediabg')"
       :settings="getSettings('mediabg')"
@@ -87,6 +89,7 @@ import Concert from "./attractions/Concert.vue";
 import ProceedButton from "./misc/ProceedButton.vue";
 import GifMess from "./attractions/GifMess.vue";
 import FineDining from "./dining/FineDining.vue";
+import HTTPRequest from "./attractions/HTTPRequest.vue";
 
 export default {
   name: "AnimationManager",
@@ -105,6 +108,7 @@ export default {
     ProceedButton,
     GifMess,
     FineDining,
+    HTTPRequest,
   },
   props: {
     scene: Object,
