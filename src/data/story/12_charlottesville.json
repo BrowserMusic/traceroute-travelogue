@@ -1,0 +1,37 @@
+[
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "here's my stop."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah, I'll be seeing you the minute I refresh!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "are you going to be okay getting home?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah, I'm sure the orb can find me a Michael or three to take me back through the lines."
+      },
+      {
+        "speaker": "Becky",
+        "text": "alright, here goes"
+      },
+      {
+        "speaker": "notice",
+        "text": "Becky refreshes the page."
+      }
+    ]
+  }
+]

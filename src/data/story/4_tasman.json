@@ -3,6 +3,10 @@
     "type": "animation",
     "components": [
       {
+        "name": "mediabg",
+        "state": "stop"
+      },
+      {
         "name": "imgtimer",
         "state": "start",
         "settings": {
@@ -36,7 +40,23 @@
             "/images/drink.gif",
             "/images/cave.gif",
             "/images/drumkit.gif",
-            "/images/beach2.gif"
+            "/images/beach2.gif",
+            "/images/orca.gif",
+            "/images/orca.gif",
+            "/images/orcawithhouse.gif",
+            "/images/seaturtle.gif",
+            "/images/seaturtle.gif",
+            "/images/seaturtle.gif",
+            "/images/seaturtle.gif",
+            "/images/seaturtle.gif",
+            "/images/seawelcomebanner.gif",
+            "/images/beach.gif",
+            "/images/beachwithboat.gif",
+            "/images/bluefish.gif",
+            "/images/bubbles.gif",
+            "/images/dolphin.gif",
+            "/images/dolphin_swim.gif",
+            "/images/porthole.gif"
           ]
         }
       },
@@ -203,56 +223,24 @@
     ]
   },
   {
-    "type": "animation",
-    "components": [
-      {
-        "name": "gifmess",
-        "state": "start",
-        "settings": {
-          "images": [
-            "/images/beach2.gif",
-            "/images/ocean.gif",
-            "/images/portal.gif",
-            "/images/drink.gif",
-            "/images/cave.gif",
-            "/images/drumkit.gif",
-            "/images/beach2.gif"
-          ]
-        }
-      },
-      {
-        "name": "link",
-        "state": "start",
-        "settings": {
-          "img": "/images/email.gif",
-          "width": "150px"
-        }
-      },
-      {
-        "name": "mediabg",
-        "state": "start",
-        "settings": {
-          "type": "image",
-          "src": "/images/portal.gif"
-        }
-      },
-      {
-        "name": "imgtimer",
-        "state": "stop"
-      },
-      {
-        "name": "character",
-        "state": "stop"
-      }
-    ]
-  },
-  {
     "type": "dialogue",
     "id": "large",
     "level": 3,
     "components": [
       {
+        "name": "imgtimer",
+        "state": "stop"
+      },
+      {
         "name": "link",
+        "state": "stop"
+      },
+      {
+        "name": "character",
+        "state": "stop"
+      },
+      {
+        "name": "gifmess",
         "state": "stop"
       }
     ],
@@ -311,8 +299,12 @@
     "level": 1,
     "components": [
       {
-        "name": "gifmess",
-        "state": "stop"
+        "name": "character",
+        "state": "start",
+        "settings": {
+          "name": "karen",
+          "align": "right"
+        }
       }
     ],
     "lines": [
@@ -335,7 +327,29 @@
       {
         "speaker": "ITG",
         "text": "*beeping*"
-      },
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 2,
+          "title": " ",
+          "image": "/images/CRT_graveyard.jpg",
+          "text": " "
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
       {
         "speaker": "ITG",
         "text": "Since the advent of Internet-of-Things technology, where devices have increasingly become expected to connect to the internet (our phones, watches, refrigerators) the internet is increasingly made up of a bunch of random future-junk. "
@@ -354,7 +368,7 @@
       },
       {
         "speaker": "Karen",
-        "text": "Oh, I eat garbage."
+        "text": "oh, I eat garbage."
       },
       {
         "speaker": "Karen",
@@ -368,6 +382,7 @@
   },
   {
     "type": "animation",
+    "pathid": "to-sydney1",
     "components": [
       {
         "name": "bigbutton",
@@ -375,6 +390,10 @@
         "settings": {
           "text": "ESCAPE THIS WEIRDNESS FOR AUSTRALIA?"
         }
+      },
+      {
+        "name": "hub",
+        "state": "stop"
       }
     ]
   }

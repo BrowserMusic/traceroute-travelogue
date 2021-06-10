@@ -1,0 +1,102 @@
+[
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Guide",
+        "text": "We're now in an area where new NFTs are being minted and auctioned."
+      },
+      {
+        "speaker": "Zak",
+        "text": "sorry, what's an NFT again?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "NFT stands for non-fungible tokens. A single NFT can be a single piece of digital art, that is limited in number and made to be \"bought\" and \"owned\" through a cryptocurrency transaction."
+      },
+      {
+        "speaker": "Becky",
+        "text": "and people go crazy for them!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Yes, the art auction house Christie's recently auctioned their first NFT piece, which was a catalogue of 3D artist Beeple's daily renders, for $69 million. "
+      },
+      {
+        "speaker": "Becky",
+        "text": "and this has led to environmental concerns as well, right? Not just because the transactions are done with cryptocurrency?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "The auctions and minting process are deeply tied into how cryptocurrencies operate. NFTs are generated with a blockchain, just like Bitcoin, which means they're also dependent on the same energy-heavy \"proof of work\" calculations."
+      },
+      {
+        "speaker": "Guide",
+        "text": "While some NFT and cryptocurrency systems are trying to find more energy-efficient means of authenticating transactions, established systems like Bitcoin and Ethereum are unlikely to change, due to the investment already made by so many miners."
+      },
+      {
+        "speaker": "Zak",
+        "text": "I think what makes me even more uneasy about this versus something like people throwing out too many cellphones too quickly is that all of this stuff is really invisible. "
+      },
+      {
+        "speaker": "Becky",
+        "text": "bleh, well I think we're almost at the finish line, shall we get out of here?"
+      },
+      {
+        "speaker": "Orb",
+        "text": "EXIT FACILITATED BY TIER 1 NETWORK LOCATION. ACCESS TO TIER 1 FACILITY IN ASHBURN, VIRGINIA AVAILABLE."
+      },
+      {
+        "speaker": "Becky",
+        "text": "oh, hey, I guess it's been awhile since we heard from you"
+      },
+      {
+        "speaker": "Zak",
+        "text": "what's that tier 1 stuff?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "*beeping*"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Did you know? The internet isn't just one network, but a huge, interconnected mess of interlinking networks!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Every ISP is its own network, schools and businesses are often their own networks, as are governments. Technically, even your home is its own network, since it's a collection of devices under the same router."
+      },
+      {
+        "speaker": "Guide",
+        "text": "But these separate networks can communicate because they all speak the Internet Protocol!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Tier 1 networks are called the \"backbone\" of the internet. Most of them use fibre-optic instead of electrical cable, take part in the installation and purchasing of submarine cables, and exchange data between each other at no cost."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Most tier 1 networks are also ISPs. You probably recognize a lot of these names!",
+        "TODO": "needs Tier 1 wikipedia link"
+      },
+      {
+        "speaker": "Zak",
+        "text": "isn't this a bit of a tonal shift?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "huh, I do recognize a lot of these names, but my ISP isn't on this list."
+      },
+      {
+        "speaker": "Becky",
+        "text": "wonder how we're getting to my home?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Hop on in, and we'll find out!"
+      }
+    ]
+  }
+]

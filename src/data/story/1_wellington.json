@@ -175,7 +175,12 @@
         "components": [
           {
             "name": "ipv4",
-            "state": "start"
+            "state": "start",
+            "settings": {
+              "toShow": [
+                "ip"
+              ]
+            }
           }
         ]
       },
@@ -186,10 +191,12 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "source",
-                "destination"
-              ]
+              "highlight": {
+                "ip": [
+                  "source",
+                  "destination"
+                ]
+              }
             }
           }
         ]
@@ -225,9 +232,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "version"
-              ]
+              "highlight": {
+                "ip": [
+                  "version"
+                ]
+              }
             }
           }
         ]
@@ -239,9 +248,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "ihl"
-              ]
+              "highlight": {
+                "ip": [
+                  "ihl"
+                ]
+              }
             }
           }
         ]
@@ -253,9 +264,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "totalLength"
-              ]
+              "highlight": {
+                "ip": [
+                  "totalLength"
+                ]
+              }
             }
           }
         ]
@@ -271,9 +284,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "typeOfService"
-              ]
+              "highlight": {
+                "ip": [
+                  "typeOfService"
+                ]
+              }
             }
           }
         ]
@@ -297,9 +312,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "identification"
-              ]
+              "highlight": {
+                "ip": [
+                  "identification"
+                ]
+              }
             }
           }
         ]
@@ -311,9 +328,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "flag"
-              ]
+              "highlight": {
+                "ip": [
+                  "flag"
+                ]
+              }
             }
           }
         ]
@@ -325,9 +344,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "fragOff"
-              ]
+              "highlight": {
+                "ip": [
+                  "fragOff"
+                ]
+              }
             }
           }
         ]
@@ -363,9 +384,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "ttl"
-              ]
+              "highlight": {
+                "ip": [
+                  "ttl"
+                ]
+              }
             }
           }
         ]
@@ -393,9 +416,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "protocol"
-              ]
+              "highlight": {
+                "ip": [
+                  "protocol"
+                ]
+              }
             }
           }
         ]
@@ -411,9 +436,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "headerChecksum"
-              ]
+              "highlight": {
+                "ip": [
+                  "headerChecksum"
+                ]
+              }
             }
           }
         ]
@@ -425,9 +452,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "data"
-              ]
+              "highlight": {
+                "ip": [
+                  "data"
+                ]
+              }
             }
           }
         ]
@@ -475,9 +504,11 @@
           {
             "name": "ipv4",
             "settings": {
-              "highlight": [
-                "stop"
-              ]
+              "highlight": {
+                "ip": [
+                  "stop"
+                ]
+              }
             }
           }
         ]

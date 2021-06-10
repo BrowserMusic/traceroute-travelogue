@@ -1,0 +1,486 @@
+[
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Orb",
+        "text": "ARRIVAL PROCESSED. TIER 1 LOCATION CAPABLE OF TRANSITIONING TO LOCAL NETWORK VIA INTERNET EXCHANGE POINT."
+      },
+      {
+        "speaker": "Orb",
+        "text": "PROCEED TO DESTINATION VIA AFOREMENTIONED IXP."
+      },
+      {
+        "speaker": "Zak",
+        "text": "hey, so was that food Karen gave you any good?"
+      },
+      {
+        "speaker": "Orb",
+        "text": "..."
+      },
+      {
+        "speaker": "Orb",
+        "text": "..."
+      },
+      {
+        "speaker": "Becky",
+        "text": "I think Karen was right about your jokes, Orb."
+      },
+      {
+        "speaker": "Zak",
+        "text": "okay, so what's the deal with an IXP?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Internet Exchange Points keep your traffic local! They let any networks communicate for free, similar to a tier 1 network destination."
+      },
+      {
+        "speaker": "Guide",
+        "text": "But instead of a tier 1, which normally speaks only to other tier 1s, an IXP lets *any* network in its center communicate for free."
+      },
+      {
+        "speaker": "Guide",
+        "text": "This means that an email you send to your next-door neighbor will likely only travel in your local network, instead of getting kicked halfway across the country, or even to another continent!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "that seems helpful?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Absolutely! And IXPs in developing nations are an enormous boost, as these countries would often be dealing with expensive international connections otherwise."
+      },
+      {
+        "speaker": "Becky",
+        "text": "so, I guess my ISP has a router in this IXP or something?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I think we're just about ready to finish this journey"
+      },
+      {
+        "speaker": "Becky",
+        "text": "but we still have one loose end"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah, you. we need to finish requesting you."
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 2,
+    "id": "tutorial",
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "oh, okay, back in the explanation zone."
+      },
+      {
+        "speaker": "Zak",
+        "text": "and I see the guide already put up that layering diagram again"
+      },
+      {
+        "speaker": "Zak",
+        "text": "so what's left?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "It's time for the top layer of a packet – the **application layer**!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "This is the part you're used to. Everything else below it has just been in service of sending packets or reconstructing messages *from* packets, but the application layer is where we get. Stuff. Done!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "These are all protocols, too, and different ways of asking for \"stuff\" from various servers."
+      },
+      {
+        "speaker": "Guide",
+        "text": "You already know about DNS, but let's talk about HTTP."
+      },
+      {
+        "speaker": "Becky",
+        "text": "oh! I know this one, it's **HyperText Transfer Protocol.**"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Whenever you load a web page, your browser first makes an HTTP request for that page."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Once it gets the page body, it runs through it and finds every single piece of content – every image, every video, every script – and sends an HTTP request for each one."
+      },
+      {
+        "speaker": "Guide",
+        "text": "HTTP is the protocol that makes web pages on a browser interesting, or even possible!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "you're saying \"request,\" but we've been talking about packets this whole time. is this... different?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Not in the slightest! Do you recall the human matroshka doll analogy?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "is the request going to go"
+      },
+      {
+        "speaker": "Guide",
+        "text": "The request is going to go *inside* the TCP data field, which is *inside* the IP packet data field!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "But now that we know how the previous layers work, we can leave them alone for now."
+      },
+      {
+        "speaker": "Guide",
+        "text": "here is what a very basic HTTP request looks like."
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, this certainly looks a lot more human-readable than those packet diagrams"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Let's start in the middle. The **host** is the site you're requesting, which, as you already know, is [[redacted]].."
+      },
+      {
+        "speaker": "Becky",
+        "text": "wait – if we went through all that trouble with DNS to get an IP address for [[redacted]], why is the host still listed as a URL?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Ah, because you did things a bit out of order!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "In the real world, when your browser first sends the HTTP request, this triggers the start of the DNS resolution process through your ISP."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Your browser stores the IP address it receives, so that you only need to go through that process once."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Then the TCP handshake occurs, after which you continue sending HTTP requests over that TCP connection."
+      },
+      {
+        "speaker": "Guide",
+        "text": "For the purposes of your journey, we stayed mum about the HTTP aspect of this process until just now."
+      },
+      {
+        "speaker": "Zak",
+        "text": "hey, is it me, or is that **User-Agent** thing my actual computer and browser?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Probably!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Since there are differences between different computing devices and the browsers they use, this lets the server determine what to give you."
+      },
+      {
+        "speaker": "Becky",
+        "text": "alright, and then what's the bit at the top?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Why, that's the start line!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "The capitalized GET is the HTTP method in use. \"GET\" means you're asking the server to give you something."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Whenever you go to a webpage, expecting to see all its content and images, you're using the GET HTTP method."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Other methods, like POST, mean you're sending something new to the server, and generally you expect some changes as a result."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Like, purely hypothetically, if you were to send a message to someone, that might be a POST request."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Guide",
+        "text": "Ah! Yes, there you are, hypothetical message."
+      },
+      {
+        "speaker": "Guide",
+        "text": "The bit to the right of GET is the **query string** to send to the host, which would look like `www.[[redacted]].com/search?q=test` in your browser's address bar."
+      },
+      {
+        "speaker": "Guide",
+        "text": "These are site-specific – every website server gets to decide for itself what a given query string translates to."
+      },
+      {
+        "speaker": "Guide",
+        "text": "And, as you might imagine, there's a data field below this, which you'd only use if you wanted something specific out of the server or, say, had a specific message that needed sending."
+      },
+      {
+        "speaker": "Zak",
+        "text": "so the server at [[redacted]] kept mentioning earlier that it would be sending me stuff that I needed to acknowledge."
+      },
+      {
+        "speaker": "Zak",
+        "text": "is that in here somewhere?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Nearly! For every HTTP request sent, you'll receive an HTTP response."
+      },
+      {
+        "speaker": "Guide",
+        "text": "If your request was successful, you'll get the content in the response, alongside a `200 Success` message."
+      },
+      {
+        "speaker": "Guide",
+        "text": "If it failed, you'll get a response with a `404 Not Found` error message, with little or no content included."
+      },
+      {
+        "speaker": "Zak",
+        "text": "that sounds like it might be everything we need to finish this trip!"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "hey, [[redacted]]?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "Hm?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I'd like to finish sending this message or packet or request or whatever to Becky."
+      },
+      {
+        "speaker": "Zak",
+        "text": "Can I ask you to do that over HTTP?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "You sure can! Give me your best POST request and I can get you taken care of."
+      },
+      {
+        "speaker": "redacted",
+        "text": "In reality, the site I host probably has a lot of extra data it'll add in, like your username, the username of your recipient, your timezone, the exact time you sent it..."
+      },
+      {
+        "speaker": "redacted",
+        "text": "...the contents of your message, whether you're making a new message or editing an old one, any images that are part of your message, maybe the version of [[redacted]] you're currently using, but..."
+      },
+      {
+        "speaker": "redacted",
+        "text": "But today's a special day. No cruft needed."
+      },
+      {
+        "speaker": "Zak",
+        "text": "actually, I think I can do the cruft!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "let's see, here..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "is that crufty enough?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "It'll do the job!"
+      },
+      {
+        "speaker": "notice",
+        "text": "[[redacted]] concentrates for a moment."
+      },
+      {
+        "speaker": "redacted",
+        "text": "Hey, is there a Becky on the line, over?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah? over?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "10-4, alright, TCP handshake established."
+      },
+      {
+        "speaker": "redacted",
+        "text": "For the purposes of the abstraction, could you refresh whatever browser tab has [[redacted]] in it?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "you mean, like, me?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "or the viewer?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "You!"
+      },
+      {
+        "speaker": "redacted",
+        "text": "Do you really want to make the viewer go through all of this *again?*"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I think I'm about to send you an army of GET requests, right?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "Yep! An average chat app like me could generate somewhere between 80 and 120 requests just on page load."
+      },
+      {
+        "speaker": "redacted",
+        "text": "And you'll get just as many responses back."
+      },
+      {
+        "speaker": "Becky",
+        "text": "that's... a lot"
+      },
+      {
+        "speaker": "Becky",
+        "text": "hey, can we pause for a minute before I head home and hit refresh?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "I'll be waiting."
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 2,
+    "id": "tutorial",
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "oof! okay, let's try and recap."
+      },
+      {
+        "speaker": "Zak",
+        "text": "what did we really end up learning about the whole *cost* of this journey?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, I guess that the internet is such a deep rabbit hole that it's almost impossible to say for certain *what* it costs."
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah I mean especially when it comes to energy consumption"
+      },
+      {
+        "speaker": "Becky",
+        "text": "your head got sent all over the world in all these zig-zaggy ways to avoid traffic and packet congestion..."
+      },
+      {
+        "speaker": "Becky",
+        "text": "even though specific systems exist to reduce the amount of zagging needed..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "even though I guess that's because the systems of routers care about maintianing an effecient system..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "but it's at such a huge scale that I don't even know how to say what efficiency *means*, only that it appears inefficient to me."
+      },
+      {
+        "speaker": "Becky",
+        "text": "and nobody sees any of this unless they go digging, like we did."
+      },
+      {
+        "speaker": "Becky",
+        "text": "it's crazy!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "wait, so what about this specific project?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I know we're not mining Bitcoin or anything, but we're still participating in the system that's causing the problem."
+      },
+      {
+        "speaker": "Zak",
+        "text": "since we have to be hosted *somewhere*, after all"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I don't know what to think about it."
+      },
+      {
+        "speaker": "Becky",
+        "text": "When I was putting this whole site together, I kept looking at the network tab in the developer tools"
+      },
+      {
+        "speaker": "Becky",
+        "text": "and every time I looked, I kept noticing all the resources I was using."
+      },
+      {
+        "speaker": "Becky",
+        "text": "it takes so many little images to make up the map, and every time it moves, it has to load more of them!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "and all these gifs? and the audio?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "it's all *stuff.*"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I guess it's kind of like how we felt about the Internet Archive"
+      },
+      {
+        "speaker": "Zak",
+        "text": "it's using way more space than us, but at least it's working for the public good."
+      },
+      {
+        "speaker": "Zak",
+        "text": "but it sounds like we're trying to ask if it was ethically or morally just to make this, and for you to experience it, which, like"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I don't know how to answer that, either"
+      },
+      {
+        "speaker": "Becky",
+        "text": "here. I'll just drop the full list of everything your browser made an HTTP request for while you were here."
+      },
+      {
+        "speaker": "Becky",
+        "text": "viewer, were we worth {{16 mb}} to you?"
+      }
+    ]
+  }
+]

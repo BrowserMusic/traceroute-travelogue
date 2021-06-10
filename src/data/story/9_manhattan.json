@@ -1,0 +1,141 @@
+[
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "I wonder where we are now?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Well, you're somewhere near a town now called Manhattan Kansas."
+      },
+      {
+        "speaker": "Michael",
+        "text": "But this particular spot is actually a cryptomine..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "cryptomine?"
+      },
+      {
+        "speaker": "ITG",
+        "text": "*beeps*"
+      },
+      {
+        "speaker": "Michael",
+        "text": "You might want to ask your Internet Travel Guide more about that."
+      },
+      {
+        "speaker": "Michael",
+        "text": "I know my way around a server, but crypto – I don't truck with that nonsense."
+      },
+      {
+        "speaker": "Becky",
+        "text": "how did you know we had a guide?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "How do you think I found you?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Cryptomining is a practice used to decentralize transaction information for cryptocurrencies."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Cryptominers use computers with high processing power to solve complex number comparisons through brute force."
+      },
+      {
+        "speaker": "Guide",
+        "text": "They're essentially trying to guess a number lower than some unknown target number, but that unknown target number is getting added with *another* number that they also don't know."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Since the only way to guess correctly, they just keep guessing... trillions of times."
+      },
+      {
+        "speaker": "Guide",
+        "text": "As you can imagine, this uses a lot of energy!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "..."
+      },
+      {
+        "speaker": "Becky",
+        "text": "no breathers, I guess."
+      },
+      {
+        "speaker": "Zak",
+        "text": "we've heard a lot about that today, but I'll bite – how much energy?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "The energy consumption for Bitcoin, the first and largest cryptocurrency, uses about 116 TWh per year, which is approximately 0.53% percent of the world's total energy consumption."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Which is more power than the Phillippines or the Netherlands use – per *year!*"
+      },
+      {
+        "speaker": "Guide",
+        "text": "And as the value of these currencies increase in perceived value, Bitcoin self-balances by making the size in bits of the target number bigger, which exponentially increases the number of calculations required to guess it correctly."
+      },
+      {
+        "speaker": "Guide",
+        "text": "So the amount of time and energy needed to mine increases, even as the amount of currency mined stays the same."
+      },
+      {
+        "speaker": "Guide",
+        "text": "And it's still entirely random whether your trillions of calcuations result in currency, since a new coin is only given to the first miner that gets a correct hash."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Often, the value of the coin minted barely covers the energy costs of operating the mining rig!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "wow, so this entire system is a bit of nightmare... it's almost like this was designed to tear up the environment..."
+      },
+      {
+        "speaker": "Guide",
+        "text": "From the a miner's perspective, the best way to remain competitive and increase returns on investment is by increasing computing power. "
+      },
+      {
+        "speaker": "Guide",
+        "text": "This competitive framework leads to more demand for high-powered computers and the strain on the computers means they will fall defunct sooner. "
+      },
+      {
+        "speaker": "Guide",
+        "text": "This is how cryptomining leads to massive amounts of e-waste generated annually, just like your TV friend you met in the ocean. "
+      },
+      {
+        "speaker": "Guide",
+        "text": "The same thing happens with servers. To keep pace with the world's connectivity needs, a data center has to keep upgrading servers, hard drives, routers... and a *lot* of that winds up as e-waste!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "wow, that's pretty messed up!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "it's one thing for servers to use energy, I get that, but it feels weird that it's just a bunch of random people with huge computers churning through energy as fast as possible."
+      },
+      {
+        "speaker": "Zak",
+        "text": "and isn't this related to some big conversations going on throughout the art world at the moment when it comes to NFTs, whatever those are?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Hey, yeah! There's some of that going on too, over here!"
+      },
+      {
+        "speaker": "Michael",
+        "text": "We can hit up an auction house on our next stop."
+      }
+    ]
+  }
+]

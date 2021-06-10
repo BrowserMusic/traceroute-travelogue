@@ -1,0 +1,454 @@
+[
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Local Gif",
+        "text": "Welcome to GeoCity!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "Geocity... like, from... \"*GeoCities*\"? "
+      },
+      {
+        "speaker": "Karen ",
+        "text": "!!!!"
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "Yes, sort of. The site data that accumulated from GeoCities' inception in 1994 till its shutdown on 26th October 2009 has become dispersed over time. It still exists, chunked out in different private, public or discarded collections across the world. You're currently in one of those archives. "
+      },
+      {
+        "speaker": "Karen",
+        "text": "I know this place! I think my homepage might be here somewhere..."
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "mostly this is just a bunch of scattered .gifs and other things left over, but you're welcome to look around!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "hey, so..."
+      },
+      {
+        "speaker": "Becky",
+        "text": "don't take this the wrong way, but who's still holding on to all this stuff?"
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "What do you mean?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "servers cost money, right? I mean, I'm guessing that's why Yahoo shut down GeoCities, because it wasn't viable."
+      },
+      {
+        "speaker": "Becky",
+        "text": "this is kind of a ghost town, but who's hosting it?"
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "Oh! That'll be the Internet Archive. They've been storing an archive of as many webpages as they can crawl since 1996."
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "There's not much left of something like GeoCities otherwise, eh? Any page that goes offline without getting backed up – poof!"
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "Gone forever."
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "Anyhow, their servers are up north in San Fransisco, but we've probably got some bits and bobs cached down here in Redlands."
+      },
+      {
+        "speaker": "Zak",
+        "text": "so how many webpages is that, if it's not just GeoCities they're storing?"
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "They've got nearly 70+ petabytes of data tucked away!"
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "And it's not just sitting there, either – their server gets about 2k requests a second."
+      },
+      {
+        "speaker": "Becky",
+        "text": "that's..."
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah."
+      },
+      {
+        "speaker": "Local Gif",
+        "text": "Well, if you weren't quite so human, those numbers wouldn't spook you!"
+      },
+      {
+        "speaker": "Karen",
+        "text": "Hey, you guys! I really think my homepage is in here somewhere!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "really?"
+      },
+      {
+        "speaker": "Karen",
+        "text": "Yes, really! I bet one of these .gifs know the way, maybe if we try clicking on them?"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "TODO": "add a hub here with a bunch of clickable gifs"
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Karen",
+        "text": "Wow, this is incredible, I'm finally reunited with my homepage!"
+      },
+      {
+        "speaker": "Karen",
+        "text": "Be still my frames, I forgot she put me on page one of the Name Animations examples."
+      },
+      {
+        "speaker": "Karen",
+        "text": "I barely remembered I had neighbors! Should I get something for Emmy and Emily?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "well, I don't really know what to get a gif as a present"
+      },
+      {
+        "speaker": "Becky",
+        "text": "do you have anything left of the food from earlier, or did you give it all to the orb?"
+      },
+      {
+        "speaker": "Karen",
+        "text": "Oh, I know!"
+      },
+      {
+        "speaker": "Karen",
+        "text": "The blinkies page had some great flower gifs. I'm sure they'd love those."
+      },
+      {
+        "speaker": "Karen",
+        "text": "You folks have a safe rest of your trip. Thanks for your help!"
+      },
+      {
+        "speaker": "notice",
+        "text": "Karen goes home."
+      },
+      {
+        "speaker": "Zak",
+        "text": "bye, Karen."
+      },
+      {
+        "speaker": "Becky",
+        "text": "speaking of home..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah, good point. we're back on land, so swimming was already out of the question, but who's taking us from here?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "howdy! "
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Zak",
+        "text": "(good timing)"
+      },
+      {
+        "speaker": "Michael",
+        "text": "my name's Michael."
+      },
+      {
+        "speaker": "Zak",
+        "text": "I'm guessing Michael's related to Mike and Mikey?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Those two are my cousins. Hey, if you know those two, you must be alright!"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Let me know if you want a tour though the mines anytime!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "TODO": "HEAD DOWN TO THE MINES WITH MICHAEL?"
+  },
+  {
+    "type": "animation",
+    "TODO": "loadgif goes here, but only 1 second long"
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "say, Michael?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Hm?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "that gif by the old GeoCities cache was telling us about how big the Internet Archive is."
+      },
+      {
+        "speaker": "Becky",
+        "text": "I don't even know how to think about 70 petabytes. That's so much information."
+      },
+      {
+        "speaker": "Becky",
+        "text": "how does that even *work?*"
+      },
+      {
+        "speaker": "Becky",
+        "text": "is that, like, more than I could expect from an average data center? less?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Oh, you want to talk infrastructure?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I guess?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Let me *tell* you about some infrastructure!"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Most data centers don't actually tell us anything about themselves."
+      },
+      {
+        "speaker": "Michael",
+        "text": "Security reasons, supposedly, but I can't *bear* such a complete lack of transparency."
+      },
+      {
+        "speaker": "Zak",
+        "text": "(don't you live underground?)"
+      },
+      {
+        "speaker": "Michael",
+        "text": "So nearly everything is based on guesswork, and the few details we *are* given, like data center wattage and the size of the data center's building."
+      },
+      {
+        "speaker": "Michael",
+        "text": "But the Internet Archive?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Since they're a library and a public service, they're more open with what gear they're sportin'."
+      },
+      {
+        "speaker": "Michael",
+        "text": "Get a load of this beauty! As of this conversation, each of these vertical racks holds about 10 individual servers."
+      },
+      {
+        "speaker": "Michael",
+        "text": "Each individual server is a size that could handle somewhere between 24-36 hard drives, and the Archive is slowly switching as many of their drives over to 16 TB drives as they can."
+      },
+      {
+        "speaker": "Michael",
+        "text": "So every single one of those blocks could represent as much as 512 terabytes, meaning a single rack could hold as much as 5 petabytes."
+      },
+      {
+        "speaker": "Michael",
+        "text": "Not every server is equipped the same, so some of them are likely less than this. But to support their current storage maximum of 200 PB, that means they have at least 40 racks worth of servers."
+      },
+      {
+        "speaker": "Zak",
+        "text": "that's... a lot of storage"
+      },
+      {
+        "speaker": "Zak",
+        "text": "not to get blue about this, but... how much power do all those servers take?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Well!"
+      },
+      {
+        "speaker": "Michael",
+        "text": "If we've got at least 40 racks with 10 servers each, that's 400 servers in total."
+      },
+      {
+        "speaker": "Michael",
+        "text": "The power needed for the size of server the IA uses seems to clock in around 1200 – 1400 watts these days."
+      },
+      {
+        "speaker": "Zak",
+        "text": "so, something like 1300 watts per server, 400 times..."
+      },
+      {
+        "speaker": "Michael",
+        "text": "If the whole center is operating at 100% all day, it's about 525000 watts per hour, so about 12.6 kWh per day."
+      },
+      {
+        "speaker": "Michael",
+        "text": "That's about 378,000 kWh per month, though it looks much better as 378 megawatt hours a month!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "and how much do I use!?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "You? Oh, the average US home uses about 10.7kWh per year."
+      },
+      {
+        "speaker": "Zak",
+        "text": "they use more in a *day* than I do in a *year?*"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Well, are you providing an international service and/or hosting one of the internet's 200 favorite websites?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I guess not..."
+      },
+      {
+        "speaker": "Michael",
+        "text": "I'm sure that seems like a lot, but if you want a comparison, the average hyperscale data center – the kind Google, Amazon, and Microsoft house – has a power draw of about 30 mWh."
+      },
+      {
+        "speaker": "Michael",
+        "text": "So, 21.6 gigawatts hours a month, for comparison."
+      },
+      {
+        "speaker": "Michael",
+        "text": "Heck, there are a few data centers in Inner Mongolia that run about 150 mWh, or 108 gWh hours per month!"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Really makes your head spin!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "spinning, for sure..."
+      },
+      {
+        "speaker": "Becky",
+        "text": "hey, can we head down into the mines? I think I need a breather from all these numbers."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "TODO": "hub goes here, pathid of 'server-thoughts', with options: 'Michael has more thoughts' (michael-thoughts), 'moral panic' (moral-panic), 'keep moving' (to-manhattan)"
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "pathid": "michael-thoughts",
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Michael",
+        "text": "Say, did you know that the world's 18 million servers use an estimated 200 to 500 terawatt hours per year?"
+      },
+      {
+        "speaker": "Michael",
+        "text": "That's somewhere between 1% and 1.5% of global power consumption!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "Michael!! Breather!!"
+      },
+      {
+        "speaker": "Michael",
+        "text": "Fine, fine."
+      },
+      {
+        "speaker": "Michael",
+        "text": "Kids these days!",
+        "to": "server-thoughts"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "pathid": "moral-panic",
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "hey, so..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "are we, like... *against* the Internet Archive existing?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "it's an important service, but that's a *lot* of power"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I mean, in the scheme of things, I guess it's small potatoes compared to those Google data centers"
+      },
+      {
+        "speaker": "Zak",
+        "text": "you know?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "and it's a service that stands for information freedom and accountability, and those are both important too"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah, I feel the same way"
+      },
+      {
+        "speaker": "Becky",
+        "text": "everything does have to come with some kind of cost, good or bad"
+      },
+      {
+        "speaker": "Zak",
+        "text": "I wonder how much larger Wikipedia's data centers must be?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "ugh!!",
+        "to": "server-thoughts"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "to-manhattan",
+    "todo": "button that reads 'CAN WE GET THIS SHOW ON THE ROAD?'"
+  }
+]

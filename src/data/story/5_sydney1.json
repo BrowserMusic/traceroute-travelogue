@@ -1,0 +1,173 @@
+[
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      },
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "stop"
+      },
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/sydney2000.gif",
+            "/images/sydneymap.gif",
+            "/images/sydneynew.gif",
+            "/images/sydneyolympics.gif",
+            "/images/sydneysights.gif",
+            "/images/sydneyspin.gif"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Karen",
+        "text": "gosh I'm bushed! I need to take a rest but I have a feeling we'll be seeing each other again soon. Don't forget to be on the lookout for food on your travels in Australia!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "to-mines",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "CHECK OUT THE MINES?"
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "in-syd-mines",
+    "components": [
+      {
+        "name": "character",
+        "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "state": "stop"
+      },
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/cave.gif",
+            "/images/cave2.gif",
+            "/images/cave.gif",
+            "/images/cave2.gif",
+            "/images/bat.gif",
+            "/images/bat2.gif",
+            "/images/bat3.gif",
+            "/images/torch.gif",
+            "/images/torch2.gif",
+            "/images/torch3.gif"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "character",
+        "state": "start",
+        "settings": {
+          "name": "mike",
+          "align": "right"
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Mikey",
+        "text": "g'day! My name's Mikey, need a ride through the cables?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "this guy looks just like Mike!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah, how'd you get to Australia, bud?"
+      },
+      {
+        "speaker": "Mikey",
+        "text": "Mike's my cousin..."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "to-perth",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "RIDE WITH MIKEY?"
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "where are we going, anyway?"
+      }
+    ]
+  }
+]

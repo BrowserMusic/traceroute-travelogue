@@ -3,12 +3,12 @@
     "type": "animation",
     "components": [
       {
-        "name": "dining",
-        "state": "start"
-      },
-      {
-        "name": "mediabg",
-        "state": "stop"
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
       },
       {
         "name": "bigbutton",
@@ -17,6 +17,266 @@
       {
         "name": "gifmess",
         "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      },
+      {
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "video",
+          "src": "/videos/Perth.mp4",
+          "orientation": "vertical"
+        }
+      },
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/perth.gif",
+            "/images/perth.gif",
+            "/images/perth.gif",
+            "/images/perth.gif",
+            "/images/perth.gif",
+            "/images/perth.gif",
+            "/images/perth.gif",
+            "/images/perth.gif",
+            "/images/perth.gif"
+          ]
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "whoa what are we doing all the way over in Perth? This kind of seems like the wrong direction. Shouldn't we be going east?"
+      },
+      {
+        "speaker": "Mikey",
+        "text": "this is where the cable you were routed to took us."
+      },
+      {
+        "speaker": "Becky",
+        "text": "I guess this just goes to show how zig-zaggy and non-linear packets' routes end up being."
+      },
+      {
+        "speaker": "Zak",
+        "text": "looks like we're on a bit of a layover here, maybe we can check out the local cuisine!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "maybe we can find something our hungry dolphin friend Karen would like."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "to-food",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "CHECK OUT THE LOCAL CUISINE?"
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "stop",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
+      },
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "food",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "start",
+        "images": [
+          "/images/bananapeels.gif",
+          "/images/bread.gif",
+          "/images/burger.gif",
+          "/images/cereal.gif",
+          "/images/lemons.gif",
+          "/images/milkncookies.gif",
+          "/images/pizza.gif",
+          "/images/spaghetti.gif",
+          "/images/strawberries.gif",
+          "/images/toast.gif",
+          "/images/toast2.gif"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [],
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "uhhh hm okay this food looks pretty weird!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "lots of tasty looking options. Which one do you think Karen would like?"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "choose-food",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "text": "some yummy milk and cookies?",
+              "img": "/images/milkncookies.gif",
+              "to": "err-perth-1"
+            },
+            {
+              "text": "do dolphin gifs like pizza?",
+              "img": "/images/pizza.gif",
+              "to": "err-perth-2"
+            },
+            {
+              "text": "some e-waste?",
+              "img": "/images/brokencircuit.gif",
+              "to": "correct-food"
+            }
+          ]
+        }
+      },
+      {
+        "name": "error",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "pathid": "err-perth-1",
+    "components": [
+      {
+        "name": "error",
+        "state": "start",
+        "settings": {
+          "title": "some yummy milk and cookies?",
+          "text": "I feel like Karen said she eats something specific, but I can't remember what it is...",
+          "to": "choose-food"
+        }
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "pathid": "err-perth-2",
+    "components": [
+      {
+        "name": "error",
+        "state": "start",
+        "settings": {
+          "title": "do dolphin gifs like pizza?",
+          "text": "I don't know... I think Karen has some weirder tastes than maybe we're giving her credit for. Let's keep looking.",
+          "to": "choose-food"
+        }
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "correct-food",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "stop"
+      },
+      {
+        "name": "dining",
+        "state": "start"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "components": [
+      {
+        "name": "dining",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "now, *that* looks like..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "well, a good choice for Karen. she was just saying she eats garbage"
+      },
+      {
+        "speaker": "Becky",
+        "text": "we should probably get going, layovers aren't actually a thing in the packetsphere!"
+      },
+      {
+        "speaker": "Mikey",
+        "text": "All aboard!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "to-east",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "CONTINUE BACK EAST?"
+        }
       }
     ]
   }

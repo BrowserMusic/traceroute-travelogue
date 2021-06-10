@@ -1,0 +1,987 @@
+[
+  {
+    "type": "animation",
+    "pathid": "loading-syd",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      },
+      {
+        "name": "mediabg",
+        "state": "stop"
+      },
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 2000
+        }
+      },
+      {
+        "name": "character",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      },
+      {
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "video",
+          "src": "/videos/Sydney.mp4",
+          "orientation": "vertical"
+        }
+      },
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/sydney2000.gif",
+            "/images/sydneymap.gif",
+            "/images/sydneynew.gif",
+            "/images/sydneyolympics.gif",
+            "/images/sydneysights.gif",
+            "/images/sydneyspin.gif"
+          ]
+        }
+      },
+      {
+        "name": "character",
+        "state": "start",
+        "settings": {
+          "name": "karen",
+          "align": "right"
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Karen",
+        "text": "You're back!"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "ITG",
+        "text": "*beeps*",
+        "components": [
+          {
+            "name": "pamphlet",
+            "state": "start",
+            "settings": {
+              "page": 2,
+              "title": " ",
+              "image": "/images/CRT_graveyard.jpg",
+              "text": " "
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "ITG",
+        "text": "It doesn't take long when you're traveling at the speed of light!"
+      },
+      {
+        "speaker": "ITG",
+        "text": "Your entire journey is virtually instant."
+      },
+      {
+        "speaker": "Zak",
+        "text": "that sounds nauseating!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "well anyway, we picked you up some grub in Perth like you asked, Karen!"
+      },
+      {
+        "speaker": "Notice",
+        "text": "You give Karen the... food."
+      },
+      {
+        "speaker": "Karen",
+        "text": "Oh, wow, food!... I love food!"
+      },
+      {
+        "speaker": "Karen",
+        "text": "This kind of junk is my favorite!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "so where do we go from here? across the ocean this time, or back across Australia again?",
+        "components": [
+          {
+            "name": "character",
+            "state": "stop"
+          }
+        ]
+      },
+      {
+        "speaker": "Orb",
+        "text": "PROOF OF TCP HANDSHAKE WITH SERVER MUST BE PROVIDED BEFORE CONTENT CAN BE TRANSMITTED OVER HTTP.",
+        "components": [
+          {
+            "name": "character",
+            "state": "start",
+            "settings": {
+              "name": "orb",
+              "align": "right"
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Orb",
+        "text": "NO OVERSEAS TRAVEL IS PERMITTED UNTIL SUCH PROOF IS DISPLAYED."
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, I guess we *are* going overseas, but not yet.",
+        "components": [
+          {
+            "name": "character",
+            "state": "stop"
+          }
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "what do we need, Guide?"
+      },
+      {
+        "speaker": "ITG",
+        "text": "Good news, travelers! You're ready for the next stage of the HTTP process. It's time to Sync! That! Server!!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "is this a game show?"
+      },
+      {
+        "speaker": "ITG",
+        "text": "Get ready for the ride of your life on the TCP! What's behind door number one?"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "game-show",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "text": "what's TCP?",
+              "to": "TCP-exp"
+            },
+            {
+              "text": "what's the sync part?",
+              "to": "sync-exp"
+            },
+            {
+              "text": "shake hands with server",
+              "to": "shake-server"
+            }
+          ]
+        }
+      },
+      {
+        "name": "error",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "pathid": "TCP-exp",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "okay, so what's TCP?"
+      },
+      {
+        "speaker": "ITG",
+        "text": "There's no need to play dumb, let's answer this question together!"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "tutorial",
+    "level": 2,
+    "components": [
+      {
+        "name": "ipv4",
+        "state": "start",
+        "settings": {
+          "toShow": [
+            "ip"
+          ],
+          "highlight": {
+            "ip": [
+              "protocol"
+            ]
+          }
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "hey, is this where we talk about protocols, like we mentioned earlier?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I have a feeling it is"
+      },
+      {
+        "speaker": "Guide",
+        "text": "And your feeling is correct!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "The vast majority of all packets sent through a server are Internet Protocol packets, but we're about to talk about TCP, which is built on top of IP."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Let's take a step back and look at the layers of a network, for context.",
+        "components": [
+          {
+            "name": "ipv4",
+            "state": "stop"
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "Here's the simplest version of how this layering works.",
+        "components": [
+          {
+            "name": "ipv4",
+            "state": "start",
+            "settings": {
+              "toShow": [
+                "layer"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "so all the physical cabling and routers are at the bottom?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Yes! That's the **link layer**, where everything is just ones and zeroes, cables and routers, electricity and light.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "fibre",
+                  "ethernet",
+                  "link"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "Every successive layer makes use of what's on the layer below it."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Though it's worth noting this is purely a conceptual diagram – the upper layers nest within each other like your human matroshka dolls."
+      },
+      {
+        "speaker": "Becky",
+        "text": "...*human* matroshka dolls?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "The next layer up is the **network layer**, which is (for our purposes) just uses the Internet Protocol, which is the basic shell of any packet.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "ipv4",
+                  "ipv6",
+                  "network"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "Which you've talked about already!",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "toShow": [
+                "layer",
+                "ip"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "so the **transport layer** is above that, and can be either UDP or TCP, which are both protocols?",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "toShow": [
+                "layer"
+              ],
+              "highlight": {
+                "layer": [
+                  "udp",
+                  "tcp",
+                  "transport"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "sorry, what's a protocol again?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Excellent question! A **protocol** is just an agreed-upon set of rules for communicating data."
+      },
+      {
+        "speaker": "Guide",
+        "text": "A router that can't understand the Internet Protocol could hardly be called a router at all!",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "toShow": [
+                "layer"
+              ],
+              "highlight": {
+                "layer": [
+                  "ipv4",
+                  "ipv6"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "We have a lot of protocols here in the packetsphere, because there are all kinds of different types of data and ways they ought to be sent."
+      },
+      {
+        "speaker": "Zak",
+        "text": "alright, I'm sold. give me the business about these transport layer protocols.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "udp",
+                  "tcp",
+                  "transport"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "These two protocols are UDP and TCP."
+      },
+      {
+        "speaker": "Guide",
+        "text": "UDP stands for **User Datagram Protocol**, which is simple and fast, but can't deal with packet problems if they arise.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "udp"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "TCP stands for **Transmission Control Protocol**. It's a little slower, but it can make sure all the necessary fragments of a message are reassembled correctly.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "tcp"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "some very inspired names here"
+      },
+      {
+        "speaker": "Zak",
+        "text": "yeah – so which one do we use?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "That depends!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Things that depend on speed that don't mind a lost packet or two are fine on UDP. Real-time video streaming is a good example.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "udp"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "Or things where the likelihood of packet reassembly is so low that speed matters more."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Remember when you went through the DNS process to get your destination IP address?",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "layer": [
+                  "udp",
+                  "dns"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah, that was like a couple minutes ago"
+      },
+      {
+        "speaker": "Guide",
+        "text": "More likely a few nanoseconds."
+      },
+      {
+        "speaker": "Guide",
+        "text": "But it was over UDP!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "you keep saying things are \"over\" some protocol. is the IP packet, like... sending more packets?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Ah, no! This is where the packet becomes the human matroshka doll."
+      },
+      {
+        "speaker": "Guide",
+        "text": "The information necessary to send something via UDP is located *inside* the data portion of the IP packet.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "toShow": [
+                "ip",
+                "udp"
+              ],
+              "highlight": {
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "Same thing goes for TCP!",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "toShow": [
+                "ip",
+                "tcp"
+              ],
+              "highlight": {
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "You can see that both of these protocols add new headers for their own uses, and then have their own data field."
+      },
+      {
+        "speaker": "Becky",
+        "text": "...inside the data field of the enclosing IP packet."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Yes!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "so, again which one are we using to actually send Zak's head?"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "Guide",
+        "text": "TCP, without a doubt!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Without it, your message might wind up missing parts, never to be heard from again!"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\"",
+        "to": "game-show"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "pathid": "sync-exp",
+    "id": "main",
+    "level": 1,
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "you mentioned we needed to–"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Sync! That! Server!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah, that."
+      },
+      {
+        "speaker": "Becky",
+        "text": "what does that have to do with any of this TCP stuff?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Glad you asked!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "A UDP packet doesn't expect much more than getting sent somewhere, but TCP involves a whole process."
+      },
+      {
+        "speaker": "Guide",
+        "text": "The first part of that process involves synchronizing with the server you're heading to."
+      },
+      {
+        "speaker": "Guide",
+        "text": "You can only continue asking for content from the server over TCP once this synchronization handshake is complete."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Remember the IP address for [[redacted]] you got earlier?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "uh, what was it... 14.1.88.255?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Let's give them a ring!",
+        "to": "game-show"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "pathid": "shake-server",
+    "level": 1,
+    "id": "main",
+    "lines": [
+      {
+        "speaker": "notice",
+        "text": "*ringing noise*"
+      },
+      {
+        "speaker": "redacted",
+        "text": "This is the server for [[redacted]], located at 14.1.88.255, go ahead, over."
+      },
+      {
+        "speaker": "Zak",
+        "text": "I think we need to synchronize with you, because I'm trying to send my head over to Becky. Can we do that?"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
+      },
+      {
+        "speaker": "redacted",
+        "text": "Affirmative, stranger. Send me a dummy TCP packet with your SYN bit to 1, over."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "ipv4",
+        "settings": {
+          "listeningFor": {
+            "tcp": [
+              "syn"
+            ]
+          },
+          "highlight": {
+            "ip": [
+              "data"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "ipv4",
+        "settings": {
+          "listeningFor": false,
+          "highlight": {
+            "tcp": [
+              "syn"
+            ],
+            "ip": [
+              "data"
+            ]
+          }
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "okay, that was weird, but I did it"
+      },
+      {
+        "speaker": "Zak",
+        "text": "over?",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "stop"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "redacted",
+        "text": "Roger, received that, ACKnowledging it.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "ack"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "redacted",
+        "text": "Sending you back a SYNchronize to check that our connection works both ways, do you copy?",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "syn",
+                  "ack"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "uh, roger copy over?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "(You have to ACKnowledge it, bud)",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "stop"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "oh, right."
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
+      {
+        "name": "ipv4",
+        "settings": {
+          "listeningFor": {
+            "tcp": [
+              "ack"
+            ]
+          },
+          "highlight": {
+            "ip": [
+              "data"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "ipv4",
+        "settings": {
+          "listeningFor": false,
+          "highlight": {
+            "tcp": [
+              "ack"
+            ],
+            "ip": [
+              "data"
+            ]
+          }
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "still kind of unsettling"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I guess that's why they typically have the routers do it, not us"
+      },
+      {
+        "speaker": "Zak",
+        "text": "anyways, 10-4? partner? over?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "Roger that! From here until our connection is closed, ask me for whatever you need."
+      },
+      {
+        "speaker": "redacted",
+        "text": "Every time I send you something new, I'll increase my sequence number.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "seqNum"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "redacted",
+        "text": "Every time you receive it, you'll increase your acknowledge number, and send me an ACK back to let me know you got it.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "ackNum"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "redacted",
+        "text": "If the numbers don't match, the router will do the work of figuring out how to reassemble the message from out-of-order packets, or ask for any missing ones."
+      },
+      {
+        "speaker": "redacted",
+        "text": "Just make sure you send me that ACK to let me know you received it, or I'll assume it got lost and resend it!",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "ack"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "so now that we're here, can we just... ask you to send Zak's head to me?"
+      },
+      {
+        "speaker": "redacted",
+        "text": "Just like that? You sure can't! You've got to word that in HTTP – that's the protocol for me.",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "stop"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "redacted",
+        "text": "But our connection's going to stay open until you tell me you're closing it, so just give me a holler when you've figured it out!",
+        "components": [
+          {
+            "name": "ipv4",
+            "settings": {
+              "highlight": {
+                "tcp": [
+                  "fin"
+                ],
+                "ip": [
+                  "data"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Zak",
+        "text": "*more* protocols?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "We'll talk about that later. For now, let's get you across the ocean!"
+      }
+    ]
+  }
+]
