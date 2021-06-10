@@ -2,18 +2,21 @@
   <div id="app">
     <LeafletMap @after-opening="beginStory()" />
     <ChapterNode :index="myCity" v-if="isModalOpen" />
+    <resource-timer />
   </div>
 </template>
 
 <script>
 import LeafletMap from "./LeafletMap.vue";
 import ChapterNode from "./ChapterNode.vue";
+import ResourceTimer from "./attractions/ResourceTimer.vue";
 
 export default {
   name: "App",
   components: {
     LeafletMap,
     ChapterNode,
+    ResourceTimer,
   },
   data() {
     return {
@@ -36,7 +39,7 @@ export default {
     },
   },
   async mounted() {
-    const limit = { city: 3, scene: 0 };
+    const limit = { city: 0, scene: 2 };
     // await this.fastForward(limit);
     window.addEventListener("keyup", this.proceed);
   },
@@ -51,7 +54,8 @@ export default {
       this.$store.commit("changeLayout");
       this.$store.commit("openModal", true);
       this.$store.commit("path/changeCity", 0);
-      this.$store.commit("path/changeScene");
+      this.$store.commit("path/changeScene", 0);
+      console.log(this.scene);
     },
     proceed(e) {
       if (e.code == "Space") {

@@ -5,19 +5,19 @@
     "id": "main",
     "lines": [
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "Welcome to GeoCity!"
       },
       {
         "speaker": "Becky",
-        "text": "Geocity... like, from... \"*GeoCities*\"? "
+        "text": "Geocity... like, from... *GeoCities?*"
       },
       {
         "speaker": "Karen ",
         "text": "!!!!"
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "Yes, sort of. The site data that accumulated from GeoCities' inception in 1994 till its shutdown on 26th October 2009 has become dispersed over time. It still exists, chunked out in different private, public or discarded collections across the world. You're currently in one of those archives. "
       },
       {
@@ -25,7 +25,7 @@
         "text": "I know this place! I think my homepage might be here somewhere..."
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "mostly this is just a bunch of scattered .gifs and other things left over, but you're welcome to look around!"
       },
       {
@@ -37,7 +37,7 @@
         "text": "don't take this the wrong way, but who's still holding on to all this stuff?"
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "What do you mean?"
       },
       {
@@ -49,19 +49,19 @@
         "text": "this is kind of a ghost town, but who's hosting it?"
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "Oh! That'll be the Internet Archive. They've been storing an archive of as many webpages as they can crawl since 1996."
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "There's not much left of something like GeoCities otherwise, eh? Any page that goes offline without getting backed up – poof!"
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "Gone forever."
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "Anyhow, their servers are up north in San Fransisco, but we've probably got some bits and bobs cached down here in Redlands."
       },
       {
@@ -69,11 +69,11 @@
         "text": "so how many webpages is that, if it's not just GeoCities they're storing?"
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "They've got nearly 70+ petabytes of data tucked away!"
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "And it's not just sitting there, either – their server gets about 2k requests a second."
       },
       {
@@ -89,7 +89,7 @@
         "text": "yeah."
       },
       {
-        "speaker": "Local Gif",
+        "speaker": "Local",
         "text": "Well, if you weren't quite so human, those numbers wouldn't spook you!"
       },
       {
