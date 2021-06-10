@@ -5,6 +5,7 @@ class SpeakerSoundFile {
   constructor(player, settings) {
     this.player = player;
     this.once = (settings.style == "once") ? true : false;
+    this.speed = ("speed" in settings) ? settings.speed : 0.5;
     this.sounds = this.soundsAsBoundaries(settings.sounds);
     this.maxLength = ("maxLength" in settings) ? settings.maxLength : 5;
   }
@@ -58,13 +59,13 @@ class SpeakerSoundFile {
   makeEvents(mood = "normal", limit = 5, deviance = 0.1) {
     // question, exclamation, puzzled, normal
     let events = [];
-    let fireRate = 0.5;     // speed of the series of files
+    let fireRate = this.speed;     // speed of the series of files
     let playbackRate = 1.0; // speed of an individual file
 
     if (mood == "puzzled") {
-      fireRate += 0.2;
+      fireRate += 0.1;
     } else if (mood == "exclamation") {
-      fireRate -= 0.2;
+      fireRate -= 0.05;
       limit += 2;
     } else if (mood == "question") {
       limit += 1;

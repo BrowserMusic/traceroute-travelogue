@@ -32,29 +32,4 @@ class AudioManager {
   }
 }
 
-// class SpritePlayer() {
-//   constructor(file) {
-//     this.player = new Tone.Player(speechFile).toDestination();
-//   }
-
-//   playSoundEvent(sound, time) {
-//     if ("rate" in sound) {
-//       this.player.playbackRate = sound.rate;
-//     }
-//     time = (time == null) ? Tone.now() : time;
-
-//     this.player.start(time, sound.start, sound.duration);
-//   }
-
-//   getRandomSound() {
-//     const index = Math.floor(Math.random() * this.sounds.length);
-//     const duration = this.sounds[index].end - this.sounds[index].start;
-
-//     return {
-//       start: this.sounds[index].start,
-//       duration: duration
-//     };
-//   }
-// }
-
 export default AudioManager;
