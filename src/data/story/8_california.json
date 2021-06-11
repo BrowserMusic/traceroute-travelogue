@@ -3,10 +3,10 @@
     "type": "dialogue",
     "level": 1,
     "id": "main",
-    "components":[
+    "components": [
       {
-        "name":"video",
-        "state":"stop"
+        "name": "video",
+        "state": "stop"
       }
     ],
     "lines": [
@@ -115,50 +115,52 @@
   {
     "type": "animation",
     "TODO": "add a hub here with a bunch of clickable gifs",
-    "components":[
+    "components": [
       {
         "name": "hub",
-      "state": "start",
-      "settings": {
-        "locations": [
-          {
-            "img": "/images/email.gif",
-            "to": "karen-home"
-          },
-          {
-            "img": "/images/bat2.gif",
-            "to": "karen-home"
-          },
-          {
-            "img": "/images/burger.gif",
-            "to": "karen-home"
-          },
-          {
-            "img": "/images/drumkit.gif",
-            "to": "karen-home"
-          },
-          {
-            "img": "/images/orcawithhouse.gif",
-            "to": "karen-home"
-          },
-          {
-            "img": "/images/orcawithhouse.gif",
-            "to": "karen-home"
-          }
-        ]
-      }
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "img": "/images/email.gif",
+              "to": "karen-home"
+            },
+            {
+              "img": "/images/bat2.gif",
+              "to": "karen-home"
+            },
+            {
+              "img": "/images/burger.gif",
+              "to": "karen-home"
+            },
+            {
+              "img": "/images/orcawithhouse.gif",
+              "to": "karen-home"
+            }
+          ]
+        }
       }
     ]
   },
   {
     "type": "dialogue",
     "level": 1,
-    "pathid":"karen-home",
+    "pathid": "karen-home",
     "id": "main",
-    "components":[
+    "components": [
       {
-        "name":"hub",
-        "state":"stop"
+        "name": "hub",
+        "state": "stop"
+      },
+      {
+        "name": "link",
+        "state": "start",
+        "settings": {
+          "img": "/images/rainbowukhome.png",
+          "url": "https://web.archive.org/web/20091022120101/http://geocities.com/pinkrainbowuk/Index1.html",
+          "text": "go look at Karen's home!",
+          "width": "350px"
+        }
       }
     ],
     "lines": [
@@ -196,7 +198,13 @@
       },
       {
         "speaker": "notice",
-        "text": "Karen goes home."
+        "text": "Karen goes home.",
+        "components": [
+          {
+            "name": "link",
+            "state": "stop"
+          }
+        ]
       },
       {
         "speaker": "Zak",
@@ -243,11 +251,11 @@
   {
     "type": "animation",
     "TODO": "HEAD DOWN TO THE MINES WITH MICHAEL?",
-    "components":[
+    "components": [
       {
-        "name":"bigbutton",
-        "state":"start",
-        "settings":{
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
           "text": "HEAD DOWN TO THE MINES WITH MICHAEL?"
         }
       }
@@ -255,18 +263,17 @@
   },
   {
     "type": "animation",
-    "TODO": "loadgif goes here, but only 1 second long",
     "components": [
       {
-        "name":"bigbutton",
-        "state":"stop"
+        "name": "bigbutton",
+        "state": "stop"
       },
       {
         "name": "imgtimer",
         "state": "start",
         "settings": {
-         "src": "/images/loadscreen.gif",
-         "timer": 1000
+          "src": "/images/loadscreen.gif",
+          "timer": 1000
         }
       }
     ]
@@ -275,6 +282,12 @@
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Becky",
@@ -338,7 +351,19 @@
       },
       {
         "speaker": "Michael",
-        "text": "Get a load of this beauty! As of this conversation, each of these vertical racks holds about 10 individual servers."
+        "text": "Get a load of this beauty! As of this conversation, each of these vertical racks holds about 10 individual servers.",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/ia_servers.png",
+              "url": "https://www.theregister.com/2017/11/16/head_like_a_memory_hole/",
+              "text": "here are some actual servers of the Internet Archive, located in a former church!",
+              "width": "350px"
+            }
+          }
+        ]
       },
       {
         "speaker": "Michael",
@@ -346,7 +371,19 @@
       },
       {
         "speaker": "Michael",
-        "text": "So every single one of those blocks could represent as much as 512 terabytes, meaning a single rack could hold as much as 5 petabytes."
+        "text": "So every single one of those blocks could represent as much as 512 terabytes, meaning a single rack could hold as much as 5 petabytes.",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/jonah_ia.png",
+              "url": "https://archive.org/details/jonah-edwards-presentation",
+              "text": "check out this presentation with Jonah Edwards, head of the Internet Archive's core infrastructure team!",
+              "width": "350px"
+            }
+          }
+        ]
       },
       {
         "speaker": "Michael",
@@ -362,7 +399,13 @@
       },
       {
         "speaker": "Michael",
-        "text": "Well!"
+        "text": "Well!",
+        "components": [
+          {
+            "name": "link",
+            "state": "stop"
+          }
+        ]
       },
       {
         "speaker": "Michael",
@@ -390,7 +433,7 @@
       },
       {
         "speaker": "Michael",
-        "text": "You? Oh, the average US home uses about 10.7kWh per year."
+        "text": "You? Oh, the average US home uses [about 10.7kWh per year](https://www.eia.gov/tools/faqs/faq.php?id=97&t=3)."
       },
       {
         "speaker": "Zak",
@@ -432,24 +475,36 @@
   },
   {
     "type": "animation",
-    "pathid":"server-thoughts",
+    "pathid": "server-thoughts",
     "components": [
       {
-        "name":"hub",
+        "name": "link",
+        "state": "stop"
+      },
+      {
+        "name": "hub",
         "state": "start",
         "settings": {
           "locations": [
             {
               "text": "Michael has more thoughts",
-              "to":"michael-thoughts"
+              "img": "/images/thoughts.gif",
+              "to": "michael-thoughts",
+              "locks": 0
             },
             {
               "text": "moral panic",
-              "to": "moral-panic"
+              "img": "/images/panic.gif",
+              "to": "moral-panic",
+              "locks": 1
             },
             {
               "text": "keep moving",
-              "to":"to-manhattan"
+              "to": "to-manhattan",
+              "requires": [
+                0,
+                1
+              ]
             }
           ]
         }
@@ -464,7 +519,19 @@
     "lines": [
       {
         "speaker": "Michael",
-        "text": "Say, did you know that the world's 18 million servers use an estimated 200 to 500 terawatt hours per year?"
+        "text": "Say, did you know that the world's 18 million servers use an estimated 200 to 500 terawatt hours per year?",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/estglobaluse.png",
+              "url": "https://energyinnovation.org/2020/03/17/how-much-energy-do-data-centers-really-use/",
+              "text": "here's an article with more on data center power usage, if you're into that",
+              "width": "350px"
+            }
+          }
+        ]
       },
       {
         "speaker": "Michael",
@@ -542,10 +609,10 @@
     "type": "animation",
     "pathid": "to-manhattan",
     "todo": "button that reads 'CAN WE GET THIS SHOW ON THE ROAD?'",
-    "components":[
+    "components": [
       {
-        "name":"hub",
-        "state":"stop"
+        "name": "hub",
+        "state": "stop"
       },
       {
         "name": "bigbutton",

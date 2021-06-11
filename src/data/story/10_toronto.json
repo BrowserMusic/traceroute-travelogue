@@ -1,8 +1,97 @@
 [
   {
+    "type": "animation",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      },
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 1000
+        }
+      }
+    ]
+  },
+  {
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Zak",
+        "text": "okay, Canada now I guess"
+      },
+      {
+        "speaker": "Becky",
+        "text": "at least we're still moving east?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I guess nationality doesn't matter much for the internet"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Not always!"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "toronto-hub",
+    "components": [
+      {
+        "name": "hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "text": "to the auction house",
+              "to": "nft-auction",
+              "locks": 0
+            },
+            {
+              "text": "\"not always?\"",
+              "to": "tier-1",
+              "locks": 1
+            },
+            {
+              "text": "to Virginia",
+              "to": "to-va",
+              "requires": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "link",
+        "state": "stop"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "pathid": "nft-auction",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Guide",
@@ -22,7 +111,19 @@
       },
       {
         "speaker": "Guide",
-        "text": "Yes, the art auction house Christie's recently auctioned their first NFT piece, which was a catalogue of 3D artist Beeple's daily renders, for $69 million. "
+        "text": "Yes, the art auction house Christie's recently auctioned their first NFT piece, which was a catalogue of 3D artist Beeple's daily renders, for $69 million. ",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/beeple.png",
+              "url": "https://www.theverge.com/2021/3/11/22325054/beeple-christies-nft-sale-cost-everydays-69-million",
+              "text": "read more on Beeple's NFT auction",
+              "width": "450px"
+            }
+          }
+        ]
       },
       {
         "speaker": "Becky",
@@ -42,8 +143,23 @@
       },
       {
         "speaker": "Becky",
-        "text": "bleh, well I think we're almost at the finish line, shall we get out of here?"
-      },
+        "text": "bleh, well I think we're almost at the finish line, shall we get out of here?",
+        "to": "toronto-hub"
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "level": 1,
+    "id": "main",
+    "pathid": "tier-1",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
+    "lines": [
       {
         "speaker": "Orb",
         "text": "EXIT FACILITATED BY TIER 1 NETWORK LOCATION. ACCESS TO TIER 1 FACILITY IN ASHBURN, VIRGINIA AVAILABLE."
@@ -62,15 +178,51 @@
       },
       {
         "speaker": "Guide",
-        "text": "Did you know? The internet isn't just one network, but a huge, interconnected mess of interlinking networks!"
+        "text": "Do you remember your question about \"nationality\" earlier?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah"
       },
       {
         "speaker": "Guide",
-        "text": "Every ISP is its own network, schools and businesses are often their own networks, as are governments. Technically, even your home is its own network, since it's a collection of devices under the same router."
+        "text": "Tier 1 networks are related!"
       },
       {
         "speaker": "Guide",
-        "text": "But these separate networks can communicate because they all speak the Internet Protocol!"
+        "text": "You may often think of the internet as one, monolithic, international network, but this isn't true."
+      },
+      {
+        "speaker": "Guide",
+        "text": "The internet isn't just one network; it's a huge, interconnected mess of interlinking networks!",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/networkmap.png",
+              "url": "https://www.vox.com/a/internet-maps",
+              "text": "check out how the landscape of the internet has changed since 1969!",
+              "width": "450px"
+            }
+          }
+        ]
+      },
+      {
+        "speaker": "Guide",
+        "text": "Every ISP is its own network, schools and businesses are often their own networks, as are governments."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Technically, even your home is its own network, since it's a collection of devices under the same router."
+      },
+      {
+        "speaker": "Guide",
+        "text": "But these separate networks can communicate because they all speak the Internet Protocol."
+      },
+      {
+        "speaker": "Becky",
+        "text": "okay, but you still haven't mentioned what a tier 1 is yet?"
       },
       {
         "speaker": "Guide",
@@ -78,8 +230,27 @@
       },
       {
         "speaker": "Guide",
+        "text": "ISPs that aren't Tier 1 generally don't do business internationally, and instead rely on communications with their Tier 1 colleagues to cross borders."
+      },
+      {
+        "speaker": "Guide",
+        "text": "This can get pretty expensive, depending on how remote a location is!"
+      },
+      {
+        "speaker": "Guide",
         "text": "Most tier 1 networks are also ISPs. You probably recognize a lot of these names!",
-        "TODO": "needs Tier 1 wikipedia link"
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/tier1.jpg",
+              "url": "https://en.wikipedia.org/wiki/Tier_1_network#List_of_Tier_1_networks",
+              "text": "here are all the tier 1 networks! is yours on this list?",
+              "width": "400px"
+            }
+          }
+        ]
       },
       {
         "speaker": "Zak",
@@ -95,7 +266,26 @@
       },
       {
         "speaker": "Michael",
-        "text": "Hop on in, and we'll find out!"
+        "text": "Hop on in, and we'll find out as soon as you're ready to hit the road!",
+        "to": "toronto-hub"
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "pathid": "to-va",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      },
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 1000
+        }
       }
     ]
   }

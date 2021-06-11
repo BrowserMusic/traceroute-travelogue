@@ -189,12 +189,6 @@ export default {
   img {
     width: 100%;
   }
-
-  h4 {
-    position: absolute;
-    top: 1em;
-    left: 2em;
-  }
 }
 
 .single-video {
@@ -208,8 +202,21 @@ export default {
   }
 }
 
-// .handout {
-//   background-image: var(--img-link-bg);
-//   background-
-// }
+.handout a {
+  color: blue;
+  text-shadow: 1px 1px 0 white, -1px -1px 0 white, -1px 1px 0 white,
+    1px -1px 0 white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h4 {
+    font-size: 1.3em;
+    position: absolute;
+    // top: 1em;
+    // left: 2em;
+    width: 80%;
+  }
+}
 </style>

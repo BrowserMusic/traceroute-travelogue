@@ -19,7 +19,7 @@
         "state": "stop"
       }
     ],
-    "audio":false
+    "audio": false
   },
   {
     "type": "dialogue",
@@ -123,38 +123,38 @@
         "state": "stop"
       },
       {
-      "name": "mediabg",
-      "state": "start",
-      "settings": {
-        "type": "image",
-        "src": "/images/foodcourt.jpg"
-      }
-    },
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "image",
+          "src": "/images/foodcourt.jpg"
+        }
+      },
       {
         "name": "gifmess",
         "state": "start",
         "settings": {
           "images": [
-          "/images/bananapeels.gif",
-          "/images/bread.gif",
-          "/images/burger.gif",
-          "/images/cereal.gif",
-          "/images/lemons.gif",
-          "/images/milkncookies.gif",
-          "/images/pizza.gif",
-          "/images/spaghetti.gif",
-          "/images/strawberries.gif",
-          "/images/toast.gif",
-          "/images/toast2.gif"
+            "/images/bananapeels.gif",
+            "/images/bread.gif",
+            "/images/burger.gif",
+            "/images/cereal.gif",
+            "/images/lemons.gif",
+            "/images/milkncookies.gif",
+            "/images/pizza.gif",
+            "/images/spaghetti.gif",
+            "/images/strawberries.gif",
+            "/images/toast.gif",
+            "/images/toast2.gif"
           ]
         }
       }
     ],
-    "audio":{
-      "repeat":true,
-      "interval":{
-        "type":"fixed",
-        "value":0
+    "audio": {
+      "repeat": true,
+      "interval": {
+        "type": "fixed",
+        "value": 0
       },
       "name": "loop6"
     }
@@ -197,7 +197,12 @@
             {
               "text": "some e-waste?",
               "img": "/images/brokencircuit.gif",
-              "to": "correct-food"
+              "to": "correct-food",
+              "locked": true,
+              "requires": [
+                0,
+                1
+              ]
             }
           ]
         }

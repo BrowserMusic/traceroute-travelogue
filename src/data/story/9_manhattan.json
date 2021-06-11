@@ -80,11 +80,23 @@
       },
       {
         "speaker": "Guide",
-        "text": "The energy consumption for Bitcoin, the first and largest cryptocurrency, uses about 116 TWh per year, which is approximately 0.53% percent of the world's total energy consumption."
+        "text": "The energy consumption for Bitcoin, the first and largest cryptocurrency, uses about 102.04 TWh per year, which is approximately 0.47% percent of the world's total energy consumption.",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/bitcoin_est.png",
+              "url": "https://cbeci.org/cbeci/comparisons",
+              "text": "click here for more resources on Bitcoin and energy use!",
+              "width": "450px"
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",
-        "text": "Which is more power than the Phillippines or the Netherlands use – per *year!*"
+        "text": "Which is more power than the Phillippines use – per *year!*"
       },
       {
         "speaker": "Guide",

@@ -3,6 +3,12 @@
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Orb",
@@ -30,7 +36,23 @@
       },
       {
         "speaker": "Zak",
-        "text": "okay, so what's the deal with an IXP?"
+        "text": "is it me, or does the Orb seem to want to teach us stuff too?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "it just keeps dropping new terms all the time."
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah! we're on to you, buddy"
+      },
+      {
+        "speaker": "Orb",
+        "text": "..."
+      },
+      {
+        "speaker": "Zak",
+        "text": "it was tier 1s in Toronto, and now IXPs. what's an IXP?"
       },
       {
         "speaker": "Guide",
@@ -38,11 +60,27 @@
       },
       {
         "speaker": "Guide",
-        "text": "But instead of a tier 1, which normally speaks only to other tier 1s, an IXP lets *any* network in its center communicate for free."
+        "text": "But instead of a tier 1, which normally speaks only to other tier 1s, an IXP lets *any* network in its center communicate for free.",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/ixpmap.jpg",
+              "url": "https://www.internetexchangemap.com/#/",
+              "text": "sure are a lot of IXPs in the Washington, DC area",
+              "width": "400px"
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",
         "text": "This means that an email you send to your next-door neighbor will likely only travel in your local network, instead of getting kicked halfway across the country, or even to another continent!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "And unlike a node of a tier 1 ISP, which is typically a large for-profit corporation, IXPs are often run by non-profits, schools, governments, or assocations of ISPs."
       },
       {
         "speaker": "Zak",
@@ -57,8 +95,18 @@
         "text": "so, I guess my ISP has a router in this IXP or something?"
       },
       {
+        "speaker": "Guide",
+        "text": "It's likely!"
+      },
+      {
         "speaker": "Becky",
-        "text": "I think we're just about ready to finish this journey"
+        "text": "I think we're just about ready to finish this journey",
+        "components": [
+          {
+            "name": "link",
+            "state": "stop"
+          }
+        ]
       },
       {
         "speaker": "Becky",

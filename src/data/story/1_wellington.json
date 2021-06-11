@@ -17,11 +17,11 @@
     "type": "animation",
     "scene": "showOpeningMap",
     "layout": "map",
-    "audio":{
-      "repeat":true,
-      "interval":{
-        "type":"fixed",
-        "value":0
+    "audio": {
+      "repeat": true,
+      "interval": {
+        "type": "fixed",
+        "value": 0
       }
     }
   },
@@ -99,7 +99,12 @@
         "state": "start",
         "settings": {
           "img": "/images/floating_head.gif",
-          "dropText": "Isolate your packet for further analysis!"
+          "dropText": "Isolate your packet for further analysis!",
+          "dragBackground": {
+            "file": "/images/body.png",
+            "location": "below"
+          },
+          "dropImg": "/images/box.jpg"
         }
       },
       {
@@ -137,12 +142,20 @@
         "text": "\"hello\""
       },
       {
+        "speaker": "Becky",
+        "text": "did you just, um..."
+      },
+      {
         "speaker": "Zak",
-        "text": "alright, ready to send whenever"
+        "text": "alright, I'm ready to send this message whenever"
       },
       {
         "speaker": "Becky",
-        "text": "let’s check the packet details just to be sure"
+        "text": "well, let’s check the packet details just to be sure"
+      },
+      {
+        "speaker": "Box",
+        "text": "\"hello\""
       }
     ]
   },
@@ -638,10 +651,10 @@
       }
     ],
     "audio": {
-      "repeat":true,
-      "interval":{
+      "repeat": true,
+      "interval": {
         "type": "fixed",
-        "value":0
+        "value": 0
       },
       "name": "loop2"
     }
@@ -657,8 +670,8 @@
       }
     ],
     "audio": {
-      "repeat":false,
-      "name":"dialup"
+      "repeat": false,
+      "name": "dialup"
     },
     "characters": [
       {

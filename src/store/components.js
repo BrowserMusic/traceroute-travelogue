@@ -29,6 +29,7 @@ const comps = {
       for (let comp of block.components) {
         if (!(comp.name in state)) {
           console.error();
+          console.log(comp.name + " does not exist");
         } else {
           state[comp.name] = {
             ...state[comp.name],

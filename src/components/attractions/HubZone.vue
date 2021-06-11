@@ -3,10 +3,10 @@
     <h3>pick one!</h3>
     <div class="hub-grid">
       <div
-        :class="'hub-link hub-' + index"
+        :class="getClass(loc, index)"
         v-for="(loc, index) in settings.locations"
         :key="index"
-        @click="toNext(loc)"
+        @click="toNext(loc, index)"
       >
         <img v-if="'img' in loc" :src="loc.img" />
         <p v-if="'text' in loc">
@@ -24,6 +24,7 @@ export default {
     settings: Object,
   },
   mounted() {
+    console.log(this.settings.locations);
     this.$store.commit("path/freeze", true);
   },
   methods: {
@@ -34,8 +35,48 @@ export default {
         return "";
       }
     },
-    async toNext(loc) {
-      console.log(loc.to);
+    lockState(loc) {
+      return (
+        ("requires" in loc && loc.requires.length > 0) ||
+        ("locked" in loc && loc.locked == true)
+      );
+    },
+    getClass(loc, index) {
+      let retval = "hub-link hub-" + index;
+      retval += this.lockState(loc) ? " locked" : "";
+      return retval;
+    },
+    async toNext(loc, index) {
+      if (this.lockState(loc)) return;
+      let all = this.settings.locations;
+
+      if ("locks" in loc) {
+        all[loc["locks"]].locked = true;
+      }
+
+      for (let i = 0; i < all.length; i++) {
+        if ("requires" in all[i] && all[i].requires.includes(index)) {
+          all[i].requires = all[i].requires.filter((s) => s != index);
+
+          if (all[i].requires.length == 0 && all[i].locked) {
+            all[i].locked = false;
+          }
+        }
+      }
+
+      const data = {
+        id: this.settings.scene,
+        data: {
+          components: [
+            {
+              name: "hub",
+              settings: { locations: all },
+            },
+          ],
+        },
+      };
+
+      await this.$store.dispatch("path/hubAlteration", data);
       await this.$store.dispatch("path/toOption", loc.to);
     },
   },
@@ -64,6 +105,7 @@ export default {
   border: 5px solid white;
   box-shadow: 0px 0px 0px 2px black;
   border-radius: 10px;
+  z-index: 100;
 
   .hub-grid {
     display: flex;
@@ -89,6 +131,7 @@ export default {
       margin: 0;
       margin-top: -1em;
       margin-left: 10px;
+      position: relative;
 
       span {
         background: white;
@@ -102,6 +145,23 @@ export default {
       box-shadow: 2px 2px 0px 0 rgba(0, 0, 0, 0.25);
       min-width: 60px;
       max-width: 150px;
+    }
+  }
+
+  .hub-link.locked {
+    opacity: 0.8;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+
+    img {
+      filter: grayscale(100%);
+    }
+
+    img,
+    p span {
+      border-color: grey;
     }
   }
 

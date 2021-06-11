@@ -20,11 +20,10 @@
         "state": "stop"
       }
     ],
-    "audio":false
+    "audio": false
   },
   {
     "type": "dialogue",
-
     "id": "main",
     "level": 1,
     "components": [
@@ -54,11 +53,12 @@
         }
       },
       {
-        "name":"video",
-        "state":"start",
-        "settings":{
-          "src":"/videos/Sydney.mp4",
-          "text": "it's from a VHS tape!"
+        "name": "video",
+        "state": "start",
+        "settings": {
+          "src": "/videos/Sydney.mp4",
+          "text": "You find this VHS tape on the ground. What a nice welcome!",
+          "buttonText": "Thanks, stranger"
         }
       },
       {
@@ -112,7 +112,7 @@
         "text": "well anyway, we picked you up some grub in Perth like you asked, Karen!"
       },
       {
-        "speaker": "Notice",
+        "speaker": "notice",
         "text": "You give Karen the... food."
       },
       {
@@ -184,8 +184,8 @@
     "pathid": "game-show",
     "components": [
       {
-        "name":"video",
-        "state":"stop"
+        "name": "video",
+        "state": "stop"
       },
       {
         "name": "hub",
@@ -194,15 +194,27 @@
           "locations": [
             {
               "text": "what's TCP?",
-              "to": "TCP-exp"
+              "img": "/images/psisync.gif",
+              "to": "TCP-exp",
+              "locks": 0
             },
             {
               "text": "what's the sync part?",
-              "to": "sync-exp"
+              "img": "/images/slots.gif",
+              "to": "sync-exp",
+              "requires": [
+                0
+              ],
+              "locks": 1
             },
             {
               "text": "shake hands with server",
-              "to": "shake-server"
+              "to": "shake-server",
+              "img": "/images/hand_shake.gif",
+              "requires": [
+                0,
+                1
+              ]
             }
           ]
         }
@@ -212,7 +224,7 @@
         "state": "stop"
       },
       {
-        "name": "ip",
+        "name": "ipv4",
         "state": "stop"
       }
     ]
@@ -222,6 +234,12 @@
     "pathid": "TCP-exp",
     "id": "main",
     "level": 1,
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Becky",
@@ -618,6 +636,12 @@
     "pathid": "sync-exp",
     "id": "main",
     "level": 1,
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Becky",

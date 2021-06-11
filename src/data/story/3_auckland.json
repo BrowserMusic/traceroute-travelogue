@@ -232,22 +232,32 @@
         "name": "hub",
         "state": "start",
         "settings": {
+          "scene": "landing-auck",
           "locations": [
             {
               "text": "visit local nameserver",
               "img": "/images/email.gif",
-              "to": "auck-convo-1"
+              "to": "auck-convo-1",
+              "locks": 0
             },
             {
               "text": "where are we going, anyway?",
               "img": "/images/ocean.gif",
-              "to": "auck-convo-2"
+              "to": "auck-convo-2",
+              "locks": 1,
+              "requires": [
+                0
+              ]
             },
             {
               "text": "to departures",
               "img": "/images/mine_travel.gif",
               "to": "auck-proceed",
-              "disabled": true
+              "locked": true,
+              "requires": [
+                0,
+                1
+              ]
             }
           ],
           "onskip": "auck-proceed"
