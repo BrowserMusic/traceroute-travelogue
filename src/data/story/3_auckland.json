@@ -30,6 +30,13 @@
       {
         "name": "imgtimer",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 0
+        }
       }
     ],
     "lines": [
@@ -96,10 +103,8 @@
               "text": "keep moving",
               "img": "/images/beach2.gif",
               "to": "auck-datacentre-start",
-              "disabled": true,
-              "expects": [
-                "auck-background",
-                "auck-music"
+              "requires": [
+                0
               ]
             }
           ]
@@ -128,6 +133,10 @@
           "afterText": "Strange, isn't it? And yet you were granted this recital, as if the data center knew you were already coming... a treasured memory.",
           "to": "auck-strange"
         }
+      },
+      {
+        "name": "hub",
+        "state": "stop"
       }
     ]
   },
@@ -150,6 +159,10 @@
           "type": "image",
           "src": "/images/auck_data.png"
         }
+      },
+      {
+        "name": "hub",
+        "state": "stop"
       }
     ]
   },
@@ -209,11 +222,27 @@
       {
         "speaker": "Zak",
         "text": "uh, it's beeping again!"
-      },
+      }
+    ]
+  },
+  {
+    "type": "animation",
+    "components": [
       {
-        "speaker": "Guide",
-        "text": "WELCOME TO AUCKLAND!"
-      },
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "WELCOME TO AUCKLAND!",
+          "image": "/images/server-after.png"
+        }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "lines": [
       {
         "speaker": "Becky",
         "text": "you need to stop scaring me like that!!"
@@ -278,6 +307,14 @@
       {
         "name": "hub",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "Let's finish the DNS process!",
+          "image": "/images/server-after.png"
+        }
       }
     ],
     "lines": [
@@ -361,7 +398,11 @@
       },
       {
         "speaker": "Guide",
-        "text": "That was a completely random IP address, that may or may not point to a real website, but it exists within the range of IP addresses for New Zealand! Did you know that you can look up the IP address range of any country? [Here's the full list of address blocks for New Zealand!](https://lite.ip2location.com/new-zealand-ip-address-ranges?lang=en_US) And if you [look up a domain name through ICANN](https://lookup.icann.org/), you can find out what its nameservers are!"
+        "text": "That was a completely random IP address, that may or may not point to a real website, but it exists within the range of IP addresses for New Zealand!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Did you know that you can look up the IP address range of any country? [Here's the full list of address blocks for New Zealand!](https://lite.ip2location.com/new-zealand-ip-address-ranges?lang=en_US) And if you [look up a domain name through ICANN](https://lookup.icann.org/), you can find out what its nameservers are!"
       },
       {
         "speaker": "Zak",
@@ -387,13 +428,17 @@
       {
         "name": "hub",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "Let's talk about traceroutes!",
+          "img": "/images/server-after.png"
+        }
       }
     ],
     "lines": [
-      {
-        "speaker": "notice",
-        "text": "Subject: Traceroutes and Hops"
-      },
       {
         "speaker": "Becky",
         "text": "so we started at Wellington, then went to Whanganui, and now we're in Auckland."
@@ -428,7 +473,19 @@
       },
       {
         "speaker": "Guide",
-        "text": "Below is a graphical representation of this process!"
+        "text": "See the handout for more information on how this works!",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/traceroute.jpg",
+              "url": "https://blog.paessler.com/what-you-need-to-know-about-traceroute",
+              "text": "here's an article that has goes into more detail on how this works!",
+              "width": "400px"
+            }
+          }
+        ]
       },
       {
         "speaker": "Zak",
@@ -478,6 +535,14 @@
       {
         "name": "hub",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "Get ready for a splash!",
+          "img": "/images/server-after.png"
+        }
       }
     ],
     "lines": [
