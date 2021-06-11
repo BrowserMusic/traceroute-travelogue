@@ -201,6 +201,10 @@
       {
         "name": "error",
         "state": "stop"
+      },
+      {
+        "name": "ip",
+        "state": "stop"
       }
     ]
   },
@@ -658,6 +662,12 @@
     "pathid": "shake-server",
     "level": 1,
     "id": "main",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "notice",
@@ -686,7 +696,12 @@
     "components": [
       {
         "name": "ipv4",
+        "state": "start",
         "settings": {
+          "toShow": [
+            "ip",
+            "tcp"
+          ],
           "listeningFor": {
             "tcp": [
               "syn"

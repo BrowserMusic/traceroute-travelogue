@@ -9,6 +9,7 @@
           item: true,
           flag: 'flag' in item,
           highlight: highlight(data.name, item.code),
+          makeObvious: isListenedFor(item.code),
         }"
         :style="elemWidth(item)"
         @click.prevent="interactWith(item.code)"
@@ -45,16 +46,19 @@ export default {
       return `--block-width: ${item.bits}`;
     },
     interactWith(code) {
-      if (
-        this.listeningFor != null &&
-        this.listeningFor[this.data.name] != null &&
-        this.listeningFor[this.data.name].includes(code)
-      ) {
+      if (this.isListenedFor(code)) {
         console.log("you clicked on", code);
         this.$store.commit("path/freeze", false);
         this.$store.dispatch("path/next");
         console.log(this.$store.state.path.freezeState);
       }
+    },
+    isListenedFor(code) {
+      return (
+        this.listeningFor != null &&
+        this.listeningFor[this.data.name] != null &&
+        this.listeningFor[this.data.name].includes(code)
+      );
     },
   },
 };
@@ -74,6 +78,13 @@ export default {
 
   .packet .item {
     font-size: 0.95em;
+
+    &.makeObvious {
+      box-shadow: 0 0 0 10px orange;
+      box-shadow: 0 0 0 10px orange;
+      border: 5px solid aqua;
+      cursor: pointer;
+    }
   }
 
   .packet .item.flag {

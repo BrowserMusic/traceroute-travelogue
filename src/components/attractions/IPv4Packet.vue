@@ -427,6 +427,7 @@ export default {
   top: 0.5em;
   right: 0.5em;
   width: 40%;
+  z-index: 100;
 
   .packet {
     display: grid;
