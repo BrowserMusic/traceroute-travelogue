@@ -1,9 +1,6 @@
 <template>
   <div class="audio-handler">
     <audio-enabler v-if="!audioEnabled" />
-    <!-- <button v-if="!audioStarted" class="resume-audio" @click="resume()">
-      Audio
-    </button> -->
   </div>
 </template>
 
@@ -12,7 +9,6 @@ import * as Tone from "tone";
 import AudioManager from "../utils/audio/AudioManager.js";
 import AudioEnabler from "./misc/AudioEnabler.vue";
 import folks from "../data/characters.json";
-// const audioLoc = "/audio/speech/speech.mp3";
 const audioLoc = "/audio/speech.mp3";
 const mng = new AudioManager(folks, audioLoc);
 
@@ -47,8 +43,12 @@ export default {
     lineIndex() {
       if (this.$store.state.path.isFastForward) return;
       if (this.line != null) {
-        const mood = this.seeMood(this.line.text);
-        const length = Math.max(Math.floor(this.line.text.length / 12), 1);
+        const mood =
+          "text" in this.line ? this.seeMood(this.line.text) : "normal";
+        const length =
+          "text" in this.line
+            ? Math.max(Math.floor(this.line.text.length / 12), 1)
+            : 1;
         mng.play(this.line.speaker.toLowerCase(), {
           length: length,
           mood: mood,
@@ -66,25 +66,6 @@ export default {
       }
     },
   },
-  mounted() {
-    // mng.becky = this.makeSynth("sine", 523.25);
-    // mng.zak = this.makeSynth("triangle", 329.63);
-    // // mng.box = this.makeSynth("sine", 880);
-    // mng.box = {
-    //   synth: new Tone.NoiseSynth({
-    //     noise: "pink",
-    //     envelope: {
-    //       attack: 0.3,
-    //       decay: 0.2,
-    //       sustain: 0.7,
-    //       release: 0.8,
-    //     },
-    //     volume: -18,
-    //   }).toDestination(),
-    // };
-    // mng.box.synth.volume.value = -12;
-    // mng.box.synth.envelope = ;
-  },
   beforeDestroy() {
     mng.beforeDestroy();
     // for (let s of Object.keys(mng)) {
@@ -93,7 +74,9 @@ export default {
   },
   methods: {
     seeMood(text) {
-      if (text.includes("?")) {
+      if (text == null) {
+        return "normal";
+      } else if (text.includes("?")) {
         return "question";
       } else if (text.includes("!")) {
         return "exclamation";

@@ -14,12 +14,16 @@ class BackgroundMusicManager {
   }
 
   play(sound) {
+    console.log(sound);
+    this.stop();
     const shouldRepeat = ("repeat" in sound) ? sound.repeat : false;
     this.soundList = [];
 
     if (!shouldRepeat) {
+      console.log("sound shouldnt repeat");
       this.playSoundEvent(this.getSound(sound.name));
     } else {
+      console.log("sound should repeat");
       this.isRepeating = true;
       this.sound = ("name" in sound) ? sound.name : null;
       this.interval = ("interval" in sound) ? sound.interval : null;
@@ -57,12 +61,19 @@ class BackgroundMusicManager {
   }
 
   getSound(index) {
-    const duration = this.allSounds[index].end - this.allSounds[index].start;
+    try {
+      const duration = this.allSounds[index].end - this.allSounds[index].start;
 
-    return {
-      start: this.allSounds[index].start,
-      duration: duration
-    };
+      return {
+        start: this.allSounds[index].start,
+        duration: duration
+      };
+    } catch (e) {
+      console.log(index);
+      console.log(this.allSounds);
+      // console.log(e);
+    }
+
   }
 
   soundsAsBoundaries(fnames) {
