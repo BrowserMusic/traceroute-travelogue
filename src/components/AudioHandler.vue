@@ -8,9 +8,14 @@
 import * as Tone from "tone";
 import AudioManager from "../utils/audio/AudioManager.js";
 import AudioEnabler from "./misc/AudioEnabler.vue";
-import folks from "../data/characters.json";
-const audioLoc = "/audio/speech.mp3";
-const mng = new AudioManager(folks, audioLoc);
+const speechFile = "/audio/speech.mp3";
+
+Tone.ToneAudioBuffer.fromUrl(speechFile).then((buff) => {
+  // console.log("how about now?");
+  mng.setBuffer(buff);
+});
+
+const mng = new AudioManager();
 
 export default {
   components: { AudioEnabler },
