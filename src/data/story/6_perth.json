@@ -123,9 +123,18 @@
         "state": "stop"
       },
       {
+      "name": "mediabg",
+      "state": "start",
+      "settings": {
+        "type": "image",
+        "src": "/images/foodcourt.jpg"
+      }
+    },
+      {
         "name": "gifmess",
         "state": "start",
-        "images": [
+        "settings": {
+          "images": [
           "/images/bananapeels.gif",
           "/images/bread.gif",
           "/images/burger.gif",
@@ -137,7 +146,8 @@
           "/images/strawberries.gif",
           "/images/toast.gif",
           "/images/toast2.gif"
-        ]
+          ]
+        }
       }
     ]
   },

@@ -39,8 +39,7 @@
         "state": "start",
         "settings": {
           "type": "video",
-          "src": "/videos/Sydney.mp4",
-          "orientation": "vertical"
+          "src": "/videos/Sydney.mp4"
         }
       },
       {
