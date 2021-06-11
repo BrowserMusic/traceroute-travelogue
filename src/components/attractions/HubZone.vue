@@ -77,8 +77,9 @@ export default {
   }
 
   .hub-link {
-    display: inline-block;
     margin-top: 1em;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
       cursor: pointer;
@@ -86,12 +87,19 @@ export default {
 
     p {
       margin: 0;
+      margin-top: -1em;
+      margin-left: 10px;
+
       span {
         background: white;
+        border: 6px solid orange;
+        box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
       }
     }
 
     img {
+      border: 7px solid #00abff;
+      box-shadow: 2px 2px 0px 0 rgba(0, 0, 0, 0.25);
       min-width: 60px;
       max-width: 150px;
     }

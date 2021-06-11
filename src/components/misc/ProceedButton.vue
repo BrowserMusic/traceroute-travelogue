@@ -1,5 +1,5 @@
 <template>
-  <button class="proceed-button" @click="proceed()">
+  <button :class="generateClass()" @click="proceed()">
     <span>{{ buttonText() }}</span>
   </button>
 </template>
@@ -40,10 +40,15 @@ export default {
     },
     buttonText() {
       if (this.text == null) {
-        return "Proceed";
+        return "✉";
       }
 
       return this.text;
+    },
+    generateClass() {
+      let retval = this.text == "✉" || this.text == null ? "envelope" : "";
+      retval += " proceed-button";
+      return retval;
     },
   },
 };
@@ -51,19 +56,26 @@ export default {
 
 <style lang="scss">
 button {
-  font-size: 3.3em;
   border: 0px solid transparent;
   border-radius: 13px;
   color: #415fff;
   background-color: #ffc68a;
   box-shadow: inset -2px -2px 2px gray, inset 2px 2px 3px #ffe8cb;
-  min-width: 1.1em;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 120px;
-  max-height: 0.9em;
+
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.4em;
+
+  &.envelope {
+    font-size: 3.3em;
+    max-height: 0.9em;
+    min-width: 1.1em;
+    padding: 0;
+  }
 }
 button:active {
   box-shadow: inset 2px 2px 2px gray, inset -2px -2px 3px #ffe8cb;
