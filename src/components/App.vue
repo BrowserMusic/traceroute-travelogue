@@ -12,6 +12,11 @@
       @after-opening="toTyping()"
     />
     <ChapterNode :index="myCity" v-if="isModalOpen" />
+
+    <instruction-block
+      v-if="'scene' in scene && this.scene.scene == 'instructions'"
+      :settings="scene.settings"
+    />
   </div>
 </template>
 
@@ -19,6 +24,7 @@
 import LeafletMap from "./LeafletMap.vue";
 import ChapterNode from "./ChapterNode.vue";
 import BigHello from "./misc/BigHello.vue";
+import InstructionBlock from "./misc/InstructionBlock.vue";
 
 export default {
   name: "App",
@@ -26,6 +32,7 @@ export default {
     LeafletMap,
     ChapterNode,
     BigHello,
+    InstructionBlock,
   },
   data() {
     return {
@@ -89,7 +96,6 @@ export default {
         } else if (this.scene.scene == "showClosingTyping") {
           this.triggerState = "showClosingTyping";
         } else {
-          console.error();
           this.triggerState = false;
         }
       } else {
@@ -126,6 +132,7 @@ export default {
     },
     proceed(e) {
       if (e.code == "Space") {
+        e.preventDefault();
         this.$store.dispatch("path/next");
       }
     },
