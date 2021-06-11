@@ -43,20 +43,14 @@ export default {
     lineIndex() {
       if (this.$store.state.path.isFastForward) return;
       if (this.line != null) {
-        const mood =
-          "text" in this.line ? this.seeMood(this.line.text) : "normal";
-        const length =
-          "text" in this.line
-            ? Math.max(Math.floor(this.line.text.length / 12), 1)
-            : 1;
-        mng.play(this.line.speaker.toLowerCase(), {
-          length: length,
-          mood: mood,
-        });
+        this.playLine();
       }
     },
     sceneIndex() {
       if (this.$store.state.path.isFastForward) return;
+      if ("lines" in this.scene) {
+        this.playLine();
+      }
       if ("audio" in this.scene) {
         if (!this.scene.audio) {
           mng.stopBackground();
@@ -90,6 +84,18 @@ export default {
       Tone.context.resume();
       this.audioStarted = true;
       Tone.Transport.start();
+    },
+    playLine() {
+      const mood =
+        "text" in this.line ? this.seeMood(this.line.text) : "normal";
+      const length =
+        "text" in this.line
+          ? Math.max(Math.floor(this.line.text.length / 12), 1)
+          : 1;
+      mng.play(this.line.speaker.toLowerCase(), {
+        length: length,
+        mood: mood,
+      });
     },
     // playSound(speaker, length, mood) {
     //   if (speaker in mng) {

@@ -196,6 +196,7 @@ export default {
   padding: 1em;
   bottom: 5em;
   right: 260px;
+  z-index: 100;
 
   video {
     width: 100%;
