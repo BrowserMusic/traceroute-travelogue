@@ -2,18 +2,21 @@
   <div
     :class="{
       'big-hello': true,
-      active: active,
     }"
   >
     <h1>
       {{ helloText }}
-      <button v-if="showButton" @click="proceed">Enter</button>
+      <button v-if="showButton" @click="$emit('after-typing')">Enter</button>
     </h1>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    state: String,
+    settings: Object,
+  },
   data() {
     return {
       helloText: "",
@@ -26,35 +29,38 @@ export default {
     },
   },
   watch: {
-    active(newV) {
-      if (newV == true) {
-        this.animate();
-      }
+    state(newV) {
+      if (newV == false) return;
+      // if (newV == "showOpeningT") {
+      this.animate(this.settings.line, this.settings.speed);
+      // }
     },
   },
+  mounted() {
+    this.$store.commit("path/freeze", true);
+    this.animate(this.settings.line, this.settings.speed);
+  },
   methods: {
-    animate() {
-      let word = ["h", "e", "l", "l", "o"];
+    animate(word, speed = 300) {
+      // let word = ["h", "e", "l", "l", "o"];
+      word = word.split("");
       let index = 0;
 
       let ref = this;
       const timeout = setInterval(() => {
         if (index == word.length) {
           this.showButton = true;
-
-          // setTimeout(() => {
-
-          // }, 1000);
         } else if (index > word.length) {
           clearInterval(timeout);
         } else {
           ref.helloText += word[index];
           index++;
         }
-      }, 300);
+      }, speed);
     },
     proceed() {
-      this.$store.commit("openHello", false);
+      // this.$store.commit("path/freeze", false);
+      // this.$store.commit("openHello", false);
       this.$emit("after-opening");
     },
   },
@@ -63,14 +69,14 @@ export default {
 
 <style lang="scss">
 .big-hello {
-  display: none;
+  // display: none;
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
   // display: table;
-  opacity: 0;
+  // opacity: 0;
   z-index: 999;
   justify-content: center;
   align-items: center;

@@ -33,5 +33,19 @@
         "text": "Becky refreshes the page."
       }
     ]
+  },
+  {
+    "type": "animation",
+    "scene": "showClosingMap",
+    "layout": "map"
+  },
+  {
+    "type": "animation",
+    "scene": "showClosingTyping",
+    "layout": "map",
+    "settings": {
+      "line": "hey, how's it going?",
+      "speed": 300
+    }
   }
 ]

@@ -1,12 +1,23 @@
 [
   {
     "type": "animation",
-    "scene": "showOpeningTyping"
+    "scene": "showOpeningMap",
+    "layout": "map"
+  },
+  {
+    "type": "animation",
+    "scene": "showOpeningTyping",
+    "layout": "map",
+    "settings": {
+      "line": "hello",
+      "speed": 300
+    }
   },
   {
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "layout": "chapter",
     "lines": [
       {
         "speaker": "becky",

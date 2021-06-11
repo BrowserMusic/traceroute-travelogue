@@ -1,26 +1,38 @@
 <template>
   <div id="app">
-    <LeafletMap @after-opening="beginStory()" />
+    <BigHello
+      v-if="triggerState != false"
+      :state="triggerState"
+      :settings="scene.settings"
+      @after-typing="beginStory()"
+    />
+    <LeafletMap
+      :animate="mapAnim"
+      :animateType="mapAnimType"
+      @after-opening="toTyping()"
+    />
     <ChapterNode :index="myCity" v-if="isModalOpen" />
-    <resource-timer />
   </div>
 </template>
 
 <script>
 import LeafletMap from "./LeafletMap.vue";
 import ChapterNode from "./ChapterNode.vue";
-import ResourceTimer from "./attractions/ResourceTimer.vue";
+import BigHello from "./misc/BigHello.vue";
 
 export default {
   name: "App",
   components: {
     LeafletMap,
     ChapterNode,
-    ResourceTimer,
+    BigHello,
   },
   data() {
     return {
       myCity: 0,
+      triggerState: false,
+      mapAnim: false,
+      mapAnimType: "",
     };
   },
   computed: {
@@ -30,15 +42,27 @@ export default {
     city() {
       return this.$store.state.path.currentCity;
     },
-
-    scene() {
+    sceneIndex() {
       return this.$store.state.path.sceneIndex;
+    },
+    scene() {
+      return this.$store.getters["path/getScene"];
     },
     line() {
       return this.$store.state.path.lineIndex;
     },
   },
+  watch: {
+    sceneIndex() {
+      this.checkLayout();
+      this.getHelloState();
+      console.log(this.scene);
+    },
+  },
   async mounted() {
+    // const ff = false;
+    this.checkLayout();
+    this.getHelloState();
     const limit = { city: 0, scene: 2 };
     // await this.fastForward(limit);
     window.addEventListener("keyup", this.proceed);
@@ -50,12 +74,55 @@ export default {
     passCityVal(e) {
       this.myCity = e;
     },
-    beginStory() {
-      this.$store.commit("changeLayout");
-      this.$store.commit("openModal", true);
-      this.$store.commit("path/changeCity", 0);
-      this.$store.commit("path/changeScene", 0);
+    getHelloState() {
       console.log(this.scene);
+      if ("scene" in this.scene) {
+        this.$store.commit("path/freeze", true);
+        if (this.scene.scene == "showOpeningMap") {
+          this.mapAnim = true;
+          this.mapAnimType = "showOpeningMap";
+        } else if (this.scene.scene == "showClosingMap") {
+          this.mapAnim = true;
+          this.mapAnimType = "showClosingMap";
+        } else if (this.scene.scene == "showOpeningTyping") {
+          this.triggerState = "showOpeningTyping";
+        } else if (this.scene.scene == "showClosingTyping") {
+          this.triggerState = "showClosingTyping";
+        } else {
+          console.error();
+          this.triggerState = false;
+        }
+      } else {
+        this.triggerState = false;
+      }
+
+      console.log(this.triggerState);
+    },
+    toTyping() {
+      this.$store.commit("path/freeze", false);
+      this.$store.commit("path/changeScene");
+      console.log("begin typing");
+      this.mapAnim = false;
+      // await this.$store.dispatch("path/next");
+    },
+    checkLayout() {
+      if ("layout" in this.scene) {
+        this.$store.commit("changeLayout", this.scene.layout);
+      }
+      if (!("layout" in this.scene) || this.scene.layout == "chapter") {
+        this.$store.commit("changeLayout", "chapter");
+        this.$store.commit("openModal", true);
+      }
+    },
+    beginStory() {
+      if (this.triggerState == "showOpeningTyping") {
+        this.$store.commit("path/freeze", false);
+        // this.$store.commit("changeLayout");
+        this.$store.commit("openModal", true);
+        this.$store.commit("path/changeScene");
+      } else {
+        this.$store.commit("openModal", false);
+      }
     },
     proceed(e) {
       if (e.code == "Space") {

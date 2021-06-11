@@ -73,7 +73,8 @@ class MapHolder {
     this.map.scrollWheelZoom.enable();
   }
 
-  openingAnimation(callback) {
+  openingAnimation(callback, type) {
+    const loc = (type == "showOpeningMap") ? this.origin : this.destination;
     setTimeout(() => {
       this.disableMovement();
       this.map.on("moveend", () => {
@@ -82,11 +83,10 @@ class MapHolder {
         this.enableMovement();
         this.map.off("moveend");
       })
-      this.map.flyTo(this.path[0], 8, {
+      this.map.flyTo(loc, 8, {
         duration: 2
       });
     }, 2000);
-
   }
 
   buildNodePath() {

@@ -6,23 +6,26 @@
       >{{ cityDetails.country }}
     </p>
     <div id="mapContainer" :data-layout="layout"></div>
-    <BigHello @after-opening="$emit('after-opening')" />
   </div>
 </template>
 
 <script>
-import BigHello from "./misc/BigHello.vue";
+// import BigHello from "./misc/BigHello.vue";
 import MapHolder from "../utils/MapHolder";
 let map = {};
 
 export default {
   name: "LeafletMap",
-  components: { BigHello },
+  // components: { BigHello },
   data() {
     return {
       isMounted: false,
       isMini: false,
     };
+  },
+  props: {
+    animate: Boolean,
+    animateType: String,
   },
   computed: {
     city() {
@@ -39,6 +42,13 @@ export default {
     },
   },
   watch: {
+    animate: function (newV) {
+      if (newV == true) {
+        map.openingAnimation(() => {
+          this.$emit("after-opening");
+        }, this.animateType);
+      }
+    },
     layout: function (newV, oldV) {
       // console.log("layout watch");
       if (this.isMounted) {
@@ -65,10 +75,15 @@ export default {
     this.isMounted = true;
     map = new MapHolder(this.path, this.mapMarkerClick);
 
-    // map.openingAnimation(() => {
-    //   this.$store.commit("openHello");
-    // });
-    this.$emit("after-opening");
+    if (this.animate) {
+      map.openingAnimation(() => {
+        console.log("done with opening animation");
+        this.$emit("after-opening");
+        // this.$store.commit("openHello");
+        // func();
+      }, this.animateType);
+    }
+    // this.callOpening();
   },
   beforeDestroy() {
     if (map) {
@@ -88,6 +103,13 @@ export default {
       txt += this.cityDetails.country;
 
       return txt;
+    },
+    callOpening(func) {
+      map.openingAnimation(() => {
+        // this.$store.commit("openHello");
+        func();
+      });
+      // this.$emit("after-opening");
     },
   },
 };
