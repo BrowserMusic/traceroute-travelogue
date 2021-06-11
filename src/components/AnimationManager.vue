@@ -50,6 +50,11 @@
 
     <HTTPRequest v-if="isVisible('http')" :settings="getSettings('http')" />
 
+    <resource-timer
+      v-if="isVisible('resourcetimer')"
+      :settings="getSettings('resourcetimer')"
+    />
+
     <media-background
       v-if="isVisible('mediabg')"
       :settings="getSettings('mediabg')"
@@ -90,6 +95,7 @@ import ProceedButton from "./misc/ProceedButton.vue";
 import GifMess from "./attractions/GifMess.vue";
 import FineDining from "./dining/FineDining.vue";
 import HTTPRequest from "./attractions/HTTPRequest.vue";
+import ResourceTimer from "./attractions/ResourceTimer.vue";
 
 export default {
   name: "AnimationManager",
@@ -109,6 +115,7 @@ export default {
     GifMess,
     FineDining,
     HTTPRequest,
+    ResourceTimer,
   },
   props: {
     scene: Object,

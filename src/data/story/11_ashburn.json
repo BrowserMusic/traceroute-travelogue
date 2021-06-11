@@ -622,7 +622,25 @@
       },
       {
         "speaker": "Becky",
-        "text": "here. I'll just drop the full list of everything your browser made an HTTP request for while you were here."
+        "text": "here. I'll just drop the full list of everything your browser made an HTTP request for while you were here.",
+        "components": [
+          {
+            "name": "resourcetimer",
+            "state": "start"
+          }
+        ]
+      },
+      {
+        "speaker": "Becky",
+        "text": "it's not perfect, because this isn't how much you actually downloaded, it's how much space your downloaded files take up once they're unencoded"
+      },
+      {
+        "speaker": "Becky",
+        "text": "and this isn't even including map tiles, which are loaded from an external resource, but you can assume each one is between 3KB and 23KB in size."
+      },
+      {
+        "speaker": "Becky",
+        "text": "all this to say:"
       },
       {
         "speaker": "Becky",

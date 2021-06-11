@@ -17,7 +17,8 @@ const comps = {
     video: {},
     gifmess: {},
     dining: {},
-    http: {}
+    http: {},
+    resourcetimer: {}
   }),
   mutations: {
     updateComponents(state, block) {
@@ -35,6 +36,14 @@ const comps = {
           }
         }
       }
+    },
+    componentUpdateSelf(state, block) {
+      if (!(block.name in state)) {
+        console.error();
+        return;
+      }
+
+      state[block.name].settings = block.data;
     }
   },
   getters: {
@@ -46,11 +55,34 @@ const comps = {
         }
       }
       return retval;
+    },
+    getResourceTimerSize(state) {
+      if ("settings" in state.resourcetimer) {
+        console.log("inside getting the timer size");
+        const data = state.resourcetimer.settings;
+        console.log(data);
+        // let total = 0;
+        const reducer = (a, b) => a + b.encodedBodySize;
+        const res = data.reduce(reducer, 0);
+        return formatBytes(res);
+      }
     }
   },
   actions: {
 
   }
+}
+
+const formatBytes = function(bytes, decimals = 2) {
+  if (bytes === 0) return "0 Bytes";
+
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 }
 
 export default comps;

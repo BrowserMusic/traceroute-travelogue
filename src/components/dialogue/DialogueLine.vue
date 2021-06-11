@@ -69,6 +69,13 @@ export default {
         .split("[[redacted]]")
         .join("<span class='redact'>▥▤▧▩</span>");
 
+      if (res.indexOf("{{16 mb}}") >= 0) {
+        res = res
+          .split("{{16 mb}}")
+          .join(this.$store.getters["path/comps/getResourceTimerSize"]);
+      }
+      // res = res.split("{{16 mb}}").join
+
       return res;
     },
   },
