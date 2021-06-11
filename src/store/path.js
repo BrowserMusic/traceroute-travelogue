@@ -15,7 +15,7 @@ import ashburn from "../data/story/11_ashburn.json";
 import cville from "../data/story/12_charlottesville.json";
 
 function prepJSON() {
-  const path = [sydney1, perth, sydney2, wellington, whanganui, auckland, tasman, sydney1, perth, sydney2, cali, manhattan, toronto, ashburn, cville];
+  const path = [wellington, whanganui, auckland, tasman, sydney1, perth, sydney2, cali, manhattan, toronto, ashburn, cville];
   for (let j = 0; j < path.length; j++) {
     for (let i = 0; i < path[j].length; i++) {
       path[j][i].index = i;
@@ -40,7 +40,7 @@ const path = {
     currentCity: 0, // index of city in path
     paths: pathBlock,// the base one when you load geotraceroute: nuremberg to missoula 
     story: prepJSON(),
-    sceneIndex: 0, // index of current scene node inside city
+    sceneIndex: 2, // index of current scene node inside city
     lineIndex: 0, // index of current line if dialogue is present
     freezeState: false,
     isFastForward: false

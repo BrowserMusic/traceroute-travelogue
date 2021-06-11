@@ -22,7 +22,15 @@
         "name": "link",
         "state": "stop"
       }
-    ]
+    ],
+    "audio": {
+      "repeat":true,
+      "interval":{
+        "type": "fixed",
+        "value":0
+      },
+      "name": "loop1"
+    }
   },
   {
     "type": "dialogue",
@@ -220,7 +228,8 @@
           "timer": 2000
         }
       }
-    ]
+    ],
+    "audio": false
   },
   {
     "type": "dialogue",
@@ -244,6 +253,14 @@
         "state": "stop"
       }
     ],
+    "audio": {
+      "repeat":true,
+      "interval":{
+        "type": "fixed",
+        "value":0
+      },
+      "name": "loop2"
+    },
     "characters": [
       {
         "name": "tv",
@@ -294,10 +311,8 @@
     ]
   },
   {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "components": [
+    "type": "animation",
+    "components":[
       {
         "name": "character",
         "state": "start",
@@ -307,6 +322,22 @@
         }
       }
     ],
+    "audio":false
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+    ],
+    "audio": {
+      "repeat":true,
+      "interval":{
+        "type": "fixed",
+        "value":0
+      },
+      "name": "loop4"
+    },
     "lines": [
       {
         "speaker": "Zak",

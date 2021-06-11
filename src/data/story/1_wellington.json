@@ -629,7 +629,15 @@
         "name": "bigtext",
         "state": "stop"
       }
-    ]
+    ],
+    "audio": {
+      "repeat":true,
+      "interval":{
+        "type": "fixed",
+        "value":0
+      },
+      "name": "loop2"
+    }
   },
   {
     "type": "dialogue",
@@ -641,6 +649,7 @@
         "state": "stop"
       }
     ],
+    "audio":false,
     "characters": [
       {
         "name": "orb",
