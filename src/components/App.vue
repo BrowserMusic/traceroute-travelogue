@@ -63,7 +63,7 @@ export default {
     this.checkLayout();
     this.getHelloState();
     const limit = { city: 0, scene: 1 };
-    await this.fastForward(limit);
+    // await this.fastForward(limit);
 
     window.addEventListener("keyup", this.proceed);
   },
