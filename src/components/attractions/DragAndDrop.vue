@@ -1,6 +1,11 @@
 <template>
   <div class="drag-drop">
-    <div class="dragged-element" draggable @dragstart="startDrag($event)">
+    <div
+      class="dragged-element"
+      draggable
+      @dragstart="startDrag($event)"
+      :style="dragStyle()"
+    >
       <img v-if="!imgIsDropped" name="drag-el" :src="settings.img" />
     </div>
     <div
@@ -49,12 +54,22 @@ export default {
       this.$store.commit("path/freeze", false);
       this.$store.dispatch("path/next");
     },
+    dragStyle() {
+      let retval = "";
+      retval +=
+        "dragBackground" in this.settings
+          ? `--drag-bg: url('${this.settings.dragBackground.file}');`
+          : "";
+
+      return retval;
+    },
     dropStyle() {
       let retval = "";
       retval +=
         "dropText" in this.settings
           ? `--drop-text: '${this.settings.dropText}'; `
           : "";
+
       retval +=
         "dropImg" in this.settings
           ? `--drop-img: url('${this.settings.dropImg}'); `
@@ -99,14 +114,34 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     width: var(--dragging-size);
     height: var(--dragging-size);
+  }
+
+  .dragged-element {
+    img {
+      min-width: 160px;
+      height: auto;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -150px;
+      right: -1em;
+      width: calc(100% - 2em);
+      height: 200px;
+      background-image: var(--drag-bg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.75;
+      z-index: -1;
+    }
   }
 
   .drop-zone {
     --drop-text: "";
     --drop-img: "";
-    position: relative;
 
     &.waiting {
       box-shadow: 0px 0px 1px 5px yellow;
@@ -119,7 +154,8 @@ export default {
 
     &::before {
       background-image: var(--drop-img);
-      background-size: contain;
+      background-size: cover;
+      background-repeat: no-repeat;
       background-position: 50%;
       content: "";
       z-index: 0;
@@ -135,6 +171,8 @@ export default {
       justify-self: center;
       text-align: center;
       width: 70%;
+      text-shadow: 1px 1px 0 white, -1px -1px 0 white, -1px 1px 0 white,
+        1px -1px 0 white;
     }
 
     &.done::after {
