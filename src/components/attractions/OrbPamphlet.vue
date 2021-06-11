@@ -16,6 +16,7 @@
     </div>
     <div v-else class="page">
       <img v-if="'image' in settings" :src="settings.image" />
+      <h1 v-if="'title' in settings">{{ settings.title }}</h1>
       <p v-if="'text' in settings">{{ settings.text }}</p>
     </div>
     <div v-if="page != 0" class="left-page"></div>

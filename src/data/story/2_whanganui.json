@@ -89,8 +89,8 @@
         }
       }
     ],
-    "audio":{
-      "repeat":true,
+    "audio": {
+      "repeat": true,
       "interval": {
         "type": "random",
         "value": [
@@ -255,11 +255,11 @@
       },
       {
         "speaker": "Becky",
-        "text": "this internet travel guide beeps?"
+        "text": "you beep, too?"
       },
       {
         "speaker": "Zak",
-        "text": "I guess it's weirdly sentient or something, it must be trying to tell us something about this place"
+        "text": "I guess it's always listening, it must be trying to tell us something about this place"
       }
     ]
   },
@@ -272,8 +272,7 @@
         "settings": {
           "page": 1,
           "title": "WELCOME TO THE TARANAKI OIL FIELDS!!!!",
-          "image": "/images/server-after.png",
-          "text": "WELCOME TO THE TARANAKI OIL FIELDS!!!!"
+          "image": "/images/server-after.png"
         }
       }
     ]
@@ -287,56 +286,27 @@
       {
         "speaker": "Becky",
         "text": "aaaaa!!"
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
+      },
       {
-        "name": "pamphlet",
-        "state": "start",
-        "settings": {
-          "page": 1,
-          "title": "WELCOME TO THE TARANAKI OIL FIELDS!!!!",
-          "image": "/images/server-after.png",
-          "text": "If you've ended up here, you're probably one lost packet! what are you doing outside of the packetsphere? well since you're here we might as well use this as an opportunity to learn a bit more about where the internet *really* comes from."
-        }
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "pathid": "oil-field1",
-    "lines": [
+        "speaker": "Guide",
+        "text": "If you've ended up here, you're probably one lost packet! What are you doing outside?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Well, since you're here we might as well use this as an opportunity to learn a bit more about where the internet *really* comes from."
+      },
       {
         "speaker": "Zak",
         "text": "oh?"
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
+      },
       {
-        "name": "pamphlet",
-        "state": "start",
-        "settings": {
-          "page": 1,
-          "title": "WELCOME TO THE TARANAKI OIL FIELDS!",
-          "image": "/images/server-after.png",
-          "text": "The internet, and just about all of the things that make it up require energy to run. Since all of these routers, computers, data centers, mobile devices etc. are also scattered all around the globe, these individual pieces of technology rely mostly on their local power grids to get that energy. So as different places harvest energy in different ways, the energy \"diet\" of the internet changes depending on where you are."
-        }
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "lines": [
+        "speaker": "Guide",
+        "text": "The internet, and just about all of the things that make it up require energy to run. "
+      },
+      {
+        "speaker": "Guide",
+        "text": "Since all of these routers, computers, data centers, mobile devices etc. are also scattered all around the globe, these individual pieces of technology rely mostly on their local power grids to get that energy. So as different places harvest energy in different ways, the energy \"diet\" of the internet changes depending on where you are."
+      },
       {
         "speaker": "Becky",
         "text": "Hmm, so I guess what it \"costs\" to use the internet depends not only on where *you're* using it, but where you're *connecting* to with the internet, and all the places that connection is traveling through along its journey."
@@ -359,7 +329,7 @@
       },
       {
         "speaker": "Becky",
-        "text": "wait, you talk?"
+        "text": "why do you seem so interested in food?"
       },
       {
         "speaker": "Guide",
@@ -367,7 +337,7 @@
       },
       {
         "speaker": "Zak",
-        "text": "this is a weirdly interactive travel pamphet!"
+        "text": "you are weirdly interactive for a travel pamphet!"
       },
       {
         "speaker": "Becky",
@@ -386,14 +356,17 @@
           "locations": [
             {
               "img": "/images/oildrum-fire.gif",
+              "text": "this one?",
               "to": "oil-field2"
             },
             {
               "img": "/images/drumkit.gif",
+              "text": "or this one?",
               "to": "wrong-drum"
             },
             {
               "img": "/images/lava.gif",
+              "text": "maybe this one?",
               "to": "bad-oil-drum"
             }
           ]
@@ -571,6 +544,10 @@
     "level": 1,
     "lines": [
       {
+        "speaker": "notice",
+        "text": "You physically oil Mike's digital wheels."
+      },
+      {
         "speaker": "Mike",
         "text": "Say... that's feeling pretty good!... whoo hoo!!! I'm free!"
       },
@@ -584,7 +561,7 @@
       },
       {
         "speaker": "Mike",
-        "text": "Well listen, I owe ya big time. Any time you need a ride through these here underground cable mines you just give me a holler!"
+        "text": "Well, listen, I owe ya big time. Any time you need a ride through these here underground cable mines you just give me a holler!"
       },
       {
         "speaker": "Mike",

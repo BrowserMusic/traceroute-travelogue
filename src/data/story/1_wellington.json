@@ -67,15 +67,43 @@
       },
       {
         "speaker": "Becky",
-        "text": "I did! but \"hello\" still has to take the the journey all the way from New Zealand to the US."
+        "text": "I did! but \"hello\" still has to take the the trip all the way from New Zealand to the US."
       },
       {
         "speaker": "Becky",
-        "text": "do you want to do the honors, since you’re sending the message?"
+        "text": "and this trip is going to be unique, because we're going along for the ride!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "a never-before-seen journey into the very depths of the internet!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "something that has never been done before!"
       },
       {
         "speaker": "Zak",
-        "text": "yeah, hang on"
+        "text": "well, I think I've seen a movie or two that might do something similar..."
+      },
+      {
+        "speaker": "Becky",
+        "text": "never been done before!!!"
+      },
+      {
+        "speaker": "Zak",
+        "text": "anyways, you're welcome to join us, whoever you are, on your browser"
+      },
+      {
+        "speaker": "Zak",
+        "text": "guess it's about time we got started?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "yeah! do you want to do the honors, since you’re the sender?"
+      },
+      {
+        "speaker": "Zak",
+        "text": "sure, hang on"
       }
     ]
   },
@@ -147,11 +175,11 @@
       },
       {
         "speaker": "Zak",
-        "text": "alright, I'm ready to send this message whenever"
+        "text": "alright, I'm ready to send this message whenever you are"
       },
       {
         "speaker": "Becky",
-        "text": "well, let’s check the packet details just to be sure"
+        "text": "well, let’s check the packet details just to be sure."
       },
       {
         "speaker": "Box",
@@ -803,38 +831,41 @@
     ]
   },
   {
-    "type": "animation",
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
     "components": [
       {
         "name": "pamphlet",
         "state": "start",
         "settings": {
           "page": 1,
-          "title": "Welcome!",
-          "image": "/images/server-after.png",
-          "text": "If you're reading this right now you're likely a packet about to start a journey across the internet. At the moment you've been sent out through a device and are sitting in your first router. Routers look at your destination address and depending on the local traffic conditions will pass you through to the next closest stop along your journey to your destination."
+          "title": "Let's journey through the packetsphere!",
+          "image": "/images/server-after.png"
         }
       }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
-      {
-        "name": "pamphlet",
-        "settings": {
-          "page": 1,
-          "image": "/images/server-after.png",
-          "text": "To determine your destination IP address, first locate your ISP's DNS resolver. Make sure you have the domain name of your destination ready for faster processing."
-        }
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
+    ],
     "lines": [
+      {
+        "speaker": "Guide",
+        "text": "Greetings!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I thought you were a book! why do you talk??"
+      },
+      {
+        "speaker": "Guide",
+        "text": "If you're reading this right now you're likely a packet about to start a journey across the internet. At the moment you've been sent out through a device and are sitting in your first router."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Routers look at your destination address and depending on the local traffic conditions will pass you through to the next closest stop along your journey to your destination."
+      },
+      {
+        "speaker": "Guide",
+        "text": "To determine your destination IP address, first locate your ISP's DNS resolver. Make sure you have the domain name of your destination ready for faster processing."
+      },
       {
         "speaker": "Zak",
         "text": "that... didn't clarify anything for me"
@@ -842,35 +873,22 @@
       {
         "speaker": "Becky",
         "text": "Turn the page? Maybe we'll get a better explanation."
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
+      },
       {
-        "name": "pamphlet",
-        "settings": {
-          "page": 1,
-          "title": "DNS Resolution",
-          "image": "/images/server-after.png",
-          "text": "Your DNS resolver will recursively ask the root DNS server, then the TLD server, then finally the domain's nameserver, which will give you the IP address required to continue your request."
-        }
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "lines": [
+        "speaker": "Guide",
+        "text": "Your DNS resolver will recursively ask the root DNS server, then the TLD server, then finally the domain's nameserver, which will give you the IP address required to continue your request."
+      },
       {
         "speaker": "Zak",
         "text": "what??"
       },
       {
         "speaker": "Becky",
-        "text": "wow, let's try to parse that out"
+        "text": "these pages don't even *turn,* it's just *talking*, why is it *talking*"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Oh – goodness me, I didn't realize you were human tourists. Allow me to explain!"
       }
     ]
   },
@@ -878,42 +896,45 @@
     "type": "dialogue",
     "id": "tutorial",
     "level": 2,
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 1,
+          "title": "Let's get our IP address!",
+          "image": "/images/server-after.png"
+        }
+      }
+    ],
     "lines": [
       {
-        "speaker": "notice",
-        "text": "Subject: Why Domain Name Servers?"
+        "speaker": "Guide",
+        "text": "Any website is located at some IP address. IP addresses look something like: 194.18.24.800"
+      },
+      {
+        "speaker": "Guide",
+        "text": "But you humans don't like IP addresses, because numbers are hard to remember."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Instead, you use URLs, like [[redacted]].com, or whatever.org or horse.pizza."
+      },
+      {
+        "speaker": "Guide",
+        "text": "But URLs are too complicated for a router – they don't have any sense of order or have any information on their location, they're just *text.*"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Dreadful!"
       },
       {
         "speaker": "Becky",
-        "text": "So here's the deal."
-      },
-      {
-        "speaker": "Becky",
-        "text": "any website is located at some IP address. IP addresses look something like: 194.18.24.800"
-      },
-      {
-        "speaker": "Becky",
-        "text": "but humans don't like IP addresses, because numbers are hard to remember."
-      },
-      {
-        "speaker": "Becky",
-        "text": "instead, we use URLs, like whatever.com or horse.pizza."
-      },
-      {
-        "speaker": "Zak",
-        "text": "or [[redacted]].com."
-      },
-      {
-        "speaker": "Becky",
-        "text": "but routers don't want URLs, they want IP addresses."
-      },
-      {
-        "speaker": "Zak",
         "text": "so: something has to translate it?"
       },
       {
-        "speaker": "Becky",
-        "text": "Yeah. We need to \"resolve\" the URL into an IP address, and we'll do that by asking a hierarchical series of Domain Name Servers."
+        "speaker": "Guide",
+        "text": "Exactly. We need to \"resolve\" the URL into an IP address, and we'll do that by asking a hierarchical series of Domain Name Servers."
       },
       {
         "speaker": "Zak",
@@ -921,72 +942,65 @@
       },
       {
         "speaker": "Becky",
-        "text": "well, it's something our Internet Service Provider (ISP) likely handles"
+        "text": "This is almost certainly something your ISP would handle, but let's walk through the process ourselves."
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 1,
+          "title": "Let's use DNS to get our IP address!",
+          "image": "/images/server-after.png"
+        }
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Becky",
+        "text": "hey! anybody listening? we've got a domain name. it's [[redacted]].com. can somebody turn this thing into an IP address?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Congratulations! With your domain name in hand, it's time to begin. First, we'll find the nearest DNS root server."
+      },
+      {
+        "speaker": "Guide",
+        "text": "The root server's task is to redirect you to a Top-Level Domain (TLD) server."
       },
       {
         "speaker": "Becky",
-        "text": "but I think the Guide is going to walk us through it."
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "lines": [
+        "text": "what does the TLD server do, then?"
+      },
       {
-        "speaker": "Becky",
-        "text": "hey! we've got our domain name. it's [[redacted]].com. can you resolve it?"
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
+        "speaker": "Guide",
+        "text": "You'll find out when we get there!"
+      },
       {
-        "name": "pamphlet",
-        "settings": {
-          "page": 1,
-          "title": "DNS Resolution",
-          "image": "/images/server-after.png",
-          "text": "Congratulations! With your domain name in hand, it's time to begin. First, we'll find the nearest DNS root server. The root server's task is to redirect you to a Top-Level Domain (TLD) server. Each of these servers handles a different TLD, like .com, .net, .org, .pizza, etc."
-        }
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
+        "speaker": "Guide",
+        "text": "There are 1380 root DNS servers spread strategically throughout the globe, which come in 13 varieties from A to M."
+      },
       {
-        "name": "pamphlet",
-        "settings": {
-          "page": 1,
-          "title": "DNS Resolution",
-          "image": "/images/server-after.png",
-          "text": "There are 1380 root DNS servers spread strategically throughout the globe, which come in 13 varieties from A to M. You can find your nearest DNS root server via the attached handout."
-        }
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
-      {
-        "name": "link",
-        "state": "start",
-        "settings": {
-          "img": "/images/root_dns_handout.jpeg",
-          "url": "https://root-servers.org/#map",
-          "text": "click me to find your closest root DNS servers!"
-        }
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "lines": [
+        "speaker": "Guide",
+        "text": "You can find your nearest DNS root server via the attached handout.",
+        "components": [
+          {
+            "name": "link",
+            "state": "start",
+            "settings": {
+              "img": "/images/root_dns_handout.jpeg",
+              "url": "https://root-servers.org/#map",
+              "text": "click me to find your closest root DNS servers!"
+            }
+          }
+        ]
+      },
       {
         "speaker": "Zak",
         "text": "oh, that's cool, there's actually four of them in Wellington. D, E, I, and J."
@@ -1006,93 +1020,58 @@
       {
         "speaker": "Zak",
         "text": "hey, uh.. guide? can we ask the \"J\" root DNS server in Wellington, NZ to forward us... somewhere?"
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
-      {
-        "name": "pamphlet",
-        "settings": {
-          "page": 1,
-          "title": "DNS Resolution",
-          "image": "/images/server-after.png",
-          "text": "Congratulations!! The \"J\" root DNS server's IP address is 199.7.83.42. You should hear from the root DNS soon."
-        }
       },
       {
-        "name": "link",
-        "state": "stop"
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "lines": [
+        "speaker": "Guide",
+        "text": "Congratulations!! The \"J\" root DNS server's IP address is 199.7.83.42. You should hear from the root DNS soon."
+      },
       {
         "speaker": "J",
-        "text": "Hello! This is the J root DNS server. Your requested URL's top-level domain is dot-com. Forwarding you to the dot-com TLD domain closest to you."
+        "text": "Hello! This is the J root DNS server. Your requested URL's top-level domain is dot-com."
+      },
+      {
+        "speaker": "J",
+        "text": "Here's the location of the closest dot-com TLD server to you."
       },
       {
         "speaker": "Becky",
-        "text": "that was fa-"
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
+        "text": "that was fast"
+      },
       {
-        "name": "pamphlet",
-        "settings": {
-          "page": 1,
-          "title": "DNS Resolution",
-          "image": "/images/server-after.png",
-          "text": "Congratulations!!! You've received the location of the closest TLD server covering dot-com to you. Now forwarding this request to the TLD server."
-        }
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "lines": [
+        "speaker": "Guide",
+        "text": "Congratulations!! You've received the location of the closest .com TLD server."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Each TLD server handles a different domain – this one serves .com, but there are others for .org, .net, .pizza, etc."
+      },
+      {
+        "speaker": "Becky",
+        "text": "why do you keep mentioning .pizza?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Now forwarding this request to the TLD server."
+      },
       {
         "speaker": "dot-com",
-        "text": "Hello! This is the dot-com TLD server speaking. The closest nameserver for your domain, [[redacted]].com, is located in Auckland, NZ. The nameserver will give you the IP address of your destination."
+        "text": "Hello! This is the dot-com TLD server speaking."
+      },
+      {
+        "speaker": "dot-com",
+        "text": "The closest nameserver for your domain, [[redacted]].com, is located in Auckland, NZ. The nameserver will give you the IP address of your destination."
+      },
+      {
+        "speaker": "Guide",
+        "text": "Congratulations!!!! Your nameserver is in sight! Please make your way to Auckland, NZ."
       },
       {
         "speaker": "Zak",
         "text": "wait, what's a nameserver again?"
-      }
-    ]
-  },
-  {
-    "type": "animation",
-    "components": [
+      },
       {
-        "name": "pamphlet",
-        "settings": {
-          "page": 1,
-          "title": "DNS Resolution",
-          "image": "/images/server-after.png",
-          "text": "Congratulations!!!! Your nameserver is in sight! Please make your way to Auckland, NZ."
-        }
-      }
-    ]
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "lines": [
-      {
-        "speaker": "Becky",
-        "text": "it generally belongs to whatever registrar the site owner registered the domain with."
+        "speaker": "Guide",
+        "text": "It's the final level of the DNS hierarchy! It generally is part of whatever registrar the site owner registered the domain with."
       },
       {
         "speaker": "Becky",
