@@ -178,34 +178,84 @@
       "end": 88.15673469387755,
       "loop": false
     },
-    "orb_short": {
+    "loop1": {
       "start": 90,
-      "end": 90.55201814058957,
+      "end": 106.06530612244899,
+      "loop": false
+    },
+    "loop10": {
+      "start": 108,
+      "end": 124.06530612244899,
+      "loop": false
+    },
+    "loop2": {
+      "start": 126,
+      "end": 142.065306122449,
+      "loop": false
+    },
+    "loop3": {
+      "start": 144,
+      "end": 160.065306122449,
+      "loop": false
+    },
+    "loop4": {
+      "start": 162,
+      "end": 178.065306122449,
+      "loop": false
+    },
+    "loop5": {
+      "start": 180,
+      "end": 196.065306122449,
+      "loop": false
+    },
+    "loop6": {
+      "start": 198,
+      "end": 214.065306122449,
+      "loop": false
+    },
+    "loop7": {
+      "start": 216,
+      "end": 232.065306122449,
+      "loop": false
+    },
+    "loop8": {
+      "start": 234,
+      "end": 250.065306122449,
+      "loop": false
+    },
+    "loop9": {
+      "start": 252,
+      "end": 268.065306122449,
+      "loop": false
+    },
+    "orb_short": {
+      "start": 270,
+      "end": 270.55201814058955,
       "loop": false
     },
     "orb_short2": {
-      "start": 92,
-      "end": 93.03201814058957,
+      "start": 272,
+      "end": 273.03201814058957,
       "loop": false
     },
     "orb_short3": {
-      "start": 95,
-      "end": 96.44,
+      "start": 275,
+      "end": 276.44,
       "loop": false
     },
     "orb_short4": {
-      "start": 98,
-      "end": 98.6,
+      "start": 278,
+      "end": 278.6,
       "loop": false
     },
     "orb_short5": {
-      "start": 100,
-      "end": 100.88800453514739,
+      "start": 280,
+      "end": 280.8880045351474,
       "loop": false
     },
     "orb_short6": {
-      "start": 102,
-      "end": 102.96,
+      "start": 282,
+      "end": 282.96,
       "loop": false
     }
   }
