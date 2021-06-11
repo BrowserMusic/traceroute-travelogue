@@ -89,6 +89,26 @@
         }
       }
     ],
+    "audio":{
+      "repeat":true,
+      "interval": {
+        "type": "random",
+        "value": [
+          1,
+          2,
+          5,
+          6
+        ]
+      },
+      "name": "cave1",
+      "list": [
+        "cave2",
+        "cave3",
+        "cave4",
+        "cave5",
+        "cave6"
+      ]
+    },
     "lines": [
       {
         "speaker": "notice",

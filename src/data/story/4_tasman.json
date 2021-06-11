@@ -4,7 +4,9 @@
     "components": [
       {
         "name": "mediabg",
-        "state": "stop"
+        "settings":{
+          "src":"/images/underwater.jpg"
+        }
       },
       {
         "name": "imgtimer",
@@ -251,6 +253,12 @@
       {
         "name": "gifmess",
         "state": "stop"
+      },
+      {
+        "name":"mediabg",
+        "settings":{
+          "src":"/images/underwater2.jpg"
+        }
       }
     ],
     "audio": {

@@ -8,10 +8,6 @@
         "state": "stop"
       },
       {
-        "name": "mediabg",
-        "state": "stop"
-      },
-      {
         "name": "imgtimer",
         "state": "start",
         "settings": {
@@ -23,10 +19,12 @@
         "name": "character",
         "state": "stop"
       }
-    ]
+    ],
+    "audio":false
   },
   {
     "type": "dialogue",
+
     "id": "main",
     "level": 1,
     "components": [
@@ -36,10 +34,9 @@
       },
       {
         "name": "mediabg",
-        "state": "start",
         "settings": {
-          "type": "video",
-          "src": "/videos/Sydney.mp4"
+          "type": "image",
+          "src": "/images/sydneybg.jpg"
         }
       },
       {
@@ -54,6 +51,14 @@
             "/images/sydneysights.gif",
             "/images/sydneyspin.gif"
           ]
+        }
+      },
+      {
+        "name":"video",
+        "state":"start",
+        "settings":{
+          "src":"/videos/Sydney.mp4",
+          "text": "it's from a VHS tape!"
         }
       },
       {
@@ -84,7 +89,7 @@
             "settings": {
               "page": 2,
               "title": " ",
-              "image": "/images/magnify.gif",
+              "image": "/images/server-after.png",
               "text": " "
             }
           }
@@ -178,6 +183,10 @@
     "type": "animation",
     "pathid": "game-show",
     "components": [
+      {
+        "name":"video",
+        "state":"stop"
+      },
       {
         "name": "hub",
         "state": "start",

@@ -18,7 +18,8 @@
         "name": "gifmess",
         "state": "stop"
       }
-    ]
+    ],
+    "audio":false
   },
   {
     "type": "dialogue",
@@ -33,9 +34,8 @@
         "name": "mediabg",
         "state": "start",
         "settings": {
-          "type": "video",
-          "src": "/videos/Perth.mp4",
-          "orientation": "vertical"
+          "type": "image",
+          "src": "/images/perth.gif"
         }
       },
       {
@@ -149,7 +149,15 @@
           ]
         }
       }
-    ]
+    ],
+    "audio":{
+      "repeat":true,
+      "interval":{
+        "type":"fixed",
+        "value":0
+      },
+      "name": "loop6"
+    }
   },
   {
     "type": "dialogue",

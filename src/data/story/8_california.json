@@ -3,6 +3,12 @@
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "components":[
+      {
+        "name":"video",
+        "state":"stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Local",
@@ -108,12 +114,53 @@
   },
   {
     "type": "animation",
-    "TODO": "add a hub here with a bunch of clickable gifs"
+    "TODO": "add a hub here with a bunch of clickable gifs",
+    "components":[
+      {
+        "name": "hub",
+      "state": "start",
+      "settings": {
+        "locations": [
+          {
+            "img": "/images/email.gif",
+            "to": "karen-home"
+          },
+          {
+            "img": "/images/bat2.gif",
+            "to": "karen-home"
+          },
+          {
+            "img": "/images/burger.gif",
+            "to": "karen-home"
+          },
+          {
+            "img": "/images/drumkit.gif",
+            "to": "karen-home"
+          },
+          {
+            "img": "/images/orcawithhouse.gif",
+            "to": "karen-home"
+          },
+          {
+            "img": "/images/orcawithhouse.gif",
+            "to": "karen-home"
+          }
+        ]
+      }
+      }
+    ]
   },
   {
     "type": "dialogue",
     "level": 1,
+    "pathid":"karen-home",
     "id": "main",
+    "components":[
+      {
+        "name":"hub",
+        "state":"stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Karen",
@@ -195,11 +242,34 @@
   },
   {
     "type": "animation",
-    "TODO": "HEAD DOWN TO THE MINES WITH MICHAEL?"
+    "TODO": "HEAD DOWN TO THE MINES WITH MICHAEL?",
+    "components":[
+      {
+        "name":"bigbutton",
+        "state":"start",
+        "settings":{
+          "text": "HEAD DOWN TO THE MINES WITH MICHAEL?"
+        }
+      }
+    ]
   },
   {
     "type": "animation",
-    "TODO": "loadgif goes here, but only 1 second long"
+    "TODO": "loadgif goes here, but only 1 second long",
+    "components": [
+      {
+        "name":"bigbutton",
+        "state":"stop"
+      },
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+         "src": "/images/loadscreen.gif",
+         "timer": 1000
+        }
+      }
+    ]
   },
   {
     "type": "dialogue",

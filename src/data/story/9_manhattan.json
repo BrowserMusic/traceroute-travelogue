@@ -3,6 +3,12 @@
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "components": [
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Becky",

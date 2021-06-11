@@ -16,7 +16,14 @@
   {
     "type": "animation",
     "scene": "showOpeningMap",
-    "layout": "map"
+    "layout": "map",
+    "audio":{
+      "repeat":true,
+      "interval":{
+        "type":"fixed",
+        "value":0
+      }
+    }
   },
   {
     "type": "animation",
@@ -32,6 +39,7 @@
     "level": 1,
     "id": "main",
     "layout": "chapter",
+    "audio": false,
     "lines": [
       {
         "speaker": "becky",
@@ -650,7 +658,7 @@
     ],
     "audio": {
       "repeat":false,
-      "name":"Zak3"
+      "name":"dialup"
     },
     "characters": [
       {

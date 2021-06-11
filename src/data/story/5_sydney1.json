@@ -14,11 +14,16 @@
           "timer": 2000
         }
       }
-    ]
+    ],
+    "audio": false
   },
   {
     "type": "animation",
     "components": [
+      {
+        "name":"mediabg",
+        "state":"stop"
+      },
       {
         "name": "pamphlet",
         "state": "stop"
@@ -41,7 +46,11 @@
           ]
         }
       }
-    ]
+    ],
+    "audio":{
+      "repeat":false,
+      "name": "wave"
+    }
   },
   {
     "type": "dialogue",
@@ -101,7 +110,32 @@
           ]
         }
       }
-    ]
+    ],
+    "audio":{
+      "repeat":true,
+      "interval": {
+        "type": "random",
+        "value": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7
+        ]
+      },
+      "name": "cave1",
+      "list": [
+        "cave2",
+        "cave3",
+        "cave4",
+        "cave5",
+        "cave6"
+      ]
+    }
   },
   {
     "type": "dialogue",
