@@ -3,89 +3,209 @@
     "speech.mp3"
   ],
   "spritemap": {
-    "Zak1": {
+    "Mike1": {
       "start": 0,
-      "end": 0.6008163265306122,
+      "end": 3.0040816326530613,
+      "loop": false
+    },
+    "Mike2": {
+      "start": 5,
+      "end": 9.806530612244899,
+      "loop": false
+    },
+    "Mike3": {
+      "start": 11,
+      "end": 15.806530612244899,
+      "loop": false
+    },
+    "Mike4": {
+      "start": 17,
+      "end": 21.8065306122449,
+      "loop": false
+    },
+    "Mike5": {
+      "start": 23,
+      "end": 25.42938775510204,
+      "loop": false
+    },
+    "Mike6": {
+      "start": 27,
+      "end": 28.044897959183672,
+      "loop": false
+    },
+    "Mike7": {
+      "start": 30,
+      "end": 31.071020408163264,
+      "loop": false
+    },
+    "Mike8": {
+      "start": 33,
+      "end": 34.071020408163264,
+      "loop": false
+    },
+    "Zak1": {
+      "start": 36,
+      "end": 36.60081632653061,
       "loop": false
     },
     "Zak2": {
-      "start": 2,
-      "end": 2.6008163265306123,
+      "start": 38,
+      "end": 38.60081632653061,
       "loop": false
     },
     "Zak3": {
-      "start": 4,
-      "end": 4.7575510204081635,
+      "start": 40,
+      "end": 40.757551020408165,
       "loop": false
     },
     "Zak4": {
-      "start": 6,
-      "end": 6.3395918367346935,
+      "start": 42,
+      "end": 42.33959183673469,
       "loop": false
     },
     "Zak5": {
-      "start": 8,
-      "end": 8.522448979591836,
+      "start": 44,
+      "end": 44.522448979591836,
       "loop": false
     },
     "Zak6": {
-      "start": 10,
-      "end": 10.57469387755102,
+      "start": 46,
+      "end": 46.57469387755102,
+      "loop": false
+    },
+    "becky1": {
+      "start": 48,
+      "end": 48.26122448979592,
+      "loop": false
+    },
+    "becky10": {
+      "start": 50,
+      "end": 50.26122448979592,
+      "loop": false
+    },
+    "becky2": {
+      "start": 52,
+      "end": 52.26122448979592,
+      "loop": false
+    },
+    "becky3": {
+      "start": 54,
+      "end": 54.26122448979592,
+      "loop": false
+    },
+    "becky4": {
+      "start": 56,
+      "end": 56.26122448979592,
+      "loop": false
+    },
+    "becky5": {
+      "start": 58,
+      "end": 58.26122448979592,
+      "loop": false
+    },
+    "becky6": {
+      "start": 60,
+      "end": 60.26122448979592,
+      "loop": false
+    },
+    "becky7": {
+      "start": 62,
+      "end": 62.26122448979592,
+      "loop": false
+    },
+    "becky8": {
+      "start": 64,
+      "end": 64.26122448979592,
+      "loop": false
+    },
+    "becky9": {
+      "start": 66,
+      "end": 66.26122448979592,
       "loop": false
     },
     "dolphcall_med": {
-      "start": 12,
-      "end": 12.600816326530612,
+      "start": 68,
+      "end": 68.6008163265306,
       "loop": false
     },
     "dolphcall_short": {
-      "start": 14,
-      "end": 14.417959183673469,
+      "start": 70,
+      "end": 70.41795918367347,
       "loop": false
     },
     "hello_long": {
-      "start": 16,
-      "end": 16.57469387755102,
+      "start": 72,
+      "end": 72.57469387755103,
       "loop": false
     },
     "hello_med": {
-      "start": 18,
-      "end": 18.57469387755102,
+      "start": 74,
+      "end": 74.57469387755103,
       "loop": false
     },
     "hello_short": {
-      "start": 20,
-      "end": 20.496326530612244,
+      "start": 76,
+      "end": 76.49632653061225,
+      "loop": false
+    },
+    "karen1": {
+      "start": 78,
+      "end": 78.36571428571429,
+      "loop": false
+    },
+    "karen2": {
+      "start": 80,
+      "end": 80.3134693877551,
+      "loop": false
+    },
+    "karen3": {
+      "start": 82,
+      "end": 82.18285714285715,
+      "loop": false
+    },
+    "karen4": {
+      "start": 84,
+      "end": 84.3395918367347,
+      "loop": false
+    },
+    "karen5": {
+      "start": 86,
+      "end": 86.20897959183674,
+      "loop": false
+    },
+    "karen6": {
+      "start": 88,
+      "end": 88.15673469387755,
       "loop": false
     },
     "orb_short": {
-      "start": 22,
-      "end": 22.55201814058957,
+      "start": 90,
+      "end": 90.55201814058957,
       "loop": false
     },
     "orb_short2": {
-      "start": 24,
-      "end": 25.03201814058957,
+      "start": 92,
+      "end": 93.03201814058957,
       "loop": false
     },
     "orb_short3": {
-      "start": 27,
-      "end": 28.44,
+      "start": 95,
+      "end": 96.44,
       "loop": false
     },
     "orb_short4": {
-      "start": 30,
-      "end": 30.6,
+      "start": 98,
+      "end": 98.6,
       "loop": false
     },
     "orb_short5": {
-      "start": 32,
-      "end": 32.888004535147395,
+      "start": 100,
+      "end": 100.88800453514739,
       "loop": false
     },
     "orb_short6": {
-      "start": 34,
-      "end": 34.96,
+      "start": 102,
+      "end": 102.96,
       "loop": false
     }
   }
