@@ -4,7 +4,9 @@
     "components": [
       {
         "name": "mediabg",
+        "state": "start",
         "settings": {
+          "type": "image",
           "src": "/images/underwater.jpg"
         }
       },
