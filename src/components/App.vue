@@ -63,7 +63,7 @@ export default {
     sceneIndex() {
       this.checkLayout();
       this.getHelloState();
-      console.log(this.scene);
+      // console.log(this.scene);
     },
   },
   async mounted() {
@@ -82,7 +82,7 @@ export default {
       this.myCity = e;
     },
     getHelloState() {
-      console.log(this.scene);
+      // console.log(this.scene);
       if ("scene" in this.scene) {
         this.$store.commit("path/freeze", true);
         if (this.scene.scene == "showOpeningMap") {
@@ -102,7 +102,7 @@ export default {
         this.triggerState = false;
       }
 
-      console.log(this.triggerState);
+      // console.log(this.triggerState);
     },
     toTyping() {
       this.$store.commit("path/freeze", false);

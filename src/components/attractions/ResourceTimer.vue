@@ -86,7 +86,6 @@ export default {
   bottom: 3em;
   max-height: 600px;
   overflow-y: scroll;
-  // padding: 1em;
 
   ul {
     padding-left: 0;
@@ -96,14 +95,20 @@ export default {
       display: grid;
       grid-gap: 10px;
       grid-template-columns: 2fr 1fr;
-      padding-bottom: 0.5em;
+      padding: 0.25em 0;
+      border-bottom: 1px dashed grey;
 
       .resource-name {
         display: block;
         word-break: break-all;
       }
 
+      &:not(.header) .resource-name {
+        font-family: monospace;
+      }
+
       .resource-size {
+        font-weight: bold;
         text-align: right;
       }
     }

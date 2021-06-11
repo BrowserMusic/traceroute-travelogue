@@ -1,12 +1,18 @@
 <template>
   <div :class="classDef()">
     <template v-if="!isAlert">
-      <span class="speaker" v-if="showUser">{{ content.speaker }}</span>
+      <span
+        class="speaker"
+        v-if="showUser && content.speaker == 'redacted'"
+        v-html="this.redactString"
+      ></span>
+      <span class="speaker" v-else-if="showUser">{{ content.speaker }}</span>
       <span class="speaker" v-else></span>
+
       <span class="text" v-html="parsedText(content.text)"></span
     ></template>
     <template v-else>
-      <span class="notice">{{ parsedText(content.text) }}</span>
+      <span class="notice" v-html="parsedText(content.text)"></span>
     </template>
   </div>
 </template>
@@ -27,6 +33,7 @@ export default {
       showUser: true,
       myID: "",
       isAlert: false,
+      redactString: "<span class='redact'>▥▤▧▩</span>",
     };
     // console.log(this.content);
   },
@@ -65,9 +72,7 @@ export default {
       // const html = marked(markdown, { renderer });
 
       const t = marked.parseInline(text, { renderer });
-      var res = t
-        .split("[[redacted]]")
-        .join("<span class='redact'>▥▤▧▩</span>");
+      var res = t.split("[[redacted]]").join(this.redactString);
 
       if (res.indexOf("{{16 mb}}") >= 0) {
         res = res

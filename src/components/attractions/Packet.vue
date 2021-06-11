@@ -80,8 +80,8 @@ export default {
     font-size: 0.95em;
 
     &.makeObvious {
-      box-shadow: 0 0 0 10px orange;
-      box-shadow: 0 0 0 10px orange;
+      box-shadow: 0 0 0 10px #ff5ec8;
+      // box-shadow: 0 0 0 10px orange;
       border: 5px solid aqua;
       cursor: pointer;
     }

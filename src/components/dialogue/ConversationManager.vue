@@ -59,6 +59,7 @@ export default {
       return retval;
     },
     addNewScene(scene) {
+      if (scene == null) return;
       if (!this.conversationIDs.includes(scene.id) && scene.id != "large") {
         this.conversationIDs.push(scene.id);
       }
