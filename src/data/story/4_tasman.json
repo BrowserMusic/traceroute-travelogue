@@ -4,7 +4,9 @@
     "components": [
       {
         "name": "mediabg",
+        "state": "start",
         "settings": {
+          "type":"image",
           "src": "/images/underwater.jpg"
         }
       },
@@ -256,7 +258,9 @@
       },
       {
         "name": "mediabg",
+        "state":"start",
         "settings": {
+          "type": "image",
           "src": "/images/underwater2.jpg"
         }
       }
