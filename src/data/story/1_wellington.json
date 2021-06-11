@@ -22,7 +22,8 @@
       "interval": {
         "type": "fixed",
         "value": 0
-      }
+      },
+      "name": "loop2"
     }
   },
   {

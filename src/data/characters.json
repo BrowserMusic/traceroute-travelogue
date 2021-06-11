@@ -8,7 +8,8 @@
     },
     "audio": {
       "type": "file",
-      "style": "many",
+      "style": "once",
+      "maxLength": 4,
       "sounds": [
         "Zak1",
         "Zak2",
@@ -30,6 +31,7 @@
     "audio": {
       "type": "file",
       "style": "many",
+      "speed": 0.3,
       "sounds": [
         "becky1",
         "becky2",
@@ -43,7 +45,6 @@
         "becky10"
       ]
     }
-
   },
   "box": {
     "name": "Box",

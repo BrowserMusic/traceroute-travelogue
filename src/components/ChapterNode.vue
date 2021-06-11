@@ -10,7 +10,6 @@
       :scene="scene"
       @end-scene="sceneChange()"
     />
-    <AudioHandler />
 
     <!-- <button @click.prevent="toNextNode()">Done</button> -->
   </div>
@@ -19,11 +18,10 @@
 <script>
 import ConversationManager from "./dialogue/ConversationManager.vue";
 import AnimationManager from "./AnimationManager.vue";
-import AudioHandler from "./AudioHandler.vue";
 
 export default {
   name: "ChapterNode",
-  components: { ConversationManager, AnimationManager, AudioHandler },
+  components: { ConversationManager, AnimationManager },
   data() {
     return {
       lines: [],

@@ -13,6 +13,8 @@
     />
     <ChapterNode :index="myCity" v-if="isModalOpen" />
 
+    <audio-handler />
+
     <instruction-block
       v-if="'scene' in scene && this.scene.scene == 'instructions'"
       :settings="scene.settings"
@@ -25,6 +27,7 @@ import LeafletMap from "./LeafletMap.vue";
 import ChapterNode from "./ChapterNode.vue";
 import BigHello from "./misc/BigHello.vue";
 import InstructionBlock from "./misc/InstructionBlock.vue";
+import AudioHandler from "./AudioHandler.vue";
 
 export default {
   name: "App",
@@ -33,6 +36,7 @@ export default {
     ChapterNode,
     BigHello,
     InstructionBlock,
+    AudioHandler,
   },
   data() {
     return {
