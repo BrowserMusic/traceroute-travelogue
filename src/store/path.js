@@ -15,7 +15,7 @@ import ashburn from "../data/story/11_ashburn.json";
 import cville from "../data/story/12_charlottesville.json";
 
 function prepJSON() {
-  const path = [wellington, whanganui, auckland, tasman, sydney1, perth, sydney2, cali, manhattan, toronto, ashburn, cville];
+  const path = [sydney1, perth, sydney2, cali, manhattan, toronto, ashburn, cville, wellington, whanganui, auckland, tasman, sydney1, perth, sydney2, cali, manhattan, toronto, ashburn, cville];
   for (let j = 0; j < path.length; j++) {
     for (let i = 0; i < path[j].length; i++) {
       path[j][i].index = i;
