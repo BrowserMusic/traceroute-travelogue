@@ -3,8 +3,8 @@ import speech from "../../data/speech.json";
 let ref;
 
 class BackgroundMusicManager {
-  constructor(speechFile) {
-    this.player = new Tone.Player(speechFile).toDestination();
+  constructor(buffer) {
+    this.player = new Tone.Player(buffer).toDestination();
     this.player.onstop = this.onEnd;
     this.allSounds = speech.spritemap;
     this.currentSounds = [];

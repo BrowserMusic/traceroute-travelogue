@@ -76,6 +76,7 @@ export default {
     const limit = { city: 0, scene: 1 };
     // await this.fastForward(limit);
 
+    this.$store.commit("path/comps/updateComponents", this.scene);
     window.addEventListener("keyup", this.proceed);
   },
   beforeDestroy() {

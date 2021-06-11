@@ -6,7 +6,7 @@
         "name": "mediabg",
         "state": "start",
         "settings": {
-          "type":"image",
+          "type": "image",
           "src": "/images/underwater.jpg"
         }
       },
