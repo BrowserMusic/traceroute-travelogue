@@ -42,7 +42,7 @@ export default {
   },
   watch: {
     lineIndex() {
-      console.log(this.settings);
+      // console.log(this.settings);
       this.persist = {
         ...this.persist,
         ...this.settings,
@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     highlight(code) {
-      console.log(code);
+      // console.log(code);
       if (this.settings.highlight == code) {
         return "highlight";
       }
