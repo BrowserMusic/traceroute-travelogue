@@ -45,6 +45,7 @@
     "layout": "map",
     "settings": {
       "line": "hey, how's it going?",
+      "oldline": "hello",
       "speed": 300
     }
   }

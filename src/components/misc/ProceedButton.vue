@@ -1,6 +1,6 @@
 <template>
   <button class="proceed-button" @click="proceed()">
-    {{ buttonText() }}
+    <span>{{ buttonText() }}</span>
   </button>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     },
     text: {
       type: String,
-      default: "Proceed",
+      default: "✉",
     },
     goto: {
       type: String,
@@ -49,5 +49,28 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+button {
+  font-size: 3.3em;
+  border: 0px solid transparent;
+  border-radius: 13px;
+  color: #415fff;
+  background-color: #ffc68a;
+  box-shadow: inset -2px -2px 2px gray, inset 2px 2px 3px #ffe8cb;
+  min-width: 1.1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 120px;
+  max-height: 0.9em;
+}
+button:active {
+  box-shadow: inset 2px 2px 2px gray, inset -2px -2px 3px #ffe8cb;
+}
+button:disabled {
+  background-color: grey;
+  box-shadow: none;
+  color: white;
+}
 </style>
