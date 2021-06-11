@@ -362,7 +362,29 @@
   },
   {
     "type": "animation",
-    "TODO": "hub goes here, pathid of 'server-thoughts', with options: 'Michael has more thoughts' (michael-thoughts), 'moral panic' (moral-panic), 'keep moving' (to-manhattan)"
+    "pathid":"server-thoughts",
+    "components": [
+      {
+        "name":"hub",
+        "state": "start",
+        "settings": {
+          "locations": [
+            {
+              "text": "Michael has more thoughts",
+              "to":"michael-thoughts"
+            },
+            {
+              "text": "moral panic",
+              "to": "moral-panic"
+            },
+            {
+              "text": "keep moving",
+              "to":"to-manhattan"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "type": "dialogue",
@@ -449,6 +471,19 @@
   {
     "type": "animation",
     "pathid": "to-manhattan",
-    "todo": "button that reads 'CAN WE GET THIS SHOW ON THE ROAD?'"
+    "todo": "button that reads 'CAN WE GET THIS SHOW ON THE ROAD?'",
+    "components":[
+      {
+        "name":"hub",
+        "state":"stop"
+      },
+      {
+        "name": "bigbutton",
+        "state": "start",
+        "settings": {
+          "text": "CAN WE GET THIS SHOW ON THE ROAD?"
+        }
+      }
+    ]
   }
 ]

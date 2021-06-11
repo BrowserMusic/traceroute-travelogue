@@ -648,7 +648,10 @@
         "state": "stop"
       }
     ],
-    "audio":false,
+    "audio": {
+      "repeat":false,
+      "name":"Zak3"
+    },
     "characters": [
       {
         "name": "orb",
