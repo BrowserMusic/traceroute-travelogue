@@ -1,19 +1,12 @@
 <template>
   <div class="audio-enabler">
-    <button v-if="!audioStarted" class="resume-audio" @click="resume()">
-      Audio
-    </button>
+    <button class="resume-audio" @click="resume()">Audio</button>
   </div>
 </template>
 
 <script>
 import * as Tone from "tone";
 export default {
-  data() {
-    return {
-      audioStarted: false,
-    };
-  },
   methods: {
     resume() {
       Tone.context.resume();
@@ -21,6 +14,7 @@ export default {
       Tone.Transport.start();
 
       this.$emit("audio-enabled");
+      this.$store.commit("openAudio", true);
     },
   },
 };

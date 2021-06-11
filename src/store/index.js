@@ -16,8 +16,16 @@ export default new Vuex.Store({
     isModalOpen: false,
     layout: "map",
     showBigHello: false,
+    audioEnabled: false,
   }),
   mutations: {
+    openAudio(state, f) {
+      if (f != null) {
+        state.audioEnabled = f;
+      } else {
+        state.audioEnabled = true;
+      }
+    },
     openModal(state, f) {
       state.isModalOpen = f;
     },

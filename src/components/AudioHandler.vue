@@ -1,26 +1,32 @@
 <template>
   <div class="audio-handler">
-    <button v-if="!audioStarted" class="resume-audio" @click="resume()">
+    <audio-enabler v-if="!audioEnabled" />
+    <!-- <button v-if="!audioStarted" class="resume-audio" @click="resume()">
       Audio
-    </button>
+    </button> -->
   </div>
 </template>
 
 <script>
 import * as Tone from "tone";
 import AudioManager from "../utils/audio/AudioManager.js";
+import AudioEnabler from "./misc/AudioEnabler.vue";
 import folks from "../data/characters.json";
 // const audioLoc = "/audio/speech/speech.mp3";
 const audioLoc = "/audio/speech.mp3";
 const mng = new AudioManager(folks, audioLoc);
 
 export default {
+  components: { AudioEnabler },
   data() {
     return {
       audioStarted: false,
     };
   },
   computed: {
+    audioEnabled() {
+      return this.$store.state.audioEnabled;
+    },
     scene() {
       return this.$store.getters["path/getScene"];
     },

@@ -5,10 +5,7 @@
       <p v-for="(para, index) in settings.paragraphs" :key="index">
         {{ para }}
       </p>
-      <audio-enabler
-        v-if="'audioEnabler' in settings"
-        @audio-enabled="dummy()"
-      />
+      <audio-enabler v-if="'audioEnabler' in settings && !audioEnabled" />
       <proceed-button v-if="audioEnabled" :locked="true" />
     </div>
   </div>
@@ -26,17 +23,22 @@ export default {
   mounted() {
     this.$store.commit("path/freeze", true);
   },
-  data() {
-    return {
-      audioEnabled: false,
-    };
-  },
-  methods: {
-    dummy() {
-      console.log("hello dummy??");
-      this.audioEnabled = true;
+  // data() {
+  //   return {
+  //     audioEnabled: false,
+  //   };
+  // },
+  computed: {
+    audioEnabled() {
+      return this.$store.state.audioEnabled;
     },
   },
+  // methods: {
+  //   dummy() {
+  //     console.log("hello dummy??");
+  //     this.audioEnabled = true;
+  //   },
+  // },
 };
 </script>
 
