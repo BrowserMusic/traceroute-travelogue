@@ -28,10 +28,22 @@
       "mad": ""
     },
     "audio": {
-      "type": "base",
-      "wave": "sine",
-      "pitch": 523.25
+      "type": "file",
+      "style": "many",
+      "sounds": [
+        "becky1",
+        "becky2",
+        "becky3",
+        "becky4",
+        "becky5",
+        "becky6",
+        "becky7",
+        "becky8",
+        "becky9",
+        "becky10"
+      ]
     }
+
   },
   "box": {
     "name": "Box",
@@ -59,6 +71,20 @@
     "display": {
       "type": "image",
       "file": "/images/shopcart.gif"
+    },
+    "audio": {
+      "type": "file",
+      "style": "once",
+      "sounds": [
+        "Mike1",
+        "Mike2",
+        "Mike3",
+        "Mike4",
+        "Mike5",
+        "Mike6",
+        "Mike7",
+        "Mike8"
+      ]
     }
   },
   "orb": {
@@ -91,7 +117,13 @@
       "style": "many",
       "sounds": [
         "dolphcall_med",
-        "dolphcall_short"
+        "dolphcall_short",
+        "karen1",
+        "karen2",
+        "karen3",
+        "karen4",
+        "karen5",
+        "karen6"
       ],
       "maxLength": 4
     }
@@ -101,6 +133,19 @@
     "display": {
       "type": "video",
       "file": "/videos/CRT_Face2.mp4"
+    },
+    "audio": {
+      "type": "file",
+      "style": "many",
+      "sounds": [
+        "orb_short",
+        "orb_short2",
+        "orb_short3",
+        "orb_short4",
+        "orb_short5",
+        "orb_short6"
+      ],
+      "maxLength": 4
     }
   },
   "notice": {
