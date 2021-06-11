@@ -4,8 +4,8 @@
     "components": [
       {
         "name": "mediabg",
-        "settings":{
-          "src":"/images/underwater.jpg"
+        "settings": {
+          "src": "/images/underwater.jpg"
         }
       },
       {
@@ -26,10 +26,10 @@
       }
     ],
     "audio": {
-      "repeat":true,
-      "interval":{
+      "repeat": true,
+      "interval": {
         "type": "fixed",
-        "value":0
+        "value": 0
       },
       "name": "loop1"
     }
@@ -255,17 +255,17 @@
         "state": "stop"
       },
       {
-        "name":"mediabg",
-        "settings":{
-          "src":"/images/underwater2.jpg"
+        "name": "mediabg",
+        "settings": {
+          "src": "/images/underwater2.jpg"
         }
       }
     ],
     "audio": {
-      "repeat":true,
-      "interval":{
+      "repeat": true,
+      "interval": {
         "type": "fixed",
-        "value":0
+        "value": 0
       },
       "name": "loop2"
     },
@@ -320,7 +320,7 @@
   },
   {
     "type": "animation",
-    "components":[
+    "components": [
       {
         "name": "character",
         "state": "start",
@@ -330,19 +330,18 @@
         }
       }
     ],
-    "audio":false
+    "audio": false
   },
   {
     "type": "dialogue",
     "id": "main",
     "level": 1,
-    "components": [
-    ],
+    "components": [],
     "audio": {
-      "repeat":true,
-      "interval":{
+      "repeat": true,
+      "interval": {
         "type": "fixed",
-        "value":0
+        "value": 0
       },
       "name": "loop4"
     },
@@ -364,7 +363,7 @@
         "text": "That TV is yesterday's technology, but eventually all the tech of today's internet––the computers, routers, smart phones, even the solar panels that harvest energy––will break and become part of the 50+ million metric tons of e-waste that the human race produces each year."
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "*beeping*"
       }
     ]
@@ -377,7 +376,7 @@
         "state": "start",
         "settings": {
           "page": 2,
-          "title": " ",
+          "title": "Let's talk about e-waste!",
           "image": "/images/CRT_graveyard.jpg",
           "text": " "
         }
@@ -390,11 +389,11 @@
     "level": 1,
     "lines": [
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "Since the advent of Internet-of-Things technology, where devices have increasingly become expected to connect to the internet (our phones, watches, refrigerators) the internet is increasingly made up of a bunch of random future-junk. "
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "And that junk is extremely toxic. E-waste is the world's fastest growing and largest stream of toxic waste. Most of our technology has things like arsenic, lead, chlorine, plastics and heavy metals which contaminate the air, soil and water when manufactured and disposed of. "
       },
       {
@@ -415,7 +414,7 @@
       },
       {
         "speaker": "Becky",
-        "text": "...sure, Karen. "
+        "text": "...sure, Karen."
       }
     ]
   },

@@ -27,7 +27,7 @@
         "text": "cryptomine?"
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "*beeps*"
       },
       {
@@ -48,7 +48,19 @@
       },
       {
         "speaker": "Guide",
-        "text": "Cryptomining is a practice used to decentralize transaction information for cryptocurrencies."
+        "text": "Cryptomining is a practice used to decentralize transaction information for cryptocurrencies.",
+        "components": [
+          {
+            "name": "pamphlet",
+            "state": "start",
+            "settings": {
+              "page": 2,
+              "title": "Let's talk about the BLOCKCHAIN!",
+              "image": "/images/CRT_graveyard.jpg",
+              "text": " "
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",

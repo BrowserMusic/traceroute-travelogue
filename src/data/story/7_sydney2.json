@@ -23,13 +23,16 @@
     "audio": false
   },
   {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
+    "type": "animation",
     "components": [
       {
-        "name": "imgtimer",
-        "state": "stop"
+        "name": "video",
+        "state": "start",
+        "settings": {
+          "src": "/videos/Sydney.mp4",
+          "text": "You find this VHS tape on the ground. What a nice welcome!",
+          "buttonText": "Thanks, stranger"
+        }
       },
       {
         "name": "mediabg",
@@ -51,15 +54,21 @@
             "/images/sydneyspin.gif"
           ]
         }
+      }
+    ]
+  },
+  {
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
       },
       {
         "name": "video",
-        "state": "start",
-        "settings": {
-          "src": "/videos/Sydney.mp4",
-          "text": "You find this VHS tape on the ground. What a nice welcome!",
-          "buttonText": "Thanks, stranger"
-        }
+        "state": "stop"
       },
       {
         "name": "character",
@@ -80,7 +89,7 @@
         "text": "\"hello\""
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "*beeps*",
         "components": [
           {
@@ -96,11 +105,11 @@
         ]
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "It doesn't take long when you're traveling at the speed of light!"
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "Your entire journey is virtually instant."
       },
       {
@@ -166,7 +175,7 @@
         "text": "what do we need, Guide?"
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "Good news, travelers! You're ready for the next stage of the HTTP process. It's time to Sync! That! Server!!"
       },
       {
@@ -174,7 +183,7 @@
         "text": "is this a game show?"
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "Get ready for the ride of your life on the TCP! What's behind door number one?"
       }
     ]
@@ -246,7 +255,7 @@
         "text": "okay, so what's TCP?"
       },
       {
-        "speaker": "ITG",
+        "speaker": "Guide",
         "text": "There's no need to play dumb, let's answer this question together!"
       }
     ]
@@ -268,6 +277,14 @@
               "protocol"
             ]
           }
+        }
+      },
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "Let's talk about LAYERS!",
+          "image": "/images/server-after.png"
         }
       }
     ],
@@ -699,12 +716,20 @@
       {
         "name": "hub",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "settings": {
+          "page": 1,
+          "title": "Let's initiate the TCP handshake!",
+          "image": "/images/server-after.png"
+        }
       }
     ],
     "lines": [
       {
         "speaker": "notice",
-        "text": "*ringing noise*"
+        "text": "You call up [[redacted]]."
       },
       {
         "speaker": "redacted",

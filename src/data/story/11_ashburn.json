@@ -56,7 +56,19 @@
       },
       {
         "speaker": "Guide",
-        "text": "Internet Exchange Points keep your traffic local! They let any networks communicate for free, similar to a tier 1 network destination."
+        "text": "Internet Exchange Points keep your traffic local! They let any networks communicate for free, similar to a tier 1 network destination.",
+        "components": [
+          {
+            "name": "pamphlet",
+            "state": "start",
+            "settings": {
+              "page": 2,
+              "title": "Let's talk about INTERNET EXCHANGE POINTS!",
+              "image": "/images/CRT_graveyard.jpg",
+              "text": " "
+            }
+          }
+        ]
       },
       {
         "speaker": "Guide",
@@ -134,6 +146,16 @@
           "toShow": [
             "layer"
           ]
+        }
+      },
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 2,
+          "title": "Let's talk about HTTP!",
+          "image": "/images/CRT_graveyard.jpg",
+          "text": " "
         }
       }
     ],
@@ -431,6 +453,18 @@
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 2,
+          "title": "Let's make an HTTP REQUEST!",
+          "image": "/images/CRT_graveyard.jpg",
+          "text": " "
+        }
+      }
+    ],
     "lines": [
       {
         "speaker": "Zak",
@@ -575,6 +609,15 @@
     "type": "dialogue",
     "level": 2,
     "id": "tutorial",
+    "components": [
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 0
+        }
+      }
+    ],
     "lines": [
       {
         "speaker": "Becky",

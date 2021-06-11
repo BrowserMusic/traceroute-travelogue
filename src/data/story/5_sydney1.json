@@ -13,6 +13,13 @@
           "src": "/images/loadscreen.gif",
           "timer": 2000
         }
+      },
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 0
+        }
       }
     ],
     "audio": false
@@ -21,11 +28,7 @@
     "type": "animation",
     "components": [
       {
-        "name":"mediabg",
-        "state":"stop"
-      },
-      {
-        "name": "pamphlet",
+        "name": "mediabg",
         "state": "stop"
       },
       {
@@ -47,8 +50,8 @@
         }
       }
     ],
-    "audio":{
-      "repeat":false,
+    "audio": {
+      "repeat": false,
       "name": "wave"
     }
   },
@@ -111,8 +114,8 @@
         }
       }
     ],
-    "audio":{
-      "repeat":true,
+    "audio": {
+      "repeat": true,
       "interval": {
         "type": "random",
         "value": [
@@ -153,6 +156,10 @@
     ],
     "lines": [
       {
+        "speaker": "notice",
+        "text": "You descend into the Sydney underground."
+      },
+      {
         "speaker": "Box",
         "text": "\"hello\""
       },
@@ -171,6 +178,10 @@
       {
         "speaker": "Mikey",
         "text": "Mike's my cousin..."
+      },
+      {
+        "speaker": "Mikey",
+        "text": "Did you want a ride, or did you want to sit here and talk about my family?"
       }
     ]
   },

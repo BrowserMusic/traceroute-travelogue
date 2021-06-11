@@ -24,6 +24,13 @@
       {
         "name": "imgtimer",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 0
+        }
       }
     ],
     "lines": [
@@ -56,16 +63,19 @@
           "locations": [
             {
               "text": "to the auction house",
+              "img": "/images/auction.gif",
               "to": "nft-auction",
               "locks": 0
             },
             {
               "text": "\"not always?\"",
+              "img": "/images/mapref.gif",
               "to": "tier-1",
               "locks": 1
             },
             {
-              "text": "to Virginia",
+              "text": "keep moving",
+              "img": "/images/pinkcar.gif",
               "to": "to-va",
               "requires": [
                 0,
@@ -90,6 +100,16 @@
       {
         "name": "hub",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 2,
+          "title": "Let's talk about NON-FUNGIBLE TOKENS!",
+          "image": "/images/CRT_graveyard.jpg",
+          "text": " "
+        }
       }
     ],
     "lines": [
@@ -157,6 +177,16 @@
       {
         "name": "hub",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 2,
+          "title": "Let's talk about NETWORKS!",
+          "image": "/images/CRT_graveyard.jpg",
+          "text": " "
+        }
       }
     ],
     "lines": [

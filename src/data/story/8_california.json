@@ -7,6 +7,13 @@
       {
         "name": "video",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 0
+        }
       }
     ],
     "lines": [
@@ -286,6 +293,15 @@
       {
         "name": "imgtimer",
         "state": "stop"
+      },
+      {
+        "name": "pamphlet",
+        "state": "start",
+        "settings": {
+          "page": 1,
+          "title": "Let's talk about DATA CENTERS!",
+          "image": "/images/server-after.png"
+        }
       }
     ],
     "lines": [
@@ -500,6 +516,7 @@
             },
             {
               "text": "keep moving",
+              "img": "/images/pinkcar.gif",
               "to": "to-manhattan",
               "requires": [
                 0,
@@ -516,6 +533,12 @@
     "level": 1,
     "pathid": "michael-thoughts",
     "id": "main",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Michael",
@@ -557,6 +580,12 @@
     "level": 1,
     "pathid": "moral-panic",
     "id": "main",
+    "components": [
+      {
+        "name": "hub",
+        "state": "stop"
+      }
+    ],
     "lines": [
       {
         "speaker": "Becky",
