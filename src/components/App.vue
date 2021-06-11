@@ -60,11 +60,11 @@ export default {
     },
   },
   async mounted() {
-    // const ff = false;
     this.checkLayout();
     this.getHelloState();
-    const limit = { city: 0, scene: 2 };
-    // await this.fastForward(limit);
+    const limit = { city: 0, scene: 1 };
+    await this.fastForward(limit);
+
     window.addEventListener("keyup", this.proceed);
   },
   beforeDestroy() {
