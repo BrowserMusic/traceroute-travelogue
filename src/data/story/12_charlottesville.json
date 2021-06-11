@@ -45,7 +45,21 @@
     "layout": "map",
     "settings": {
       "line": "hey, how's it going?",
+      "oldline": "hello",
       "speed": 300
+    }
+  },
+  {
+    "type": "animation",
+    "layout": "map",
+    "scene": "instructions",
+    "settings": {
+      "title": "Credits",
+      "paragraphs": [
+        "\"Packetsphere\" is a collaboration of [Zak Argabrite](https://www.zakargabrite.com/) and [Becky Brown](https://becky-brown.org/), and was create as part of the first [BROWSER Sound Festival](https://browsersound.com/), June 11 - 13, 2021.",
+        "The majority of the gifs are from the Internet Archive's [gifcities](https://gifcities.org/) project. Most of the other graphics link to their source of origin.",
+        "If you have questions, ask them at the presentation on Sunday!"
+      ]
     }
   }
 ]

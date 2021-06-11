@@ -131,6 +131,7 @@ export default {
     border-radius: 75px;
     padding: 0.5em;
     border: 1px solid grey;
+    box-shadow: inset 5px 5px 2px white, inset -3px -3px 2px rgba(0, 0, 0, 0.25);
   }
 
   video,

@@ -120,8 +120,8 @@ export default {
 
   button {
     align-self: flex-end;
-    display: inline-block;
-    margin-top: 1em;
+    // display: inline-block;
+    margin-top: 0.5em;
   }
 }
 </style>

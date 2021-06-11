@@ -1,6 +1,20 @@
 [
   {
     "type": "animation",
+    "layout": "map",
+    "scene": "instructions",
+    "settings": {
+      "title": "Packetsphere: An Internet Travelogue",
+      "paragraphs": [
+        "\"What does it take to send a single message halfway around the globe? What issues exist in the technological world just below the surface of your keyboard? Come join Zak, Becky, and a colorful cast of digital characters for a look into the grand tour you initiate every time you send a phrase as simple as 'hello.'\"",
+        "This is an interactive piece intended for a desktop browser, with audio and video elements. Most of the time, you can move forward in the story by pressing the space bar.",
+        "Click the Audio button to enable sound, and we'll get started."
+      ],
+      "audioEnabler": true
+    }
+  },
+  {
+    "type": "animation",
     "scene": "showOpeningMap",
     "layout": "map"
   },
@@ -67,22 +81,7 @@
           "text": "Zak: Remove head."
         }
       }
-    ],
-    "audio": {
-      "repeat": true,
-      "interval": {
-        "type": "random",
-        "value": [
-          1,
-          3
-        ]
-      },
-      "name": "orb_short6",
-      "list": [
-        "orb_short4",
-        "orb_short5"
-      ]
-    }
+    ]
   },
   {
     "type": "animation",
@@ -671,7 +670,8 @@
       },
       {
         "speaker": "orb",
-        "text": "STOP. WHAT IS THE PURPOSE OF YOUR JOURNEY THROUGH THE PACKETSPHERE?"
+        "text": "STOP. WHAT IS THE PURPOSE OF YOUR JOURNEY THROUGH THE PACKETSPHERE?",
+        "button": "PROCEED"
       },
       {
         "speaker": "box",
@@ -684,11 +684,13 @@
       },
       {
         "speaker": "orb",
-        "text": "..."
+        "text": "...",
+        "button": "PROCEED"
       },
       {
         "speaker": "orb",
-        "text": "DO YOU HAVE ANYTHING TO DECLARE?"
+        "text": "DO YOU HAVE ANYTHING TO DECLARE?",
+        "button": "PROCEED"
       },
       {
         "speaker": "box",
@@ -701,11 +703,13 @@
       },
       {
         "speaker": "orb",
-        "text": "..."
+        "text": "...",
+        "button": "PROCEED"
       },
       {
         "speaker": "orb",
-        "text": "WHERE IS YOUR FINAL DESTINATION?"
+        "text": "WHERE IS YOUR FINAL DESTINATION?",
+        "button": "PROCEED"
       },
       {
         "speaker": "box",
@@ -718,19 +722,23 @@
       },
       {
         "speaker": "orb",
-        "text": "..."
+        "text": "...",
+        "button": "PROCEED"
       },
       {
         "speaker": "orb",
-        "text": "INVALID RESPONSE."
+        "text": "INVALID RESPONSE.",
+        "button": "PROCEED"
       },
       {
-        "speaker": "Orb",
-        "text": "ALL TRAVEL THROUGH THE PACKETSPHERE MUST PROVIDE DESTINATION ADDRESS TO BE ASSIGNED A TRACEROUTE."
+        "speaker": "orb",
+        "text": "ALL TRAVEL THROUGH THE PACKETSPHERE MUST PROVIDE DESTINATION ADDRESS TO BE ASSIGNED A TRACEROUTE.",
+        "button": "PROCEED"
       },
       {
-        "speaker": "Orb",
-        "text": "PLEASE REVIEW TRACEROUTE REFERENCE IN THE INTERNET TRAVEL GUIDE."
+        "speaker": "orb",
+        "text": "PLEASE REVIEW TRACEROUTE REFERENCE IN THE INTERNET TRAVEL GUIDE.",
+        "button": "PROCEED"
       }
     ]
   },

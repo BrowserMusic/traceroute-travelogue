@@ -10,13 +10,11 @@
 </template>
 
 <script>
-// import BigHello from "./misc/BigHello.vue";
 import MapHolder from "../utils/MapHolder";
 let map = {};
 
 export default {
   name: "LeafletMap",
-  // components: { BigHello },
   data() {
     return {
       isMounted: false,
@@ -79,11 +77,8 @@ export default {
       map.openingAnimation(() => {
         console.log("done with opening animation");
         this.$emit("after-opening");
-        // this.$store.commit("openHello");
-        // func();
       }, this.animateType);
     }
-    // this.callOpening();
   },
   beforeDestroy() {
     if (map) {
