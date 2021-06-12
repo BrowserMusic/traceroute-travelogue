@@ -5,7 +5,6 @@ let ref;
 class BackgroundMusicManager {
   constructor(buffer) {
     this.player = new Tone.Player(buffer).toDestination();
-    this.player.onstop = this.onEnd;
     this.allSounds = speech.spritemap;
     this.currentSounds = [];
     this.isRepeating = false;
@@ -18,11 +17,13 @@ class BackgroundMusicManager {
     this.stop();
     const shouldRepeat = ("repeat" in sound) ? sound.repeat : false;
     this.soundList = [];
+    // this.player.sync();
 
     if (!shouldRepeat) {
       this.playSoundEvent(this.getSound(sound.name));
     } else {
       this.isRepeating = true;
+      this.player.onstop = this.onEnd;
       this.sound = ("name" in sound) ? sound.name : null;
       this.interval = ("interval" in sound) ? sound.interval : null;
       this.soundList = ("list" in sound) ? sound.list : null;
@@ -34,7 +35,8 @@ class BackgroundMusicManager {
 
   stop() {
     this.isRepeating = false;
-    this.player.unsync().stop();
+    this.player.onEnd = null;
+    this.player.stop();
   }
 
   onEnd() {
@@ -51,13 +53,14 @@ class BackgroundMusicManager {
   }
 
   playSoundEvent(sound, time) {
-    // console.log(sound);
     if ("rate" in sound) {
       this.player.playbackRate = sound.rate;
     }
     time = (time == null) ? Tone.now() : time;
 
-    this.player.sync().start(time, sound.start, sound.duration);
+    if (this.player.state == "stopped") {
+      this.player.start(time, sound.start, sound.duration);
+    }
   }
 
   getSound(index) {
