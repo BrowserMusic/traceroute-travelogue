@@ -11,8 +11,8 @@
         }
       },
       {
-        "name":"pamphlet",
-        "state":"start",
+        "name": "pamphlet",
+        "state": "start",
         "settings": {
           "page": 0,
           "title": "Welcome!",
@@ -433,7 +433,7 @@
       },
       {
         "speaker": "Guide",
-        "text": "The capitalized GET is the HTTP method in use. \"GET\" means you're asking the server to give you something.",
+        "text": "The capitalized GET is the **HTTP method** in use. \"GET\" means you're asking the server to give you something.",
         "components": [
           {
             "name": "http",

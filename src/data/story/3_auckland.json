@@ -416,6 +416,10 @@
         "text": "Correct! That was a completely random IP address for the sake of abstraction, that may or may not point to a real website, but it exists within the range of IP addresses for New Zealand!"
       },
       {
+        "speaker": "Guide",
+        "text": "Did you know that you can look up the IP address range of any country? [Here's the full list of address blocks for New Zealand!](https://lite.ip2location.com/new-zealand-ip-address-ranges?lang=en_US) And if you [look up a domain name through ICANN](https://lookup.icann.org/), you can find out what its nameservers are!"
+      },
+      {
         "speaker": "Becky",
         "text": "I didn't, but I guess I do now."
       },
@@ -482,6 +486,10 @@
       }
     ],
     "lines": [
+      {
+        "speaker": "notice",
+        "text": "–––"
+      },
       {
         "speaker": "Becky",
         "text": "so we started at Wellington, then went to Whanganui, and now we're in Auckland."
