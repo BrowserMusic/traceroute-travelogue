@@ -7,7 +7,7 @@
         "state": "start",
         "settings": {
           "type": "image",
-          "src": "/images/underwater.jpg"
+          "src": "/images/underwater.gif"
         }
       },
       {
@@ -261,7 +261,7 @@
         "state":"start",
         "settings": {
           "type": "image",
-          "src": "/images/underwater2.jpg"
+          "src": "/images/underwater2.gif"
         }
       }
     ],

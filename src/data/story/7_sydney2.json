@@ -162,13 +162,7 @@
       },
       {
         "speaker": "Becky",
-        "text": "well, I guess we *are* going overseas, but not yet.",
-        "components": [
-          {
-            "name": "character",
-            "state": "stop"
-          }
-        ]
+        "text": "well, I guess we *are* going overseas, but not yet."
       },
       {
         "speaker": "Zak",
@@ -194,6 +188,10 @@
     "components": [
       {
         "name": "video",
+        "state": "stop"
+      },
+      {
+        "name": "character",
         "state": "stop"
       },
       {
@@ -741,11 +739,27 @@
       },
       {
         "speaker": "Box",
-        "text": "\"hello\""
+        "text": "\"hello\"",
+        "components": [
+          {
+            "name": "character",
+            "state": "start",
+            "settings": {
+            "name": "box",
+            "align": "right"
+           }
+          }
+        ]
       },
       {
         "speaker": "redacted",
-        "text": "Affirmative, stranger. Send me a dummy TCP packet with your SYN bit to 1, over."
+        "text": "Affirmative, stranger. Send me a dummy TCP packet with your SYN bit to 1, over.",
+        "components": [
+          {
+            "name": "character",
+            "state": "stop"
+          }
+        ]
       }
     ]
   },
@@ -1052,7 +1066,17 @@
       },
       {
         "speaker": "Guide",
-        "text": "We'll talk about that later. For now, let's get you across the ocean!"
+        "text": "We'll talk about that later. For now, let's get you across the ocean!",
+        "components": [
+          {
+            "name": "character",
+            "state": "start",
+            "settings": {
+            "name": "karen",
+            "align": "right"
+            }
+          }
+        ]
       }
     ]
   }

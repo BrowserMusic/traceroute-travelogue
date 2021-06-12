@@ -88,6 +88,48 @@
       ]
     }
   },
+  "mikey": {
+    "name": "Mike",
+    "display": {
+      "type": "image",
+      "file": "/images/shopcart.gif"
+    },
+    "audio": {
+      "type": "file",
+      "style": "once",
+      "sounds": [
+        "Mike1",
+        "Mike2",
+        "Mike3",
+        "Mike4",
+        "Mike5",
+        "Mike6",
+        "Mike7",
+        "Mike8"
+      ]
+    }
+  },
+  "michael": {
+    "name": "Mike",
+    "display": {
+      "type": "image",
+      "file": "/images/shopcart.gif"
+    },
+    "audio": {
+      "type": "file",
+      "style": "once",
+      "sounds": [
+        "Mike1",
+        "Mike2",
+        "Mike3",
+        "Mike4",
+        "Mike5",
+        "Mike6",
+        "Mike7",
+        "Mike8"
+      ]
+    }
+  },
   "orb": {
     "name": "Orb",
     "display": {
@@ -107,6 +149,7 @@
       ]
     }
   },
+  
   "karen": {
     "name": "Karen",
     "display": {

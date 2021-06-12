@@ -3,15 +3,31 @@
     "type": "animation",
     "components":[
       {
+        "name": "pamphlet",
+        "state": "stop"
+      },
+      {
         "name": "ipv4",
         "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "stop"
+      },
+      {
+        "name": "mediabg",
+        "state":"start",
+        "settings": {
+          "type": "image",
+          "src": "/images/underwater.gif"
+        }
       },
       {
         "name": "imgtimer",
         "state": "start",
         "settings": {
           "src": "/images/loadscreen.gif",
-          "timer": 7000
+          "timer": 16000
         }
       }
     ],
@@ -28,9 +44,44 @@
       {
         "name": "imgtimer",
         "state": "stop"
+      },
+      {
+        "name": "mediabg",
+        "state":"start",
+        "settings": {
+          "type": "image",
+          "src": "/images/city2.gif"
+        }
+      },
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/city.gif",
+            "/images/compcity.gif",
+            "/images/city2.gif",
+            "/images/emailme.gif",
+            "/images/geocities.gif",
+            "/images/geocities2.gif",
+            "/images/geocities3.gif",
+            "/images/geocities4.gif",
+            "/images/geocities5.gif",
+            "/images/ontheint.gif",
+            "/images/undercon.gif",
+            "/images/welcomeflash.gif"
+          ]
+        }
       }
     ],
-    "audio": false,
+    "audio": {
+      "repeat": true,
+      "interval": {
+        "type": "fixed",
+        "value": 0
+      },
+      "name": "loop7"
+    },
     "lines": [
       {
         "speaker": "Local",
@@ -162,10 +213,6 @@
           {
             "img": "/images/orcawithhouse.gif",
             "to": "karen-home"
-          },
-          {
-            "img": "/images/orcawithhouse.gif",
-            "to": "karen-home"
           }
         ]
       }
@@ -218,7 +265,13 @@
       },
       {
         "speaker": "notice",
-        "text": "Karen goes home."
+        "text": "Karen goes home.",
+        "components": [
+          {
+            "name": "character",
+            "state": "stop"
+          }
+        ]
       },
       {
         "speaker": "Zak",
@@ -234,7 +287,18 @@
       },
       {
         "speaker": "Michael",
-        "text": "howdy! "
+        "text": "howdy!",
+        "components": [
+          {
+            "name": "character",
+            "state": "start",
+            "settings": {
+              "name": "Mike",
+              "align": "right"
+            }
+          }
+          
+        ]
       },
       {
         "speaker": "Box",
