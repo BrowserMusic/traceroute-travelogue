@@ -67,7 +67,6 @@ export default {
     sceneIndex() {
       this.checkLayout();
       this.getHelloState();
-      // console.log(this.scene);
     },
   },
   async mounted() {
@@ -132,6 +131,7 @@ export default {
         this.$store.commit("openModal", true);
         this.$store.commit("path/changeScene");
       } else {
+        this.$store.commit("path/changeScene");
         this.$store.commit("openModal", false);
       }
     },

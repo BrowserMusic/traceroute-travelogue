@@ -2,9 +2,11 @@
   <div class="instructions-wrap">
     <div class="instructions-inner window">
       <h2>{{ settings.title }}</h2>
-      <p v-for="(para, index) in settings.paragraphs" :key="index">
-        {{ para }}
-      </p>
+      <p
+        v-for="(para, index) in settings.paragraphs"
+        :key="index"
+        v-html="makeText(para)"
+      ></p>
       <audio-enabler v-if="'audioEnabler' in settings && !audioEnabled" />
       <proceed-button v-if="audioEnabled" :locked="true" />
     </div>
@@ -14,6 +16,7 @@
 <script>
 import AudioEnabler from "./AudioEnabler.vue";
 import ProceedButton from "./ProceedButton.vue";
+const marked = require("marked");
 
 export default {
   components: { AudioEnabler, ProceedButton },
@@ -21,24 +24,20 @@ export default {
     settings: Object,
   },
   mounted() {
+    console.log("instructions mounted?");
+    console.log(this.settings);
     this.$store.commit("path/freeze", true);
   },
-  // data() {
-  //   return {
-  //     audioEnabled: false,
-  //   };
-  // },
   computed: {
     audioEnabled() {
       return this.$store.state.audioEnabled;
     },
   },
-  // methods: {
-  //   dummy() {
-  //     console.log("hello dummy??");
-  //     this.audioEnabled = true;
-  //   },
-  // },
+  methods: {
+    makeText(text) {
+      return marked.parseInline(text);
+    },
+  },
 };
 </script>
 

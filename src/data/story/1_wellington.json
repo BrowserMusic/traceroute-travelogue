@@ -6,8 +6,8 @@
     "settings": {
       "title": "Packetsphere: An Internet Travelogue",
       "paragraphs": [
-        "\"What does it take to send a single message halfway around the globe? What issues exist in the technological world just below the surface of your keyboard? Come join Zak, Becky, and a colorful cast of digital characters for a look into the grand tour you initiate every time you send a phrase as simple as 'hello.'\"",
-        "This is an interactive piece intended for a desktop browser, with audio and video elements. Most of the time, you can move forward in the story by pressing the space bar.",
+        "*What does it take to send a single message halfway around the globe? What issues exist in the technological world just below the surface of your keyboard? Come join Zak, Becky, and a colorful cast of digital characters for a look into the grand tour you initiate every time you send a phrase as simple as \"hello.\"*",
+        "This is an interactive piece intended for a desktop browser, with audio and video elements. Most of the time, you can move forward in the story by **pressing the space bar.**",
         "Click the Audio button to enable sound, and we'll get started."
       ],
       "audioEnabler": true
@@ -1098,7 +1098,7 @@
       },
       {
         "speaker": "Zak",
-        "text": "so is the nameserver like the state of Virginia, then?"
+        "text": "so is the nameserver like an individual city, then?"
       },
       {
         "speaker": "Guide",
@@ -1110,7 +1110,7 @@
       },
       {
         "speaker": "Becky",
-        "text": "so it's like we're asked a global delivery chain to find my house off of just the phrase \"my house,\" but they're doing that by sending us to smaller delivery chains with more specific address books each time?"
+        "text": "so it's like we're asking a global delivery chain to find my house off of just the phrase \"my house,\" but they're doing that by sending us to smaller delivery chains with more specific address books each time?"
       },
       {
         "speaker": "Guide",
