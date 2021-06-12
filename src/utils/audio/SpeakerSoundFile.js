@@ -4,6 +4,11 @@ import speech from "../../data/speech.json";
 class SpeakerSoundFile {
   constructor(player, settings) {
     this.player = player;
+    // this.player = new Tone.Player(buffer).toDestination();
+    // this.shifter = new Tone.PitchShift().toDestination();
+    // this.shifter.wet.value = 0.5;
+    // this.player.connect(this.shifter);
+
     this.once = (settings.style == "once") ? true : false;
     this.speed = ("speed" in settings) ? settings.speed : 0.5;
     this.sounds = this.soundsAsBoundaries(settings.sounds);
@@ -13,7 +18,7 @@ class SpeakerSoundFile {
   play(length, mood) {
     if (this.once) {
       let sound = this.getRandomSound();
-      sound.rate = this.makePlaybackRate();
+      sound.shift = this.makePlaybackRate();
       this.playSoundEvent(sound);
     } else {
       const events = this.makeEvents(length, mood);
@@ -22,8 +27,8 @@ class SpeakerSoundFile {
   }
 
   playSoundEvent(sound, time) {
-    if ("rate" in sound) {
-      this.player.playbackRate = sound.rate;
+    if ("shift" in sound) {
+      this.player.playbackRate = sound.shift;
     }
     time = (time == null) ? Tone.now() : time;
 
@@ -41,12 +46,10 @@ class SpeakerSoundFile {
   }
 
   playSequence(events) {
+    console.log(events);
     const seq = new Tone.Sequence(
       (time, sound) => {
-        console.log("next event");
         this.playSoundEvent(sound, time);
-        // mng[speaker].synth.modulationIndex.value = note.mod;
-        // mng[speaker].synth.triggerAttackRelease(note.pitch, 0.035, time);
       },
       events.events,
       events.speed
@@ -56,32 +59,35 @@ class SpeakerSoundFile {
     seq.loop = false;
   }
 
-  makeEvents(mood = "normal", limit = 5, deviance = 0.1) {
+  makeEvents(mood = "normal", limit = 5, deviance = 0.2) {
     // question, exclamation, puzzled, normal
     let events = [];
     let fireRate = this.speed;     // speed of the series of files
-    let playbackRate = 1.0; // speed of an individual file
+    let shift = 1; // speed of an individual file
 
     if (mood == "puzzled") {
       fireRate += 0.1;
+      shift = 0.8;
     } else if (mood == "exclamation") {
       fireRate -= 0.05;
       limit += 2;
+      shift = 1.15;
     } else if (mood == "question") {
       limit += 1;
+      shift = 1.1;
     }
 
     limit = Math.min(limit, this.maxLength);
 
     for (let i = 0; i < limit; i++) {
       if (mood == "question") {
-        playbackRate += 0.05;
+        shift += 0.1;
       }
       const sound = this.getRandomSound();
       events[i] = {
         start: sound.start,
         duration: sound.duration,
-        rate: playbackRate + (Math.random() * deviance - deviance / 2)
+        shift: shift + (Math.random() * deviance - deviance)
       };
     }
 
@@ -89,8 +95,8 @@ class SpeakerSoundFile {
   }
 
   makePlaybackRate() {
-    let rate = Math.random() * 0.1;
-    rate *= (Math.random() > 0.5) ? 1 : -1;
+    let rate = Math.random() * 0.6;
+    // rate *= (Math.random() > 0.5) ? 1 : -1;
     rate += 1;
     return rate;
   }
@@ -106,6 +112,8 @@ class SpeakerSoundFile {
 
   beforeDestroy() {
     return;
+    // this.player.dispose();
+    // this.shifter.dispose();
   }
 }
 
