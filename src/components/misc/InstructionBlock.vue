@@ -24,8 +24,6 @@ export default {
     settings: Object,
   },
   mounted() {
-    console.log("instructions mounted?");
-    console.log(this.settings);
     this.$store.commit("path/freeze", true);
   },
   computed: {
