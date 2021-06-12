@@ -357,7 +357,7 @@
       },
       {
         "speaker": "ns1",
-        "text": "Every registrar has a number of nameservers that act as a phone book for all the domains registered through them. More than one, typically, to handle traffic when there's a lot of it. I'm ns1, but you better believe there's at *least* an ns2 and an ns3 as well."
+        "text": "Every registrar has a number of nameservers that act as an address book for all the domains registered through them. More than one, typically, to handle traffic."
       },
       {
         "speaker": "Becky",
@@ -365,45 +365,87 @@
       },
       {
         "speaker": "ns1",
-        "text": "Usually not! In fact, their nameserver might not even be located in New Zealand."
+        "text": "Usually not, but I wouldn't know, I'm just a nameserver."
       },
       {
-        "speaker": "ns1",
-        "text": "I might just be an abstraction for the sake of your journey."
+        "speaker": "Guide",
+        "text": "In your terms, the host server of a website is a house, the IP address is its address, and the nameserver is an address book."
       },
       {
-        "speaker": "Becky",
-        "text": "*what*"
+        "speaker": "Guide",
+        "text": "It's fairly simple to deliver something to a physical address without knowing the contents of the house, or even what sort of building it is."
       },
       {
-        "speaker": "ns1",
-        "text": "But the company that hosts the actual *content* of the website and a site's domain registrar are often two different companies."
+        "speaker": "Guide",
+        "text": "Imagine how slow and invasive physical deliveries would be if it *was* required for a deliverer to know the exact dimensions and contents of your home!"
       },
       {
-        "speaker": "ns1",
+        "speaker": "Zak",
+        "text": "we would never get mail?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Never!"
+      },
+      {
+        "speaker": "Guide",
+        "text": "But the company that hosts the actual *content* of the website and its domain registrar are often two different companies."
+      },
+      {
+        "speaker": "Guide",
+        "text": "You wouldn't expect a post office to both send mail *and* build houses."
+      },
+      {
+        "speaker": "Guide",
         "text": "Even if the same company serves as both the host and the registrar, the nameservers of the company are still completely ignorant of the content."
       },
       {
         "speaker": "ns1",
-        "text": "I don't have the faintest clue of what's contained in [[redacted]]'s website. It could be nothing, though that seems unlikely!"
+        "text": "I don't have the faintest clue of what's contained in [[redacted]]'s website. I guess it could be nothing, though that seems unlikely."
       },
       {
         "speaker": "ns1",
-        "text": "All I can give you is an IP address, which is something like 14.1.88.255.",
-        "components": [
-          {
-            "name": "ipaddress",
-            "state": "start"
-          }
-        ]
+        "text": "All I can give you is an IP address, which is something like 14.1.88.255."
+      },
+      {
+        "speaker": "Becky",
+        "text": "and in your analogy, this IP address is my actual mailing address?"
       },
       {
         "speaker": "Guide",
-        "text": "That was a completely random IP address, that may or may not point to a real website, but it exists within the range of IP addresses for New Zealand!"
+        "text": "Correct! That was a completely random IP address for the sake of abstraction, that may or may not point to a real website, but it exists within the range of IP addresses for New Zealand!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "I didn't, but I guess I do now."
+      },
+      {
+        "speaker": "Becky",
+        "text": "so wait, what's the registrar, then?"
       },
       {
         "speaker": "Guide",
-        "text": "Did you know that you can look up the IP address range of any country? [Here's the full list of address blocks for New Zealand!](https://lite.ip2location.com/new-zealand-ip-address-ranges?lang=en_US) And if you [look up a domain name through ICANN](https://lookup.icann.org/), you can find out what its nameservers are!"
+        "text": "A registrar allows you to register a domain by purchasing it, typically for some number of years, and then set the IP address that domain points to."
+      },
+      {
+        "speaker": "Guide",
+        "text": "I guess it, hmm..."
+      },
+      {
+        "speaker": "Guide",
+        "text": "The IP address is given to you by the host – that's your actual street address, which only changes if you move houses. The domain just points to it."
+      },
+      {
+        "speaker": "Guide",
+        "text": "I suppose the registrar is analogous to a service that would let you buy a more interesting name for your house, unique to you?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "That could travel with you if you moved to a new house?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "well, I guess no analogy is totally perfect"
       },
       {
         "speaker": "Zak",

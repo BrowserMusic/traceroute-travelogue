@@ -939,6 +939,26 @@
       },
       {
         "speaker": "Zak",
+        "text": "I'm still a little confused?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Hm! For a human comparison, a domain is like a conversational reference to a place, while its IP address is its legal location"
+      },
+      {
+        "speaker": "Guide",
+        "text": "If you hypothetically knew a person named Becky, you could say \"I'm going to Becky's house,\" but that address doesn't mean anything to the post office."
+      },
+      {
+        "speaker": "Guide",
+        "text": "In this analogy, the DNS process will let us convert the very general location of \"Becky's house\" into her actual address."
+      },
+      {
+        "speaker": "Zak",
+        "text": "this is sounding less and less hypothetical by the minute, but I think I'm following."
+      },
+      {
+        "speaker": "Zak",
         "text": "how do we do that?"
       },
       {
@@ -1050,6 +1070,10 @@
       },
       {
         "speaker": "Guide",
+        "text": "What root server J just told you is similar to: \"I know Becky is in the state of Virginia in the US. Let me forward you to Virginia, and they'll tell you what city she's in.\""
+      },
+      {
+        "speaker": "Guide",
         "text": "Each TLD server handles a different domain – this one serves .com, but there are others for .org, .net, .pizza, etc."
       },
       {
@@ -1074,15 +1098,39 @@
       },
       {
         "speaker": "Zak",
-        "text": "wait, what's a nameserver again?"
+        "text": "so is the nameserver like the state of Virginia, then?"
       },
       {
         "speaker": "Guide",
-        "text": "It's the final level of the DNS hierarchy! It generally is part of whatever registrar the site owner registered the domain with."
+        "text": "Very similar! It generally is part of whatever registrar the site owner of [[redacted]] registered the domain with."
+      },
+      {
+        "speaker": "Guide",
+        "text": "What dot-com told you is similar to: \"This is the state of Virginia! I know Becky is in the city of Charlottesville, let me forward you to Charlottesville so you can get her actual address.\""
       },
       {
         "speaker": "Becky",
-        "text": "it's like a local address book, but it's also the post office, but also you're the package."
+        "text": "so it's like we're asked a global delivery chain to find my house off of just the phrase \"my house,\" but they're doing that by sending us to smaller delivery chains with more specific address books each time?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "Correct!"
+      },
+      {
+        "speaker": "Becky",
+        "text": "but we still don't know my IP address yet?"
+      },
+      {
+        "speaker": "Becky",
+        "text": "er, [[redacted]]'s IP address?"
+      },
+      {
+        "speaker": "Guide",
+        "text": "No! All you have is the location of a nameserver that *does* know it."
+      },
+      {
+        "speaker": "Guide",
+        "text": "But while root and TLD servers are widely distributed, nameservers are a little more local."
       },
       {
         "speaker": "Box",
