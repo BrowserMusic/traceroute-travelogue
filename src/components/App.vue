@@ -38,6 +38,9 @@ export default {
     InstructionBlock,
     AudioHandler,
   },
+  created() {
+    document.title = "Packetsphere: An Internet Travelogue";
+  },
   data() {
     return {
       myCity: 0,

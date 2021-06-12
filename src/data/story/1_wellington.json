@@ -7,7 +7,7 @@
       "title": "Packetsphere: An Internet Travelogue",
       "paragraphs": [
         "*What does it take to send a single message halfway around the globe? What issues exist in the technological world just below the surface of your keyboard? Come join Zak, Becky, and a colorful cast of digital characters for a look into the grand tour you initiate every time you send a phrase as simple as \"hello.\"*",
-        "This is an interactive piece intended for a desktop browser, with audio and video elements. Most of the time, you can move forward in the story by **pressing the space bar.**",
+        "This is an interactive piece intended for a desktop browser of at least 900px wide, with audio and video elements. Most of the time, you can move forward in the story by **pressing the space bar.**",
         "Click the Audio button to enable sound, and we'll get started."
       ],
       "audioEnabler": true
