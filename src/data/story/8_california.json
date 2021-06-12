@@ -37,6 +37,10 @@
     }
   },
   {
+    "type": "animation",
+    "audio": false
+  },
+  {
     "type": "dialogue",
     "level": 1,
     "id": "main",
@@ -83,7 +87,7 @@
       "name": "loop7"
     },
     "lines": [
-      {
+      { 
         "speaker": "Local",
         "text": "Welcome to GeoCity!"
       },
@@ -355,12 +359,40 @@
          "timer": 1000
         }
       }
-    ]
+    ],
+    "audio": {
+      "repeat": false,
+      "name": "loop19"
+    }
+
   },
   {
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "audio": {
+      "repeat": true,
+      "interval": {
+        "type": "random",
+        "value": [
+          3,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7
+        ]
+      },
+      "name": "cave1",
+      "list": [
+        "cave2",
+        "cave3",
+        "cave4",
+        "cave5",
+        "cave6"
+      ]
+    },
     "lines": [
       {
         "speaker": "Becky",

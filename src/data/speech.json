@@ -228,79 +228,124 @@
       "end": 188.065306122449,
       "loop": false
     },
-    "loop2": {
+    "loop11": {
       "start": 190,
       "end": 206.065306122449,
       "loop": false
     },
-    "loop3": {
+    "loop12": {
       "start": 208,
       "end": 224.065306122449,
       "loop": false
     },
-    "loop4": {
+    "loop13": {
       "start": 226,
       "end": 242.065306122449,
       "loop": false
     },
-    "loop5": {
+    "loop14": {
       "start": 244,
-      "end": 260.065306122449,
+      "end": 252.07183673469387,
+      "loop": false
+    },
+    "loop15": {
+      "start": 254,
+      "end": 270.065306122449,
+      "loop": false
+    },
+    "loop16": {
+      "start": 272,
+      "end": 288.065306122449,
+      "loop": false
+    },
+    "loop17": {
+      "start": 290,
+      "end": 306.065306122449,
+      "loop": false
+    },
+    "loop18": {
+      "start": 308,
+      "end": 324.065306122449,
+      "loop": false
+    },
+    "loop19": {
+      "start": 326,
+      "end": 342.065306122449,
+      "loop": false
+    },
+    "loop2": {
+      "start": 344,
+      "end": 360.065306122449,
+      "loop": false
+    },
+    "loop20": {
+      "start": 362,
+      "end": 378.065306122449,
+      "loop": false
+    },
+    "loop3": {
+      "start": 380,
+      "end": 396.065306122449,
+      "loop": false
+    },
+    "loop4": {
+      "start": 398,
+      "end": 414.065306122449,
+      "loop": false
+    },
+    "loop5": {
+      "start": 416,
+      "end": 432.065306122449,
       "loop": false
     },
     "loop6": {
-      "start": 262,
-      "end": 278.065306122449,
+      "start": 434,
+      "end": 450.065306122449,
       "loop": false
     },
     "loop7": {
-      "start": 280,
-      "end": 296.065306122449,
-      "loop": false
-    },
-    "loop8": {
-      "start": 298,
-      "end": 314.065306122449,
+      "start": 452,
+      "end": 468.065306122449,
       "loop": false
     },
     "loop9": {
-      "start": 316,
-      "end": 332.065306122449,
+      "start": 470,
+      "end": 486.065306122449,
       "loop": false
     },
     "orb_short": {
-      "start": 334,
-      "end": 334.55201814058955,
+      "start": 488,
+      "end": 488.55201814058955,
       "loop": false
     },
     "orb_short2": {
-      "start": 336,
-      "end": 337.03201814058957,
+      "start": 490,
+      "end": 491.03201814058957,
       "loop": false
     },
     "orb_short3": {
-      "start": 339,
-      "end": 340.44,
+      "start": 493,
+      "end": 494.44,
       "loop": false
     },
     "orb_short4": {
-      "start": 342,
-      "end": 342.6,
+      "start": 496,
+      "end": 496.6,
       "loop": false
     },
     "orb_short5": {
-      "start": 344,
-      "end": 344.8880045351474,
+      "start": 498,
+      "end": 498.8880045351474,
       "loop": false
     },
     "orb_short6": {
-      "start": 346,
-      "end": 346.96,
+      "start": 500,
+      "end": 500.96,
       "loop": false
     },
     "wave": {
-      "start": 348,
-      "end": 351.3175510204082,
+      "start": 502,
+      "end": 505.3175510204082,
       "loop": false
     }
   }

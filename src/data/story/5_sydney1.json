@@ -29,7 +29,11 @@
     "components": [
       {
         "name": "mediabg",
-        "state": "stop"
+        "state": "start",
+        "settings": {
+          "type": "image",
+          "src": "/images/sydneybg.jpg"
+        }
       },
       {
         "name": "imgtimer",
@@ -84,6 +88,14 @@
     "pathid": "in-syd-mines",
     "components": [
       {
+        "name": "mediabg",
+        "state":"start",
+        "settings": {
+          "type": "image",
+          "src": "/images/cave.gif"
+        }
+      },
+      {
         "name": "character",
         "state": "stop"
       },
@@ -119,8 +131,6 @@
       "interval": {
         "type": "random",
         "value": [
-          1,
-          2,
           3,
           4,
           5,

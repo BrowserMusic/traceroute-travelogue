@@ -3,6 +3,10 @@
     "type": "animation",
     "components": [
       {
+        "name": "mediabg",
+        "state": "stop"
+      },
+      {
         "name": "imgtimer",
         "state": "start",
         "settings": {

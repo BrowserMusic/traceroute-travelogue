@@ -1,8 +1,55 @@
 [
   {
+    "type": "animation",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "start",
+        "settings": {
+          "src": "/images/loadscreen.gif",
+          "timer": 1000
+        }
+      }
+    ],
+    "audio": false
+  },
+  {
     "type": "dialogue",
     "level": 1,
     "id": "main",
+    "components": [
+      {
+        "name": "imgtimer",
+        "state": "stop"
+      },
+      {
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "image",
+          "src": "/images/cvillebg.jpg"
+        }
+      },
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/brokencircuit.gif",
+            "/images/computer__melting.gif",
+            "/images/IC.gif"
+          ]
+        }
+      }
+    ],
+    "audio": {
+      "repeat": true,
+      "interval": {
+        "type": "fixed",
+        "value": 0
+      },
+      "name": "loop18"
+    },
     "lines": [
       {
         "speaker": "Becky",
@@ -37,7 +84,14 @@
   {
     "type": "animation",
     "scene": "showClosingMap",
-    "layout": "map"
+    "layout": "map",
+    "components":[
+      {
+        "name": "gifmess",
+        "state": "stop"
+      }
+    ],
+    "audio": false
   },
   {
     "type": "animation",
@@ -47,7 +101,29 @@
       "line": "hey, how's it going?",
       "oldline": "hello",
       "speed": 300
+    },
+    "audio": {
+      "repeat": true,
+      "interval": {
+        "type": "fixed",
+        "value": 0
+      },
+      "name": "loop17",
+      "list": [
+        "loop10",
+        "loop20",
+        "loop15",
+        "loop16",
+        "loop1",
+        "loop6",
+        "loop9",
+        "loop14"
+      ]
     }
+  },
+  {
+    "type":"animation"
+
   },
   {
     "type": "animation",

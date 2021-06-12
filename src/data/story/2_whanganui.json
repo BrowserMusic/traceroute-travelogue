@@ -4,6 +4,10 @@
     "pathid": "landing-whan",
     "components": [
       {
+        "name": "link",
+        "state": "stop"
+      },
+      {
         "name": "hub",
         "state": "start",
         "settings": {
@@ -70,6 +74,14 @@
     "level": 1,
     "pathid": "mine1",
     "components": [
+      {
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "image",
+          "src": "/images/cave.gif"
+        }
+      },
       {
         "name": "character",
         "state": "start",

@@ -1,14 +1,71 @@
 [
   {
+    "type":"animation",
+    "components":[
+      {
+        "name":"imgtimer",
+        "state": "start",
+        "settings": {
+         "src": "/images/loadscreen.gif",
+         "timer": 2000
+        }
+      },
+      {
+        "name": "bigbutton",
+        "state": "stop"
+      }
+    ]
+  },
+  {
     "type": "dialogue",
     "level": 1,
     "id": "main",
     "components": [
       {
-        "name": "bigbutton",
-        "state": "stop"
+        "name":"imgtimer",
+        "state":"stop"
+      },
+      {
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "image",
+          "src": "/images/manhattanbg.jpg"
+        }
+      },
+      {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/brokencircuit.gif",
+            "/images/computer__melting.gif",
+            "/images/IC.gif",
+            "/images/nyc.gif",
+            "/images/oilhorse.gif",
+            "/images/crystals.gif",
+            "/images/oz.gif",
+            "/images/coin.gif",
+            "/images/coin2.gif",
+            "/images/coin3.gif",
+            "/images/coin4.gif",
+            "/images/coin5.gif",
+            "/images/coin6.gif",
+            "/images/coin7.gif",
+            "/images/coin8.gif",
+            "/images/coin9.gif"
+          ]
+        }
       }
     ],
+    "audio": {
+      "repeat": true,
+      "interval": {
+        "type": "fixed",
+        "value": 0
+      },
+      "name": "glitchloop1"
+    },
     "lines": [
       {
         "speaker": "Becky",
@@ -72,7 +129,7 @@
       },
       {
         "speaker": "Guide",
-        "text": "Since the only way to guess correctly, they just keep guessing... trillions of times."
+        "text": "Since the only way to guess is  correctly, they just keep guessing... trillions of times."
       },
       {
         "speaker": "Guide",

@@ -7,6 +7,14 @@
         "state": "stop"
       },
       {
+        "name": "mediabg",
+        "state": "start",
+        "settings": {
+          "type": "image",
+          "src": "/images/torontobg.jpg"
+        }
+      },
+      {
         "name": "imgtimer",
         "state": "start",
         "settings": {
@@ -14,7 +22,8 @@
           "timer": 1000
         }
       }
-    ]
+    ],
+    "audio": false
   },
   {
     "type": "dialogue",
@@ -26,6 +35,20 @@
         "state": "stop"
       },
       {
+        "name": "gifmess",
+        "state": "start",
+        "settings": {
+          "images": [
+            "/images/toronto.gif",
+            "/images/toronto2.gif",
+            "/images/toronto3.gif",
+            "/images/toronto4.gif",
+            "/images/toronto5.gif"
+          ]
+        }
+
+      },
+      {
         "name": "pamphlet",
         "state": "start",
         "settings": {
@@ -33,6 +56,18 @@
         }
       }
     ],
+    "audio": {
+      "repeat": true,
+      "interval": {
+        "type": "fixed",
+        "value": 0
+      },
+      "name": "loop15",
+      "list": [
+        "loop16",
+        "loop15"
+      ]
+    },
     "lines": [
       {
         "speaker": "Zak",
