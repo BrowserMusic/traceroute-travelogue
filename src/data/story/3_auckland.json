@@ -1,22 +1,9 @@
 [
   {
-    "type": "animation",
-    "components": [
-      {
-        "name": "imgtimer",
-        "state": "start",
-        "settings": {
-          "src": "/images/loadscreen.gif",
-          "timer": 2000
-        }
-      }
-    ],
-    "audio": false
-  },
-  {
     "type": "dialogue",
     "id": "main",
     "level": 1,
+    "audio": false,
     "components": [
       {
         "name": "mediabg",
@@ -325,10 +312,6 @@
       {
         "speaker": "Guide",
         "text": "Sure thing!"
-      },
-      {
-        "speaker": "Becky",
-        "text": "is no one else weirded out by the fact that you talk?"
       },
       {
         "speaker": "Box",

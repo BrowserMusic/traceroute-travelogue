@@ -7,8 +7,17 @@
       {
         "name": "bigbutton",
         "state": "stop"
+      },
+      {
+        "name": "gifmess",
+        "state": "stop"
+      },
+      {
+        "name": "mediabg",
+        "state": "stop"
       }
     ],
+    "audio": false,
     "lines": [
       {
         "speaker": "Becky",
