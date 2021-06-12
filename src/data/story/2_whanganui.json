@@ -263,7 +263,8 @@
         "text": "dang not this again"
       },
       {
-        "guide": "beep"
+        "speaker": "Guide",
+        "text": "beep!"
       },
       {
         "speaker": "Becky",

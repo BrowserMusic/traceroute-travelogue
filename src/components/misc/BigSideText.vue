@@ -36,6 +36,7 @@ export default {
   position: absolute;
   top: 30%;
   right: 20%;
+  z-index: 100;
 
   h1 {
     color: #67ff5e;

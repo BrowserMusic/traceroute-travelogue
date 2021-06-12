@@ -14,16 +14,14 @@ class BackgroundMusicManager {
   }
 
   play(sound) {
-    console.log(sound);
+    // console.log(sound);
     this.stop();
     const shouldRepeat = ("repeat" in sound) ? sound.repeat : false;
     this.soundList = [];
 
     if (!shouldRepeat) {
-      console.log("sound shouldnt repeat");
       this.playSoundEvent(this.getSound(sound.name));
     } else {
-      console.log("sound should repeat");
       this.isRepeating = true;
       this.sound = ("name" in sound) ? sound.name : null;
       this.interval = ("interval" in sound) ? sound.interval : null;
@@ -36,7 +34,7 @@ class BackgroundMusicManager {
 
   stop() {
     this.isRepeating = false;
-    this.player.stop();
+    this.player.unsync().stop();
   }
 
   onEnd() {
@@ -44,6 +42,7 @@ class BackgroundMusicManager {
       const sname = (ref.soundList != null) ? ref.soundList[Math.floor(Math.random() * ref.soundList.length)] : ref.sound;
       if (ref.interval != null) {
         const time = (ref.interval.type == "fixed") ? ref.interval.value : Math.random() * ref.interval.value[1] + ref.interval.value[0];
+        console.log(time);
         ref.playSoundEvent(ref.getSound(sname), `+${time}`);
       } else {
         ref.playSoundEvent(ref.getSound(sname));
@@ -52,12 +51,13 @@ class BackgroundMusicManager {
   }
 
   playSoundEvent(sound, time) {
+    // console.log(sound);
     if ("rate" in sound) {
       this.player.playbackRate = sound.rate;
     }
     time = (time == null) ? Tone.now() : time;
 
-    this.player.start(time, sound.start, sound.duration);
+    this.player.sync().start(time, sound.start, sound.duration);
   }
 
   getSound(index) {

@@ -54,6 +54,10 @@
         "settings": {
           "page": 0
         }
+      },
+      {
+        "name": "character",
+        "state": "stop"
       }
     ],
     "audio": {

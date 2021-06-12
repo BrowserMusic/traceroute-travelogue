@@ -14,9 +14,11 @@ class SpeakerSynth {
     this.synth.modulationIndex.value = Math.random() * 20 + 10;
 
     if (this.maxLength == 1 || length == 1) {
+      // console.log("playing once");
       const event = this.generateRandomEvent(this.pitch);
       this.playEvent(event.pitch, event.mod, Tone.now());
     } else {
+      // console.log("playing more");
       this.playSequence(length, mood);
     }
   }
@@ -65,8 +67,9 @@ class SpeakerSynth {
   }
 
   playEvent(pitch, mod, time = 0) {
+    console.log("playing event!");
     this.synth.modulationIndex.value = mod;
-    this.synth.triggerAttackRelease(pitch, 0.035, time);
+    this.synth.triggerAttackRelease(pitch, 0.035, time + 0.1);
   }
 
   generateRandomEvent(pitch, deviance = 30) {

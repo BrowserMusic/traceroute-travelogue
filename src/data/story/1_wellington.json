@@ -1024,7 +1024,13 @@
       },
       {
         "speaker": "Guide",
-        "text": "Congratulations!! The \"J\" root DNS server's IP address is 199.7.83.42. You should hear from the root DNS soon."
+        "text": "Congratulations!! The \"J\" root DNS server's IP address is 199.7.83.42. You should hear from the root DNS soon.",
+        "components": [
+          {
+            "name": "link",
+            "state": "stop"
+          }
+        ]
       },
       {
         "speaker": "J",

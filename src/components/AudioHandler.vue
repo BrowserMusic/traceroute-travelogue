@@ -11,7 +11,6 @@ import AudioEnabler from "./misc/AudioEnabler.vue";
 const speechFile = "/audio/speech.mp3";
 
 Tone.ToneAudioBuffer.fromUrl(speechFile).then((buff) => {
-  // console.log("how about now?");
   mng.setBuffer(buff);
 });
 
@@ -47,13 +46,13 @@ export default {
   watch: {
     lineIndex() {
       if (this.$store.state.path.isFastForward) return;
-      if (this.line != null) {
+      if (this.line != null && this.lineIndex != 0) {
         this.playLine();
       }
     },
     sceneIndex() {
       if (this.$store.state.path.isFastForward) return;
-      if ("lines" in this.scene) {
+      if ("lines" in this.scene && this.lineIndex == 0) {
         this.playLine();
       }
       if ("audio" in this.scene) {
@@ -102,73 +101,6 @@ export default {
         mood: mood,
       });
     },
-    // playSound(speaker, length, mood) {
-    //   if (speaker in mng) {
-    //     if (speaker == "box") {
-    //       mng.box.synth.triggerAttackRelease(0.3);
-    //     } else {
-    //       mng[speaker].synth.modulationIndex.value = Math.random() * 20 + 10;
-    //       length = Math.max(Math.floor(length / 12), 1);
-    //       const events = this.makeEvents(speaker, mood, length);
-    //       const seq = new Tone.Sequence(
-    //         (time, note) => {
-    //           mng[speaker].synth.modulationIndex.value = note.mod;
-    //           mng[speaker].synth.triggerAttackRelease(note.pitch, 0.035, time);
-    //         },
-    //         events.events,
-    //         events.speed
-    //       );
-
-    //       seq.start();
-    //       seq.loop = false;
-    //     }
-    //   }
-    // },
-    // makeEvents(speaker, mood = "normal", limit = 5, deviance = 30) {
-    //   // question, exclamation, puzzled, normal
-    //   let events = [];
-    //   let speed = 0.1;
-    //   let pitch = mng[speaker].pitch;
-
-    //   if (mood == "puzzled") {
-    //     speed = 0.2;
-    //   } else if (mood == "exclamation") {
-    //     speed = 0.09;
-    //     limit += 2;
-    //   } else if (mood == "question") {
-    //     limit += 1;
-    //   }
-
-    //   limit = Math.min(limit, 8);
-
-    //   for (let i = 0; i < limit; i++) {
-    //     if (mood == "question") {
-    //       pitch += 20;
-    //     }
-    //     events[i] = {
-    //       pitch: pitch + (Math.random() * deviance - deviance / 2),
-    //       mod: Math.random() * 20 + 10,
-    //     };
-    //   }
-
-    //   return { events: events, speed: speed };
-    // },
-    // makeSynth(stype, pitch) {
-    //   return {
-    //     synth: new Tone.FMSynth({
-    //       volume: -6,
-    //       oscillator: {
-    //         type: stype,
-    //       },
-    //       harmonicity: 2,
-    //       modulationIndex: 12.22,
-    //       modulation: {
-    //         type: "square",
-    //       },
-    //     }).toDestination(),
-    //     pitch: pitch,
-    //   };
-    // },
   },
 };
 </script>

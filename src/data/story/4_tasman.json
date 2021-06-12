@@ -258,7 +258,7 @@
       },
       {
         "name": "mediabg",
-        "state":"start",
+        "state": "start",
         "settings": {
           "type": "image",
           "src": "/images/underwater2.gif"
@@ -323,7 +323,9 @@
     ]
   },
   {
-    "type": "animation",
+    "type": "dialogue",
+    "id": "main",
+    "level": 1,
     "components": [
       {
         "name": "character",
@@ -334,13 +336,6 @@
         }
       }
     ],
-    "audio": false
-  },
-  {
-    "type": "dialogue",
-    "id": "main",
-    "level": 1,
-    "components": [],
     "audio": {
       "repeat": true,
       "interval": {
